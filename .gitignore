@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# editor
+.vscode/
+*.swp
+
+# output di campagna (working dir, non versionare)
+output/*/
+!output/reports/
+!output/README.md
+
+# dashboard: versiona il guscio (HTML/README/sample), ignora i data.json reali
+!output/dashboard/
+output/dashboard/competitor-ads/data.json
+output/dashboard/performance/data.json
+
+# dati first-party cliente (non versionare; tieni solo il README)
+context/campaign/data/*
+!context/campaign/data/README.md
+
+# dati finanziari brand — PII/segreti (tieni solo il README)
+context/brand/financials/*
+!context/brand/financials/README.md
+
+# SEGRETI — MCP config con token reali (Google Ads dev token, Klaviyo key, ...)
+.mcp.json
+# versiona solo gli esempi
+!.mcp.*.example.json
+
+# permessi locali per-macchina (path personali + token in cache) — mai distribuire
+.claude/settings.local.json
+
+# screenshot/artefatti Playwright
+.playwright-mcp/

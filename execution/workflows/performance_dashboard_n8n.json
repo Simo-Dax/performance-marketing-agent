@@ -1,0 +1,144 @@
+{
+  "name": "Performance Dashboard — data.json builder",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Performance Dashboard — data.json builder\n\nAggrega **Shopify + Google Ads + Meta Ads** → scrive `data.json` per `output/dashboard/performance/index.html`.\n\n### Setup\n1. **Schedule**: default ogni giorno 06:00 (modifica nel nodo Schedule).\n2. **Credenziali** (3 nodi HTTP):\n   - Shopify: Admin API token (header `X-Shopify-Access-Token`), sostituisci `YOUR-SHOP` nell'URL.\n   - Google Ads: serve OAuth2 + developer-token + customer-id. In alternativa usa il nodo nativo o un proxy che espone il Google Ads MCP.\n   - Meta: Marketing API access token (scope `ads_read`), sostituisci `ACT_ID`.\n3. **Code · Build data.json**: calcola MER, blended ROAS, NCAC, split. Inserisci i `*_target` da `context/brand/financials/`.\n4. **Write data.json**: il nodo Read/Write File scrive su disco locale (n8n self-hosted). Se usi **n8n cloud**, sostituiscilo con FTP / Google Drive / un webhook che salva il file accanto a index.html.\n\n### Output\n`data.json` → la dashboard lo legge client-side. Zero token Claude.",
+        "height": 420,
+        "width": 460
+      },
+      "id": "note-setup",
+      "name": "Setup Notes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-520, 80]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "0 6 * * *" }
+          ]
+        }
+      },
+      "id": "node-schedule",
+      "name": "Schedule 06:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-40, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://YOUR-SHOP.myshopify.com/admin/api/2024-10/orders.json?status=any&created_at_min={{ $today.minus({ days: 30 }).toISO() }}&limit=250",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "X-Shopify-Access-Token", "value": "={{ $credentials.shopifyToken }}" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-shopify",
+      "name": "Shopify · Orders 30gg",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [320, 140],
+      "notesInFlow": true,
+      "notes": "Paginare se >250 ordini (cursor next). Restituisce orders[] con total_price, customer.orders_count (new vs returning)."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://googleads.googleapis.com/v17/customers/CUSTOMER_ID/googleAds:searchStream",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "developer-token", "value": "={{ $credentials.googleDevToken }}" },
+            { "name": "login-customer-id", "value": "5524890329" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"query\": \"SELECT campaign.name, campaign.advertising_channel_type, metrics.cost_micros, metrics.conversions, metrics.conversions_value, metrics.search_impression_share FROM campaign WHERE segments.date DURING LAST_30_DAYS AND campaign.status = 'ENABLED'\"\n}",
+        "options": {}
+      },
+      "id": "node-google",
+      "name": "Google Ads · GAQL 30gg",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [320, 300],
+      "notesInFlow": true,
+      "notes": "cost_micros / 1e6 = spend. roas = conversions_value / spend. type = advertising_channel_type."
+    },
+    {
+      "parameters": {
+        "url": "https://graph.facebook.com/v21.0/act_ACT_ID/insights",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "level", "value": "campaign" },
+            { "name": "date_preset", "value": "last_30d" },
+            { "name": "fields", "value": "campaign_name,objective,spend,actions,action_values,cpm,ctr,frequency" },
+            { "name": "access_token", "value": "={{ $credentials.metaToken }}" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-meta",
+      "name": "Meta Ads · Insights 30gg",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [320, 460],
+      "notesInFlow": true,
+      "notes": "actions → purchases (conv). action_values → revenue. roas = revenue / spend. frequency per fatigue."
+    },
+    {
+      "parameters": {
+        "jsCode": "// ===== Performance Dashboard — Build data.json =====\n// Unisce gli output dei 3 nodi HTTP e calcola i KPI macro.\n// I valori *_target vanno presi da context/brand/financials/ — qui placeholder.\n\nconst shopify = $('Shopify · Orders 30gg').first().json;\nconst google  = $('Google Ads · GAQL 30gg').first().json;\nconst meta    = $('Meta Ads · Insights 30gg').first().json;\n\n// --- TARGET (da context/brand/financials/) ---\nconst TARGETS = { mer: 4.0, ncac: 42 };\n\n// --- SHOPIFY ---\nconst orders = (shopify.orders || []);\nlet revenue = 0, newC = 0, retC = 0;\nfor (const o of orders) {\n  revenue += parseFloat(o.total_price || 0);\n  const oc = (o.customer && o.customer.orders_count) || 1;\n  if (oc <= 1) newC++; else retC++;\n}\nconst ordersN = orders.length;\nconst aov = ordersN ? revenue / ordersN : 0;\n\n// --- GOOGLE ---\nconst gCamps = [];\nlet gSpend = 0, gConv = 0, gVal = 0;\nfor (const batch of (Array.isArray(google) ? google : [google])) {\n  for (const r of (batch.results || [])) {\n    const spend = (r.metrics?.costMicros || 0) / 1e6;\n    const conv = r.metrics?.conversions || 0;\n    const val = r.metrics?.conversionsValue || 0;\n    gSpend += spend; gConv += conv; gVal += val;\n    const roas = spend ? val / spend : 0;\n    gCamps.push({ name: r.campaign?.name, type: r.campaign?.advertisingChannelType,\n      spend: Math.round(spend), conv: Math.round(conv), cpa: conv ? +(spend/conv).toFixed(1) : null,\n      roas: +roas.toFixed(1), impression_share: r.metrics?.searchImpressionShare ?? null,\n      status: roas >= 3 ? 'g' : roas >= 1.8 ? 'w' : 'b' });\n  }\n}\n\n// --- META ---\nconst mCamps = [];\nlet mSpend = 0, mConv = 0, mVal = 0;\nfor (const r of (meta.data || [])) {\n  const spend = parseFloat(r.spend || 0);\n  const purch = (r.actions || []).find(a => a.action_type === 'purchase');\n  const conv = purch ? parseFloat(purch.value) : 0;\n  const pv = (r.action_values || []).find(a => a.action_type === 'purchase');\n  const val = pv ? parseFloat(pv.value) : 0;\n  mSpend += spend; mConv += conv; mVal += val;\n  const roas = spend ? val / spend : 0;\n  const freq = parseFloat(r.frequency || 0);\n  mCamps.push({ name: r.campaign_name, objective: r.objective,\n    spend: Math.round(spend), conv: Math.round(conv), cpa: conv ? +(spend/conv).toFixed(1) : null,\n    roas: +roas.toFixed(1), cpm: +parseFloat(r.cpm || 0).toFixed(1), ctr: +(parseFloat(r.ctr || 0)/100).toFixed(4),\n    freq: +freq.toFixed(1),\n    status: (roas < 2 && spend > 2000) ? 'b' : (freq > 3 ? 'w' : 'g') });\n}\n\n// --- CALCULATED (macro) ---\nconst totalSpend = gSpend + mSpend;\nconst totalRevenue = revenue;\nconst mer = totalSpend ? +(totalRevenue / totalSpend).toFixed(1) : 0;\nconst attributedRev = gVal + mVal;\nconst blendedRoas = totalSpend ? +(attributedRev / totalSpend).toFixed(1) : 0;\nconst ncac = newC ? Math.round(totalSpend / newC) : null;\nconst newPct = ordersN ? Math.round(newC / ordersN * 100) : null;\n\nconst out = {\n  last_updated: new Date().toISOString().slice(0, 16).replace('T', ' '),\n  business_model: 'eCommerce',\n  currency: '€',\n  period: { label: 'Ultimi 30gg', start: $today.minus({ days: 30 }).toISODate(), end: $today.toISODate() },\n  calculated: {\n    mer, mer_target: TARGETS.mer,\n    blended_roas: blendedRoas,\n    total_spend: Math.round(totalSpend),\n    total_revenue: Math.round(totalRevenue),\n    ncac, ncac_target: TARGETS.ncac,\n    new_customer_pct: newPct,\n    aov: +aov.toFixed(0)\n  },\n  shopify: { revenue_total: Math.round(revenue), orders: ordersN, aov: +aov.toFixed(0),\n    new_customers: newC, returning_customers: retC, daily: [] },\n  google_ads: { spend: Math.round(gSpend), conversions: Math.round(gConv),\n    roas: gSpend ? +(gVal/gSpend).toFixed(1) : 0, cpa: gConv ? +(gSpend/gConv).toFixed(1) : null, campaigns: gCamps },\n  meta_ads: { spend: Math.round(mSpend), conversions: Math.round(mConv),\n    roas: mSpend ? +(mVal/mSpend).toFixed(1) : 0, cpa: mConv ? +(mSpend/mConv).toFixed(1) : null,\n    cpm: mCamps.length ? +(mCamps.reduce((s,c)=>s+c.cpm,0)/mCamps.length).toFixed(1) : 0,\n    ctr: mCamps.length ? +(mCamps.reduce((s,c)=>s+c.ctr,0)/mCamps.length).toFixed(4) : 0, campaigns: mCamps }\n};\n\nreturn [{ json: out }];"
+      },
+      "id": "node-build",
+      "name": "Code · Build data.json",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "/path/to/output/dashboard/performance/data.json",
+        "dataPropertyName": "data",
+        "options": {}
+      },
+      "id": "node-write",
+      "name": "Write data.json",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [1080, 300],
+      "notesInFlow": true,
+      "notes": "n8n self-hosted: scrive su disco. n8n cloud: sostituisci con FTP / Google Drive / webhook. Il Code node sopra restituisce JSON → converti in binary (Move Binary Data) se il nodo lo richiede."
+    }
+  ],
+  "connections": {
+    "Schedule 06:00": {
+      "main": [[
+        { "node": "Shopify · Orders 30gg", "type": "main", "index": 0 },
+        { "node": "Google Ads · GAQL 30gg", "type": "main", "index": 0 },
+        { "node": "Meta Ads · Insights 30gg", "type": "main", "index": 0 }
+      ]]
+    },
+    "Shopify · Orders 30gg": { "main": [[{ "node": "Code · Build data.json", "type": "main", "index": 0 }]] },
+    "Google Ads · GAQL 30gg": { "main": [[{ "node": "Code · Build data.json", "type": "main", "index": 0 }]] },
+    "Meta Ads · Insights 30gg": { "main": [[{ "node": "Code · Build data.json", "type": "main", "index": 0 }]] },
+    "Code · Build data.json": { "main": [[{ "node": "Write data.json", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "meta": { "templateBuildNote": "Performance Marketing Team — dashboard data builder. Credenziali e path da configurare prima dell'attivazione." },
+  "tags": [{ "name": "performance-marketing" }]
+}

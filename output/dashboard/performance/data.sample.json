@@ -1,0 +1,54 @@
+{
+  "_comment": "Schema dati Performance Dashboard. Rinomina in data.json per usarlo. Generato/aggiornato dal workflow n8n 'performance_dashboard' (Shopify + Google Ads + Meta Ads → questo file). La dashboard legge data.json client-side: zero token Claude per ogni refresh. business_model accetta 'eCommerce' | 'SaaS' | 'LeadGen' e adatta i KPI card mostrati. I campi *_prev sono i valori del periodo precedente (per i delta). I campi *_target vengono da context/brand/financials/. status: 'g' (OK) | 'w' (WATCH) | 'b' (FIX).",
+  "last_updated": "2026-05-31 06:00",
+  "business_model": "eCommerce",
+  "currency": "€",
+  "period": { "label": "Ultimi 30gg", "start": "2026-05-01", "end": "2026-05-30" },
+
+  "calculated": {
+    "mer": 4.2, "mer_prev": 3.6, "mer_target": 4.0,
+    "blended_roas": 3.1, "blended_roas_prev": 2.9,
+    "total_spend": 21500, "total_spend_prev": 19800,
+    "total_revenue": 90300, "total_revenue_prev": 71300,
+    "ncac": 38, "ncac_prev": 44, "ncac_target": 42,
+    "new_customer_pct": 62, "new_customer_pct_prev": 58,
+    "aov": 74, "aov_prev": 71,
+    "_saas_fields": "cpl, cpl_prev, ltv_cac, ltv_cac_prev",
+    "_leadgen_fields": "cpl, cpl_prev, leads, leads_prev"
+  },
+
+  "shopify": {
+    "revenue_total": 90300, "orders": 1220, "aov": 74,
+    "new_customers": 756, "returning_customers": 464,
+    "daily": [
+      { "date": "05-01", "revenue": 2600, "spend": 690 },
+      { "date": "05-05", "revenue": 3100, "spend": 710 },
+      { "date": "05-09", "revenue": 2800, "spend": 700 },
+      { "date": "05-13", "revenue": 3400, "spend": 720 },
+      { "date": "05-17", "revenue": 3900, "spend": 760 },
+      { "date": "05-21", "revenue": 3600, "spend": 730 },
+      { "date": "05-25", "revenue": 4200, "spend": 780 },
+      { "date": "05-30", "revenue": 4600, "spend": 800 }
+    ]
+  },
+
+  "google_ads": {
+    "spend": 9800, "conversions": 480, "roas": 4.6, "cpa": 20.4,
+    "campaigns": [
+      { "name": "Brand Search", "type": "Search", "spend": 1200, "conv": 140, "cpa": 8.6, "roas": 9.2, "impression_share": 0.82, "status": "g" },
+      { "name": "Generic Search", "type": "Search", "spend": 3400, "conv": 150, "cpa": 22.7, "roas": 4.1, "impression_share": 0.41, "status": "g" },
+      { "name": "Performance Max", "type": "PMax", "spend": 3900, "conv": 150, "cpa": 26.0, "roas": 2.4, "impression_share": null, "status": "w" },
+      { "name": "Shopping", "type": "Shopping", "spend": 1300, "conv": 40, "cpa": 32.5, "roas": 1.9, "impression_share": 0.55, "status": "b" }
+    ]
+  },
+
+  "meta_ads": {
+    "spend": 11700, "conversions": 520, "roas": 2.6, "cpa": 22.5, "cpm": 14.2, "ctr": 0.012,
+    "campaigns": [
+      { "name": "Conversions · Broad", "objective": "Conversions", "spend": 5200, "conv": 280, "cpa": 18.6, "roas": 3.2, "cpm": 12.8, "ctr": 0.015, "freq": 2.1, "status": "g" },
+      { "name": "Conversions · Retarget", "objective": "Conversions", "spend": 2100, "conv": 150, "cpa": 14.0, "roas": 4.8, "cpm": 18.5, "ctr": 0.021, "freq": 3.6, "status": "w" },
+      { "name": "Advantage+ Shopping", "objective": "Sales", "spend": 3200, "conv": 80, "cpa": 40.0, "roas": 1.6, "cpm": 15.0, "ctr": 0.009, "freq": 4.4, "status": "b" },
+      { "name": "TOF · Awareness", "objective": "Awareness", "spend": 1200, "conv": 10, "cpa": 120.0, "roas": 0.4, "cpm": 9.2, "ctr": 0.008, "freq": 1.8, "status": "w" }
+    ]
+  }
+}

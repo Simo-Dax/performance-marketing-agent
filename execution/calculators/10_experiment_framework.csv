@@ -1,0 +1,75 @@
+,,,,,,,,,,,,,,,,,
+"Experiment Framework 🎯
+
+Identifichiamo un'ipotesi che pensiamo debba essere testata. Selezioniamo la nostra Performance Metric e la Metrica Target che vogliamo raggiungere. 
+Sulla base di essa, potremo determinare se l'ipotesi che stiamo testando sia vera o falsa.",,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Date,Status,Ipotesi,,,Canale,Budget,Stadio Customer Journey,Obiettivo campagna,Performance Metric ,Metrica Target,Impact,Confidence,Ease,ICE Score,Risultati,Learnings,Action Points
+7 - 21 Maggio,Done,Crediamo che,Ads su targeting specifico/verticale (3 categorie di servizio più popolari) con angolo emozionale ,"Crediamo che Ads su targeting specifico/verticale (3 categorie di servizio più popolari) con angolo emozionale avrà come risultato un migliore engagement rispetto agli ad angoli razionali e ci faranno capire quale stile funziona meglio in fase di prospecting.Sapremo di aver avuto successo quando i risultati in termini di CTR, CPC e CPA saranno significativamente differenti.",Facebook Ads,"€3,000.00",Mid Funnel - Consideration,Conversion,CPA,€15.00,8,8,10,26,"Sono state lanciate variazioni di ads con angoli emozionali in aggiunta a quelli razionali pre esistenti.
+
+Il copy razionale ha ottenuto 10x il numero di utenti acquisiti rispetto all'angolo emozionale/story based.
+
+Nonostante le ads con angolo emozionale fossero nuove, hanno raggiunto un numero significativo di impressions maturate in un periodo di testing di 14 giorni.  ","- Il copy razionale e funzionale funziona molto bene con un target verticale basato su interessi di categoria specifici: gli utenti hanno bisono un lavoro (esempio: trasloco, pulizia casa, riparazione in casa) e vogliono capire qual è il processo. 
+
+- Acquisire un utente all'interno della piattaforma attraverso la registrazione del suo account non significa necessariamente che sia attivo nel marketplace (una % minore non lo fa)
+
+","- Campagne di Activation, unite ad un on-boarding in piattaforma via Email + App possono aiutare a massimizzare il numero di task/richieste postate nel marketplace
+
+- Lasciare che le ads girino fino a che non si raggiunge significatività statistica"
+,,avrà come risultato,un migliore engagement rispetto agli ad angoli razionali e ci faranno capire quale stile funziona meglio in fase di prospecting.,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,"i risultati in termini di CTR, CPC e CPA saranno significativamente differenti.",,,,,,,,,,,,,,
+7 - 21 Maggio,Done,Crediamo che,lanciando campagne Search Standard per le categorie più performanti,Crediamo che lanciando campagne Search Standard per le categorie più performantiavrà come risultato l'identificazione delle parole chiave che generano un CTR medio maggiore (>7%) e un CR medio maggiore (>10%)Sapremo di aver avuto successo quando avremo trovato le categorie di parole chiave capaci di convertire ad un CPA di €20,Google Ads,"€5,000.00",Bottom Funnel - Conversion,Conversion,CPA,€20.00,,,,0,Il CPA dell'account è diminuito del 15% rispetto alle 2 settimane precedenti e conseguentemente i volumi di conversione sono aumentati.,"- Le categorie di parole più performanti sono state: Giardinaggio, riparazioni casa, trasloco, pulizie in casa.
+
+- La categoria con le performance inferiori è stata Consegna cibo a domicilio 
+
+- Dal lancio delle Campagna Search Standard, il CPA medio è sceso sotto il target iniziale. 
+
+- Le ads mostrano un CTR leggermente inferiore (<5%), ma il CPC è minore e il CR è cresciuto (25%). Grazie alla migliore qualità del traffico, abbiamo validato l'approccio alla struttura delle campagne.","- Possiamo progressivamente incrementare il budget sulle categorie che mostrano il miglior CPA e CR
+
+- Comparare i guadagni associati ad ogni categoria di keyword per definire l'allocazione del budget in maniera proporzionale 
+
+- Testare nuove tipologie di ad copy: Domande aperte + nuove USP nel titolo 2 e titolo 3"
+,,avrà come risultato,l'identificazione delle parole chiave che generano un CTR medio maggiore (>7%) e un CR medio maggiore (>10%),,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,avremo trovato le categorie di parole chiave capaci di convertire ad un CPA di €20,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Done,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,In Progress,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver ottenuto un risultato quando,,,,,,,,,,,,,,,
+,In Progress,Crediamo che,,FALSE,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Planning,Crediamo che,,,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Planning,Crediamo che,,,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,
+,Planning,Crediamo che,,,,,,,,,,,,0,,,
+,,avrà come risultato,,,,,,,,,,,,,,,
+,,Sapremo di aver avuto successo quando,,,,,,,,,,,,,,,

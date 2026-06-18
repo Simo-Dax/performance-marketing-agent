@@ -1,0 +1,49 @@
+{
+  "_comment": "Template di .mcp.json per il Performance Marketing Team. Copia in .mcp.json (gitignored) e sostituisci i placeholder con le tue chiavi/percorsi. Tutti i server sono INDIPENDENTI — nessuna dipendenza da plugin di terzi. Setup guidato: /pm-setup, /pm-setup-apify, /pm-setup-fal-ai, /pm-setup-klaviyo. Sostituisci ${HOME} con il path assoluto della tua home se Claude Code non lo espande.",
+  "mcpServers": {
+    "google-ads": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--project", "${HOME}/.claude/mcp-servers/google-ads", "python", "-m", "ads_mcp.server"],
+      "env": {
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "<YOUR_GOOGLE_ADS_DEVELOPER_TOKEN>",
+        "GOOGLE_ADS_LOGIN_CUSTOMER_ID": "<YOUR_MCC_ID>"
+      }
+    },
+    "higgsfield": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--project", "${HOME}/.claude/mcp-servers/higgsfield", "python", "${HOME}/.claude/mcp-servers/higgsfield/server.py"],
+      "env": { "PATH": "${HOME}/.local/bin:/usr/local/bin:/usr/bin:/bin" }
+    },
+    "apify": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server"],
+      "env": { "APIFY_TOKEN": "<YOUR_APIFY_TOKEN>" }
+    },
+    "fal-ai": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "fal-ai-mcp-server"],
+      "env": { "FAL_KEY": "<YOUR_FAL_KEY>" }
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "env": {}
+    },
+    "klaviyo": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["klaviyo-mcp-server@latest"],
+      "env": {
+        "PRIVATE_API_KEY": "<YOUR_KLAVIYO_PRIVATE_API_KEY>",
+        "READ_ONLY": "true",
+        "ALLOW_USER_GENERATED_CONTENT": "false"
+      }
+    }
+  },
+  "_note": "klaviyo è opzionale (solo SA9/CRM): rimuovi il blocco se non lo usi, o configuralo con /pm-setup-klaviyo. google-ads e higgsfield richiedono i server Python in ${HOME}/.claude/mcp-servers/ (vedi /pm-setup). apify/fal-ai/playwright girano via npx senza installazione manuale."
+}

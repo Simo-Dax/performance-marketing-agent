@@ -1,0 +1,28 @@
+ ,Initial status,Incremento,Best case scenario (everything improves per plan),What-if scenario (additional % traffic),"What-if scenario 
+(+% conversion rate)",What-if scenario (+% PF),What-if scenario (+% AOV),What-if scenario (+% CRR)
+Traffic Monthly - GA4 based,#REF!,,,,,,,
+Traffic Monthly - average,"55,861",,,,,,,
+Traffic Yearly,#REF!,,,,,,,
+Traffic Yearly,"670,063",25%,"837,579","837,579","670,063","670,063","670,063","670,063"
+Conversion rate,3.28%,10%,3.61%,3.28%,3.61%,3.28%,3.28%,3.28%
+Purchase Frequency (PF 12-months),1.86,10%,2.05,1.86,1.86,2.05,1.86,1.86
+AOV (Average Order Value),€48,20%,€57.6,€48.0,€48.0,€48.0,€57.6,€48.0
+CRR (Customer Retention Rate),3.2%,5%,3.4%,3.2%,3.2%,3.2%,3.2%,3.4%
+,,,,,,,,
+,,,,,,,,
+Orders,"21,978",,30220,27473,24176,21978,21978,21978
+Customers,"12,194",,"16,793","15,243","13,414","12,194","12,194","12,213"
+Initial Revenue (Customers x AOV),"€1,054,947",,"€1,740,663","€1,318,684","€1,160,442","€1,054,947","€1,265,937","€1,054,947"
+,,,,,,,,
+Projected Total Revenue ,"€1,054,947",,"€1,979,064","€1,360,882","€1,197,576","€1,197,576","€1,306,447","€1,090,393"
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+eCommerce Growth Formula,,,,,,,,
+C x (CLV/CAC) = G,,,,,,,,
+,,,,,,,,
+Media Spend Monthly,"€20,000",,,,,,,
+Traffic monthly,"55,839",,,,,,,
+Total Orders,"21,978",,,,,,,
+Total Customers,"12,194",,,,,,,
+Purchase Frequency,1.80,,,,,,,

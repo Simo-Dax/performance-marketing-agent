@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  /* ===== Airbnb design tokens (coerenti con competitor-ads) ===== */
+  :root{
+    --rausch:#FF385C; --rausch-dark:#E00B41;
+    --hof:#222222; --foggy:#717171;
+    --paper:#ffffff; --bg:#F7F7F7; --line:#DDDDDD; --line-soft:#EBEBEB; --hover:#F2F2F2;
+    --google:#4285F4; --meta:#0866FF; --shopify:#5E8E3E;
+    --good:#008A05; --warn:#E07912; --bad:#E00B41;
+    --shadow:0 6px 16px rgba(0,0,0,.10); --shadow-sm:0 1px 2px rgba(0,0,0,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--hof);font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:28px 32px 60px}
+
+  /* header */
+  .head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+  .logo{font-weight:800;font-size:22px;letter-spacing:-.5px;display:flex;align-items:center;gap:9px}
+  .logo .mark{width:24px;height:24px;border-radius:50%;background:var(--rausch);display:inline-block}
+  .logo span{color:var(--rausch)}
+  .meta{color:var(--foggy);font-size:13px;text-align:right;line-height:1.5}
+  .meta b{color:var(--hof);font-weight:800}
+  .seg{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:40px;padding:3px;margin-top:8px;box-shadow:var(--shadow-sm)}
+  .seg button{border:none;background:none;padding:8px 16px;border-radius:40px;font-family:inherit;font-weight:700;font-size:13px;color:var(--foggy);cursor:pointer;transition:.15s}
+  .seg button.on{background:var(--hof);color:#fff}
+
+  .sectitle{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--foggy);font-weight:800;margin:34px 0 14px;display:flex;align-items:center;gap:9px}
+  .sectitle .ch{width:9px;height:9px;border-radius:50%}
+
+  /* KPI hero cards */
+  .kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .kcard{background:var(--paper);border:1px solid var(--line-soft);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow-sm);transition:transform .15s}
+  .kcard:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .kcard .kl{font-size:11.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--foggy);font-weight:800}
+  .kcard .kv{font-size:30px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums;margin-top:6px;line-height:1}
+  .kcard .kd{margin-top:8px;font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:5px}
+  .kcard .kd.up{color:var(--good)} .kcard .kd.down{color:var(--bad)} .kcard .kd.flat{color:var(--foggy)}
+  .kcard .ktarget{font-size:11.5px;color:var(--foggy);margin-top:3px}
+  .stbar{height:4px;border-radius:4px;margin-top:12px;background:var(--line-soft);overflow:hidden}
+  .stbar i{display:block;height:100%;border-radius:4px}
+
+  /* channel split + table */
+  .panel{background:var(--paper);border:1px solid var(--line-soft);border-radius:16px;box-shadow:var(--shadow-sm);overflow:hidden}
+  .panel .ptop{padding:16px 20px;border-bottom:1px solid var(--line-soft);display:flex;align-items:center;gap:10px;font-weight:800}
+  .panel .ptop .ch{width:11px;height:11px;border-radius:50%}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:right;padding:11px 14px;border-bottom:1px solid var(--line-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--foggy);font-weight:800;background:var(--hover)}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:var(--hover)}
+  td .nm{font-weight:800} td .ty{font-size:11px;color:var(--foggy);font-weight:700}
+  .pill{display:inline-block;padding:3px 9px;border-radius:40px;font-size:11px;font-weight:800;color:#fff}
+  .pill.g{background:var(--good)} .pill.w{background:var(--warn)} .pill.b{background:var(--bad)}
+
+  /* trend sparkline */
+  .trendcard{background:var(--paper);border:1px solid var(--line-soft);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow-sm)}
+  .trendcard h4{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--foggy);font-weight:800;margin-bottom:14px}
+  svg.spark{width:100%;height:120px;display:block;overflow:visible}
+
+  /* alerts */
+  .alerts{display:flex;flex-direction:column;gap:10px}
+  .alert{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--paper);border:1px solid var(--line-soft);border-left:4px solid var(--foggy)}
+  .alert.bad{border-left-color:var(--bad)} .alert.warn{border-left-color:var(--warn)} .alert.good{border-left-color:var(--good)}
+  .alert .ico{font-size:18px;line-height:1.3}
+  .alert .at{font-weight:800;font-size:14px} .alert .ad{font-size:13px;color:var(--foggy);margin-top:2px}
+
+  .two{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:start}
+  @media(max-width:900px){.two{grid-template-columns:1fr}.wrap{padding:20px 16px 50px}}
+  .src{margin-top:40px;font-size:12px;color:var(--foggy);text-align:center}
+  .src code{background:var(--hover);padding:2px 7px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div>
+      <div class="logo"><span class="mark"></span>Performance<span>.</span></div>
+      <div class="seg" id="seg"></div>
+    </div>
+    <div class="meta" id="meta"></div>
+  </div>
+
+  <!-- MACRO: KPI hero -->
+  <div class="sectitle"><span class="ch" style="background:var(--rausch)"></span>Account · KPI Macro</div>
+  <div class="kgrid" id="kpis"></div>
+
+  <!-- TREND + ALERTS -->
+  <div class="two" style="margin-top:18px">
+    <div class="trendcard">
+      <h4>Revenue · Spend giornaliero</h4>
+      <svg class="spark" id="spark" viewBox="0 0 700 120" preserveAspectRatio="none"></svg>
+      <div id="sparklegend" style="display:flex;gap:18px;margin-top:10px;font-size:12px;font-weight:700"></div>
+    </div>
+    <div>
+      <div class="sectitle" style="margin-top:0"><span class="ch" style="background:var(--warn)"></span>Alert</div>
+      <div class="alerts" id="alerts"></div>
+    </div>
+  </div>
+
+  <!-- MICRO: Google -->
+  <div class="sectitle"><span class="ch" style="background:var(--google)"></span>Google Ads · Campagne</div>
+  <div class="panel"><div class="ptop"><span class="ch" style="background:var(--google)"></span>Google Ads</div>
+    <div style="overflow-x:auto"><table id="tgoogle"></table></div>
+  </div>
+
+  <!-- MICRO: Meta -->
+  <div class="sectitle"><span class="ch" style="background:var(--meta)"></span>Meta Ads · Campagne</div>
+  <div class="panel"><div class="ptop"><span class="ch" style="background:var(--meta)"></span>Meta Ads</div>
+    <div style="overflow-x:auto"><table id="tmeta"></table></div>
+  </div>
+
+  <div class="src">Dati da <code>data.json</code> · aggiornato da n8n (Shopify + Google Ads + Meta) · <span id="src-upd"></span></div>
+</div>
+
+<script>
+// ================= DATA LOAD =================
+let DATA=null, PERIOD='current';
+
+const SAMPLE={
+  last_updated:"2026-05-31 06:00",
+  business_model:"eCommerce",
+  currency:"€",
+  period:{label:"Ultimi 30gg",start:"2026-05-01",end:"2026-05-30"},
+  calculated:{mer:4.2,mer_prev:3.6,mer_target:4.0,blended_roas:3.1,blended_roas_prev:2.9,total_spend:21500,total_spend_prev:19800,total_revenue:90300,total_revenue_prev:71300,ncac:38,ncac_prev:44,ncac_target:42,new_customer_pct:62,new_customer_pct_prev:58,aov:74,aov_prev:71},
+  shopify:{revenue_total:90300,orders:1220,aov:74,new_customers:756,returning_customers:464,
+    daily:[{date:"05-01",revenue:2600,spend:690},{date:"05-05",revenue:3100,spend:710},{date:"05-09",revenue:2800,spend:700},{date:"05-13",revenue:3400,spend:720},{date:"05-17",revenue:3900,spend:760},{date:"05-21",revenue:3600,spend:730},{date:"05-25",revenue:4200,spend:780},{date:"05-30",revenue:4600,spend:800}]},
+  google_ads:{spend:9800,conversions:480,roas:4.6,cpa:20.4,
+    campaigns:[
+      {name:"Brand Search",type:"Search",spend:1200,conv:140,cpa:8.6,roas:9.2,impression_share:0.82,status:"g"},
+      {name:"Generic Search",type:"Search",spend:3400,conv:150,cpa:22.7,roas:4.1,impression_share:0.41,status:"g"},
+      {name:"Performance Max",type:"PMax",spend:3900,conv:150,cpa:26.0,roas:2.4,impression_share:null,status:"w"},
+      {name:"Shopping",type:"Shopping",spend:1300,conv:40,cpa:32.5,roas:1.9,impression_share:0.55,status:"b"}
+    ]},
+  meta_ads:{spend:11700,conversions:520,roas:2.6,cpa:22.5,cpm:14.2,ctr:0.012,
+    campaigns:[
+      {name:"Conversions · Broad",objective:"Conversions",spend:5200,conv:280,cpa:18.6,roas:3.2,cpm:12.8,ctr:0.015,freq:2.1,status:"g"},
+      {name:"Conversions · Retarget",objective:"Conversions",spend:2100,conv:150,cpa:14.0,roas:4.8,cpm:18.5,ctr:0.021,freq:3.6,status:"w"},
+      {name:"Advantage+ Shopping",objective:"Sales",spend:3200,conv:80,cpa:40.0,roas:1.6,cpm:15.0,ctr:0.009,freq:4.4,status:"b"},
+      {name:"TOF · Awareness",objective:"Awareness",spend:1200,conv:10,cpa:120.0,roas:0.4,cpm:9.2,ctr:0.008,freq:1.8,status:"w"}
+    ]}
+};
+
+async function load(){
+  try{
+    const r=await fetch('data.json',{cache:'no-store'});
+    if(r.ok){ DATA=await r.json(); } else { DATA=SAMPLE; }
+  }catch(e){ DATA=SAMPLE; }
+  render();
+}
+
+// ================= HELPERS =================
+const cur=()=>DATA.currency||'€';
+function fmtMoney(n){ if(n==null)return'n/d'; return cur()+Math.round(n).toLocaleString('it-IT'); }
+function fmtNum(n){ if(n==null)return'n/d'; return n.toLocaleString('it-IT'); }
+function fmtX(n){ return n==null?'n/d':n.toFixed(1)+'x'; }
+function fmtPct(n){ return n==null?'n/d':(n*100).toFixed(1)+'%'; }
+function delta(cur,prev,invert){ // invert=true → lower is better (CPA/NCAC/spend)
+  if(prev==null||cur==null||prev===0) return {cls:'flat',txt:'—'};
+  const d=(cur-prev)/prev*100; const good=invert?d<0:d>0;
+  const arrow=d>0?'▲':(d<0?'▼':'■');
+  return {cls:d===0?'flat':(good?'up':'down'),txt:arrow+' '+Math.abs(d).toFixed(0)+'%'};
+}
+function statusColor(s){ return s==='g'?'good':s==='w'?'warn':'bad'; }
+
+// ================= RENDER =================
+function render(){
+  const c=DATA.calculated||{}, p=DATA.period||{};
+  document.getElementById('meta').innerHTML=
+    `Business model: <b>${DATA.business_model||'n/d'}</b><br>Periodo: <b>${p.label||''}</b> (${p.start||''} → ${p.end||''})<br>Aggiornato: <b>${DATA.last_updated||'n/d'}</b>`;
+  document.getElementById('src-upd').textContent='ultimo update '+(DATA.last_updated||'n/d');
+
+  // KPI cards — adattati al business model
+  const bm=(DATA.business_model||'eCommerce').toLowerCase();
+  let cards=[];
+  const merD=delta(c.mer,c.mer_prev), roasD=delta(c.blended_roas,c.blended_roas_prev),
+        spD=delta(c.total_spend,c.total_spend_prev,true), revD=delta(c.total_revenue,c.total_revenue_prev),
+        ncacD=delta(c.ncac,c.ncac_prev,true);
+  const merBar=c.mer_target?Math.min(100,c.mer/c.mer_target*100):0;
+  const ncacBar=c.ncac_target?Math.min(100,c.ncac_target/(c.ncac||1)*100):0;
+
+  cards.push(kcard('MER',fmtX(c.mer),merD, c.mer_target?`target ${fmtX(c.mer_target)}`:'', merBar, c.mer>=(c.mer_target||0)?'good':'warn'));
+  cards.push(kcard('Blended ROAS',fmtX(c.blended_roas),roasD,'',null));
+  cards.push(kcard('Revenue totale',fmtMoney(c.total_revenue),revD,'',null));
+  cards.push(kcard('Ad Spend totale',fmtMoney(c.total_spend),spD,'',null));
+  if(bm.includes('ecom')){
+    cards.push(kcard('NCAC',fmtMoney(c.ncac),ncacD, c.ncac_target?`max ${fmtMoney(c.ncac_target)}`:'', ncacBar, (c.ncac||0)<=(c.ncac_target||1e9)?'good':'bad'));
+    cards.push(kcard('% New customers',c.new_customer_pct!=null?c.new_customer_pct+'%':'n/d',delta(c.new_customer_pct,c.new_customer_pct_prev),'',null));
+    cards.push(kcard('AOV',fmtMoney(c.aov),delta(c.aov,c.aov_prev),'',null));
+  } else if(bm.includes('saas')){
+    cards.push(kcard('CAC',fmtMoney(c.ncac),ncacD,'',null));
+    cards.push(kcard('LTV:CAC',c.ltv_cac!=null?c.ltv_cac.toFixed(1)+':1':'n/d',delta(c.ltv_cac,c.ltv_cac_prev),'target 3:1',null));
+    cards.push(kcard('CPL',fmtMoney(c.cpl),delta(c.cpl,c.cpl_prev,true),'',null));
+  } else { // leadgen
+    cards.push(kcard('CPL',fmtMoney(c.cpl),delta(c.cpl,c.cpl_prev,true),'',null));
+    cards.push(kcard('Lead totali',fmtNum(c.leads),delta(c.leads,c.leads_prev),'',null));
+    cards.push(kcard('CPA lead qual.',fmtMoney(c.ncac),ncacD,'',null));
+  }
+  document.getElementById('kpis').innerHTML=cards.join('');
+
+  renderSpark();
+  renderAlerts();
+  renderGoogle();
+  renderMeta();
+}
+
+function kcard(label,val,d,target,bar,barColor){
+  const barHtml=bar!=null?`<div class="stbar"><i style="width:${bar}%;background:var(--${barColor==='good'?'good':barColor==='bad'?'bad':'warn'})"></i></div>`:'';
+  const tg=target?`<div class="ktarget">${target}</div>`:'';
+  return `<div class="kcard"><div class="kl">${label}</div><div class="kv">${val}</div>
+    <div class="kd ${d.cls}">${d.txt} <span style="color:var(--foggy);font-weight:600">vs prec.</span></div>${tg}${barHtml}</div>`;
+}
+
+function renderSpark(){
+  const d=(DATA.shopify&&DATA.shopify.daily)||[];
+  const svg=document.getElementById('spark');
+  if(!d.length){ svg.innerHTML=''; return; }
+  const W=700,H=120,pad=6;
+  const rev=d.map(x=>x.revenue||0), sp=d.map(x=>x.spend||0);
+  const max=Math.max(...rev,...sp)*1.1||1;
+  const xs=i=>pad+i*(W-2*pad)/(d.length-1||1);
+  const ys=v=>H-pad-(v/max)*(H-2*pad);
+  const path=arr=>arr.map((v,i)=>(i?'L':'M')+xs(i).toFixed(1)+' '+ys(v).toFixed(1)).join(' ');
+  const area=path(rev)+` L ${xs(d.length-1)} ${H-pad} L ${xs(0)} ${H-pad} Z`;
+  svg.innerHTML=
+    `<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF385C" stop-opacity=".22"/><stop offset="1" stop-color="#FF385C" stop-opacity="0"/></linearGradient></defs>
+     <path d="${area}" fill="url(#g)"/>
+     <path d="${path(rev)}" fill="none" stroke="#FF385C" stroke-width="2.5"/>
+     <path d="${path(sp)}" fill="none" stroke="#717171" stroke-width="2" stroke-dasharray="4 4"/>`;
+  document.getElementById('sparklegend').innerHTML=
+    `<span style="color:#FF385C">● Revenue</span><span style="color:#717171">▬ Spend</span>`;
+}
+
+function renderAlerts(){
+  const A=[]; const g=DATA.google_ads||{}, m=DATA.meta_ads||{}, c=DATA.calculated||{};
+  // MER vs target
+  if(c.mer!=null&&c.mer_target!=null&&c.mer<c.mer_target) A.push(['warn','⚠️','MER sotto target',`MER ${fmtX(c.mer)} < target ${fmtX(c.mer_target)} — verifica allocazione budget.`]);
+  if(c.mer!=null&&c.mer_target!=null&&c.mer>=c.mer_target) A.push(['good','✅','MER on target',`MER ${fmtX(c.mer)} ≥ target — spend scalabile.`]);
+  // Meta fatigue: freq>3
+  (m.campaigns||[]).forEach(x=>{ if((x.freq||0)>3) A.push(['warn','🔁','Frequency alta · '+x.name,`Freq ${x.freq} (>3) — probabile creative fatigue, valuta refresh.`]); });
+  // ROAS<2 su spend alto
+  (m.campaigns||[]).forEach(x=>{ if((x.roas||0)<2&&(x.spend||0)>2000) A.push(['bad','🔻','ROAS basso · '+x.name,`ROAS ${fmtX(x.roas)} su ${fmtMoney(x.spend)} spend — candidata a pausa/ottimizzazione.`]); });
+  (g.campaigns||[]).forEach(x=>{ if((x.roas||0)<2&&(x.spend||0)>1000) A.push(['bad','🔻','ROAS basso · '+x.name,`ROAS ${fmtX(x.roas)} su ${fmtMoney(x.spend)} spend.`]); });
+  if(!A.length) A.push(['good','✅','Nessuna anomalia','Tutti i KPI nei range attesi.']);
+  document.getElementById('alerts').innerHTML=A.slice(0,6).map(a=>
+    `<div class="alert ${a[0]}"><div class="ico">${a[1]}</div><div><div class="at">${a[2]}</div><div class="ad">${a[3]}</div></div></div>`).join('');
+}
+
+function renderGoogle(){
+  const g=DATA.google_ads||{}; const rows=(g.campaigns||[]).map(x=>`<tr>
+    <td><span class="nm">${x.name}</span><br><span class="ty">${x.type||''}</span></td>
+    <td>${fmtMoney(x.spend)}</td><td>${fmtNum(x.conv)}</td><td>${fmtMoney(x.cpa)}</td>
+    <td>${fmtX(x.roas)}</td><td>${x.impression_share!=null?fmtPct(x.impression_share):'n/d'}</td>
+    <td><span class="pill ${x.status}">${x.status==='g'?'OK':x.status==='w'?'WATCH':'FIX'}</span></td></tr>`).join('');
+  document.getElementById('tgoogle').innerHTML=
+    `<thead><tr><th>Campagna</th><th>Spend</th><th>Conv.</th><th>CPA</th><th>ROAS</th><th>Impr. Share</th><th>Status</th></tr></thead>
+     <tbody>${rows}<tr style="font-weight:800;background:var(--hover)">
+       <td>TOTALE</td><td>${fmtMoney(g.spend)}</td><td>${fmtNum(g.conversions)}</td><td>${fmtMoney(g.cpa)}</td><td>${fmtX(g.roas)}</td><td>—</td><td>—</td></tr></tbody>`;
+}
+
+function renderMeta(){
+  const m=DATA.meta_ads||{}; const rows=(m.campaigns||[]).map(x=>`<tr>
+    <td><span class="nm">${x.name}</span><br><span class="ty">${x.objective||''}</span></td>
+    <td>${fmtMoney(x.spend)}</td><td>${fmtNum(x.conv)}</td><td>${fmtMoney(x.cpa)}</td>
+    <td>${fmtX(x.roas)}</td><td>${fmtMoney(x.cpm)}</td><td>${fmtPct(x.ctr)}</td>
+    <td>${x.freq!=null?x.freq.toFixed(1):'n/d'}</td>
+    <td><span class="pill ${x.status}">${x.status==='g'?'OK':x.status==='w'?'WATCH':'FIX'}</span></td></tr>`).join('');
+  document.getElementById('tmeta').innerHTML=
+    `<thead><tr><th>Campagna</th><th>Spend</th><th>Conv.</th><th>CPA</th><th>ROAS</th><th>CPM</th><th>CTR</th><th>Freq.</th><th>Status</th></tr></thead>
+     <tbody>${rows}<tr style="font-weight:800;background:var(--hover)">
+       <td>TOTALE</td><td>${fmtMoney(m.spend)}</td><td>${fmtNum(m.conversions)}</td><td>${fmtMoney(m.cpa)}</td><td>${fmtX(m.roas)}</td><td>${fmtMoney(m.cpm)}</td><td>${fmtPct(m.ctr)}</td><td>—</td><td>—</td></tr></tbody>`;
+}
+
+// segment buttons (placeholder: period switch — single dataset for now)
+document.getElementById('seg').innerHTML=
+  `<button class="on" onclick="this.parentNode.querySelectorAll('button').forEach(b=>b.classList.remove('on'));this.classList.add('on')">Overview</button>`;
+
+load();
+</script>
+</body>
+</html>

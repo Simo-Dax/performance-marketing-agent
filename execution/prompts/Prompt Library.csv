@@ -1,0 +1,1740 @@
+Step,Area,Obiettivo,Prompt / Input
+1,Strategy ,Strategy Goals,"Voglio che tu agisca come un Marketing Strategist. Aiutami a creare una strategia di marketing digitale, un concept di una campagna creativa, un piano di distruzione e suggerimenti per la produzione di asset per il brand qui sotto.
+
+Descrizione Brand:
+
+Categoria di prodotto:
+"
+1,Strategy ,Strategy Goals,"Voglio che tu agisca come un Digital Strategist. Io ti fornirò informazioni su mercato, prodotto e obiettivi e tu mi aiuterai a creare una strategia di marketing suddivisa in questo modo:
+- Insights Strategici di mercato
+- Strategia per arrivare agli obiettivi
+- Dividere gli obiettivi in sub-goals trimestrali
+- Definire il target
+- Definire il channel mix"
+1,Strategy ,SWOT Analysis,"Voglio che tu agisca come un ricercatore di mercato. Fai una SWOT analysis per il prodotto qui sotto. Dividi il testo in paragrafi.
+
+Descrizione Brand:
+
+Categoria di prodotto:
+"
+1,Strategy ,Insights & Obiettivi,"Voglio che tu agisca come un Digital Strategist. Io ti fornirò informazioni su mercato, prodotto e obiettivi e tu mi aiuterai a creare una strategia di marketing suddivisa in questo modo:
+
+- Insights Strategici di mercato
+- Strategia per arrivare agli obiettivi annuali
+- Dividere gli obiettivi in sub-goals trimestrali
+-Canali di comunicazione
+
+Descrizione Brand: 
+
+Categoria di prodotto: 
+
+Target di mercato: 
+
+Obiettivo di business: "
+1,Strategy ,Marketing Plan,"Voglio che tu agisca come un Digital Strategist. Sulla base della strategia proposta precedentemente, definisci un piano di marketing completo, comprensivo di (ma non limitato a):
+
+Messaggio
+- Concept creativo delle campagne da lanciare per il brand
+- Key Message
+- Claim
+
+Distribuzione:
+- Potenziali canali di comunicazione e media tradizionali 
+- Canali di comunicazione digitali 
+
+Promozione:
+- Offerte e incentivi 
+
+Pricing:
+- che tipologia di pricing di offrire per prodotti singoli e/o bundle e perché"
+1,Strategy ,Marketing Objectives,"
+Voglio che tu agisca come un Digital Strategist. Sulla base della strategia definita precedentemente, illustra nel dettaglio come arrivare a centrare l’obiettivo di business entro la fine dell’anno. Indica quali dovranno essere gli obiettivi trimestrali e spiega il perché.
+
+Strategia di marketing:
+
+Obiettivo di business:"
+1,Strategy ,Perfezionare gli obiettivi ,"In base alle considerazioni precedenti:
+- Dai un punteggio da 1 a 10 rispetto alla probabilità che questa strategia raggiunga l’obiettivo di business pianificato
+- Indica tutti i motivi per cui potenzialmente questa strategia non sarà in grado di raggiungere l’obiettivo di business
+
+Voglio che tu agisca come un analista di mercato. Quali sono le probabilità che questo prodotto raggiunga il product market fit?
+Problema di mercato:
+Prodotto che risolve il problema:
+Target di mercato: 
+
+Valuta con un punteggio da 1 a 10 quanto la mission e il why dell’azienda siano percepiti dal target di mercato:
+Mission:
+Why:"
+1,Strategy ,Fasi Strategia,"Voglio che tu agisca come un Digital Strategis. Aiutami a definire le fasi della strategia di marketing in base al contesto discusso fino ad ora. Definisci un piano strategico che includa i seguenti punti (ma non si limiti ad essi):
+
+- Fase di awareness per costruire la consapevolezza dell’esistenza del nuovo prodotto per il target di  riferimento
+- Fase di consideration perché gli utenti possano considerare il prodotto all’interno dei loro brand di riferimento prima dell’acquisto
+- Fase di conversion che inviti gli utenti ad acquistare il prodotto 
+- Fase di retention che miri a far tornare i clienti esistenti sullo store online per comprare in maniera ricorrente
+- Pianificazione di tutte le fasi
+- Indicazione delle tempistiche per ogni fase, tenendo conto che il team avrà’ 15 ore di tempo a disposizione alla settimana
+- Divisione delle attività’ in milestones e subtasks"
+1,Strategy ,"Why, Mission, Valori","Voglio che tu agisca come un Brand Strategist. Sulla base delle informazioni qui sotto, aiutami a definire i seguenti aspetti del brand. Fai la tua migliore ipotesi su quali possano essere e sul perché possono funzionare.
+
+Brand Why:
+
+Mission / Brand Purpose:
+
+Brand Values:"
+1,Strategy ,Value Proposition,"Ora voglio che tu agisca come un marketing strategist con più di 10 anni di esperienza.
+
+Voglio applicare la piramide degli elementi del valore di Bain & Company al mio business per migliorare la nostra offerta e soddisfare meglio le esigenze dei nostri clienti. 
+
+Trovi i dettagli di questo framework qui: https://media.bain.com/elements-of-value/
+
+
+Task: 
+Crea una value proposition suscettibile di generare interesse, attrarre clienti qualificati, massimizzare il tasso di conversione sul sito. 
+
+La value proposition deve essere chiara, specifica, rilevante e parlare a un target preciso.
+
+Basandoti sulle informazioni fornite, aiutami ad applicare i vari elementi della piramide degli elementi del valore di Bain & Company per migliorare la mia offerta e soddisfare meglio le esigenze dei miei clienti.
+
+
+Output:
+
+Step 1: Aiutami a identificare:
+- Elementi Funzionali che posso integrare o migliorare nei miei prodotti o servizi.
+- Elementi Emotivi che posso enfatizzare per creare una connessione più forte con i miei clienti.
+- Elementi di Cambiamento di Vita che posso introdurre per offrire un impatto più profondo e significativo.
+- Elementi di Impatto Sociale che posso considerare per contribuire positivamente alla società e migliorare la percezione del mio brand.
+
+Step 2: una volta identificati gli elementi qui sopra, proponi anche:
+- una sintesi della migliore value proposition che posso testare per validare il prodotto/servizio
+- 3 proposte concise di value proposition da utilizzare nelle headline e subheadlines del sito
+- Il segmento target
+
+
+
+Contesto:
+Ecco alcune informazioni di contesto sul mio business da utilizzare per definire la Value Proposition:
+
+[Tipologia di Business] 
+
+[Descrizione Brand]
+
+[Categoria prodotto e Prodotti Offerti]
+
+[Key Segment]
+
+[Target Market]
+
+[Pain Point] 
+
+[Desideri]"
+2,Market Research,Trovare Insights di mercato,"Voglio che tu agisca come un ricercatore di marketing molto esperto. 
+
+Fai una ricerca approfondita della seguente categoria di mercato: 
+
+[DESCRIZIONE CATEGORIA BRAND]
+
+Fornisci tutte le informazioni più rilevanti e impattanti per elaborare una strategia di marketing efficace che riesca a generare fatturato e margini positivi.
+
+Ecco gli aspetti su cui focalizzarsi in termini di ricerca:
+
+- Job: cosa cercano di ottenere i clienti?
+- Alternative: quali altre soluzioni hanno utilizzato o preso in considerazione durante il processo?
+- Pain Points: quali problemi vogliono risolvere?
+- Key Segment: quali informazioni sul cliente sono rilevanti per questa storia?
+- Categoria: quali altri elementi appartengono allo stesso gruppo di questo prodotto o servizio?
+- Triggers: quali eventi specifici li spingono ad agire?"
+2,Market Research,Competitor Overview,"Voglio che tu agisca come un market researcher. Scrivi una lista dei 3 principali competitor nella categoria nominata qui sotto. e inserisci l'URL del loro sito web, instagram, facebook, tiktok, pinterest, linkedin. 
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:
+"
+2,Market Research,Top benefits by Competitor,Ora analizza i siti web e canali social di ogni brand e definisci i 3 benefici principali del prodotto di ogni brand
+2,Market Research,Top USPs by Competitor,Ora fai la tua migliore ipotesi sulle 3 principali unique selling proposition del prodotto di ogni brand. Sii quanto più dettagliato possibile.
+2,Market Research,Organizzazione dati,"Ora raggruppa i dati precedenti in una tabella con le seguenti colonne: nome brand, URL sito web, URL instagram, URL tiktok, URL facebook, URL pinterest, URL linkedin, benefici, unique selling proposition"
+2,Market Research,Seed Keywords,"Ora fornisci 50 search keywords ad alto intento legate alla categoria di prodotto qui sotto.
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:
+"
+2,Market Research,Audience Definition,"Voglio che tu agisca come un ricercatore di mercato. Definisci i seguenti aspetti dei potenziali segmenti di mercato target del brand e raggruppa le informazioni in una tabella. 
+Per ogni segmento, crea una Audience Persona e raggruppa le informazioni in una tabella dedicata.
+
+- Caratteristiche demografiche
+- Occupazione, Hobbies e interessi
+- Caratterisitche Psicografiche
+- Luoghi di aggregazione offline e online
+- Media, Blog e canali più frequentati 
+
+
+Descrizione brand:
+
+Categoria prodotto:
+
+Target audience:"
+2,Market Research,Audience Segmentation,"Adesso indica quale dei segmenti appena identificati ha la maggiore probabilità di successo per il brand e argomenta nei dettagli il perché. Elencali in ordine di priorità. 
+Per ogni segmento, indica:
+- Grandezza del segmento di mercato potenziale in termini di popolazione 
+- Propensione alle spesa
+- Grado di percezione del bisogno del prodotto
+- Potenziale di profitto 
+
+
+
+Descrizione brand:
+
+Categoria prodotto:
+
+Target audience:"
+2,Market Research,Analisi Psicografica,"TASK = Genera un profilo più approfondito del mio pubblico in termini psicografici. Deduci qualsiasi informazione che non conosci basandoti su ciò che fai. Usa il template sottostante per il tuo output.
+
+FORMATO = All'interno di ogni sezione del template include punti elenco spartani e succinti del 15%.
+Dopo aver fornito l'elenco puntato, fornisci anche le informazioni organizzate in una tabella.
+
+AUDIENCE = #Target Audience#
+
+TEMPLATE =
+Nome del Pubblico: (ad es. Madri professioniste amanti della sostenibilità e dei prodotti naturali)
+ 1. Tratti della Personalità: (Caratteristiche tipiche della personalità del pubblico.)
+ 2. Interessi: (Hobby o attività che amano? Argomenti di loro interesse?)
+ 3. Valori: (Principi o credenze a cui il pubblico tiene?)
+ 4. Attitudini: (Attitudini verso argomenti rilevanti?)
+ 5. Stile di Vita: (Come il pubblico vive la propria vita quotidiana? Che tipo di lavoro fanno?)
+ 6. Bisogni e Desideri: (Bisogni e desideri del pubblico? Problemi che stanno cercando di risolvere? Informazioni che stanno cercando?)
+ 7. Punti Dolenti: (Sfide o ostacoli affrontati? Come aiutare a risolvere questi punti dolenti?)
+ 8. Comportamento di Consumo dei Contenuti: (Che tipo di contenuto consuma tipicamente il pubblico? A quali titoli o agganci rispondono? Con quali argomenti si impegnano maggiormente?)"
+2,Market Research,Insights e Hooks,"Basandoti sulla target audience qui sotto, genera 10 angoli per contenuti che catturerebbero molto probabilmente la loro attenzione. 
+
+Sii estremamente specifico nell'angolazione del contenuto.
+
+
+Contesto = Utilizzare intuizioni approfondite sul pubblico ci permette di creare contenuti che parlano direttamente agli interessi, ai bisogni e ai punti critici del tuo pubblico. Ciò ci consente di creare agganci che risuoneranno e coinvolgeranno, e guiderà la direzione complessiva del tuo contenuto.
+
+Target audience:"
+2,Market Research,Value Proposition,"Voglio che tu agisca come un marketing strategist con più di 10 anni di esperienza.
+
+Voglio applicare la piramide degli elementi del valore di Bain & Company al mio business per migliorare la nostra offerta e soddisfare meglio le esigenze dei nostri clienti. 
+
+Trovi i dettagli di questo framework qui: https://media.bain.com/elements-of-value/
+
+
+Task: 
+Crea una value proposition suscettibile di generare interesse, attrarre clienti qualificati, massimizzare il tasso di conversione sul sito. 
+
+La value proposition deve essere chiara, specifica, rilevante e parlare a un target preciso.
+
+Basandoti sulle informazioni fornite, aiutami ad applicare i vari elementi della piramide degli elementi del valore di Bain & Company per migliorare la mia offerta e soddisfare meglio le esigenze dei miei clienti.
+
+
+Output:
+
+Step 1: Aiutami a identificare:
+- Elementi Funzionali che posso integrare o migliorare nei miei prodotti o servizi.
+- Elementi Emotivi che posso enfatizzare per creare una connessione più forte con i miei clienti.
+- Elementi di Cambiamento di Vita che posso introdurre per offrire un impatto più profondo e significativo.
+- Elementi di Impatto Sociale che posso considerare per contribuire positivamente alla società e migliorare la percezione del mio brand.
+
+Step 2: una volta identificati gli elementi qui sopra, proponi anche:
+- una sintesi della migliore value proposition che posso testare per validare il prodotto/servizio
+- 3 proposte concise di value proposition da utilizzare nelle headline e subheadlines del sito
+- Il segmento target
+- Lista di 3 esperimenti pratici che possiamo condurre sui canali digitali
+
+
+
+Contesto:
+Ecco alcune informazioni di contesto sul mio business da utilizzare per definire la Value Proposition:
+
+[Tipologia di Business]
+
+[Descrizione brand]
+
+[Categoria prodotto]
+
+[Prodotti/Servizi Offerti]
+
+[Key Segment]
+
+[Target market]
+
+[Pain Points]
+
+[Desideri]
+
+[Valori e Mission]
+
+
+
+
+"
+2,Market Research,Pain Points,"Ora definisci i 5 principali pain point, problemi o frustrazioni principali dei consumatori del prodotto qui sotto.
+
+Descrizione brand:
+
+Categoria prodotto:
+
+Target audience:
+
+Target market"
+2,Market Research,USPs,"Ora definisci le 3 principali USP del prodotto qui sotto.
+
+Descrizione brand:
+
+Categoria prodotto:
+
+Target audience:
+
+Target market"
+2,Market Research,FAQ,"Ora definisci le 5 principali FAQ (domande più frequenti) effettuate dagli utenti online sulla categoria di prodotto qui sotto.
+
+Categoria prodotto:
+
+Target audience:
+
+Target market"
+2,Market Research,Emotional Benefits - Goals & Desires,"Ora definisci dal punto di vista emozionale quali sono i 3-5 principali desideri e ambizioni dei consumatori di prodotti indicati qui sotto.
+
+Categoria prodotto:
+
+Target audience:
+
+Target market"
+2,Market Research,Functional Benefits,"Ora definisci dal punto di vista funzionale quali sono i 3-5 principali benefici del prodotto indicato qui sotto:
+
+Categoria prodotto:
+
+Target audience:
+
+Target market"
+2,Market Research,Obiezioni,"Adesso fai una lista delle principali 3 obiezioni per cui il cliente target potrebbe decidere di non comprare sulla base del target market e delle caratteristiche del prodotto.
+
+Utilizza le informazioni qui sotto come contesto.
+
+Descrizione brand:
+
+Categoria prodotto:
+
+Target audience:"
+2,Market Research,Risposte alle obiezioni,Ora fai la tua migliore ipotesi su come rispondere a queste obiezioni in modo da convincere il consumatore che il nostro prodotto è la scelta migliore sul mercato.
+2,Market Research,"Offers, Incentives & Promotional Plan","Ora agisci come un marketing strategist. Sulla base delle informazioni qui sotto, fornisci:
+
+- 10 offerte da utilizzare per il nostro prodotto
+- 10 attività promozionali da utilizzare all'interno della strategia di marketing
+- 10 incentivi non monetari
+
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:"
+2,Market Research,Behavioural Marketing Principles,"Ora agisci come uno psicologo comportamentale. Sulla base delle informazioni qui sotto, fai una lista dei principi comportamentali più rilevanti perché la target audience consideri l'acquisto del prodotto. 
+
+Organizzali per fase del funnel (awareness, consideration, conversion)
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:"
+2,Market Research,Trigger Events,"Ora fai una lista dei principali 3 ""trigger event"" che portano la target audience a considerare l'acquisto di un prodotto appartenente alla categoria qui sotto. Con trigger event intendo eventi nella vita del consumatore che, una volta accaduti, scatenano e sbloccano nuovi bisogni e decisioni nella sua mente. Tipicamente, un trigger event avviene quando nella vita del consumatore succede qualcosa che gli fa rendere conto di avere un problema
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:"
+2,Market Research,Statistiche,"Voglio che tu agisca come un ricercatore di mercato. 
+
+Condividi statistiche interessanti sull'argomento qui sotto di cui poche persone parlano. Per favore cita le tue fonti.
+
+#Argomento#"
+2,Market Research,Statistiche Competitor,"Voglio che tu agisca come un ricercatore di mercato. 
+
+Quali argomenti tratta più frequentemente il competitor qui sotto?
+
+#URL Competitor#"
+2,Market Research,Trend Social,"Voglio che tu agisca come un ricercatore di mercato. 
+
+Analizza i trend online e fornisci le seguenti informazioni:
+- Quali sono i post social più popolari sull'argomento qui sotto basati su mi piace e condivisioni?
+- Di cosa sta parlando la stampa in relazione all'argomento qui sotto?
+- Quali sono i podcast più popolari che parlano dell'argomento qui sotto?
+
+#Argomento#"
+3,Concept Campagne,"Campaign ""Big Idea""","Voglio che tu agisca come un Creative Strategist. In base alle caratteristiche indicate qui sotto rispetto al brand, categoria di prodotto e mercato di riferimento, proponi 10 idee per una campagna di marketing creativa da lanciare sul mercato italiano.
+
+Categoria prodotto:
+
+Descrizione brand:
+
+Target audience:"
+3,Concept Campagne,Contest & Giveaway,"Voglio che tu agisca come un Creative Strategist. In base alle caratteristiche indicate qui sotto, proponi 10 idee per un contest (game of skill) o giveaway (game of chance) da lanciare sul mercato italiano. L’obiettivo è acquisire contatti qualificati che siano potenzialmente interessati al prodotto.
+
+Categoria prodotto:
+
+Descrizione brand:
+
+Target audience:
+
+Target Market:"
+3,Concept Campagne,Viral Content,"Voglio che tu agisca come un Creative Strategist. In base alle caratteristiche indicate qui sotto proponi 10 idee per un contenuto virale da lanciare sul mercato italiano. L’obiettivo è acquisire visibilità e visite sui profili social da utenti qualificati che siano potenzialmente interessati al prodotto.
+
+Categoria prodotto:
+
+Descrizione brand:
+
+Target audience:
+"
+3,Concept Campagne,Quiz Content,"Voglio che tu agisca come un Creative Strategist. In base alle caratteristiche indicate qui sotto, definisci la struttura di un Quiz da proporre ad utenti in linea con la value proposition dell’azienda. L’obiettivo è acquisire lead qualificati, aiutarli a ottenere risposte e proporgli prodotti in linea con i risultati del quiz.
+
+Descrizione Brand:
+
+Categoria di prodotto:
+
+Target market:
+
+Value Proposition:
+
+Contenuto Landing Page/Home Page:"
+4,Meta Ads,Meta Ads - Ad generica,"Crea una Facebook Ad per promuovere il prodotto qui sotto. 
+
+Nome Prodotto:
+
+Categoria di prodotto:
+
+Target audience:
+
+Target market:"
+4,Meta Ads,Meta Ads - Hooks generici,"Scrivi altre 3 versioni di Facebook Ad, utilizzando angoli diversi. Per ogni ad, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi"
+4,Meta Ads,Meta Ads - cambio tone of voice,"Ora riscrivi il testo di ogni angolo in modo più
+
+[informale, leggero e divertente]"
+4,Meta Ads,Meta Ads - Headline Variations V1,"Ora scrivi 3 headlines alternative per ognuna delle 3 Facebook ads appena create. Utilizza come fonte di ispirazione per la struttura di titoli le seguenti 22 headlines di esempio (i titoli sono in inglese, ma l'output sarà in italiano):
+
+
+1. FREE: “Free Book Shows You How to Write Sneaky Advertising That Practically Forces People to Send You Money!” 
+2. NEW: “Powerful New Seminar Teaches Flea Marketers the Power of ‘Flea-Psych’ to Drive People Into a Buying Frenzy” 
+3. AT LAST: “At Last … A Bakery That Uses Only Organic Sugar, Flour, Milk, and Eggs!” 
+4. THIS: “This New Invention Stops Any Attacker in His Tracks Without a Gun, Knife, or Black Belt in Karate.” 
+5. ANNOUNCING: “Announcing the Hottest New Sandwich Craze From Southern California: The Malibu Crust Pocket!” 
+6. WARNING! “WARNING! Some Dog Groomers Wrap a Noose Around Your Dog’s Neck!” 
+7. JUST RELEASED: “Just Released: Psychologist’s Study Reveals Little-Known Speaking Patterns That Immediately Put Rude Salespeople in Their Place.” 
+8. NOW: “Now You Can Stop Any Attacker Without Guns, Knives, or a Black Belt in Karate.” 
+9. HERE’S: “Here’s How a 95-Pound Granny Made a 275-Pound Psychopathic Killer Cry Like a Baby for its Rattle. … .” 
+10. THESE: “These Three Very Italian Men Make a Pizza to Kill For.” 
+11. WHICH OF: “Which of These Hot Bodies Would YOU Like to Show Off?” 
+12. FINALLY: “Finally … a Self-Improvement Seminar That Moves, Empowers, and Transforms You for Life!” 
+13. LOOK: “LOOK! Now You Can Buy Cotton Candy Machines at Wholesale Prices.”
+14. PRESENTING: “Presenting the Easiest Way Ever Developed to Learn the Piano.” 
+15. INTRODUCING: “Introducing the Only Water Ice Stand in Philly that Uses Real Fresh Fruit.” 
+16. HOW: “How to Sing Like an American Idol in 90 Days or Less—Guaranteed.”
+17. AMAZING: “Amazing New DVD Lowers Your Blood Pressure by Just Watching It!” 
+18. DO YOU: “Do You Know How to Stop Vicious Dog Attacks with the Push of a Button?” 
+19. WOULD YOU: “Would You Trade $2 for Our Famous Brick-Oven Pizza?” 
+20. CAN YOU: “Can You Be Sure Your Child Won’t Get Kidnapped?” 
+21. IF YOU: “If You Hate Cleaning Your Pool, This Ad Brings Good News!” 
+22. STARTING TODAY: “Starting Today You Can Dance 97% Better … If You Follow These Rules.”"
+4,Meta Ads,Meta Ads - Headline Variations V2,"Ora scrivi 5 Meta Ads headlines per ognuna delle precedenti Meta Ads create, seguendo la struttura dei seguenti titoli di esempio (i titoli sono in inglese, ma l'output sarà in italiano). Utilizza il formato che meglio si applica al contesto delle ads..
+
+The Ultimate Guide to {Good, Bad or Desirable Thing}
+
+What Everybody Ought to Know About {Good, Bad or Desirable Thing}
+
+X Lessons I Learned from {Person or Unusual Experience}
+
+To the {role} who will settle for nothing less than {world-class outcome}
+
+Break all the rules and {world-class outcome}
+
+How Your {Service Provider} Is Ripping You Off.
+And What to Do About It Right Now.
+
+I Found a {Adjective} Way to {Get Incredible Outcome}
+
+See why we have an {adverb} {adjective} {social problem} in just {short time}.
+
+{Influencer or celebrity} {emotional reaction} {to thing that basically the whole world already understood}
+
+Is this the world’s first  {Good, Bad or Desirable Thing}?
+
+How to Survive Your First  {Good, Bad or Desirable Thing}
+
+How I found out that {unexpected thing} is the best medicine
+
+Let me show you the secrets of {powerful group}
+
+What {Group or Celebrity} Can Teach You About {Unexpected Thing}
+
+People Regularly Pay Me {$} for This Information.
+But You Can Have It FREE.
+
+{David-type addresses Goliath-type.} {Result.}
+
+How to Make {$} With Your ________________, Step-by-Step
+
+The complete library of {large #} free and low-cost {desirable resources}
+
+Behind the Scenes of a _____________
+
+{Person does X.} {Another person’s reaction.} Result: priceless.
+
+Is {Trending Topic} a Scam? Find Out If You’re Putting Your {Resource} at Risk
+
+Here Is a Method/System That’s Helping {Blank} to {Blank}
+
+Little Known Ways to {Blank}
+
+The secret ways the {people from a foreign country} {get desirable result}
+
+X Little Known Factors That Could Affect Your {Thing in Which Reader Has a Vested Interest}
+
+Why haven’t {people like your readers} been told these facts?
+
+The Secret of {Desirable Thing}
+
+{#} of {group} are right/wrong/confused about {X}
+
+Is it immoral to {get desirable outcome}?
+
+Recently Downsized/Fired {Profession} Reveals the Dirty Little Secrets to {Outcome}
+
+Do you have the courage to {do something very desirable}?
+
+This {bad thing} just happened. {Outcome or media} is {adjective}.
+
+How to {get incredible result} and {do unexpected thing as a result}.
+
+{Bully does X.} {Bullied reacts with Y.}
+
+I Stopped {Doing Common Thing} Today. You Should Too. Here’s Why.
+
+Who doesn’t like {somewhat accepted taboo}? {Unexpected answer with tease about why.}
+
+I spent {time} {working toward goal}. I just {quitting statement}. Here’s why.
+
+I don’t regret {X}. But here’s what I’d do differently.
+
+Would you {do unimaginable thing}? I just did.
+"""
+4,Meta Ads,Meta Ads - Interessi,"Fai una lista dei migliori interessi Facebook Ads da utilizzare per il prodotto qui sotto.
+
+Categoria di prodotto:
+
+Target audience:
+
+Target market:"
+4,Meta Ads,Meta Ads | Behavioral Marketing,"Voglio che tu agisca come un advertiser. Scrivi 3 versioni di Meta Ads per ogni fase del funnel (awareness, consideration, conversion), utilizzando i principi comportamentali indicati qui sotto. Per ogni ads, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi.  
+
+Principi comportamentali:
+
+Categoria Prodotto:"
+4,Meta Ads,Meta Ads | Behavioural TOF,"Ora scrivi 3 versioni di Facebook Ad, basate sul principio comportamentale dell'autorità. Per ogni Facebook Ad, scrivi: 
+
+3 headline di 30-60 caratteri
+1 body copy di 200-400 caratteri
+
+Dividi il testo in paragrafi, lasciando spazio tra ognuno di essi.
+
+Categoria di prodotto:
+
+Target audience:
+
+Target market:"
+4,Meta Ads,Meta Ads | Angoli TOF,"Ora scrivi le seguenti varianti ad per la fase di Top Funnel:
+- 3 Ads basate sui pain points
+- 3 Ads basate sui Desideri
+- 3 Ads basate sulle USP
+- 3 Ads basata sulle FAQ
+
+3 headline di 30-60 caratteri
+1 body copy di 200-400 caratteri
+
+Dividi il testo in paragrafi, lasciando spazio tra ognuno di essi.
+
+Utilizza le informazioni sul brand fornite qui sotto. 
+
+Brand description:
+
+
+Categoria Prodotto:
+
+
+USP
+
+
+Pain Points
+
+
+
+Desideri 
+"
+4,Meta Ads,Meta Ads | Behavioural MOF,"Ora scrivi 3 versioni di Facebook Ad, basate sul principio comportamentale del Friction Removal. Per ogni Facebook ad, scrivi: 
+
+3 headline di 30-60 caratteri
+1 body copy di 200-400 caratteri
+
+Dividi il testo in paragrafi, lasciando spazio tra ognuno di essi.
+
+Categoria di prodotto:
+
+Target audience:
+
+Target market:"
+4,Meta Ads,Meta Ads | Angoli MOF,"Ora scrivi le seguenti varianti ad per la fase di Mid Funnel:
+- 3 Ads basate sui benefici
+- 3 Ads basate sulle FAQ
+- 3 Ads basate sulle obiezioni
+
+3 headline di 30-60 caratteri
+1 body copy di 200-400 caratteri
+
+Dividi il testo in paragrafi, lasciando spazio tra ognuno di essi.
+
+Utilizza le informazioni sul brand fornite qui sotto. 
+
+Brand description:
+
+
+Categoria Prodotto:
+
+
+Benefici funzionali:
+
+
+FAQ:
+
+
+Obiezioni:
+
+
+Risposte alle obiezioni:
+"
+4,Meta Ads,Meta Ads | Behavioural BOF,"Ora scrivi 3 versioni di Facebook Ad, basate sul principio comportamentale della Social Proof. Per ogni Facebook ad, scrivi: 
+
+3 headline di 30-60 caratteri
+1 body copy di 200-400 caratteri
+
+Dividi il testo in paragrafi, lasciando spazio tra ognuno di essi.
+
+Categoria di prodotto:
+
+Target audience:
+
+Target market:"
+4,Meta Ads,Meta Ads | Angoli Remarketing Ads,"Voglio che tu agisca come un advertiser. Scrivi 3 versioni di Meta Ads per la fase di remarketing, usando angoli differenti, basati sui seguenti principi comportamentali: social proof, scarcity, urgency, loss aversion. Per ogni ads, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi. Considera le seguenti informazioni come contesto:
+
+Categoria prodotto:
+
+Target audience:
+
+Riprova sociale/testimonianze:
+
+Prodotto da promuovere:
+
+Desideri target audience: "
+4,Meta Ads,Meta Ads | PAS Frameowork,"Voglio che tu agisca come un advertiser. Scrivi 3 versioni di Meta Ads, usando angoli differenti, basati su pain points indicati qui sotto. Per ogni ads, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi. Utilizza il copy framework PAS (problem, agitation, solution).
+
+Categoria prodotto:
+
+Pain Points:
+
+Goal e desideri:"
+4,Meta Ads,Meta Ads | AIDA Frameowork,"Voglio che tu agisca come un advertiser. Scrivi 3 versioni di Meta Ads, usando angoli differenti, basati su pain points indicati qui sotto. Per ogni ads, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi. Utilizza il copy framework AIDA (Attention, Interest, Desire, Action).
+
+Categoria prodotto:
+
+Pain Points:
+
+Goal e desideri:"
+4,Meta Ads,Meta Ads | BAB Frameowork,"Voglio che tu agisca come un advertiser. Scrivi 3 versioni di Meta Ads, usando angoli differenti, basati su pain points indicati qui sotto. Per ogni ads, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi. 
+
+Utilizza il copy framework BAB (Before, After, Bridge)
+Before: dove l'utente si trova in questo momento
+After: aiuta l'utente a immaginarsi la situazione che vivrebbero se il problema fosse risolto
+Bridge: come passano dallo stato ""before"" allo stato ""after"" (il nostro prodotto)
+
+Descrizione brand: 
+
+Categoria prodotto: 
+
+Target Market:
+
+Target audience: 
+
+Pain Points:
+
+Goal e desideri:
+"
+4,Meta Ads,Meta Ads | 4P's Frameowork,"Voglio che tu agisca come un advertiser. Scrivi 3 versioni di Meta Ads, usando angoli differenti, basati su pain points indicati qui sotto. Per ogni ads, scrivi una headline di 30-60 caratteri e un body copy di 200-400 caratteri. Lascia spazio tra i paragrafi. 
+
+Utilizza il copy framework 4P's, che è così costruito:
+Picture – Create a vivid scene prospects can easily put themselves in, whether about an existing pain or an aspirational future
+Promise – State how your solution will end that painful scene or bring that aspirational scene to life for them
+Prove – Support your promise! What are the consequences if you fail to do as promised? Who else has already seen you keep your promise, and how? What can you demonstrate to skeptics that your solution is easily going to ensure the promise is kept?
+Push – Nudge the prospect to take action
+
+Categoria prodotto:
+
+Pain Points:
+
+Goal e desideri:"
+4,Meta Ads,Meta Ads - Ads Tabella Full Funnel,"Voglio che tu agisca come un Advertiser. Ti forniro' informazioni su target audience, categoria prodotto, pain points, desideri, benefici del prodotto, angoli di comunicazione e modello di copywriting. Tu mi fornirai il testo delle Meta Ads.
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:
+
+Pain Points:
+
+Goal e desideri:
+
+Benefici prodotto:
+
+Angoli di comunicazione:
+
+Modello di copywriting:
+
+Output: Crea 3 opzioni di Meta Ads per ogni fase del funnel (Awareness, Consideration, Conversion). 
+
+3 headline di 30-60 caratteri
+1 body copy di 200-400 caratteri
+
+Dividi il testo in paragrafi, lasciando spazio tra ognuno di essi.
+
+Raggruppa l'output in una tabella avente questi valori:
+
+Fase del funnel: 
+Ad variation #:
+Hook: 
+Body:
+Call to Action:
+
+
+
+  "
+5,Google Ads,Google Ads - keywords,"Voglio che tu agisca come un PPC specialist. Fai una lista delle 50 top keywords ad alto intento per il prodotto indicato qui sotto. Raggruppale in adgroups in base al loro tema. Ogni adgroup deve fare riferimento ad un gruppo di keywords simili tra loro, in modo che ogni ad sia esclusiva al gruppo di keywords. L'output deve essere in questo formato:
+
+Campaign
+Adgroup 
+Keywords
+
+Categoria prodotto: Oli e creme per la pelle naturali, di qualità, sostenibili e senza sostanze chimiche nocive.
+
+Prodotto di riferimento/Offerta:
+Pure Natural Australian Jojoba 200ml
+
+Costo: € 53
+
+Questo olio è diverso dagli altri oli perché non è un olio, ma una cera liquida che ha la stessa struttura molecolare degli esteri di cera naturali presenti nella pelle umana sana. L'olio di Jojoba idrata e ripara la pelle sensibile e problematica, è ricco di vitamine A, D ed E e di omega 6 e 9, aiuta a lenire la secchezza, la disidratazione, il rossore e l'irritazione. 
+
+L'Australian Wadi-Wadi Jojoba, coltivato in modo sostenibile nella fattoria Beresford a Yenda, ha proprietà curative incredibili e offre risultati visibilmente trasformativi in modo naturale. È clinicamente dimostrato che idrata fino a 8 ore, è ipoallergenico e approvato dai dermatologi. La varietà australiana Wadi-Wadi contiene quantità più elevate di Omega 9 rispetto ad altre varietà di Jojoba e agisce come un blocco di costruzione nelle cellule della pelle, rendendo la pelle più forte, più sana e più giovane. Anche se non è ""certificata biologica"", l'Australian Wadi-Wadi Jojoba segue gli stessi rigorosi standard di una fattoria biologica. Non viene testato sugli animali ed è sicuro per tutti i tipi di pelle, di tutte le età."
+5,Google Ads,Google Ads - Responsive Search Ad V1,"Voglio che tu agisca come un advertiser. Crea il testo di: 
+
+15 Google Ads search headlines di minimo 20 e massimo 30 caratteri per il prodotto qui sotto.
+1  Google Ads headline di 90 caratteri
+4 Google Ads search descriptions di 90 caratteri 
+
+In almeno 3 headlines, includi la keyword [SEED KEYWORD]
+
+Dividi il testo in:
+
+Headline Standard
+- 3 Headlines con focus sulla keyword principale
+- 5 Headlines con focus sui benefici
+- 3 Headline con focus sulle USP
+- 2 Headline con focus su Desideri
+- 1 Headline con focus su Bonus
+- 1 Headline con focus su garanzie
+
+Headline Lunga
+- 1 Headline lunga 
+
+Descrizioni:
+- 2 Descriptions con focus sulle USP
+- 2 Descriptions con focus su scarsità e urgenza
+
+
+INFORMAZIONI CHIAVE:
+
+Descrizione prodotto: 
+
+Target Audience: 
+
+Categoria prodotto: 
+
+Target Market:
+
+USP:
+
+Benefici:
+
+Desideri:
+
+Bonus:
+
+Garanzie:
+"
+5,Google Ads,Google Ads - Ad Copy Table,"Raggruppa i dati precedenti in una tabella con le seguenti colonne: # variante, Headline, Description																						"
+5,Google Ads,Google Ads - Responsive Search Ad V2,"Voglio che tu agisca come un PPC specialist. Crea una tabella con le seguenti intestazioni di colonna e contenuto per le nostre Google Responsive Search Ads:
+
+Parola chiave: un termine di ricerca per un sito di olio e creme per il viso naturali, privi di sostanze nocive.
+Tipo di corrispondenza: Esatta su ogni riga
+Campagna: XXX su ogni riga
+Gruppo di annunci: il termine di ricerca elencato nella colonna Parola chiave su ogni riga
+Tipo di annuncio: Responsive Search Ad su ogni riga
+Titolo 1: un testo di massimo 30 caratteri senza punti esclamativi che si adatta esattamente alla parola chiave di quella riga
+Titolo 2: come Titolo1 ma usando il principio di Cialdini di riprova sociale, senza utilizzare un punti esclamativi
+Titolo 3: come Titolo1 ma usando il principio di Cialdini di scarsità, senza utilizzare punti esclamativi
+Descrizione 1: un testo di massimo 90 caratteri che si adatta alla parola chiave di quella riga - utilizzando il principio di Cialdini di riprova sociale
+Descrizione2: simile a Descrizione 1 ma usando il principio di Cialdini di autorità
+URL finale: del brand su ogni riga (.com)"
+5,Google Ads,Google Ads - Sitelink Extensions,"Voglio che tu agisca come un PPC specialist. Crea il seguente copy per il prodotto qui sotto
+
+- 4 Sitelink extensions differenti con suggerimento di URL
+- Ogni sitelink non deve avere più di 30 caratteri
+- Ogni sitelink deve avere 2 descrizioni di massimo 25 caratteri ognuna
+
+Descrizione prodotto: 
+
+Target Audience: 
+
+Categoria prodotto: 
+
+Target Market:"
+5,Google Ads,Google Ads - Callout Extensions,"Voglio che tu agisca come un PPC specialist. Crea il copy per il prodotto indicato qui sotto 
+
+- 10 Google Ads callout extensions, massimo 25 caratteri ognuna
+
+Categoria prodotto: 
+
+Target Market:
+
+Offerta principale: "
+5,Google Ads,Google Ads - Structured Snippets,"Voglio che tu agisca come un PPC specialist. Crea il copy per il prodotto indicato qui sotto 
+
+- 2 Google Ads Structure snippet extensions
+- Ogni snippet deve avere 5 valori
+- Ogni valore non può essere più lungo di 15 characters
+
+Il formato dovrebbe essere:
+Type: Value 1, Value 2, etc.
+
+Categoria prodotto: "
+5,Google Ads,Google Ads - Negative Keyword list,"Voglio che tu agisca come un PPC specialist. Crea una lista estensiva di negative keywords per il prodotto qui sotto. 
+
+Descrizione brand: 
+Categoria prodotto: 
+
+Target Market:
+
+Offerta principale: "
+5,Google Ads,Google Ads - In Market & Affinity Audiences,"Voglio che tu agisca come un PPC specialist. Definisci in maniera dettagliata quali Google Ads In Market segments, Affinity Audiences e Demographic targets (age, sex, income levels) devo targetizzare per promuovere il prodotto qui sotto.
+
+Descrizione brand: 
+
+Categoria prodotto: 
+
+Target Market: 
+
+Offerta principale:"
+5,Google Ads,Google Ads - Remarketing Audiences,"Voglio che tu agisca come un PPC specialist. Fornisci la lista delle migliori 10 remarketing audiences da targetizzare per il prodotto qui sotto.
+
+Categoria prodotto:
+
+Prodotto principale/Offerta:
+"
+5,Google Ads,Google Ads - Youtube Exclusion List,"Voglio che tu agisca come un PPC specialist. Fornisci una lista di esclusioni di posizionamenti Youtube per il mercato italiano che non sono rilevanti per la mia target audience e che dovrei escludere dal targeting per la categoria di prodotto qui sotto. 
+
+Categoria prodotto:
+
+Prodotto principale/Offerta:
+
+Target audience:
+
+"
+5,Google Ads,Google Ads - Experiment Ideas,"Voglio che tu agisca come un advertiser. Fornisci una lista di possibili A/B test e esperimenti che potrei implementare per il prodotto qui sotto.
+
+Categoria prodotto:
+
+Target audience:
+
+"
+5,Google Ads,Google Ads - Responsive Search Ad,"Voglio che tu agisca come un advertiser. Crea 2 Google Ads in formato RSA (utilizzando fino a 15 headlines e 4 descrizioni) per un A/B test for il prodotto qui sotto. Spiega perché questo sarebbe un buon test per le ads. 
+
+Categoria prodotto:
+
+Target audience:
+
+"
+5,Google Ads,Google Ads - Responsive Display Ad,"Voglio che tu agisca come un advertiser. Devo creare delle Responsive Display Ads per una campagna Google Ads. Suggerisci immagini, titoli e descrizioni per il prodotto qui sotto.  Proponi soluzioni creative e idee.
+
+Categoria prodotto:
+
+"
+5,Google Ads,Google Ads - Ottimizzazione campagne,"Voglio che tu agisca come un PPC specialist. Analizza in maniera dettagliata le campagne Google Ads qui sotto, e fai un report degli insights e trends che hai identificato. 
+
+In particolare voglio sapere:
+- quali campagne hanno generato maggiori vendite
+- qual è il Conv value/Cost medio dell'account
+- quali campagne non raggiungono il Conv value/Cost  di almeno 3x
+- quali campagne hanno il Conversion rate più alto
+- quali campagne hanno il Conversion rate più basso
+- cosa posso fare per ottimizzare le campagne in futuro per diminuire il costo per conversione e aumentare il Conv value/Cost
+
+Descrizione brand: Jojoba Co è un brand internazionale di skincare, specializzato nella produzione di prodotti per la bellezza e la cura del viso a base di olio di jojoba. La promessa del brand è di ""aiutare la pelle a curarsi da sola"". L'olio di jojoba è differente da tutti gli altri olii, perchè non è un olio. È l'unica pianta che immagazzina cera liquida nei suoi semi. Condivide la stessa struttura molecolare degli esteri di cera naturali presenti nella pelle umana sana, che lo rendono più recettivo nell'assorbire nutrienti e antiossidanti essenziali, ripristinando l'equilibrio e aiutando la pelle a comportarsi come era stata progettata per fare. L'olio di jojoba Wadi-Wadi è un antico super-ingrediente ed è il cuore della nostra cura della pelle.  Costituisce l'alternativa naturale, efficace e accessibile a costosi prodotti di bellezza, senza sostanze chimiche aggiunte.
+
+Categoria prodotto: Oli e creme per la pelle naturali, di qualità, sostenibili e senza sostanze chimiche nocive. 
+
+Target Market: Italia
+
+DATI DA ANALIZZARE"
+6,Analisi Quantitativa,Monitoraggio e analisi delle campagne,"Voglio che tu agisca come un Data Analyst. Io ti fornirò dei dati legati alla performance delle campagne. Analizza i KPI delle seguenti campagne e fornisci degli insight rispetto a:
+- recap risultati attuali delle campagne
+- 3 best performing e 3 lowest performing campaigns
+- quali campagne hanno un trend positivo (indica gli aumenti + % delle specifiche campagne)
+- quali campagne hanno un trend negativo (indica la decrescita - % delle specifiche campagne)
+- quali possono essere le ragioni dietro alle performance negative 
+- idee per migliorare la performance delle campagne 
+
+Copia incolla dei dati delle campagne:
+
+"
+6,Analisi Quantitativa,Monitoraggio e analisi delle campagne,"Voglio che tu agisca come un Data Analyst. Sulla base dei dati analizzati precedentemente, crea un recap dei 5 principali action points da implementare sui differenti canali di marketing.
+
+
+Copia incolla dei dati delle campagne:                                                                                                                                                                       "
+6,Analisi Quantitativa,Modifiche Post Analisi,"Voglio che tu agisca come un Data Analyst. Sulla base dei dati precedenti, analizza i KPI e fornisci degli insight rispetto a:
+- idee per migliorare la performance delle campagne 
+- stimare l’impatto delle idee 
+- prioritizzazione delle idee dal punto di vista dell’implementazione
+
+
+Copia incolla dei dati delle campagne:"
+6,Analisi Qualitativa,Thematic Analysis,"Voglio che tu agisca come un ricercatore di mercato. Analizza le interviste ai nostri clienti. Analizza le seguenti risposte e prepara un'analisi tematica (thematic analysis). Organizza i temi in categorie e dividili per paragrafo.
+
+Domande intervista:
+
+Risposte intervista:"
+6,Analisi Qualitativa,Thematic Analysis,"Voglio che tu agisca come un ricercatore di mercato. Fai una lista dei temi principali toccati all'interno delle risposte alle interviste, individua i trend e dimmi quante volte è stato nominato ogni tema all'interno delle risposte. Segui questa struttura
+
+Tema: 
+Numero di menzioni:
+
+Risposte intervista:"
+6,Analisi Qualitativa,Analisi Recensioni Clienti - Aspetti positivi e negativi,"Ora aiutami a definire cosa gli utenti hanno amato o odiato a proposito dei prodotti sulla base delle reviews.
+
+Crea:
+
+- 1 tabella con colonne: Aspetto positivo apprezzato, spiegazione, Opportunità di business, Angolo da usare nell'Ad
+
+- 1 tabella con colonne: Aspetto negativo non apprezzato, spiegazione, Opportunità di business da cogliere lato posizionamento e miglioramento prodotto, Angolo di comunicazione da usare nell'Ad"
+6,Analisi Qualitativa,Trasformare recensioni in tabella angoli contenuto,"Ora crea una tabella strutturata con le seguenti colonne:
+
+Benefit
+
+Prodotto
+
+Angle
+
+Emotional Appeal
+
+Hook
+
+Pain Point
+
+Desiderio
+
+Citazione (breve citazione rappresentativa del concetto tratta dalla review migliore e più eccentrica disponibile tra quelle fornite)
+
+Static Ad Concept
+
+Video Ad Concept
+
+Usa le recensioni sopra come input e riempi ogni colonna con precisione."
+6,Analisi Qualitativa,Sentiment Analysis,"Voglio che tu agisca come un ricercatore di mercato. Fai una sentimenti analysis dei seguenti commenti al post social pubblicato per la seguente categoria di prodotto. Rispondi con un commento in italiano. Raggruppa i feedback sui commenti in temi comuni.
+
+Categoria prodotto:
+
+Commenti social:
+
+"
+7,Creatività,Video Ad Script - TikTok,"Crea lo script di un video TikTok per il prodotto qui sotto di 30 secondi. Utilizza l'hook ""Why I stopped doing this and I did this instead"". Dividi lo script nei paragrafi Intro, body, conclusione. Scrivi il copione del testo.
+
+Descrizione prodotto:
+
+Target audience:
+
+Benefici prodotto:
+
+"
+7,Creatività,TikTok Hook Variations,"Voglio che tu agisca come un Content Creator. 
+Adesso analizza quale dei seguenti TikTok Hooks può funzionare meglio per il brand qui sotto. 
+Seleziona i 3 che meglio si adattano al contesto di questo brand.
+Poi crea lo script di 3 video TikTok di massimo 30 secondi, basandoti sulle USP del prodotto e i pain points della target audience. Posiziona il prodotto come la soluzione ai loro problemi.
+Dividi lo script nei paragrafi Intro, body, conclusione. Scrivi il copione del testo.
+
+
+HOOKS da considerare:
+1. “Watch till the end!”
+This is one of the brilliant hooks at the start of the video to force the audience to watch it till the end. Keep up the audience’s excitement by telling them that something amusing is happening if they watch the entire reel.
+
+2. “I need your help…”
+Let the audience come to you to learn what you need help for!
+
+3. “I’ve got a secret”
+The audience will react, “Well! tell me!”. It’s intriguing and a smart way to hook your audience. 
+
+4. “This one is for ___”
+Give your audience a name and personalize your TikTok or Reels to make it more fun! For example, start the video with ‘This one is for Plann’rs’. 
+
+5. “Quick Reminder!”
+Show your audience you’ve got their back with handy tips and reminders. 
+
+6. “Did you know that…”
+Yep, hook your audience with the most classic question!
+
+7. “Hear me out…”
+Your viewers would love to hear your thoughts.
+
+8. “Stop scrolling!”
+Why? Let’s see what this creator has to say.
+
+9. “If you want to achieve_____ Listen up!”
+Help your audience reach their goals.
+
+10. “You need to watch this if you struggle with______”
+Address your specific audience and highlight the specific problem statement to make your video more engaging.
+
+11. “This tip will blow your mind…”
+Everyone wants to learn something new.
+
+12. “You need to hear this!”
+Curious minds will fall for this one.
+
+13. “I bet you didn’t know this!”
+Who doesn’t want to stay updated with what’s going on around the world?
+
+14. “Why are there not more people talking about___”
+Aha! Let them talk about your product.
+
+15. “How to___ FOR FREE”
+Who doesn’t love freebie!
+
+
+Categoria prodotto: 
+
+Target Market:
+
+Target Audience: 
+
+Descrizione prodotto: 
+
+USP
+
+Pain Points:
+"
+7,Creatività,Video Ad Script - Reel PAS,"Crea lo script di un video Reel per il prodotto qui sotto di 30 secondi. Utilizza il framework  PAS (problem, agitation, solution). Dividi lo script nei paragrafi Intro, body, conclusione. Scrivi il copione del testo.
+
+Descrizione prodotto:
+
+Target audience:
+
+Benefici prodotto:
+
+"
+7,Creatività,Video Ad Script - Reel AIDA,"Crea lo script di un video Reel per il prodotto qui sotto di 30 secondi. Utilizza la struttura AIDA (Attention, Interest, Desire, Action). Dividi lo script nei paragrafi Intro, body, conclusione. Scrivi il copione del testo.
+
+Descrizione prodotto:
+
+Target audience:
+
+Benefici prodotto:
+
+"
+7,Creatività,Prompt Midjourney,"Voglio che tu agisca come un ingegnere di prompt. Mi aiuterai a scrivere prompt per un generatore di arte AI chiamato Midjourney.
+
+Ti fornirò brevi idee di contenuto e il tuo compito sarà quello di elaborarle in prompt completi, espliciti e coerenti.
+
+I prompt prevedono la descrizione del contenuto e dello stile delle immagini in un linguaggio conciso e preciso. È utile essere espliciti e utilizzare riferimenti alla cultura popolare, agli artisti e ai mezzi di comunicazione. La tua attenzione deve essere concentrata sui sostantivi e gli aggettivi. Ti darò alcuni esempi di prompt come riferimento. Per favore, definisci la fotocamera esatta da utilizzare.
+
+Ecco una formula da utilizzare: (content insert nouns here)(medium: insert artistic medium here)(style: insert references to genres, artists and popular culture here)(lighting, reference the lighting here)(colours reference color styles and palettes here)(composition: reference cameras, specific lenses, shot types and positional elements here)
+
+Quando crei una prompt, rimuovi le parentesi dalla formula qui sopra.  Parla in linguaggio naturale e sii quanto più specifico possibile, usa un linguaggio preciso ed eloquente.
+
+Conferma se hai capito la struttura e fornisci sempre due opzioni di prompt complete e diverse (in lingua inglese) per dimostrare che hai capito come costruirle. Ricordati di rimuovere le parentesi dalla formula quando scrivi le prompt. Separa le indicazioni con una virgola. 
+
+Esempi di prompt:
+
+1) Portrait of a Celtic Jedi Sentinel with wet Shamrock Armor, green lightsaber, by Aleksi Briclot, shiny wet dramatic lighting
+
+2) abstract image, Bauhaus style, 3D, phages, black, white, red and blue, 8K
+
+3) The parametric hotel lobby is a sleek and modern space with plenty of natural light. The lobby is spacious and open with a variety of seating options. The front desk is a sleek white counter with a parametric design. The walls are a light blue color with parametric patterns. The floor is a light wood color with a parametric design. There are plenty of plants and flowers throughout the space. The overall effect is a calm and relaxing space. occlusion, moody, sunset, concept art, octane rendering, 8k, highly detailed, concept art, highly detailed, beautiful scenery, cinematic, beautiful light, hyperreal, octane render, hdr, long exposure, 8K, realistic, fog, moody, fire and explosions, smoke, 50mm f2.8
+
+
+4) A white color house, wood joinery style house. high end, custom home, glass, columns, one floor, big deck, terrace, , tropical island, front view, Tom Kundig architect, daylight time, palm trees architecture. Beautiful natural wildflower lawn. Expensive, trending on archdaily, dezeen. Photorealistic, 8k, architectural photography
+
+5) nature vs human nature, surreal, UHD, HDR, 8K, hyper details, rich colors, photograph
+
+6) Editorial photoshoot of a old woman, high fashion 2000s fashion
+
+7) A New Zealand female business owner stands and is happy that his business is growing by having good VoIP and broadband supplied by Voyager Internet. This business owner is dressed semi casual and is standing with a funky office space in the background. The image is light and bright and is well lit. This image needs to be shot like a professional photo shoot using a Canon R6 with high quality 25mm lens. This image has a shallow depth of field
+
+8) Outdoor style fashion photo, full – body shot of a man with short brown hair, happy and smiling, he is standing on his hipster bicycle wearing a light blue long sleeved blouse with closed buttons and dark blue jeans trousers, in the background the exterior of an Aldi store, fully lit background, natural afternoon lighting
+
+9) A close up of a branch of a tree and a golden bug on the top a leaf, shutterstock contest winner,ecological art, depth of field, shallow depth of field, macro photography
+
+10) Street style centered straight shot photo shot on Afga Vista 400, lense 50mm, of a two women,skin to skin touch face, emotion, hughing, natural blond hair, natural features, ultra detailed, skin texture, Rembrandt light, soft shadows"""
+7,Creatività,Prompt Midjourney,"Voglio che tu agisca come un prompt engineer. Definisci le prompt esatte da utilizzare in Midjourney per creare delle immagini da utilizzare come asset creativi all’interno delle campagne Paid Media su Meta Ads.Fornisci:
+- una lista di 10 idee per asset creativi da produrre con Midjourney
+- La lista delle corrispettive prompt
+- organizza i dati sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto/Offerta principale:
+
+USP:"
+7,Creatività,Youtube Organico,"Voglio che tu agisca come uno YouTuber. Aiutami a definire una lista di video Youtube da creare per il brand. I contenuti devono essere in grado di aiutare gli utenti, fornendo informazioni utili a risolvere i loro problemi. Fornisci:
+- Una lista di 20 idee per video Youtube
+- Elenca le ragioni per cui i contenuti possono funzionare bene su Youtube
+- organizza i dati sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto/Offerta principale:
+
+USP:"
+7,Creatività,Youtube Ads,"Voglio che tu agisca come un advertiser. Aiutami a definire una lista di idee per Youtube Ads da creare per il brand qui sotto. I contenuti video devono seguire framework comprovati che aiutano a migliorare le performance,, come il framework ABCD (Attract, Brand, Consider, Desire) o AIDA o PAS. Fornisci:
+- Una lista di 20 idee per video Youtube Ads
+- Elenca le ragioni per cui i contenuti possono funzionare bene su Campagne Google Ads
+- organizza i dati sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto/Offerta principale:
+
+USP:"
+7,Creatività,Storyboard & Script,"Voglio che tu agisca come un Creative Director. Aiutami a definire lo storyboard e lo script per 3 idee video da creare per il mio brand. Le idee devono essere innovative, creative e generare un alto tasso di engagement sui canali social. Fornisci:
+- una lista di 3 idee video
+- lo storyboard per ogni idee
+- lo script esatto per ogni idea
+- organizza i dati sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto/Offerta principale:
+
+USP:"
+8,SEO & Content Marketing,Keyword Research,"Voglio che tu agisca come un esperto di marketing digitale per il seguente prodotto (vedi informazioni chiave in basso).
+
+Al fine di attirare più traffico attraverso i canali organici, ti chiedo di condurre una ricerca delle parole chiave per il nostro pubblico.
+
+Suddividile tra 
+- 'Brand keywords' che contengono il nome del brand 
+- parole chiave non-branded con intento di ricerca incentrato sul prodotto (commercial intent) 
+- parole chiave non-branded con intento di ricerca incentrato sulle informazioni (information intent)
+
+Presenta queste informazioni in una tabella: la prima colonna sarà la parola chiave, la seconda colonna se è Branded o Non Branded, e la terza il tipo di intento di ricerca.
+
+Fornisci un elenco di 30 parole chiave ""top level"", come sopra, e quindi ulteriori 30 parole chiave ideate come 'query', focalizzandoti su ricerche che includono gli operatori 'chi, cosa, dove, perché, come, può, dovrebbe.
+
+Fornisci quindi tutte le parole chiave in formato separato da virgola, al di fuori delle tabelle in testo normale.
+
+
+Brand name:
+
+Brand description:
+
+Category description:"
+8,SEO & Content Marketing,Content Strategy,"Voglio che tu agisca come un Content Marketer. Considera le informazioni qui sotto per elaborare un content marketing plan, che includa almeno 5 contenuti per ognuna delle seguenti fasi: awareness, consideration, and conversion.
+
+Nello scrivere i titoli dei contenuti, considera le seguenti informazioni: pain points, bisogni emozionali, USPs. 
+
+Nel definire i contenuti, inserisci solo temi ricercati dagli utenti e che ci consentano di:
+- Mettere in evidenza le USP del brand 
+- Prioritizzare contenuti informativi che diano consigli utili a migliorare la vita dei consumatori.
+- Offrire consigli per incorporare il nostro prodotto all'interno della vita dell'utente target
+- Promuovere i valori del nostro brand
+
+Non inserire il nome del brand nei titoli, ma trova contenuti che siano legati al potenziale utilizzo del prodotto.
+
+Organizza le informazioni in due formati: prima elenca il piano in forma scritta, poi riassumi tutte le informazioni all'interno di una tabella.
+
+
+Goal:
+
+Value Proposition
+
+Brand description:
+
+Category description:
+
+USP:
+
+Pain Points: 
+
+Desideres/Emotional Needs:"
+8,SEO & Content Marketing,Articolo Blog,"Voglio che tu agisca come un Content Marketer. Considera le informazioni qui sotto per scrivere un articolo di 3000 parole sul tema [TITOLO ARTICOLO]
+
+
+LINEE GUIDA:
+- Includi le migliori keywords nell'articolo e ottimizza headlines, subheading, alt tags, titolo, meta description e body dell'articolo in ottica SEO per posizionarsi in pagina 1 su Google.
+- Includi l'indice all'inizio dell'articolo.
+- Ottimizza l'articolo in ottica SEO per la keyword [KEYWORD]. Posiziona il prodotto come la migliore soluzione sul mercato senza essere troppo promozionale, spiegandone i motivi.
+- Utilizza un linguaggio [TONE OF VOICE]. Elabora i concetti con frasi semplici, ma senza essere troppo schematico.
+- Considera le seguenti parole chiave correlate (Google related questions & searches) per definire il contenuto e la struttura dell'articolo:
+[INSERIRE RELATED QUESTIONS & SEARCHES]
+- Scrivi l'articolo utilizzando Markdown formatting.
+- Indica anche Title Tag e Meta description. 
+- Assicurati di utilizzare dati e statistiche all'interno dell'articolo citando le tue fonti
+- Scrivi l'introduzione in formato narrativo
+
+
+Brand description:
+
+Category description:
+
+Product description:
+
+Value proposition:
+
+USP:
+
+Pain Points: 
+
+Desideres/Emotional Needs:"
+8,SEO & Content Marketing,Content Calendar,"Voglio che tu agisca come un Social Media Manager. 
+
+Definisci il piano editoriale (PED) per il brand qui sotto. 
+Dividi il piano editoriale in macro temi (da minimo 2 a massimo 5). 
+
+Identifica i macro temi legati alla categoria di prodotto/servizio qui sotto, tenendo i considerazione i pain points della target audience e le keywords più rilevanti come da tabella precedente.
+
+All'interno di ogni macro-tema, inserisci i titoli dei post. Dammi 10 titoli per macro-tema.
+
+Formato: organizza la risposta in una tabella avente come colonne: macro-tema, angolo, titolo del post.
+
+Prenditi il tuo tempo e procedi step-by-step. Ti darò una mancia di 100€ se mi fornirai una risposta eccellente e precisa.
+
+#Brand description#:
+
+#Category description#:
+
+#Audience Persona#:
+
+#Problemi / Pain Points#:
+
+#Desideri / Obiettivi#:
+
+
+"
+8,SEO & Content Marketing,Content Calendar,Scrivi 3 domande uniche per ogni argomento 1-10. Ordinali in un elenco puntato e numerato.
+8,SEO & Content Marketing,Content Calendar,"Raggruppa i dati precedenti in una tabella con le seguenti colonne: Mese, data (1-30), macro tema, titolo, domanda"
+8,SEO & Content Marketing,Link building ,"Ora voglio che tu agisca come un SEO Manager che deve fare link building. Dammi 5 argomenti per articoli linkabili per il brand qui sotto, considerando la seguente target audiece. Includi le seguenti informazioni nel fare l'analisi: il publisher da contattare, l'argomento consigliato per l'articolo da proporre, una breve descrizione, la domain authority del publisher.
+
+Fornisci le informazioni prima in formato scritto, poi organizza i dati in una tabella.
+
+Brand name:
+
+Brand description
+
+Category description
+
+Target audience"
+8,SEO & Content Marketing,Link building advanced,"In aggiunta alla risposta precedente, dammi suggerimenti precisi e dettagliati su come ottenere queste 7 tipologie di link per migliorare la off-page SEO del nostro brand.
+
+1) Editorial links: quando altri siti citano il nostro brand come fonte. 
+2) Guest posts: post guest su domini con medio alta authority.
+3) Relationship-based links: stabilire relazioni con un sito con buona reputazione che ha inserito un link verso il nostro sito, per diventare una loro fonte autorevole.
+4) Business profiles: link da business directories e profili social media 
+5) Public speaking: link da podcast, webinars, corsi online e conference in cui siamo ospiti 
+6) Embedded asset links: tools, widgets, awards, badges che altri integrano sul loro sito
+7) Reverse backlinks: creare contenuti che le persone non possono fare altro che citare e condividere tramite link sul loro sito."
+8,SEO & Content Marketing,Link Building email outreach template,"Voglio che tu agisca come un SEO Manager. Scrivi una email di contatto a dei publisher potenzialmente interessati a collaborare con il nostro brand per sottoporre un guest post sulla categoria di argomento qui sotto. Proponi anche i punti chiave dell'articolo.  
+
+Usa un linguaggio diretto, succinto, onesto e genuinamente interessato a collaborare. Includi  riferimento ai benefici della collaborazione per entrambe le parti.
+
+Includi il subject per l'email. Deve essere corto (max 70 caratteri), fare riferimento alla proposta e incuriosire chi riceve l'email.
+
+Crea due email di proposta per i seguenti Publishers:
+
+Fornisci le informazioni prima in formato scritto, poi organizza i dati in una tabella. 
+
+Brand name:
+
+Brand description:
+
+Cateogoria / Argomento:
+
+
+
+
+"
+8,PR,Key message & angles,"Voglio che tu agisca come un creative director. Fornisci 10 idee di campagne di PR che promuovano il brand qui sotto, inclusive di Key Message e campaign angles.
+
+Il tema della campagna deve evidenziare i benefici e la USP riportati di seguito, che parlino al nostro pubblico target.
+
+Includi le brand collaborations come parte delle idee per la campagna di PR.
+
+Brand name:
+
+Descrizione brand:
+
+Value proposition:
+
+Pain Points:
+
+USP:"
+8,PR,Pubblicazioni target,"Ora fornisci la lista delle top 50 publications sul mercato italiano in linea con il posizionamento del brand, da contattare per collaborazioni PR."
+8,PR,Outreach template,Ora crea un template di email outreach da utilizzare per contattare i publisher che potrebbero essere interessati a collaborare.
+9,Landing Pages ,Analisi Landing Page,"Voglio che tu agisca come un professionista espero in CRO e UX design. Analizza il contenuto della seguente Landing Page e descrivi il prodotto/servizio che promuove, facendo un recap dei principali benefici. Conferma se comprendi bene di cosa parla o se ci sono informazioni ulteriori di cui hai bisogno per fare un'analisi dettagliata di business."
+9,Landing Pages ,Analisi Landing Page,"Voglio che tu agisca come un professionista espero in CRO e UX design. Analizza il contenuto della seguente Landing Page e fai un elenco puntato di tutti gli elementi che possono essere migliorati per incrementare il messaggio chiave e il conversion rate della pagina. Spiega perché e fornisci un’idea per migliorarlo. 
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+
+Contenuto della pagina:"
+9,Landing Pages ,Titoli e contenuti,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Analizza il contenuto della seguente Landing Page e crea una lista di 10 Headlines alternative da usare sulla base del posizionamento del brand. 
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+
+Contenuto della pagina:"
+9,Landing Pages ,Titoli e contenuti,"Ora riscrivi il contenuto della Landing page in modo che sia piu’ persuasivo, utilizzando i migliori principi di marketing comportamentale. "
+9,Landing Pages ,Headlines,Voglio che tu agisca come un professionista esperto in CRO e UX design. Analizza il contenuto della seguente Landing Page e crea una lista di 10 Headlines alternative di massimo 75 caratteri. 
+9,Landing Pages ,Video Storyboard,"Voglio che tu agisca come un videographer. Analizza il contenuto della seguente Landing Page e crea script e storyboard di un breve video di 30-45 secondi che introduca il brand e la sua value proposition. Il video verra’ inserito nell’Above the fold della pagina. 
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+
+Contenuto della pagina:
+"
+9,Landing Pages ,Testimonianze & Case Study,"Ora proponi 3 idee per integrare testimonianze e case studies all’interno della Landing Page. Indica quali formati debbano avere, fornisci delle idee creative e proponi delle bozze di contenuto da utilizzare all’ interno delle sezioni."
+9,Landing Pages ,Offerte e Incentivi,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Analizza il contenuto della seguente Landing Page e indica quale logica e offerta posso usare per creare
+- una mistery boxed offrire nel processo di acquisto
+- una lista di possibile combinazioni di prodotti per creare bundles
+- una lista di soglie e incentivi che gli utenti possono sbloccare quando comprano maggiori prodotti 
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+
+Contenuto della pagina:
+"
+9,Landing Pages ,Product Page,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Aiutami a creare la struttura e il contenuto di una Product Page per il prodotto qui sotto. 
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:"
+9,Landing Pages ,Product Page,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Analizza il contenuto della Product Page qui sotto e:
+- fai una lista di raccomandazioni per migliorare il contenuto
+- spiega il perché di ogni cambiamento
+- dai un punteggio da 1 a 10 ad ogni cambiamento rispetto al suo impatto in termini di conversioni e vendite
+
+Value proposition: 
+
+Brand description: 
+
+Categoria prodotto: 
+
+Target Market:
+
+Target Audience: 
+
+Offerta:
+
+USPs:
+
+Contenuto Product Page:
+"
+9,Landing Pages ,Viral Competition Page,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Aiutami a creare il concept e contenuto di una Viral Competition Landing Page.
+- Crea 10 idee per un concept di Viral Competition
+- Definisci il contenuto di ogni sezione della Viral Competition Page
+- Dividi il contenuto in paragrafi, uno per sezione della pagina
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:"
+9,Landing Pages ,Opt-in Page,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Aiutami a creare il concept e contenuto di una Opt In Landing Page.
+- Crea 10 idee per convertire lead attraverso una pagina di Opt in
+- Definisci il contenuto di ogni sezione della Opt in page
+- Dividi il contenuto in paragrafi, uno per sezione della pagina
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta/Lead Magnet:
+
+USP:"
+9,Landing Pages ,Quiz Page,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Aiutami a creare il concept e contenuto di una Quiz Landing Page.
+- Crea 10 idee per un Quiz da proporre ai clienti, sulla base delle informazioni qui sotto
+- Definisci il contenuto di ogni sezione della Quiz page
+- Dividi il contenuto in paragrafi, uno per sezione della pagina
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+"
+9,Landing Pages ,CTA & Forms,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Sulla base delle informazioni qui sotto, fornisci:
+- una lista di 10 differenti call to action da utilizzare nella landing page
+- una lista di 5 idee per strutturare il form di conversione della Landing page per la lead generation
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+
+"
+9,Landing Pages ,A/B Testing & Esperimenti,"Voglio che tu agisca come un professionista esperto in CRO e UX design. Sulla base delle informazioni qui sotto, fornisci 10 idee di test per ottimizzare e migliorare il conversion rate della landing Page.
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Offerta:
+
+USP:
+"
+9,Landing Pages ,Sales Copy ,"Ruolo: Sei un copywriter esperto abile nel creare post sui social media coinvolgenti o pagine di atterraggio persuasive.
+
+Obiettivo: La tua missione è creare una Sales Landing Page utilizzando le intuizioni derivanti dall'analisi del pubblico e dagli agganci di contenuto precedentemente sviluppati.
+
+Dettagli:
+• Fase di chiarimento: Prima di iniziare, riassumi le intuizioni chiave dell'analisi psicografica del pubblico e degli agganci di contenuto. Questo assicura l'allineamento con gli interessi e le necessità del pubblico.
+• Tono & Stile: Mantieni un tono conversazionale e ispiratore. Scrivi in un linguaggio semplice e accessibile (livello di scuola elementare 5-6).
+• Struttura di frasi e paragrafi: Usa frasi brevi (meno di 20 parole) e mantieni i paragrafi concisi. Utilizza titoli, sottotitoli e punti elenco per una formattazione chiara.
+• Vocabolario: Usa un linguaggio quotidiano con occasionali termini specifici del settore per mantenere il contenuto riconoscibile e autorevole.
+
+
+Formato:
+• Incipit: Inizia con un aggancio coinvolgente derivato dagli angoli di contenuto sviluppati nel passo 2. Potrebbe trattarsi di una domanda stimolante o di un'affermazione audace.
+
+
+Corpo:
+• Incorpora le intuizioni psicografiche per affrontare i bisogni, i desideri e i punti di dolore del pubblico.
+• Usa un quadro di riferimento problema-soluzione o un approccio narrativo.
+• Includi titoli o sottotitoli chiari e concisi dove appropriato, assicurando un flusso logico.
+• Call to Action (CTA): Concludi con una CTA forte, guidando il pubblico verso l'azione desiderata (ad esempio, iscriversi, acquistare, saperne di più).
+• Elementi visivi: (Opzionale) Suggerisci elementi visivi che si allineino con gli interessi del pubblico e il tema del contenuto, aumentando il coinvolgimento.
+
+#Target audience:#"
+10,Offerta,JTBD - Job To Be Done,"Voglio che tu agisca come un product manager. Definisci o dai la tua migliore interpretazione del Job To Be Done (JTBD) del seguente prodotto. Spiega perché questo JBTD funziona presso la nostra target audience.
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Target Audience:
+"
+10,Offerta,Lead Magnet,"Voglio che tu agisca come un professionista esperto in CRO e Strategy. Aiutami a creare idee per definire Lead Magnets efficaci che attraggano contatti qualificati, suscettibili di diventare clienti.
+
+- Crea 10 idee di Lead Magnets per generare lead attraverso una pagina di Opt in
+- Dai un punteggio all'idea, ordinandole per priorità
+- Spiega perché e in quale contesto potrebbero funzionare
+- Dividi il contenuto in paragrafi, uno per sezione della pagina
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+USP:"
+10,Offerta,Pricing,"Voglio che tu agisca come un Pricing manager. Definisci una strategia di pricing per il seguente prodotto, indicando le possibili soluzioni a livello di offerta. Spiega perché questa strategia potrà funzionare presso la nostra target audience.
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Descrizione prodotto:
+
+Offerta attuale:
+
+Target Audience:
+
+"
+10,Offerta,Incentivi monetari,"Ora agisci come un marketing strategist. Sulla base delle informazioni qui sotto, definisci 10 offerte + 10 attività promozionali da utilizzare all'interno della strategia di marketing per il nostro prodotto. Le offerte fornite devono riuscire a portare l'utente dal pain point iniziale (before state) al suo desiderio/obiettivo finale (after state).
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:
+
+Pain Point (Before State):
+
+Desire (After State):
+
+"
+10,Offerta,Incentivi non monetari,"Ora agisci come un marketing strategist. Sulla base delle informazioni qui sotto, definisci 10 incentivi non monetari da utilizzare all'interno della strategia di marketing
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:
+
+Pain Point (Before State):
+
+Desire (After State):
+"
+10,Offerta,Upsell & Cross-sell,"Ora agisci come un marketing strategist. Sulla base delle informazioni qui sotto, definisci 10 offerte di upsell e cross-sell da utilizzare per il nostro prodotto
+
+Categoria prodotto:
+
+Target audience:
+
+Target market:"
+11,Email Marketing,Piano Editoriale,"Voglio che tu agisca come un professionista esperto Email Marketing. Sulla base delle informazioni qui sotto, fornisci:
+- un piano editoriale trimestrale per le newsletter settimanali del brand - Definisci i macro temi e le categorie di email che verranno inviate. Dividi il piano editoriale secondo queste categorie
+- suggerisci una cadenze regolare di invio EDM
+- suggerisci le date di invio nel periodo Settembre - Dicembre
+- scrivi le subject line (max 70 caratteri), il preview copy (massimo 50 caratteri) e un riassunto del tema centrale che verrà incluso 
+- Organizza i dati qui sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto principale: 
+
+Offerta:
+
+USP:
+"
+11,Email Marketing,Migliorare una EDM,"Voglio che tu agisca come un professionista esperto Email Marketing. Sulla base delle informazioni qui sotto:
+- analizza il contenuto dell’email e fai una lista delle cose che sono state fatte bene e di cio’ che si può’ migliorare
+- proponi i miglioramenti che applicheresti all’EDM
+- Organizza i dati qui sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto principale: 
+
+Offerta:
+
+USP:
+
+Contenuto EDM:
+
+"
+11,Email Marketing,Email Lancio Prodotto/Servizio,"Scrivi una email di marketing convincente basata su PAS per promuovere il prodotto/servizio qui sotto.
+
+Inizia identificando il Problema, descrivendo i punti critici del lettore e l'effetto del pain point sulla loro vita o attività.
+
+Successivamente, introduci l'Agitazione scavando più a fondo nelle conseguenze e nell'incomodo emotivo che il lettore prova a causa del problema, sottolineando l'urgenza di trovare una soluzione.
+
+Quindi, presenta la Soluzione mostrando il prodotto/servizio come risposta alle loro esigenze. Introduci la Soluzione iniziando con: ""Non preoccuparti. Abbiamo la soluzione per te. Il nostro prodotto ti aiuterà a ottenere i vantaggi qui sotto che lo rendono speciale
+
+Condividi una testimonianza di un cliente soddisfatto che ha riscontrato miglioramenti nel risultato specifico indicato di seguito, dopo aver utilizzato il prodotto. Puoi utilizzare la citazione qui sotto come testimonianza. Non modificare o aggiungere parole alla testimonianza - lasciala com'è.
+
+Motiva il lettore a prendere l'azione desiderata e sottolinea l'offerta per creare un senso di urgenza. Includi qui anche un pulsante CTA che evidenzi il valore.
+
+Assicurati che l'output sia una email di marketing pronta all'uso che possa essere inviata ai sottoscrittori.
+
+Ricorda, questa email deve essere persuasiva e convincente e deve spingere il lettore ad agire.
+
+Assicurati che questa email abbia meno di del numero parole indicato qui sotto e sia scritta a un livello di lettura pari a quello di una quinta elementare. Non includere emoji.
+
+[Il Prodotto/Servizio] =
+[Pain Point] =
+[USP 1] =
+[USP 2] =
+[USP 3] =
+[Risultato Specifico o Esito] =
+[Azione Desiderata] =
+[Offerta] =
+[La tua Migliore Testimonianza] =
+[Numero Massimo di Parole nella Email] ="
+11,Email Marketing,Email Flow Plan,"Voglio che tu agisca come un professionista esperto Email Marketing. Sulla base delle informazioni qui sotto, crea una strategia di email marketing che includa le principali email sequences necessarie a crescere la retention e il fatturato del businsess. Proponi una serie di sequenze email e dividile nelle fasi di: Acquisizione, Nurturing & Retention, Lapsed & Goodbye.
+
+Fornisci due fomati: prima condividi la spiegazione e la lista di punti, poi organizza i dati in una tabella.
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto principale: 
+
+Offerta:
+
+USP:"
+11,Email Marketing,Welcome Sequence,"Voglio che tu agisca come un professionista esperto Email Marketing. Sulla base delle informazioni qui sotto:
+- crea una strategia di email marketing per la Welcome Sequence di questo brand
+- elenca il numero di email che verranno inviate
+- elenca il temi che verranno trattati all’interno di ogni email
+- scrivi le subject line (max 70 caratteri), il preview copy (massimo 50 caratteri), il body copy e la CTA per ogni email
+- Organizza i dati qui sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto principale: 
+
+Offerta:
+
+USP:"
+11,Email Marketing,Abandoned Cart Sequence,"Voglio che tu agisca come un professionista esperto Email Marketing. Sulla base delle informazioni qui sotto:
+- crea una strategia di email marketing per l’Abandoned Sequence di questo brand
+- elenca il numero di email che verranno inviate
+- elenca il temi che verranno trattati all’interno di ogni email
+- scrivi le subject line (max 70 caratteri), il preview copy (massimo 50 caratteri), il body copy e la CTA per ogni email
+- Organizza i dati qui sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto principale: 
+
+Offerta:
+
+USP:
+"
+11,Email Marketing,Post Purchase Sequence,"Voglio che tu agisca come un professionista esperto Email Marketing. Sulla base delle informazioni qui sotto:
+- crea una strategia di email marketing per la Post Purchase Sequence di questo brand
+- elenca il numero di email che verranno inviate
+- elenca il temi che verranno trattati all’interno di ogni email
+- scrivi le subject line (max 70 caratteri), il preview copy (massimo 50 caratteri), il body copy e la CTA per ogni email
+- Organizza i dati qui sopra in una tabella
+
+
+Value Proposition:
+
+Categoria di prodotto:
+
+Descrizione Brand: 
+
+Prodotto principale: 
+
+Offerta:
+
+USP:
+"
+12,Personal Branding,Definire il tone of voice,"Voglio che tu agisca come un ghostwriter. Analizza i seguenti 4 post social che ho scritto, e descrivi:
+- le caratteristiche del mio stile di copywriting
+- il tono di voce utilizzato
+- lo schema di valori che emergono dai contenuti 
+- le parole piu’ utilizzate 
+
+Conferma se hai capito lo stile, o se hai bisogno di ulteriori informazioni per impersonare questo tono di voce se ti chiedessi di scrivere contenuti. "
+12,Personal Branding,Contenuto personalizzato,"Adesso aiutami a creare nuovi contenuti, sulla base di cio’ che hai imparato. Fornisci:
+- 10 idee di contenuti da postare sui social
+- 3 bozze di contenuto per le idee che reputi piu’ convincenti.
+- Per scrivere il copy, utilizza lo stile che hai imparato dai miei post precedenti."
+12,Personal Branding,Reinterpretare concetti,"Ora voglio che tu analizzi i seguenti 3 post scritti da professionisti che seguo sui social. Dopo aver compreso il contenuto:
+- analizza le differenze tra il loro stile di scrittura e il mio
+- reinterpreta gli stessi concetti come se fossero scritti da me
+- fornisci come output 3 post di massimo 350 caratteri l’uno, scritti con il mio stile, a proposito degli stessi concetti"
+12,Personal Branding,Storytelling,"Ora, sulla base delle informazioni fornite sopra, crea 10 idee di contenuti per raccontare esperienze personali utilizzando lo storytelling. "
