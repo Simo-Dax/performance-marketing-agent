@@ -1,4 +1,4 @@
-# Investigator briefs, ai-ad-lab-meta-analyze deep diagnosis
+# Investigator briefs, 50_meta_analyze deep diagnosis
 
 This file holds the verbatim agent briefs for the deep diagnosis panel. The main session reads
 this file before fanning out, fills the angle-bracket placeholders, and passes each completed

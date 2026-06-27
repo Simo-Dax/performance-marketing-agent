@@ -40,18 +40,18 @@ Il craft non negoziabile è il **PACING**, regola FAST AND PUNCHY (~3.5 parole/s
 
 ## Step 0.5 — Cartella output + auto-discovery (PRIMA di tutto)
 
-Gli output vanno nella cartella dove Claude Code è aperto (la campaign folder = `$AILAB`). Risolvi `$AILAB` e gli script:
+Gli output vanno nella cartella dove Claude Code è aperto (la campaign folder = `$WORKDIR`). Risolvi `$WORKDIR` e gli script:
 
 ```bash
-AILAB="$PWD"
+WORKDIR="$PWD"
 # Risolvi la root del progetto (cerca verso l'alto directives/skills/25_ugc_prompt/scripts)
 ROOT="$PWD"; while [ "$ROOT" != "/" ] && [ ! -d "$ROOT/directives/skills/25_ugc_prompt/scripts" ]; do ROOT="$(dirname "$ROOT")"; done
 SCRIPTS="$ROOT/directives/skills/25_ugc_prompt/scripts"
-mkdir -p "$AILAB/05_UGC_Prompts/factory"
-echo "AILAB=$AILAB"; echo "SCRIPTS=$SCRIPTS"
+mkdir -p "$WORKDIR/05_UGC_Prompts/factory"
+echo "WORKDIR=$WORKDIR"; echo "SCRIPTS=$SCRIPTS"
 ```
 
-Una volta nominato il concept (Step 2): `WORK="$AILAB/05_UGC_Prompts/factory/<concept-slug>"` e `mkdir -p "$WORK/clips" "$WORK/out" "$WORK/inputs"`. Ogni file intermedio, clip raw e ad finale va sotto `$WORK`.
+Una volta nominato il concept (Step 2): `WORK="$WORKDIR/05_UGC_Prompts/factory/<concept-slug>"` e `mkdir -p "$WORK/clips" "$WORK/out" "$WORK/inputs"`. Ogni file intermedio, clip raw e ad finale va sotto `$WORK`.
 
 ### Auto-discovery asset salvati
 Riusa ciò che è già nel progetto prima di chiedere upload:

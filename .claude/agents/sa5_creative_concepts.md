@@ -1,3 +1,8 @@
+---
+name: sa5-creative-concepts
+description: Concept creativi e angoli narrativi evidence-driven dalla strategia SA4. Produce 3-5 concept con leva psicologica e varianti A/B. Precede SA7. Output in intermediate/sa5_creative_framework.md.
+---
+
 # SA5 — Creative Concepts
 
 ## Ruolo

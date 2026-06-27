@@ -27,9 +27,9 @@ mkdir -p "$TARGET/_assets/product-images" "$TARGET/_assets/product-shots" "$TARG
 ## Step 0b — Auto-discovery contesto progetto
 
 ```bash
-ls "$AILAB/11_Characters/" 2>/dev/null
-ls -t "$AILAB/02_Brand_DNA/"*.html 2>/dev/null | head -n 1
-ls "$AILAB/_assets/product-shots/" 2>/dev/null
+ls "$WORKDIR/11_Characters/" 2>/dev/null
+ls -t "$WORKDIR/02_Brand_DNA/"*.html 2>/dev/null | head -n 1
+ls "$WORKDIR/_assets/product-shots/" 2>/dev/null
 ```
 
 Informa in una riga: "Contesto: Brand DNA trovato, 3 personaggi disponibili (sofia, kai, marcus)."
@@ -38,8 +38,8 @@ Informa in una riga: "Contesto: Brand DNA trovato, 3 personaggi disponibili (sof
 
 ## Step 1 — Selezione immagine prodotto
 
-Cerca in `$AILAB/_assets/product-images/*.{png,jpg,jpeg,webp}`. Se trovate, mostra come lista numerata. Se non trovate:
-> "Copia la tua immagine prodotto in `$AILAB/_assets/product-images/`. Filename minuscolo con trattini (es. `pynk-can-pink.jpg`). Dimmi quando è pronta."
+Cerca in `$WORKDIR/_assets/product-images/*.{png,jpg,jpeg,webp}`. Se trovate, mostra come lista numerata. Se non trovate:
+> "Copia la tua immagine prodotto in `$WORKDIR/_assets/product-images/`. Filename minuscolo con trattini (es. `pynk-can-pink.jpg`). Dimmi quando è pronta."
 
 Cattura path come `$SRC_IMG`.
 
@@ -98,7 +98,7 @@ GPT Image 2 (raccomandato) o Nano Banana 2 (solo se si vuole ridurre i costi).
 
 ## Step 8 — Conferma + spec file
 
-Mostra riepilogo. Crea `$AILAB/_assets/product-shots/<output-name>/product-shot-spec.json`.
+Mostra riepilogo. Crea `$WORKDIR/_assets/product-shots/<output-name>/product-shot-spec.json`.
 
 ---
 

@@ -21,9 +21,9 @@ Se SA5 non ha girato (skill usata standalone), la skill può ancora lavorare da 
 ## Step 0 — Auto-discovery input
 
 ```bash
-ls -t "$AILAB/intermediate/sa5_creative_framework.md" 2>/dev/null | head -n 1
-ls -t "$AILAB/01_VOC_Research/"*.html "$AILAB/01_VOC_Research/"*.md 2>/dev/null | head -n 1
-ls -t "$AILAB/02_Brand_DNA/"*.html "$AILAB/02_Brand_DNA/"*.md 2>/dev/null | head -n 1
+ls -t "$WORKDIR/intermediate/sa5_creative_framework.md" 2>/dev/null | head -n 1
+ls -t "$WORKDIR/01_VOC_Research/"*.html "$WORKDIR/01_VOC_Research/"*.md 2>/dev/null | head -n 1
+ls -t "$WORKDIR/02_Brand_DNA/"*.html "$WORKDIR/02_Brand_DNA/"*.md 2>/dev/null | head -n 1
 ```
 
 Cattura:

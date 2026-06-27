@@ -108,7 +108,7 @@ Breakout requires BOTH: `views/followers >= 50` AND `followers >= 100`.
 
 ### Transcript source label
 - `whisper_fallback`: display as `WHISPER AI (FALLBACK)`
-- `unavailable`: display as `UNAVAILABLE`
+- `unavailable`: display as `UNAVWORKDIRLE`
 
 ### Transcript unavailable
 Replace HOOK LINE and FULL TRANSCRIPT with:
@@ -168,13 +168,13 @@ Winners render in: `relevance DESC, final_score DESC`. Highest REL at the top. T
 The build script accepts the per-project root via `--output-dir` and writes under that root only. It never touches `~/Desktop`. On Windows with OneDrive Known Folder Move enabled, the swipe file always lands in the project folder you opened Claude Code in, never in a OneDrive-synced home redirect.
 
 ```
-$AILAB/05_UGC/scraper/<niche-slug>/ugc-winners-v2-<YYYY-MM-DD>.txt
+$WORKDIR/05_UGC/scraper/<niche-slug>/ugc-winners-v2-<YYYY-MM-DD>.txt
 ```
 
 If the subdirectory cannot be created, fall back to:
 
 ```
-$AILAB/05_UGC/scraper/ugc-winners-v2-<YYYY-MM-DD>-<niche-slug>.txt
+$WORKDIR/05_UGC/scraper/ugc-winners-v2-<YYYY-MM-DD>-<niche-slug>.txt
 ```
 
 ## Typical file size

@@ -1,3 +1,8 @@
+---
+name: sa2-market-research
+description: Ricerca di mercato, target audience e jobs-to-be-done dalla VOC. Gira in parallelo con SA1 (sa1-competitor-analysis). Alimenta SA3 e SA4. Output in intermediate/sa2_market_insights.md.
+---
+
 # SA2 — Market Research
 
 ## Ruolo

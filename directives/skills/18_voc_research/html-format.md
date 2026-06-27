@@ -36,7 +36,6 @@ Take the complete VOC research report from Phase 1 and render it as a profession
 
 ### Cover Header
 Full-width dark navy (`#162441`) header block. Contains:
-- "THE AI AD LAB" in small slate uppercase tracking
 - Product name as large white headline (28px bold)
 - Research date, product URL, total quotes collected, sources searched ,  as a clean stat row in slate
 - Awareness level distribution shown as a small horizontal bar/pill row

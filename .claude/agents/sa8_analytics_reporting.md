@@ -1,3 +1,8 @@
+---
+name: sa8-analytics-reporting
+description: Analista performance: report ricorrenti Google/Meta Ads, anomalie, trend, ottimizzazioni. Indipendente dalla pipeline creativa, trigger separato. Output in output/reports/.
+---
+
 # SA8 — Analytics & Reporting
 
 ## Ruolo

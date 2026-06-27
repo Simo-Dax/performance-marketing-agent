@@ -30,7 +30,7 @@ Sostituisci i template con i dati reali del brand:
 - [ ] **Apify** → `/pm-setup-apify` (competitor spy + UGC scraper TikTok)
 - [ ] **Higgsfield** (opzionale) → MCP già in `.mcp.json`; CLI: `higgsfield auth login` al primo uso
 - [ ] **Google Ads MCP** → già in `.mcp.json` (MCC `5524890329`); per altri account aggiorna developer token + login customer id
-- [ ] **Meta Ads** → funziona solo in claude.ai web (OAuth). In Claude Code usa `/pm-handoff`
+- [ ] **Meta Ads** → MCP attivo direttamente in Claude Code: `/pm-meta-analyze` (diagnosi read-only) e `/pm-meta-build` (build/write, tutto PAUSED). (`/pm-handoff` deprecato)
 
 ## 5. Reference opzionali (migliorano la qualità)
 - [ ] `execution/prompts/` — popola la prompt library (reference/backup)

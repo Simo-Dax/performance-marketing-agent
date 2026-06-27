@@ -1,4 +1,4 @@
-# Diagnostic frameworks, ai-ad-lab-meta-analyze
+# Diagnostic frameworks, 50_meta_analyze
 
 This file holds the deep-diagnosis methodology: the signature and kill-criteria tables, the
 confidence rubric and ranking rules, the report templates, the worked example, and the full
@@ -85,7 +85,7 @@ the reason this method exists.
 ## What I could not see from here
 <short list with where to look manually>
 
-Run /ai-ad-lab:meta-analyze again and pick deep diagnosis if one of these looks like a real
+Run /pm-meta-analyze again and pick deep diagnosis if one of these looks like a real
 break rather than a wobble.
 ```
 
@@ -138,7 +138,7 @@ symptom resolves. Do not treat the symptom separately.">
 <Exactly one action: entity name and ID, the specific change, the expected effect, the
 verification signal, and when to check.>
 <When the action is a change in the account: "I can make this change for you through
-/ai-ad-lab:meta-build, with the same confirm before anything happens, or do it in Ads Manager
+/pm-meta-build, with the same confirm before anything happens, or do it in Ads Manager
 here: <ads_manager_url>.">
 Do not: <guard lines when applicable, e.g. "Do NOT pause <ad name>. The panel cleared it:
 <one line of evidence>.">

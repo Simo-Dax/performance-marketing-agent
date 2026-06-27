@@ -1,3 +1,8 @@
+---
+name: sa9-crm-lifecycle
+description: CRM, retention ed email/lifecycle marketing (canale owned). Indipendente dalla pipeline creativa. Alimenta SA3 (LTV reale), SA4 (split retention), SA8 (KPI email).
+---
+
 # SA9 — CRM / Retention / Lifecycle Agent
 
 ## Ruolo

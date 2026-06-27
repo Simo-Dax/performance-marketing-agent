@@ -1,3 +1,8 @@
+---
+name: sa3-financial-performance
+description: Framework finanziario campagna (MER, ROAS, CPA, NCAC, budget split) prima della strategia. Vincola SA4. Richiede brief con budget/AOV/margin. Output in intermediate/sa3_financial_framework.md.
+---
+
 # SA3 — Financial Performance Agent
 
 ## Ruolo

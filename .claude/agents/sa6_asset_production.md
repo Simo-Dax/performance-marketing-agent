@@ -1,3 +1,8 @@
+---
+name: sa6-asset-production
+description: Router produzione asset: instrada a statiche/product shot/UGC video in base al concept SA5 e al copy SA7. Usa GPT Image 2, Seedance 2.0, Canva. Ultimo step della pipeline creativa.
+---
+
 # SA6 — Asset Production
 
 ## Ruolo

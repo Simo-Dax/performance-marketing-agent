@@ -21,8 +21,8 @@ mkdir -p "$HOME/.config/pm-agent/.state"
 ## Step 1 — Verifica struttura progetto
 Controlla che esistano nella root del progetto:
 - `claude.md` (orchestrator), `ROADMAP.md`
-- `agents/` con sa1-sa8
-- `directives/skills/` con le skill 01-30
+- `.claude/agents/` con sa1-sa9 (subagent nativi)
+- `directives/skills/` con le skill 01-51
 - `directives/skill_orchestrator.md`
 - `context/brand/`, `context/campaign/`, `context/references/`
 - `.claude/commands/` con i comandi `/pm-*`

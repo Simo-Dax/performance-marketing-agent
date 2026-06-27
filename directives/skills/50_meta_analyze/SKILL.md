@@ -10,8 +10,7 @@ ufficiale, direttamente dentro Claude Code, **strettamente read-only**. La modal
 un panel di investigator avversariale: investigator indipendenti su slice di dati sigillate, un
 referee che prova a uccidere ogni teoria, una diagnosi unica ranked.
 
-> **Porting nota (project-specific).** Skill importata da The AI Ad Lab v2.4.0 (`ai-ad-lab-meta-analyze`),
-> adattata alle convenzioni di questo progetto: output sotto `output/`, comandi `/pm-*`, integrazione SA8.
+> **Nota (project-specific).** Skill nativa di questo progetto: output sotto `output/`, comandi `/pm-*`, integrazione SA8.
 > Il corpo operativo (narration member-facing, soglie, nomi tool, template) è preservato in inglese
 > per fedeltà al design avversariale — la copy member-facing può essere consegnata in italiano per
 > aderire al ToV del brand (`context/brand/tone_of_voice.md`). I 3 file in `references/` sono technical

@@ -18,15 +18,15 @@ Agnostico rispetto al brand — il contesto specifico è in `context/brand/` e `
 
 ```
 ORCHESTRATOR (questo file)
-├── agents/sa1_competitor_analysis.md      ← WebSearch + SimilarWeb MCP + spy + ugc-scraper
-├── agents/sa2_market_research.md          ← WebSearch + Lenny's Data MCP + voc
-├── agents/sa3_financial_performance.md   ← MER / ROAS / CPA / NCAC / budget framework (alimentato da brief + SA2)
-├── agents/sa4_pm_strategist.md            ← strategia: job→pain-non-risolto→desiderio→segmento(contesto+trigger)→posizionamento→nemico+POV (47 review-gap + 48 segment-pain) + campaign architecture Meta+Google (alimentato da SA1+SA2+SA3)
-├── agents/sa5_creative_concepts.md        ← alimentato da SA4 + character + rebuild
-├── agents/sa6_asset_production.md         ← alimentato da SA5 + static + ugc-prompt + product-shot + multiplier
-├── agents/sa7_ad_copywriter.md            ← alimentato da SA4 + SA5 + copy
-├── agents/sa8_analytics_reporting.md      ← Google Ads MCP + Meta Ads MCP + 15_google_ads_analytics + 16_meta_ads_analytics + 50_meta_analyze (diagnosi read-only) + 51_meta_build (build/write live)
-└── agents/sa9_crm_lifecycle.md            ← CRM/retention/email: 43_crm + 44_rfm + 45_email_strategy + 46_email_creation (canale owned, indipendente)
+├── .claude/agents/sa1_competitor_analysis.md   ← WebSearch + SimilarWeb MCP + spy + ugc-scraper
+├── .claude/agents/sa2_market_research.md       ← WebSearch + Lenny's Data MCP + voc
+├── .claude/agents/sa3_financial_performance.md ← MER / ROAS / CPA / NCAC / budget framework (alimentato da brief + SA2)
+├── .claude/agents/sa4_pm_strategist.md         ← strategia: job→pain-non-risolto→desiderio→segmento(contesto+trigger)→posizionamento→nemico+POV (47 review-gap + 48 segment-pain) + campaign architecture Meta+Google (alimentato da SA1+SA2+SA3)
+├── .claude/agents/sa5_creative_concepts.md     ← alimentato da SA4 + character + rebuild
+├── .claude/agents/sa6_asset_production.md      ← alimentato da SA5 + static + ugc-prompt + product-shot + multiplier
+├── .claude/agents/sa7_ad_copywriter.md         ← alimentato da SA4 + SA5 + copy
+├── .claude/agents/sa8_analytics_reporting.md   ← Google Ads MCP + Meta Ads MCP + 15_google_ads_analytics + 16_meta_ads_analytics + 50_meta_analyze (diagnosi read-only) + 51_meta_build (build/write live)
+└── .claude/agents/sa9_crm_lifecycle.md         ← CRM/retention/email: 43_crm + 44_rfm + 45_email_strategy + 46_email_creation (canale owned, indipendente)
 ```
 
 Flusso pipeline creativa: SA1∥SA2 → **[47 review-gap + 48 segment-pain]** → **Insight (🚦GATE 1)** → **SA3** → **SA4 [Brand Strategy 🚦GATE 2 → Campaign Architecture]** → SA5 → SA7 → SA6 → consolidation.
@@ -36,9 +36,26 @@ Flusso pipeline creativa: SA1∥SA2 → **[47 review-gap + 48 segment-pain]** �
 > SA3 (Financial) corre dopo gli insight e prima di SA4: framework finanziario che vincola la strategia.
 > **SA4 lavora in 2 fasi:** Brand Strategy (`32`: VP Bain/USP/ToV/offer → 🚦GATE 2) poi Campaign Architecture.
 > SA7 dipende da SA5 — il copy deve riflettere la direzione creativa, non precederla.
-> SA8 è indipendente dalla pipeline creativa — opera su base ricorrente per reporting e audit. **`50_meta_analyze`** (importata da The AI Ad Lab v2.4.0) opera il Meta Ads MCP **read-only direttamente in Claude Code** per diagnosi live on-demand: quick check o deep diagnosis (panel investigator avversariale + referee). Sostituisce la modalità "analisi" del vecchio `30_meta_handoff`. Per BUILD/lancio campagne → **`51_meta_build`** (`/pm-meta-build`), l'unica superficie di write sull'account: campaign+ad set+creative+ad tutto PAUSED, cerimonie di conferma su budget/attivazione (un sì per livello, >500/gg = digita il totale). Insieme `50`+`51` sostituiscono `30_meta_handoff`.
+> SA8 è indipendente dalla pipeline creativa — opera su base ricorrente per reporting e audit. **`50_meta_analyze`** opera il Meta Ads MCP **read-only direttamente in Claude Code** per diagnosi live on-demand: quick check o deep diagnosis (panel investigator avversariale + referee). Sostituisce la modalità "analisi" del vecchio `30_meta_handoff`. Per BUILD/lancio campagne → **`51_meta_build`** (`/pm-meta-build`), l'unica superficie di write sull'account: campaign+ad set+creative+ad tutto PAUSED, cerimonie di conferma su budget/attivazione (un sì per livello, >500/gg = digita il totale). Insieme `50`+`51` sostituiscono `30_meta_handoff`.
 > SA9 è indipendente dalla pipeline creativa — gestisce CRM/retention/email (canale owned). Alimenta SA3 (LTV reale), SA4 (split acquisition vs retention), SA8 (KPI email).
 > **Filosofia human-in-the-loop:** l'AI accelera dato ed esecuzione; l'umano valida insight (GATE 1) e strategia (GATE 2).
+
+---
+
+## Agenti — dove vivono, come sono organizzati, come si invocano
+
+I 9 sub-agent vivono in **`.claude/agents/`** come **subagent nativi di Claude Code** (NON più nella vecchia `agents/` a root). Ogni file `saN_*.md` ha:
+- **frontmatter** YAML in cima: `name` (kebab-case, es. `sa1-competitor-analysis`) + `description` (quando invocarlo + dipendenze + output path);
+- **corpo SOP**: ruolo, input richiesti, tool, fasi di lavoro, output, handoff.
+
+**Regole di invocazione (obbligatorie per l'orchestratore):**
+1. **Si invocano via Task tool**, con `subagent_type` = il `name` del frontmatter (es. `sa1-competitor-analysis` … `sa9-crm-lifecycle`). NON si leggono inline nel contesto dell'orchestratore.
+2. **Contesto isolato**: ogni agente gira in una sua finestra e ritorna **solo il deliverable**. Il ragionamento grezzo resta nel suo contesto.
+3. **Parallelo vs sequenziale**: SA1∥SA2 = due Task **nello stesso messaggio** (parallelo vero). Tutto il resto della pipeline = un Task per volta, in sequenza. SA8 e SA9 = binari indipendenti, on-demand.
+4. **Handoff via file**: gli agenti si passano il lavoro scrivendo/leggendo `intermediate/*.md` (memoria condivisa su disco), non via contesto condiviso.
+5. **Gate umani**: GATE 1 (insight) e GATE 2 (strategia) restano sull'orchestratore, **fra** una invocazione e l'altra — i subagent non si fermano da soli per validazione umana.
+
+> **Agenti vs skill vs command:** un **subagent** (`.claude/agents/`) è un *ruolo* che orchestra una o più skill. Una **skill** (`directives/skills/NN_*`) è una *procedura* eseguibile. Un **command** `/pm-*` (`.claude/commands/`) è la scorciatoia che lancia una skill. I command puntano alle skill, non ai subagent.
 
 ---
 
@@ -48,16 +65,18 @@ Flusso pipeline creativa: SA1∥SA2 → **[47 review-gap + 48 segment-pain]** �
 0.5. **🚦 Context Completeness Gate:** verifica `context/brand/` (`business_profile.md`, `tone_of_voice.md` compilato) + `context/brand/financials/` (se disponibile, alimenta SA3) + `context/campaign/data/` (opzionale). Se si lancia una campagna specifica, verifica anche `context/campaign/brief.md` (budget, revenue target, AOV, margin — obbligatori per SA3). Se campi critici mancano → ferma, elenca, attiva `08_grill_me`. Garbage in = garbage out. Dettaglio in `skill_orchestrator.md` (Fase 0).
 1. Legge brief da `context/campaign/brief.md` — **obbligatorio solo per campagne specifiche**; se non presente, la pipeline può girare in modalità strategia/ricerca senza SA3. Se presente ma incompleto, attiva `directives/skills/08_grill_me`
 2. Legge brand context da `context/brand/`
-3. Avvia SA1 + SA2 **in parallelo** (unica fase parallela — davvero indipendenti)
+3. Avvia SA1 + SA2 **in parallelo** via Task tool — due chiamate `Task(subagent_type: "sa1-competitor-analysis")` + `Task(subagent_type: "sa2-market-research")` nello **stesso messaggio** (unica fase parallela — davvero indipendenti). Gli step successivi = un Task per volta, in sequenza.
 3.5. (Per strategia/posizionamento) Avvia **`47_competitor_review_mining`** (gap recensioni competitor) e **`48_segment_pain_prioritization`** (pain matrix + segmenti per contesto/trigger) → alimentano l'insight
 4. Avvia **`33_insight_synthesis`** → `intermediate/insight.md` → **🚦GATE 1**: ferma, mostra le 7 dimensioni, attende OK umano
-5. Avvia **SA3** con brief + insight validati → produce `intermediate/sa3_financial_framework.md`
-6. Avvia **SA4 Fase 1** (`32_brand_strategy`) → `sa4_brand_strategy.md` + `tone_of_voice_campaign.md` → **🚦GATE 2**: attende OK umano. (opzionale `34_editorial_content_plan`)
-7. Avvia **SA4 Fase 2** (Campaign Architecture) → `intermediate/sa4_strategy.md` (con ICE prioritization + experiment list)
-8. Avvia SA5 con output SA4
-9. Avvia SA7 con output SA4 + SA5 (sequenziale dopo SA5 — il copy segue i concept)
-10. Avvia SA6 con output SA5 + SA7
+5. Avvia **SA3** via `Task(subagent_type: "sa3-financial-performance")` con brief + insight validati → `intermediate/sa3_financial_framework.md`
+6. Avvia **SA4 Fase 1** via `Task(subagent_type: "sa4-pm-strategist")` (esegue `32_brand_strategy`) → `sa4_brand_strategy.md` + `tone_of_voice_campaign.md` → **🚦GATE 2**: attende OK umano. (opzionale `34_editorial_content_plan`)
+7. Avvia **SA4 Fase 2** (stesso agente `sa4-pm-strategist`, Campaign Architecture) → `intermediate/sa4_strategy.md` (con ICE prioritization + experiment list)
+8. Avvia **SA5** via `Task(subagent_type: "sa5-creative-concepts")` con output SA4
+9. Avvia **SA7** via `Task(subagent_type: "sa7-ad-copywriter")` con output SA4 + SA5 (sequenziale dopo SA5 — il copy segue i concept)
+10. Avvia **SA6** via `Task(subagent_type: "sa6-asset-production")` con output SA5 + SA7
 11. Consolida tutto in `output/{brand}_{campaign}_{date}/final/`
+
+> **Nota invocazione:** ogni SA gira via **Task tool** in contesto isolato — legge i suoi input dai file `intermediate/*.md` e ci scrive l'output (handoff su disco, non via contesto condiviso). I 🚦GATE (1 insight, 2 strategia) restano qui sull'orchestrator, **fra** una Task e l'altra: i subagent non si fermano da soli per la validazione umana. SA8 (`sa8-analytics-reporting`) e SA9 (`sa9-crm-lifecycle`) si invocano on-demand, fuori da questa sequenza.
 
 Per routing skill → sub-agent: leggi `directives/skill_orchestrator.md`.
 
@@ -70,7 +89,7 @@ Per routing skill → sub-agent: leggi `directives/skill_orchestrator.md`.
 ├── claude.md                        ← questo file (orchestrator)
 ├── ROADMAP.md                       ← task e stato setup
 │
-├── agents/                          ← definizioni sub-agent (ruolo, input, output, tool)
+├── .claude/agents/                  ← sub-agent nativi (frontmatter name/description + SOP ruolo/input/output/tool), invocabili via Task
 │
 ├── context/
 │   ├── brand/                       ← brand context (agnostico, si sostituisce per ogni brand)
@@ -272,8 +291,8 @@ Quando una skill o un agente deve scrivere un prompt (immagini, video, copy, ric
 - `47_competitor_review_mining` — ✅ Gap di mercato dal delta recensioni competitor positive vs negative (gap esecuzione/scoperto/trade-off polarizzante), Apify REST, alimenta insight+segmentazione (SA1/SA2→SA4) → `/pm-review-gap`
 - `48_segment_pain_prioritization` — ✅ Segmentazione acquisition: pain matrix frequency×frustration vs alternative, matrice attributi×pain, segmenti per contesto+trigger, prioritizzazione 3 fattori (profittabilità/accesso/TAM) (SA4) → `/pm-segments`
 - `49_anti_ai_slop` — ✅ Gate finale anti-AI per ogni copy esterno: forbidden words/patterns EN (delve/crucial/landscape/rule-of-three/em-dash/negative-parallelism…) + script CLI `words`/`dashes`/`replace`. Layer IT via `context/brand/anti_ai_writing_style.md`. Richiamata da tutte le skill copy (10,11,12,28,46,02,41,34,03,29). Importata da github.com/walidboulanouar/anti-ai-slop → `/pm-de-ai`
-- `50_meta_analyze` — ✅ Meta Ads diagnosi **read-only live** dentro Claude Code (Meta Ads MCP, suffix-resolved, mai write). 2 modalità: quick check (audit single-pass ~10-12 pull) o deep diagnosis (5 investigator paralleli su slice isolate + referee avversariale → diagnosi ranked con evidence-for/against, confidence, singola azione settimanale; 🚦 consent gate). 3 reference verbatim EN (operator guide 60 tool, frameworks, briefs). Importata da The AI Ad Lab v2.4.0 (`ai-ad-lab-meta-analyze`), output `output/reports/{data}_meta_analysis/`. Sostituisce la modalità analisi di `30`. (SA8) → `/pm-meta-analyze`
-- `51_meta_build` — ✅ Meta Ads **build/write** dentro Claude Code: UNICA superficie di write sull'account. Costruisce campagne complete (campaign+ad set+creative+ad) + ogni modifica a esistenti (pause/budget/targeting/audience/customer list/attivazione). Tutto **PAUSED**; tiered tool loading (create solo post-piano, activate solo in cerimonia); 🚦 Gate 1 piano + cerimonia attivazione bottom-up (un sì/livello, >500/gg = digita totale); gate special-ad-categories + DSA EU + fine print irreversibilità; validator subagent del piano; manifest before/after ogni write (resume/adopt-by-name). 3 reference verbatim EN (operator guide, build-chain-spec, validation-checklist). Importata da The AI Ad Lab v2.4.0 (`ai-ad-lab-meta-build`), output `output/{brand}_{campaign}_{date}/13_Meta_Campaigns/` o `output/reports/{data}_meta_campaigns/`. Sostituisce la modalità build di `30`. (SA8/post-SA6) → `/pm-meta-build`
+- `50_meta_analyze` — ✅ Meta Ads diagnosi **read-only live** dentro Claude Code (Meta Ads MCP, suffix-resolved, mai write). 2 modalità: quick check (audit single-pass ~10-12 pull) o deep diagnosis (5 investigator paralleli su slice isolate + referee avversariale → diagnosi ranked con evidence-for/against, confidence, singola azione settimanale; 🚦 consent gate). 3 reference verbatim EN (operator guide 60 tool, frameworks, briefs). Output in `output/reports/{data}_meta_analysis/`. Sostituisce la modalità analisi di `30`. (SA8) → `/pm-meta-analyze`
+- `51_meta_build` — ✅ Meta Ads **build/write** dentro Claude Code: UNICA superficie di write sull'account. Costruisce campagne complete (campaign+ad set+creative+ad) + ogni modifica a esistenti (pause/budget/targeting/audience/customer list/attivazione). Tutto **PAUSED**; tiered tool loading (create solo post-piano, activate solo in cerimonia); 🚦 Gate 1 piano + cerimonia attivazione bottom-up (un sì/livello, >500/gg = digita totale); gate special-ad-categories + DSA EU + fine print irreversibilità; validator subagent del piano; manifest before/after ogni write (resume/adopt-by-name). 3 reference verbatim EN (operator guide, build-chain-spec, validation-checklist). Output in `output/{brand}_{campaign}_{date}/13_Meta_Campaigns/` o `output/reports/{data}_meta_campaigns/`. Sostituisce la modalità build di `30`. (SA8/post-SA6) → `/pm-meta-build`
 
 > **Skill SEO/supporto (39-42):** importate da `kostja94/marketing-skills` + plugin esterni, tradotte in italiano (corpo IT, termini tecnici SEO in EN). Pacchetti come cartelle con `references/` e `scripts/`. La skill globale `google-search-console` è installata in `~/.claude/skills/` (alimenta `40_seo_audit`).
 

@@ -22,7 +22,7 @@ Se il VOC non è fornito, chiedi. Non inventare mai contenuto VOC.
 
 **Auto-discovery:** prima di chiedere il VOC, controlla se esiste già:
 ```bash
-ls -t "$AILAB/01_VOC_Research/"*.html "$AILAB/01_VOC_Research/"*.md 2>/dev/null | head -n 1
+ls -t "$WORKDIR/01_VOC_Research/"*.html "$WORKDIR/01_VOC_Research/"*.md 2>/dev/null | head -n 1
 ```
 
 ---
@@ -144,7 +144,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/scrape-creators~best-tiktok-tran
 
 ## Step 7 — Costruzione swipe file
 
-Salva in: `$AILAB/05_UGC/scraper/<niche-slug>/ugc-winners-v2-<YYYY-MM-DD>.txt`
+Salva in: `$WORKDIR/05_UGC/scraper/<niche-slug>/ugc-winners-v2-<YYYY-MM-DD>.txt`
 
 Ogni blocco winner include:
 - Rank, score REL, score finale, flag breakout

@@ -50,7 +50,7 @@ else
 fi
 ```
 
-Cattura il path risolto come `$AILAB`.
+Cattura il path risolto come `$WORKDIR`.
 
 ---
 
@@ -103,7 +103,7 @@ curl -sS -X POST "https://api.apify.com/v2/acts/apify~facebook-pages-scraper/run
 | `pageAdLibrary.id` presente + `categories` include "Page" | PASS | Procedi |
 | `pageAdLibrary.id` presente MA title non corrisponde al brand | SOFT WARN | Chiedi conferma utente |
 
-Salva brand validati in `$AILAB/03_Ad_Spy/competitors.json`.
+Salva brand validati in `$WORKDIR/03_Ad_Spy/competitors.json`.
 
 ---
 
@@ -144,7 +144,7 @@ curl -s -L --max-time 10 \
 
 7. **Build HTML** — dark theme, card grid, filtri per badge, immagini inline base64
 
-8. **Salva** in `$AILAB/03_Ad_Spy/adspy-{SLUG}-{YYYYMMDD}.html`
+8. **Salva** in `$WORKDIR/03_Ad_Spy/adspy-{SLUG}-{YYYYMMDD}.html`
 
 ---
 
@@ -177,7 +177,7 @@ Mappa il badge scoring al campo `tier`: PROVEN / HOT / ACTIVE / RETIRED / SHORT.
 
 Estrai i KPI realmente disponibili da Meta Ad Library (ads commerciali): `days_active`, `eu_reach` (se presente, altrimenti `null`), `n_variants`, `first_seen`, `platforms`, `format`, `ad_library_url`. **NON** inventare impressions/spend/CTR — non esistono per ads commerciali.
 
-Scrivi `$AILAB/03_Ad_Spy/data.json` seguendo lo schema in `output/dashboard/competitor-ads/data.sample.json`. L'utente copia questo file in `output/dashboard/competitor-ads/data.json` e apre `index.html` (o lo deploya su Netlify/Cloudflare/Vercel).
+Scrivi `$WORKDIR/03_Ad_Spy/data.json` seguendo lo schema in `output/dashboard/competitor-ads/data.sample.json`. L'utente copia questo file in `output/dashboard/competitor-ads/data.json` e apre `index.html` (o lo deploya su Netlify/Cloudflare/Vercel).
 
 ---
 

@@ -11,8 +11,7 @@ modifica successiva alle campagne esistenti. Tutto creato PAUSED; l'attivazione 
 separata con le sue conferme. Se il membro vuole solo guardare la performance o diagnosticare
 un problema, usa /pm-meta-analyze, che è read-only by design.
 
-> **Porting nota (project-specific).** Skill importata da The AI Ad Lab v2.4.0 (`ai-ad-lab-meta-build`),
-> adattata: output sotto `output/`, comandi `/pm-*`, integrazione SA8. Il corpo operativo
+> **Nota (project-specific).** Skill nativa di questo progetto: output sotto `output/`, comandi `/pm-*`, integrazione SA8. Il corpo operativo
 > (cerimonie di sicurezza, narration member-facing, soglie) è preservato in inglese per fedeltà al
 > design di sicurezza — la copy member-facing può essere consegnata in italiano (ToV brand). I 3 file
 > in `references/` sono technical reference verbatim. La copy nel creative arriva VERBATIM dai deck

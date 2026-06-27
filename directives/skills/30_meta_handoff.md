@@ -118,7 +118,7 @@ Markdown da incollare in claude.ai. Struttura:
 
 ## Step 4 — Salva e stampa
 
-Salva in `$AILAB/09_Meta_Handoff/handoff-[YYYY-MM-DD-HHMMSS].md`.
+Salva in `$WORKDIR/09_Meta_Handoff/handoff-[YYYY-MM-DD-HHMMSS].md`.
 
 Stampa il prompt completo nel chat dentro un code block fenced. Poi:
 

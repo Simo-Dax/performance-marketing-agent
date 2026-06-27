@@ -102,8 +102,8 @@ command -v ffprobe >/dev/null 2>&1 || { echo "ERROR: ffprobe not found on PATH" 
 command -v python3 >/dev/null 2>&1 || { echo "ERROR: python3 not found on PATH" >&2; exit 2; }
 
 # -----------------------------------------------------------------------------
-# Argument parsing. Quote everything; paths may contain spaces (e.g. the
-# "AI Ad Lab" folder).
+# Argument parsing. Quote everything; paths may contain spaces (e.g. a
+# "Performance Marketing Team" folder).
 # -----------------------------------------------------------------------------
 if [ "$#" -ne 3 ]; then
   echo "Usage: $0 <manifest.json> <variant_id> <output.mp4>" >&2

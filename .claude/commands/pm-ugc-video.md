@@ -11,7 +11,7 @@ Argomenti: $ARGUMENTS
 
 ## Cosa fare
 1. Leggi e segui integralmente `directives/skills/25_ugc_prompt/SKILL.md`. Leggi `references/generation-architecture.md` per primo.
-2. Step 0.5: risolvi `$AILAB` (pwd) e `$SCRIPTS`; auto-discovery character in `11_Characters/`, prodotto in `_assets/`, VOC/Brand DNA.
+2. Step 0.5: risolvi `$WORKDIR` (pwd) e `$SCRIPTS`; auto-discovery character in `11_Characters/`, prodotto in `_assets/`, VOC/Brand DNA.
 3. Intake 4 asset (face, body, product+misura, voice ≤15s) + niche. Hook da `hook-library` + VOC (**no TikTok scraping**).
 4. Script con framework → 4 ad Andromeda (4 hook unici + b-roll ladder 0/1/2/2, ognuno chiude su CTA).
 5. 🚦 GATE TRANSCRIPT (Step 3.5) → 🚦 GATE COSTO/PACING (Step 4, pacing via `segment_script.py`, ogni gen <10s ~3.5wps). Ferma e attendi approvazione esplicita a entrambi.

@@ -104,8 +104,8 @@ Chiedi N nomi (uno per personaggio, formato slug: lowercase, trattini). Valida c
 ## Step 5 — Conferma batch + spec files
 
 Mostra riepilogo cast. Crea per ogni personaggio:
-- `$AILAB/11_Characters/<nome>/character-spec.json`
-- `$AILAB/11_Characters/<nome>/characteristics.md`
+- `$WORKDIR/11_Characters/<nome>/character-spec.json`
+- `$WORKDIR/11_Characters/<nome>/characteristics.md`
 
 ---
 
@@ -144,7 +144,7 @@ Per ogni personaggio, in ordine STRETTO (headshot → full body):
 "$HIGGS_BIN" generate create gpt_image_2 \
   --prompt "$(cat /tmp/character-fullbody-<nome>-$$.txt)" \
   --aspect_ratio "3:4" --quality "high" --resolution "4k" \
-  --image "$AILAB/11_Characters/<nome>/headshot.png" \
+  --image "$WORKDIR/11_Characters/<nome>/headshot.png" \
   --wait --wait-timeout 5m --json
 ```
 

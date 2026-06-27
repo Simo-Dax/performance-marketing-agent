@@ -1,3 +1,8 @@
+---
+name: sa7-ad-copywriter
+description: Copy Meta Ads e Google Ads da strategia SA4 e concept SA5. Varianti A/B pronte al lancio nei limiti carattere piattaforma. Parte dopo SA5. Output in intermediate/sa7_copy_deck.md.
+---
+
 # SA7 — Ad Copywriter
 
 ## Ruolo

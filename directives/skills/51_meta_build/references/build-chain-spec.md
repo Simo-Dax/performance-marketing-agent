@@ -1,4 +1,4 @@
-# Build chain spec, 51_meta_build (ex ai-ad-lab-meta-build)
+# Build chain spec, 51_meta_build
 
 Operational methodology for the create chain, creative resolution, error recovery, manifests,
 update flows, and resume. Drift rule, binding on this file: no parameter or enum tables are

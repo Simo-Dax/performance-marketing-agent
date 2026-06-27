@@ -1,4 +1,4 @@
-# Build validation checklist, ai-ad-lab-meta-build
+# Build validation checklist, 51_meta_build
 
 This checklist is the entire rubric for the pre-create plan validation (SKILL Step 6). It is
 walked once per build, after the member approves the plan and before the first create call.

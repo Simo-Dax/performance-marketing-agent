@@ -170,7 +170,7 @@ Prossimi passi:
 
 ## Regole critiche
 
-- **Mai scrivere fuori da `$AILAB/10_Landing_Pages/`**
+- **Mai scrivere fuori da `$WORKDIR/10_Landing_Pages/`**
 - **Mai procedere senza VOC e Brand DNA**
 - **Zero numeri/testimonial inventati**
 - **Un solo CTA destination**

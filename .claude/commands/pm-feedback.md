@@ -11,7 +11,7 @@ Feedback: $ARGUMENTS
 
 ## Cosa fare
 1. Leggi `directives/self_improvement.md`.
-2. **Classifica** il feedback: tipo (correzione/conferma/preferenza), livello (procedurale/agentico/skill), target esatto (orchestrator / `agents/saN` / `skills/NN`), durata (one-off/durevole).
+2. **Classifica** il feedback: tipo (correzione/conferma/preferenza), livello (procedurale/agentico/skill), target esatto (orchestrator / `.claude/agents/saN` / `skills/NN`), durata (one-off/durevole).
 3. Se manca contesto (a quale agente/skill si riferisce), chiedi una sola domanda mirata.
 4. **Proponi la modifica** concreta all'utente (quale file, quale regola). Attendi OK.
 5. Su conferma:

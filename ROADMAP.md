@@ -8,7 +8,7 @@ Ultimo aggiornamento: 2026-06-02
 
 - [x] `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in `~/.claude/settings.json`
 - [x] `claude.md` — orchestrator agnostico, mappa struttura, tabella MCP + skills
-- [x] `agents/` — 8 file sub-agent (sa1–sa8) con ruolo, input, output, tool, handoff
+- [x] `.claude/agents/` — file sub-agent nativi (sa1–sa9) con frontmatter + ruolo, input, output, tool, handoff
 - [x] `context/brand/` — file brand: `business_profile.md` (unifica about + business_strategy), `tone_of_voice.md`, `anti_ai_writing_style.md`, `brand_kit.md`, `design_system.md`, `preferences.md`
 - [x] `context/brand/financials/` — cartella dati finanziari brand con README (SA3)
 - [x] `context/campaign/brief.md` — template brief (opzionale, solo campagne specifiche)
@@ -16,7 +16,7 @@ Ultimo aggiornamento: 2026-06-02
 - [x] `context/references/ads|copy|landing-pages` — organizzato; `cro_principles.md` in `landing-pages/`
 - [x] `directives/skill_orchestrator.md` — routing skill → sub-agent + flusso + Gate 0 aggiornato
 - [x] `directives/skills/` — 46 skill (01–46) complete
-- [x] `agents/` — 9 sub-agent (sa1–sa9): sa9_crm_lifecycle.md aggiunto (CRM/retention/email)
+- [x] `.claude/agents/` — 9 sub-agent (sa1–sa9): sa9_crm_lifecycle.md aggiunto (CRM/retention/email)
 - [x] `31_reporting_template` — creata: struttura report SA8, KPI business-model-aware (eComm/SaaS/LeadGen), macro+micro, ICE action points, export HTML email
 - [x] `39_marketing_ideas` / `40_seo_audit` / `41_seo_content_optimizer` / `42_carousel` — importate da kostja94/marketing-skills + plugin, tradotte IT (cartelle con references/scripts)
 - [x] `google-search-console` — skill globale installata in `~/.claude/skills/` (alimenta 40_seo_audit)
@@ -26,7 +26,7 @@ Ultimo aggiornamento: 2026-06-02
 - [x] MCP attivi: Canva, SimilarWeb, n8n, Gmail, Google Drive, Google Calendar, Slack, Lenny's Data
 - [x] Higgsfield MCP — CLI + wrapper Python + configurato in `.mcp.json`
 - [x] Google Ads MCP — ADC credentials, MCC 5524890329, 11 sub-account verificati
-- [x] Plugin The AI Ad Lab v1.6.1 — Apify + Fal AI key configurate
+- [x] Apify + Fal AI key configurate
 - [x] 17 command file `/pm-*` in `.claude/commands/`
 
 ---
@@ -35,7 +35,7 @@ Ultimo aggiornamento: 2026-06-02
 
 ### ✅ SA9 — Agente CRM / Retention / Lifecycle
 Terzo pilastro (canale owned) costruito. Aggiunge CRM/retention/email a paid+organico.
-- **Agent:** `agents/sa9_crm_lifecycle.md`
+- **Agent:** `.claude/agents/sa9_crm_lifecycle.md`
 - **4 skill:** `43_crm_database_analysis` (analisi DB, list health, baseline) · `44_rfm_segmentation` (RFM + lifecycle + churn, 11 segmenti) · `45_email_strategy` (calendario + automazioni ICE + KPI, business-model-aware) · `46_email_creation` (copy email per segmento, anti-AI, draft Gmail MCP)
 - **4 comandi:** `/pm-crm-analysis` → `/pm-rfm` → `/pm-email-strategy` → `/pm-email-copy`
 - **Output:** `intermediate/sa9_*.md` + copy in `12_Email/`
@@ -124,7 +124,7 @@ Obiettivo: versione templatizzabile, vendibile, auto-aggiornabile via plugin Git
 **Verità da tenere a mente:**
 - L'abbonamento blocca gli *update*, non revoca ciò che hanno già scaricato.
 - Le skill sono markdown in chiaro: non si offuscano. Il moat è il sistema + update + onboarding, non il segreto.
-- Dipendenze esterne (MCP/API) = attrito setup per l'acquirente. Vedi task dipendenze The AI Ad Lab.
+- Dipendenze esterne (MCP/API) = attrito setup per l'acquirente.
 
 **Architettura plugin (1 repo = 1 marketplace = N plugin):**
 ```
@@ -268,7 +268,7 @@ Fatto (sessioni 2026-05-31 / 06-01):
 ✅ Dashboard Performance (HTML + schema + workflow n8n)
 ✅ Skill 39-42 (marketing-ideas, seo-audit, seo-content-optimizer, carousel) + /pm-seo-*, /pm-carousel
 ✅ Basi MCP Klaviyo (/pm-setup-klaviyo + .mcp.json.example)
-✅ Indipendenza totale da plugin The AI Ad Lab (MCP propri apify/fal-ai/playwright; zero residui)
+✅ MCP propri apify/fal-ai/playwright; zero dipendenze da plugin esterni
 ✅ .gitignore rinforzato + .mcp.json.example consolidato
 
 Subito (locale, nessun prerequisito):

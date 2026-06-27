@@ -1,3 +1,8 @@
+---
+name: sa1-competitor-analysis
+description: Analisi competitor: tiering, messaging matrix, white-space map e conclusione strategica azionabile. Gira in parallelo con SA2 (sa2-market-research). Alimenta SA4 e SA5. Output in intermediate/sa1_competitor_landscape.md.
+---
+
 # SA1 — Competitor Analysis
 
 ## Ruolo

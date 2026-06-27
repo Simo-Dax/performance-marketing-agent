@@ -14,13 +14,13 @@ Riguarda **come scorre la pipeline**: ordine fasi, gate, handoff, quando attivar
 - Dove si applica: `claude.md` (ruolo orchestrator), `directives/skill_orchestrator.md` (routing), o un gate nuovo.
 - Esempio: "voglio sempre validare gli insight prima del financial" → già implementato come GATE 1.
 
-### 2. Livello AGENTICO (sub-agent SA1-SA8)
+### 2. Livello AGENTICO (sub-agent SA1-SA9)
 Riguarda **il comportamento di un agente** specifico: cosa enfatizza, cosa evita, quale taglio dà all'output.
 - Trigger: feedback su un agente ("SA1 deve sempre includere lo spend stimato", "SA4 è troppo generico sui budget").
-- Dove si applica: il file `agents/saN_*.md` → sezione **"## Feedback applicato"** in coda (regole durature apprese).
+- Dove si applica: il file `.claude/agents/saN_*.md` → sezione **"## Feedback applicato"** in coda (regole durature apprese).
 - Più i memory di progetto (vedi sotto).
 
-### 3. Livello SKILL (singola skill 01-37)
+### 3. Livello SKILL (singola skill 01-51)
 Riguarda **l'output di una skill** specifica: formato, regole, default.
 - Trigger: feedback su una skill ("le headline di 28 sono troppo lunghe", "la landing 29 deve sempre avere la sezione FAQ").
 - Dove si applica: il file `directives/skills/NN_*.md` → sezione **"## Feedback applicato"** in coda.
@@ -38,7 +38,7 @@ Due modi:
 Per ogni feedback, classifica:
 - **Tipo**: `correzione` (qualcosa è sbagliato) / `conferma` (qualcosa è giusto, da mantenere) / `preferenza` (gusto/stile)
 - **Livello**: procedurale / agentico / skill
-- **Target esatto**: quale file (orchestrator / `agents/saN` / `skills/NN`)
+- **Target esatto**: quale file (orchestrator / `.claude/agents/saN` / `skills/NN`)
 - **Durata**: one-off (solo questa run) o durevole (regola permanente)
 
 ### Applicazione
@@ -62,7 +62,7 @@ Da aggiungere in coda al file agente/skill quando arriva un feedback durevole:
 - [YYYY-MM-DD] [correzione/conferma/preferenza] — [regola azionabile]. (fonte: feedback utente)
 ```
 
-Esempio in `agents/sa4_pm_strategist.md`:
+Esempio in `.claude/agents/sa4_pm_strategist.md`:
 ```markdown
 ## Feedback applicato
 - [2026-06-02] correzione — ogni campagna deve sempre indicare bid strategy esplicita, non solo budget. (fonte: feedback utente)
