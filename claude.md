@@ -129,7 +129,7 @@ Per routing skill → sub-agent: leggi `directives/skill_orchestrator.md`.
     └── {brand}_{campaign}_{date}/   ← working dir campagna (apri CC qui = pwd)
         ├── 01_VOC_Research/         ← /pm-dati-qualitativi (SA2)
         ├── 02_Brand_DNA/            ← /pm-brand-kit (pre-pipeline)
-        ├── 03_Ad_Spy/              ← /pm-competitor-spy (SA1)
+        ├── 03_Ad_Spy/              ← /pm-competitor-spy (SA1, static) + /pm-competitor-spy-video (SA1, video, sottocartella <slug>-video/)
         ├── 04_Static_Ads/          ← /pm-statiche (SA6)
         ├── 05_UGC_Prompts/         ← /pm-ugc-video (SA6)
         ├── 06_Ad_Copy/             ← /pm-meta-copy (SA7)
@@ -158,7 +158,7 @@ output/
 ├── {brand}_{campaign}_{date}/            ← TUTTI gli output di una campagna
 │   ├── 01_VOC_Research/                  ← 18_voc_research (/pm-dati-qualitativi)
 │   ├── 02_Brand_DNA/                     ← 21_brand_dna (/pm-brand-kit)
-│   ├── 03_Ad_Spy/ (+ data.json)          ← 19_ad_spy (/pm-competitor-spy)
+│   ├── 03_Ad_Spy/ (+ data.json)          ← 19_ad_spy (/pm-competitor-spy) + 52_ad_spy_video (/pm-competitor-spy-video, sottocartella <slug>-video/)
 │   ├── 04_Static_Ads/                    ← 24_static_ads (/pm-statiche)
 │   ├── 05_UGC_Prompts/                   ← 25_ugc_prompt (/pm-ugc-video)
 │   ├── 06_Ad_Copy/                       ← 28_meta_copy (/pm-meta-copy)
@@ -293,6 +293,7 @@ Quando una skill o un agente deve scrivere un prompt (immagini, video, copy, ric
 - `49_anti_ai_slop` — ✅ Gate finale anti-AI per ogni copy esterno: forbidden words/patterns EN (delve/crucial/landscape/rule-of-three/em-dash/negative-parallelism…) + script CLI `words`/`dashes`/`replace`. Layer IT via `context/brand/anti_ai_writing_style.md`. Richiamata da tutte le skill copy (10,11,12,28,46,02,41,34,03,29). Importata da github.com/walidboulanouar/anti-ai-slop → `/pm-de-ai`
 - `50_meta_analyze` — ✅ Meta Ads diagnosi **read-only live** dentro Claude Code (Meta Ads MCP, suffix-resolved, mai write). 2 modalità: quick check (audit single-pass ~10-12 pull) o deep diagnosis (5 investigator paralleli su slice isolate + referee avversariale → diagnosi ranked con evidence-for/against, confidence, singola azione settimanale; 🚦 consent gate). 3 reference verbatim EN (operator guide 60 tool, frameworks, briefs). Output in `output/reports/{data}_meta_analysis/`. Sostituisce la modalità analisi di `30`. (SA8) → `/pm-meta-analyze`
 - `51_meta_build` — ✅ Meta Ads **build/write** dentro Claude Code: UNICA superficie di write sull'account. Costruisce campagne complete (campaign+ad set+creative+ad) + ogni modifica a esistenti (pause/budget/targeting/audience/customer list/attivazione). Tutto **PAUSED**; tiered tool loading (create solo post-piano, activate solo in cerimonia); 🚦 Gate 1 piano + cerimonia attivazione bottom-up (un sì/livello, >500/gg = digita totale); gate special-ad-categories + DSA EU + fine print irreversibilità; validator subagent del piano; manifest before/after ogni write (resume/adopt-by-name). 3 reference verbatim EN (operator guide, build-chain-spec, validation-checklist). Output in `output/{brand}_{campaign}_{date}/13_Meta_Campaigns/` o `output/reports/{data}_meta_campaigns/`. Sostituisce la modalità build di `30`. (SA8/post-SA6) → `/pm-meta-build`
+- `52_ad_spy_video` — ✅ Ad Spy Video — sorella video di `19_ad_spy` (quella copre solo static). Stesso brand-lock (Pages scraper + `pageAdLibrary.id`), scraping `media_type=all` + filtro post a video, download mp4, **trascrizione word-for-word via fal.ai Whisper** (`chunk_level: segment`, niente venv locale), frame ffmpeg (hook + contact sheet), teardown per video via agenti paralleli model sonnet (script timestampato, on-screen text, hook, beat sheet, scene-by-scene, CTA). Pura intelligence, mai genera ad. Output: `03_Ad_Spy/<slug>-video/video-teardown-*.html`. Prereq: Apify key + fal.ai key. (SA1) → `/pm-competitor-spy-video`
 
 > **Skill SEO/supporto (39-42):** importate da `kostja94/marketing-skills` + plugin esterni, tradotte in italiano (corpo IT, termini tecnici SEO in EN). Pacchetti come cartelle con `references/` e `scripts/`. La skill globale `google-search-console` è installata in `~/.claude/skills/` (alimenta `40_seo_audit`).
 
@@ -300,7 +301,7 @@ Quando una skill o un agente deve scrivere un prompt (immagini, video, copy, ric
 > **Dashboard competitor ads:** `output/dashboard/competitor-ads/index.html` — single-file, **look&feel Airbnb**, filtri awareness (5 Schwartz) + funnel (TOF/MOF/BOF) + competitor + tier. Alimentata da `data.json` di `19_ad_spy`.
 > **Dashboard performance:** `output/dashboard/performance/index.html` — single-file, look&feel Airbnb, KPI macro (MER/ROAS/NCAC business-model-aware) + sparkline + tabelle campagne Google/Meta + alert automatici. Alimentata da `data.json` generato dal workflow n8n `execution/workflows/performance_dashboard_n8n.json` (Shopify+Google+Meta). **Token-zero sui refresh** — SA8 legge `data.json` solo on-demand per i report. Dettaglio in `output/dashboard/performance/README.md`.
 
-> **Nota:** le funzioni un tempo coperte da plugin esterni (ad spy, UGC scraper, brand DNA, character, rebuild, static, ugc-prompt, product-shot, multiplier, copy, landing-page, meta-handoff) sono **internalizzate** nelle skill native `18`-`30` (comandi `/pm-*`). Nessuna dipendenza da plugin di terzi: i servizi (Apify, Fal.ai, Playwright, Higgsfield) girano come **MCP propri** configurati in `.mcp.json` (vedi `.mcp.json.example`). Setup: `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`.
+> **Nota:** le funzioni un tempo coperte da plugin esterni (ad spy static+video, UGC scraper, brand DNA, character, rebuild, static, ugc-prompt, product-shot, multiplier, copy, landing-page, meta-handoff) sono **internalizzate** nelle skill native `18`-`30` + `52` (comandi `/pm-*`). Nessuna dipendenza da plugin di terzi: i servizi (Apify, Fal.ai, Playwright, Higgsfield) girano come **MCP propri** configurati in `.mcp.json` (vedi `.mcp.json.example`). Setup: `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`.
 
 ### Skills Claude Code (globali)
 - `marketing-psychology` — attiva sempre per SA2, SA5, SA7

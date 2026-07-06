@@ -123,14 +123,23 @@ Campi utili per ad: `page_name`, `ad_archive_id`, `is_active`, `start_date`/`end
 
 3. **Filtro solo immagini statiche** — scarta gli ad con `snapshot.videos` o `display_format=VIDEO`. **DCO** (`display_format=DCO`): l'immagine sta in `snapshot.cards[].resized_image_url` (non in `images[]`); fallback `cards[].video_preview_image_url`. Tieni gli ad con almeno un'immagine statica.
 
-4. **Scoring** (per mercati non EU/UK/BR — basato su durata):
+4. **Scoring** (per mercati non EU/UK/BR — basato su durata, `reach_available=false`):
    - 🏆 PROVEN WINNER: `is_active=true` AND `days_running >= 60`
    - 🔥 HOT RUNNER: `is_active=true` AND `days_running >= 21`
    - ⚡ ACTIVE AD: `is_active=true` AND `days_running < 21`
    - ✅ RETIRED WINNER: `is_active=false` AND `days_running >= 60`
    - ⬜ SHORT RUN: `is_active=false` AND `days_running < 60`
-   
-   Per mercati EU/UK/BR: scoring blended reach + durata
+
+   **Per mercati EU/UK/BR** (`aaa_info.eu_total_reach`/`uk_total_reach`/`br_total_reach` popolato su almeno un ad → `reach_available=true`): scoring blended reach + durata, così un lancio nuovo ad alto reach e un vecchio slow-burner emergono entrambi:
+   - 🏆 PROVEN WINNER: `is_active=true` AND (`reach >= 100000` OR `days_running >= 60`)
+   - 🔥 HOT RUNNER: `is_active=true` AND (`reach >= 25000` OR `days_running >= 21`)
+   - ⚡ ACTIVE AD: `is_active=true` AND `reach < 25000` AND `days_running < 21`
+   - ✅ RETIRED WINNER: `is_active=false` AND (`reach >= 100000` OR `days_running >= 60`)
+   - ⬜ SHORT RUN: `is_active=false` AND `reach < 100000` AND `days_running < 60`
+
+   Dentro ogni tier, ordina per reach desc poi days_running desc. **Non fabbricare mai reach** — se `aaa_info` è null anche in un run `reach_available=true` (capita ad-per-ad), tratta quell'ad come i mercati non-EU (solo durata) e non stimare/interpolare dai fratelli.
+
+   Nella card HTML di ogni ad EU/UK/BR con `aaa_info` popolato, aggiungi un blocco "🎯 Audience & Reach": reach formattato con separatore migliaia + regione (`"1.240.000 (EU)"`), fascia età dominante e skew di genere da `age_country_gender_reach_breakdown[]`, top country. Quando `reach_available=false` per l'intero brand, mostra un banner in testa allo swipe file: *"Meta non pubblica reach/impression per ads commerciali fuori da EU/UK/Brasile. Il segnale winner più forte per questo brand è la durata di pubblicazione + stato attivo."* — mai ometterlo, evita che l'utente pensi che lo scrape sia fallito.
 
 5. **Analisi** — per ogni 🏆/🔥/⚡: 2-3 frasi su hook, awareness level, perché funziona
 
@@ -142,7 +151,13 @@ curl -s -L --max-time 10 \
   "<URL>" | base64
 ```
 
-7. **Build HTML** — dark theme, card grid, filtri per badge, immagini inline base64
+7. **Build HTML** — **stesso Design System chiaro navy/slate di `18_voc_research`/`52_ad_spy_video`** (non più dark theme — allinea i 3 deliverable HTML come stessa famiglia prodotto):
+   - CSS variabili: `--bg:#FFFFFF; --surface-light:#F4F6FA; --surface-mid:#E8EDF5; --navy:#162441; --slate:#8A9BBC; --body:#2C3E50; --green:#1A6B3C (winner/reach); --blue:#1A5276 (link/info); --amber:#8B6914 (disclaimer)`. Font: system sans-serif stack (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`).
+   - Header navy pieno (`--navy` bg, testo bianco): brand + kicker + sub-riga con conteggio ads/winner + reach totale (o "reach n/a" se `reach_available=false`, vedi Step 4.4).
+   - Barra filtri sticky, sfondo bianco, bordo `--surface-mid`: filtro per tier badge, per formato, per stato attivo/ritirato.
+   - Card grid su sfondo bianco, ogni card `--surface-light` bg, bordo 1px `--surface-mid`, badge tier in alto (colori: PROVEN/RETIRED = `--green`, HOT = `--amber`, ACTIVE = `--blue`, SHORT = `--slate`), immagine statica inline base64, copy sotto (headline/body/CTA), blocco Audience & Reach quando disponibile (Step 4).
+   - Banner disclaimer reach (Step 4) quando `reach_available=false`, in testa alla pagina, `--amber` come da Step 4.
+   - Self-contained: zero `<link>`/`<script src>` esterni, tutto CSS inline + immagini base64.
 
 8. **Salva** in `$WORKDIR/03_Ad_Spy/adspy-{SLUG}-{YYYYMMDD}.html`
 

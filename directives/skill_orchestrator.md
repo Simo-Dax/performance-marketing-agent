@@ -44,6 +44,7 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 |-------|-----------|------|---------|
 | `18_voc_research` | SA2 | Research | VOC research — linguaggio verbatim clienti da review/community. Input: URL prodotto + nome prodotto. Output HTML. Richiede web search. |
 | `19_ad_spy` | SA1 | Research | Ad spy competitor Meta — swipe file HTML con static ads. Input: brand/lista/nicchia, paese, n. ads. Richiede Apify. |
+| `52_ad_spy_video` | SA1 | Research | Ad spy competitor Meta — sorella video di `19_ad_spy` (solo VIDEO ads). Teardown per video: script timestampato (fal.ai Whisper), on-screen text, hook, beat sheet, CTA. Input: brand/lista/nicchia, paese, n. video. Richiede Apify + fal.ai. |
 | `20_ugc_scraper` | SA1 | Research | Scraping TikTok UGC virali — 25 transcript per swipe file. Input: VOC + nicchia. Richiede Apify. Costo ~$0.056/run. |
 | `21_brand_dna` | Pre-pipeline | Setup | Brand DNA HTML — colori live via Playwright + web search. Input: nome brand + URL. Prerequisito per static e character. |
 | `22_character_creator` | SA5 | Creative | Brand character creator — 1-10 personaggi (headshot + full body). Input: Brand DNA opzionale. Modello: GPT Image 2 o Nano Banana 2. |
@@ -81,7 +82,7 @@ Esito gate:
 - Legge `context/references/` per materiale di riferimento
 
 ### Fase 2 — Research (SA1 + SA2 in parallelo)
-- SA1: WebSearch + SimilarWeb MCP + **`19_ad_spy`** (competitor ad intelligence) + **`20_ugc_scraper`** (TikTok UGC viral)
+- SA1: WebSearch + SimilarWeb MCP + **`19_ad_spy`** (competitor ad intelligence, static) + **`52_ad_spy_video`** (competitor ad intelligence, video teardown) + **`20_ugc_scraper`** (TikTok UGC viral)
 - SA2: WebSearch + Lenny's Data MCP + `09_marketing_psychology` + **`18_voc_research`** (VOC verbatim) + JTBD/Forces of Progress
 
 ### Fase 2.5 — Insight Synthesis (🚦 GATE 1 umano)
@@ -197,9 +198,10 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `16_meta_ads_analytics` — report Meta Ads
 - [x] `17_financial_performance` — MER/ROAS/CPA framework
 
-### Produzione/Research — internalizzate (skill native 18-30)
+### Produzione/Research — internalizzate (skill native 18-30, +52)
 - [x] `18_voc_research` — VOC Research (SA2)
-- [x] `19_ad_spy` — Ad Spy 2.0 (SA1)
+- [x] `19_ad_spy` — Ad Spy 2.0, static (SA1)
+- [x] `52_ad_spy_video` — Ad Spy Video, teardown video competitor (SA1)
 - [x] `20_ugc_scraper` — UGC Scraper 2.0 (SA1)
 - [x] `21_brand_dna` — Brand DNA Playwright 3.0 (Pre-pipeline)
 - [x] `22_character_creator` — Character Creator (SA5)
@@ -246,6 +248,7 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 |---------|-------|--------|
 | `/pm-dati-qualitativi` | `18_voc_research` | SA2 |
 | `/pm-competitor-spy` | `19_ad_spy` | SA1 |
+| `/pm-competitor-spy-video` | `52_ad_spy_video` | SA1 |
 | `/pm-ugc-analysis` | `20_ugc_scraper` | SA1 |
 | `/pm-brand-kit` | `21_brand_dna` | Pre-pipeline |
 | `/pm-buyer-persona` | `22_character_creator` | SA5 |

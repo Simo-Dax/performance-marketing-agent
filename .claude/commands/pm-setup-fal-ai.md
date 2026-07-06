@@ -1,10 +1,10 @@
 ---
-description: Configura la Fal AI API key usata dalle skill di generazione immagini/video (statiche, ugc-video, product-photo, multiplier, buyer-persona). Salva il token in modo sicuro.
+description: Configura la Fal AI API key usata dalle skill di generazione immagini/video (statiche, ugc-video, product-photo, multiplier, buyer-persona) e dalla trascrizione di 52_ad_spy_video. Salva il token in modo sicuro.
 ---
 
 # /pm-setup-fal-ai — Configura Fal AI API Key
 
-Configura la Fal AI API key usata dalle skill di generazione (Path C): `24_static_ads`, `25_ugc_prompt`, `26_product_shot`, `27_multiplier`, `22_character_creator`, `23_competitor_rebuild`.
+Configura la Fal AI API key usata dalle skill di generazione (Path C): `24_static_ads`, `25_ugc_prompt`, `26_product_shot`, `27_multiplier`, `22_character_creator`, `23_competitor_rebuild`. Usata anche da `52_ad_spy_video` per la trascrizione (`fal-ai/whisper`).
 
 ## Hard rules
 1. Esegui ogni comando shell tu stesso via Bash. Non far aprire terminali all'utente.

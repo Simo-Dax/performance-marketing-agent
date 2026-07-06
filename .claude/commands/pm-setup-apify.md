@@ -1,10 +1,10 @@
 ---
-description: Configura la Apify API key usata da /pm-competitor-spy e /pm-ugc-analysis. Salva il token in modo sicuro.
+description: Configura la Apify API key usata da /pm-competitor-spy, /pm-competitor-spy-video e /pm-ugc-analysis. Salva il token in modo sicuro.
 ---
 
 # /pm-setup-apify — Configura Apify API Key
 
-Configura la Apify Personal API token (formato `apify_api_xxx`) usata dalle skill `19_ad_spy` (`/pm-competitor-spy`) e `20_ugc_scraper` (`/pm-ugc-analysis`).
+Configura la Apify Personal API token (formato `apify_api_xxx`) usata dalle skill `19_ad_spy` (`/pm-competitor-spy`), `52_ad_spy_video` (`/pm-competitor-spy-video`) e `20_ugc_scraper` (`/pm-ugc-analysis`).
 
 ## Hard rules
 1. Esegui ogni comando shell tu stesso via Bash. Non far aprire terminali all'utente.

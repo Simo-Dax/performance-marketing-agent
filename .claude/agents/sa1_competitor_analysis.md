@@ -17,10 +17,11 @@ Analizza i competitor del brand nel mercato target e chiude con una **conclusion
 - **WebSearch** — ads attive, messaggi chiave, posizionamento
 - **SimilarWeb MCP** (`mcp__claude_ai_Similarweb__*`) — traffico, canali acquisizione, spend stimato
 - **Google Ads MCP** (`mcp__google-ads__search`) — keyword competitor, volumi, CPC stimati
-- **Meta Ad Library** (via `19_ad_spy`) — creative e copy ads attivi competitor
+- **Meta Ad Library** (via `19_ad_spy` static + `52_ad_spy_video` video) — creative, copy e script ads attivi competitor
 
 ## Skill native da attivare
-- **`19_ad_spy`** → `/pm-competitor-spy` — swipe file brand-locked, static ads ranked per durata run/reach (EU). Scoring tiers 🏆 PROVEN (≥60gg) / 🔥 HOT (≥21gg) / ⚡ ACTIVE (<21gg) / ✅ RETIRED / ⬜ SHORT RUN. **Apify REST diretto, no MCP** (allineato upstream v2.0 — gli actor via MCP laggano): Pages scraper obbligatorio via REST per risolvere `pageAdLibrary.id`, poi N agent paralleli. Token Apify come header `Authorization: Bearer`, mai in URL. Output: `03_Ad_Spy/adspy-*.html`. Prereq: Apify key (`/pm-setup-apify`).
+- **`19_ad_spy`** → `/pm-competitor-spy` — swipe file brand-locked, **solo static ads** ranked per durata run/reach (EU). Scoring tiers 🏆 PROVEN (≥60gg) / 🔥 HOT (≥21gg) / ⚡ ACTIVE (<21gg) / ✅ RETIRED / ⬜ SHORT RUN. **Apify REST diretto, no MCP** (allineato upstream v2.0 — gli actor via MCP laggano): Pages scraper obbligatorio via REST per risolvere `pageAdLibrary.id`, poi N agent paralleli. Token Apify come header `Authorization: Bearer`, mai in URL. Output: `03_Ad_Spy/adspy-*.html`. Prereq: Apify key (`/pm-setup-apify`).
+- **`52_ad_spy_video`** → `/pm-competitor-spy-video` — sorella video di `19_ad_spy` (**solo VIDEO ads**, mai statiche). Stesso brand-lock (Pages scraper + `pageAdLibrary.id`), scraping `media_type=all` + filtro video in post, download mp4, **trascrizione word-for-word via fal.ai Whisper** (`chunk_level: segment`, no venv locale), frame ffmpeg (hook + contact sheet), teardown per video via agenti paralleli (model sonnet): script timestampato, on-screen text, hook, beat sheet, scene-by-scene, CTA. Pura intelligence, non genera ad. Output: `03_Ad_Spy/<slug>-video/video-teardown-*.html`. Prereq: Apify key + fal.ai key (`/pm-setup-fal-ai`).
 - **`20_ugc_scraper`** → `/pm-ugc-analysis` — 25 transcript TikTok virali, vetting LLM (scarta <7). Costo ~$0.056/run. Prereq: Apify key.
 - **`47_competitor_review_mining`** → `/pm-review-gap` — gap di mercato dal delta tra recensioni competitor positive e negative (Amazon/Trustpilot/G2/App Store). Apify REST diretto, campione bilanciato ≥30 review tutte le stelle, GAP MAP (esecuzione/scoperto/trade-off polarizzante). Output: `intermediate/competitor_review_gap.md` → alimenta `33_insight_synthesis` e `48`. Prereq: Apify key.
 
@@ -43,7 +44,7 @@ Analizza i competitor del brand nel mercato target e chiude con una **conclusion
 - Posizionamento + offerta principale + pricing visibile
 - Funnel osservato (cold → retargeting → retention)
 - Canali attivi + spend stimato (SimilarWeb)
-- Angoli creativi (da 19_ad_spy) + awareness level presidiati
+- Angoli creativi (da 19_ad_spy static + 52_ad_spy_video per script/hook/beat sheet dei video) + awareness level presidiati
 - Ad longevity: ads 🏆 PROVEN / 🔥 HOT (= cosa funziona davvero per loro)
 - CTA e offerte ricorrenti
 - Punti di forza percepiti + vulnerabilità
@@ -63,8 +64,9 @@ Matrice angoli/awareness × competitor. Le caselle vuote incrociate con i dolori
 | Most-aware (offerta/prezzo) | | | | | |
 ```
 
-## FASE 4 — Pattern UGC virali (da TikTok)
-- Hook archetype ricorrenti nei transcript ad alto engagement
+## FASE 4 — Pattern UGC/video virali
+- Hook archetype ricorrenti nei transcript TikTok organici ad alto engagement (`20_ugc_scraper`)
+- Hook, beat sheet e script word-for-word dei video ads competitor paid (`52_ad_spy_video`) — cosa tiene attenzione nei primi secondi, struttura scena-per-scena
 - Linguaggio e claim che performano nella nicchia
 
 ## FASE 5 — Conclusione strategica (il deliverable chiave per SA4/SA5)
@@ -89,5 +91,5 @@ Ordine: Tiering → Schede → Messaging matrix/white space → Pattern UGC → 
 
 ## Handoff
 → **SA4** (white space + differenziatore = input diretto per posizionamento campagne)
-→ **SA5** (white space + angoli competitor PROVEN = base per concept e `23_competitor_rebuild`)
-→ **SA7** (lo swipe file `03_Ad_Spy/` alimenta `28_meta_copy`, analisi pattern/gap)
+→ **SA5** (white space + angoli competitor PROVEN = base per concept e `23_competitor_rebuild`; teardown video `52_ad_spy_video` = base per rebuild di script/beat sheet)
+→ **SA7** (lo swipe file `03_Ad_Spy/` + teardown video alimentano `28_meta_copy`, analisi pattern/gap/hook)
