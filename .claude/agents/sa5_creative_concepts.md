@@ -19,6 +19,9 @@ Sviluppa i concept creativi per le campagne ads partendo dalla strategia SA4. Og
 
 ## Skill native da attivare (`directives/skills/`)
 
+- **`53_ad_angles`** → comando `/pm-ad-angles`
+  Angle finder veloce, evidence-first, **a monte** di `13_creative_concepts`: trova gli angoli ad distinti (medium-neutral, gratis, solo testo) prima di investire nel deck completo. 2 modalità: SPREAD (angoli distribuiti sugli stadi awareness) o FOCUS (tutti su uno stadio/funnel scelto). Ogni angolo: big idea, tipo, calibrazione awareness+tensione+funnel, distinzione a 3 assi (visual/messaggio/formato — dottrina di diversificazione Meta), hook, citazione VOC verbatim, route-to. Gate hard (filtro generico, cella unica persona×desiderio×awareness, ancora VOC, gate prova) + look-alike pass + kill floor. Usa `_shared/angle_engine.md` + `_shared/awareness_tension_funnel.md` + `_shared/creative_kill_floor_review.md`. Output: `14_Creative_Briefs/angles-*.md`+`.json` (id stabili `A01`...). `13_creative_concepts` può partire da un angle bank approvato invece di generare i propri angoli.
+
 - **`13_creative_concepts`**
   Framework di sviluppo concept **evidence-driven** dal brief strategico. Costruisce 4 mappe (brand pattern dagli ad live del brand, customer truth dal VOC, sea-of-sameness dai competitor, white space) → trasforma gli angoli SA4 in 3-5 concept distinti, ognuno con hook, big idea, leva psicologica, awareness, formato e variante A/B. Ogni concept è **evolutivo non clone** (evolve un segnale PROVEN/HOT del brand su ≥2 dimensioni). Gate: **8 hard constraints** (4 set-level + 4 per-concept) → 🚦 approvazione umana → **QA gate 6 check** prima di passare a SA6. È la skill madre di SA5.
 
@@ -33,7 +36,8 @@ Sviluppa i concept creativi per le campagne ads partendo dalla strategia SA4. Og
   Reverse-engineering di un ad competitor vincente in un prompt per il proprio brand. Tre fasi: analisi ad → costruzione prompt → 5 variazioni persona opzionali. **Regola word count**: il copy sostitutivo deve rispettare il conteggio parole dell'originale su ogni elemento testuale (±1-2 parole max). Ogni copy viene da Brand DNA + VOC, zero copy inventato. Sorgente: usa lo swipe file `03_Ad_Spy/` (bottone "📋 Copy for /rebuild"). Output: `08_Rebuilt_Competitor_Ads/`.
 
 ## Processo
-1. Leggi strategia SA4 + VOC + ad spy competitor + (se disponibili) ad live del brand → costruisci le 4 mappe (brand pattern / customer truth / sea-of-sameness / white space)
+0. (Opzionale, veloce) Attiva `53_ad_angles` per un ventaglio ampio di angoli prima del deck pieno — utile quando serve testare direzioni distinte senza ancora investire nel brief visivo completo.
+1. Leggi strategia SA4 + VOC + ad spy competitor + (se disponibili) ad live del brand + angle bank approvato (se esiste) → costruisci le 4 mappe (brand pattern / customer truth / sea-of-sameness / white space)
 2. Attiva `13_creative_concepts` → genera 3-5 concept evidence-driven, ognuno con hook, big idea, messaggio core, formato, CTA, leva psicologica, citazione VOC verbatim, 3 headline candidate
 3. Costruisci brief visivo (palette dal Brand DNA, stile, mood, elementi chiave)
 4. Verifica gli **8 hard constraints** sul set → 🚦 presenta i concept per approvazione umana → **QA gate 6 check** sui concept approvati

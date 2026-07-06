@@ -22,9 +22,9 @@ ORCHESTRATOR (questo file)
 ├── .claude/agents/sa2_market_research.md       ← WebSearch + Lenny's Data MCP + voc
 ├── .claude/agents/sa3_financial_performance.md ← MER / ROAS / CPA / NCAC / budget framework (alimentato da brief + SA2)
 ├── .claude/agents/sa4_pm_strategist.md         ← strategia: job→pain-non-risolto→desiderio→segmento(contesto+trigger)→posizionamento→nemico+POV (47 review-gap + 48 segment-pain) + campaign architecture Meta+Google (alimentato da SA1+SA2+SA3)
-├── .claude/agents/sa5_creative_concepts.md     ← alimentato da SA4 + character + rebuild
-├── .claude/agents/sa6_asset_production.md      ← alimentato da SA5 + static + ugc-prompt + product-shot + multiplier
-├── .claude/agents/sa7_ad_copywriter.md         ← alimentato da SA4 + SA5 + copy
+├── .claude/agents/sa5_creative_concepts.md     ← alimentato da SA4 + ad-angles + character + rebuild
+├── .claude/agents/sa6_asset_production.md      ← alimentato da SA5 + video-script + static + ugc-prompt + product-shot + multiplier
+├── .claude/agents/sa7_ad_copywriter.md         ← alimentato da SA4 + SA5 + headline-bank + copy
 ├── .claude/agents/sa8_analytics_reporting.md   ← Google Ads MCP + Meta Ads MCP + 15_google_ads_analytics + 16_meta_ads_analytics + 50_meta_analyze (diagnosi read-only) + 51_meta_build (build/write live)
 └── .claude/agents/sa9_crm_lifecycle.md         ← CRM/retention/email: 43_crm + 44_rfm + 45_email_strategy + 46_email_creation (canale owned, indipendente)
 ```
@@ -139,13 +139,15 @@ Per routing skill → sub-agent: leggi `directives/skill_orchestrator.md`.
         ├── 10_Landing_Pages/       ← /pm-landing-page (post-SA7)
         ├── 11_Characters/          ← /pm-buyer-persona (SA5)
         ├── 12_Email/               ← /pm-email-copy (SA9)
+        ├── 14_Creative_Briefs/     ← /pm-ad-angles (SA5)
+        ├── 15_Video_Scripts/       ← /pm-video-script (SA6)
         ├── _assets/product-shots/  ← /pm-product-photo (SA6)
         ├── intermediate/           ← output SA testuali per handoff (insight, strategy, copy deck)
         └── final/                  ← deliverable compilati pronti al lancio
 ```
 
 > **Convenzione cartelle:** le skill scrivono nella cartella dove Claude Code è aperto (`pwd`).
-> **Campagna specifica (pipeline completa):** crea `output/{brand}_{campaign}_{date}/` e apri Claude Code in quella folder. Le sottocartelle numerate `01_*`-`13_*` vengono create lì dentro (13_Meta_Campaigns = `51_meta_build`). **Skill standalone** (es. `/pm-google-audit`, `/pm-report`, `/pm-dati-qualitativi` isolato): non serve creare la folder campagna — gli output vanno nel path appropriato (`output/reports/` per SA8, o nella folder corrente). Nessun wrapper esterno: tutto rimane dentro `output/`.
+> **Campagna specifica (pipeline completa):** crea `output/{brand}_{campaign}_{date}/` e apri Claude Code in quella folder. Le sottocartelle numerate `01_*`-`15_*` vengono create lì dentro (13_Meta_Campaigns = `51_meta_build`; 14_Creative_Briefs = `53_ad_angles`; 15_Video_Scripts = `55_video_script`). **Skill standalone** (es. `/pm-google-audit`, `/pm-report`, `/pm-dati-qualitativi` isolato): non serve creare la folder campagna — gli output vanno nel path appropriato (`output/reports/` per SA8, o nella folder corrente). Nessun wrapper esterno: tutto rimane dentro `output/`.
 
 ---
 
@@ -161,7 +163,7 @@ output/
 │   ├── 03_Ad_Spy/ (+ data.json)          ← 19_ad_spy (/pm-competitor-spy) + 52_ad_spy_video (/pm-competitor-spy-video, sottocartella <slug>-video/)
 │   ├── 04_Static_Ads/                    ← 24_static_ads (/pm-statiche)
 │   ├── 05_UGC_Prompts/                   ← 25_ugc_prompt (/pm-ugc-video)
-│   ├── 06_Ad_Copy/                       ← 28_meta_copy (/pm-meta-copy)
+│   ├── 06_Ad_Copy/                       ← 28_meta_copy (/pm-meta-copy) + 54_headline_bank (/pm-headlines)
 │   ├── 07_Multiplied_Ads/                ← 27_multiplier (/pm-multiplier)
 │   ├── 08_Rebuilt_Competitor_Ads/        ← 23_competitor_rebuild (/pm-competitor-rebuild)
 │   ├── 09_Meta_Handoff/                  ← 30_meta_handoff (/pm-handoff)
@@ -169,6 +171,8 @@ output/
 │   ├── 11_Characters/                    ← 22_character_creator (/pm-buyer-persona)
 │   ├── 12_Email/                         ← 46_email_creation (/pm-email-copy)
 │   ├── 13_Meta_Campaigns/                ← 51_meta_build (/pm-meta-build): plan.md + build-manifest.json + manifest.md per run
+│   ├── 14_Creative_Briefs/ (+ .json)     ← 53_ad_angles (/pm-ad-angles): angle bank id-stabili (A01...)
+│   ├── 15_Video_Scripts/                 ← 55_video_script (/pm-video-script)
 │   ├── _assets/product-shots/            ← 26_product_shot (/pm-product-photo)
 │   ├── intermediate/                     ← output TESTUALI dei SA (handoff fra agenti)
 │   │   ├── insight.md                    ← 33_insight_synthesis (/pm-insight)
@@ -294,6 +298,11 @@ Quando una skill o un agente deve scrivere un prompt (immagini, video, copy, ric
 - `50_meta_analyze` — ✅ Meta Ads diagnosi **read-only live** dentro Claude Code (Meta Ads MCP, suffix-resolved, mai write). 2 modalità: quick check (audit single-pass ~10-12 pull) o deep diagnosis (5 investigator paralleli su slice isolate + referee avversariale → diagnosi ranked con evidence-for/against, confidence, singola azione settimanale; 🚦 consent gate). 3 reference verbatim EN (operator guide 60 tool, frameworks, briefs). Output in `output/reports/{data}_meta_analysis/`. Sostituisce la modalità analisi di `30`. (SA8) → `/pm-meta-analyze`
 - `51_meta_build` — ✅ Meta Ads **build/write** dentro Claude Code: UNICA superficie di write sull'account. Costruisce campagne complete (campaign+ad set+creative+ad) + ogni modifica a esistenti (pause/budget/targeting/audience/customer list/attivazione). Tutto **PAUSED**; tiered tool loading (create solo post-piano, activate solo in cerimonia); 🚦 Gate 1 piano + cerimonia attivazione bottom-up (un sì/livello, >500/gg = digita totale); gate special-ad-categories + DSA EU + fine print irreversibilità; validator subagent del piano; manifest before/after ogni write (resume/adopt-by-name). 3 reference verbatim EN (operator guide, build-chain-spec, validation-checklist). Output in `output/{brand}_{campaign}_{date}/13_Meta_Campaigns/` o `output/reports/{data}_meta_campaigns/`. Sostituisce la modalità build di `30`. (SA8/post-SA6) → `/pm-meta-build`
 - `52_ad_spy_video` — ✅ Ad Spy Video — sorella video di `19_ad_spy` (quella copre solo static). Stesso brand-lock (Pages scraper + `pageAdLibrary.id`), scraping `media_type=all` + filtro post a video, download mp4, **trascrizione word-for-word via fal.ai Whisper** (`chunk_level: segment`, niente venv locale), frame ffmpeg (hook + contact sheet), teardown per video via agenti paralleli model sonnet (script timestampato, on-screen text, hook, beat sheet, scene-by-scene, CTA). Pura intelligence, mai genera ad. Output: `03_Ad_Spy/<slug>-video/video-teardown-*.html`. Prereq: Apify key + fal.ai key. (SA1) → `/pm-competitor-spy-video`
+- `53_ad_angles` — ✅ Angle Finder evidence-driven, **a monte** di `13_creative_concepts`: angoli ad medium-neutral, gratis e solo testo, 2 modalità (SPREAD sugli stadi awareness / FOCUS su uno scelto), distinzione a 3 assi (dottrina diversificazione Meta), gate hard + look-alike pass + kill floor, id stabili `A01...` consumati da `13`/`54`/`55`. Reference condivise in `_shared/` (`angle_engine.md`, `awareness_tension_funnel.md`, `niche_offer_types.md`, `creative_claims_compliance.md`, `creative_kill_floor_review.md`). Output: `14_Creative_Briefs/angles-*.md`+`.json`. (SA5) → `/pm-ad-angles`
+- `54_headline_bank` — ✅ Headline Bank, deliverable dedicato più profondo delle 5 headline di `28_meta_copy`: ~20 headline platform + 8 hook on-image + 6 first-line, framework-nominate (9 famiglie + 5 formule DR, `_shared/headline_frameworks.md`), char-discipline a due livelli (27 safe/40 hard), gate personal-attributes Meta, kill floor. 4 modalità input incl. angle bank `53`. Output: `06_Ad_Copy/headline-bank-*.md`. (SA7) → `/pm-headlines`
+- `55_video_script` — ✅ Video Script Studio universale (qualsiasi formato/lunghezza), gratis e solo testo: matematica del budget parole deterministica, 12 framework video nominati (`_shared/script_frameworks.md`), 3 hook variant + kill floor, upgrade di pacing misurato da `52_ad_spy_video` quando disponibile. Non richiesto da `25_ugc_prompt` (che scrive già i propri script) — copre i formati che quella non produce (voiceover-only, dialogo, founder, VSL) o un deliverable-script rapido. Output: `15_Video_Scripts/script-*.md`. (SA6) → `/pm-video-script`
+
+> **Reference condivise (`directives/skills/_shared/`):** motori riusati da più skill creative (53/54/55, e riusabili da 13/28 in futuro): `angle_engine.md`, `awareness_tension_funnel.md`, `niche_offer_types.md`, `headline_frameworks.md`, `script_frameworks.md`, `creative_claims_compliance.md`, `creative_kill_floor_review.md`. Non sono skill invocabili direttamente, solo reference caricate dalle skill che le citano.
 
 > **Skill SEO/supporto (39-42):** importate da `kostja94/marketing-skills` + plugin esterni, tradotte in italiano (corpo IT, termini tecnici SEO in EN). Pacchetti come cartelle con `references/` e `scripts/`. La skill globale `google-search-console` è installata in `~/.claude/skills/` (alimenta `40_seo_audit`).
 
@@ -301,7 +310,7 @@ Quando una skill o un agente deve scrivere un prompt (immagini, video, copy, ric
 > **Dashboard competitor ads:** `output/dashboard/competitor-ads/index.html` — single-file, **look&feel Airbnb**, filtri awareness (5 Schwartz) + funnel (TOF/MOF/BOF) + competitor + tier. Alimentata da `data.json` di `19_ad_spy`.
 > **Dashboard performance:** `output/dashboard/performance/index.html` — single-file, look&feel Airbnb, KPI macro (MER/ROAS/NCAC business-model-aware) + sparkline + tabelle campagne Google/Meta + alert automatici. Alimentata da `data.json` generato dal workflow n8n `execution/workflows/performance_dashboard_n8n.json` (Shopify+Google+Meta). **Token-zero sui refresh** — SA8 legge `data.json` solo on-demand per i report. Dettaglio in `output/dashboard/performance/README.md`.
 
-> **Nota:** le funzioni un tempo coperte da plugin esterni (ad spy static+video, UGC scraper, brand DNA, character, rebuild, static, ugc-prompt, product-shot, multiplier, copy, landing-page, meta-handoff) sono **internalizzate** nelle skill native `18`-`30` + `52` (comandi `/pm-*`). Nessuna dipendenza da plugin di terzi: i servizi (Apify, Fal.ai, Playwright, Higgsfield) girano come **MCP propri** configurati in `.mcp.json` (vedi `.mcp.json.example`). Setup: `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`.
+> **Nota:** le funzioni un tempo coperte da plugin esterni (ad spy static+video, UGC scraper, brand DNA, character, rebuild, static, ugc-prompt, product-shot, multiplier, copy, landing-page, meta-handoff, angle finder, headline bank, video script) sono **internalizzate** nelle skill native `18`-`30` + `52`-`55` (comandi `/pm-*`). Nessuna dipendenza da plugin di terzi: i servizi (Apify, Fal.ai, Playwright, Higgsfield) girano come **MCP propri** configurati in `.mcp.json` (vedi `.mcp.json.example`). Setup: `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`. `53`/`54`/`55` sono gratis e solo testo, nessuna key richiesta.
 
 ### Skills Claude Code (globali)
 - `marketing-psychology` — attiva sempre per SA2, SA5, SA7

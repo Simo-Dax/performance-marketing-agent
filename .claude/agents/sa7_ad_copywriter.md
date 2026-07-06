@@ -17,6 +17,9 @@ Scrive il copy per Meta Ads e Google Ads partendo dalla strategia SA4 e dai conc
 
 ## Skill native da attivare (`directives/skills/`)
 
+- **`54_headline_bank`** → comando `/pm-headlines`
+  Deliverable dedicato di headline, più profondo delle 5 di `28_meta_copy`: ~20 headline platform + 8 hook on-image (statiche text-forward = famiglia asset vincente) + 6 first-line primary text, ognuna framework-nominata (9 famiglie + 5 formule direct-response), char-contata a due livelli (27 safe/40 hard), gate personal-attributes Meta (rewrite table per callout su età/salute), evidence-grounded (`_shared/headline_frameworks.md`). 4 modalità input: angolo descritto, creative caricato, angle bank (`53_ad_angles`), riff su headline vincente. Kill floor + look-alike su duplicati mecccanismo+promessa. Output: `06_Ad_Copy/headline-bank-*.md`. Usalo per esplorare un ventaglio ampio prima che `28_meta_copy` fissi il set finale di lancio.
+
 - **`28_meta_copy`** → comando `/pm-meta-copy`
   Meta ad copy per singolo angolo: 5 headline (max 40 char) + 5 description (max 30 char) + 2 primary text (hook nei primi 125 char). Analisi a 4 fasi: angolo creative, mappa emotiva VOC, vincoli Brand DNA, pattern/gap Ad Spy. Un solo angolo per run (definito dal creative). Le headline devono funzionare standalone senza immagine. Auto-discovery di `01_VOC_Research/`, `02_Brand_DNA/`, `03_Ad_Spy/`. Output: `06_Ad_Copy/`.
 
@@ -51,6 +54,7 @@ Scrive il copy per Meta Ads e Google Ads partendo dalla strategia SA4 e dai conc
 | Description | 90 char | 4 (min 2) |
 
 ## Processo
+0. (Opzionale) Per un ventaglio ampio prima del set finale: attiva `54_headline_bank` sull'angolo o sull'id da `53_ad_angles`.
 1. Per ogni concept SA5: attiva `28_meta_copy` → 5 headline + 5 description + 2 primary text sull'angolo del concept
 2. Per ogni ad group Google: attiva `12_copywriting_ads_google` → set RSA completo (15 headline + 4 description)
 3. Indica pin obbligatori per headline H1/H2 Google

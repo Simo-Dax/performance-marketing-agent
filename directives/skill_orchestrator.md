@@ -14,6 +14,7 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 |-------|-----------|------|---------|
 | `17_financial_performance` | SA3 | Financial | Calcolo MER/ROAS/CPA/NCAC targets + budget framework — sempre prima di SA4 |
 | `09_marketing_psychology` | SA2, SA5, SA7 | Research + Creative | Sempre attiva per insight comportamentali |
+| `53_ad_angles` | SA5 | Creative | Angle finder veloce evidence-driven, a monte di `13_creative_concepts` — angoli medium-neutral, SPREAD/FOCUS, gratis e solo testo. Input: VOC + Brand DNA (+ Ad Spy opzionale). Output id-stabili `A01...`. |
 | `13_creative_concepts` | SA5 | Creative | Sviluppo concept da brief strategico |
 | `11_copywriting_ads_meta` | SA7 | Creative | Copy Meta Ads (primary text, headline, description) |
 | `12_copywriting_ads_google` | SA7 | Creative | Copy Google RSA (15 headline, 4 description) |
@@ -49,10 +50,12 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `21_brand_dna` | Pre-pipeline | Setup | Brand DNA HTML — colori live via Playwright + web search. Input: nome brand + URL. Prerequisito per static e character. |
 | `22_character_creator` | SA5 | Creative | Brand character creator — 1-10 personaggi (headshot + full body). Input: Brand DNA opzionale. Modello: GPT Image 2 o Nano Banana 2. |
 | `23_competitor_rebuild` | SA5 | Creative | Competitor ad rebuild — trasforma ad competitor in prompt per proprio brand + 5 variazioni persona opzionali. Input: ad competitor + Brand DNA + VOC. |
+| `55_video_script` | SA6 | Production | Video Script Studio universale, gratis e solo testo — script finito per qualsiasi formato/lunghezza (10s-90s+), matematica budget parole deterministica, 12 framework nominati, non richiesto da `25_ugc_prompt`. |
 | `24_static_ads` | SA6 | Production | 40 static ad prompts — da Brand DNA + VOC. Input: brand URL + nome prodotto. Modello: GPT Image 2 o Nano Banana 2. |
 | `25_ugc_prompt` | SA6 | Production | UGC video prompts → Seedance 2.0 (Higgsfield o fal.ai). Input: script UGC + VOC + Brand DNA. 6 prompt con hook archetype diversi. |
 | `26_product_shot` | SA6 | Production | Product shot (Studio/Held/Worn). Input: immagine prodotto. Opzionale: personaggio da `22_character_creator`. |
 | `27_multiplier` | SA6 | Production | Moltiplicatore winner — 5-8 variazioni Andromeda-compliant da ad vincente. Input: ad vincente + 1-3 img prodotto + Brand DNA + VOC. |
+| `54_headline_bank` | SA7 | Creative | Headline bank dedicata, più profonda di `28_meta_copy` — ~20 headline + 8 hook on-image + 6 first-line, framework-nominate, char-discipline 27/40, gate personal-attributes Meta. Input: angolo/creative/angle-bank/riff. |
 | `28_meta_copy` | SA7 | Creative | Meta ad copy — 5 headline (40char) + 5 description (30char) + 2 primary text. Input: Brand DNA + VOC + creative. Alias nativo di `11_copywriting_ads_meta`. |
 | `29_landing_page` | Post-SA7 | Production | Landing page HTML single-file da ad Meta (Tailwind + VOC injection). Input: ad creative + Brand DNA + VOC. Anti-AI slop 34-point audit. |
 | `30_meta_handoff` | Post-SA6 | Lancio | Prompt handoff per Meta Ads MCP su claude.ai web. Due modalità: analisi campagne esistenti o build nuove campagne. |
@@ -110,15 +113,16 @@ Esito gate:
 - Output: `02_Brand_DNA/brand-dna-[brand-slug].html` — prerequisito per `24_static_ads` e `22_character_creator`
 
 ### Fase 4 — Creative (SA5 → SA7 sequenziale)
-- SA5: attiva `13_creative_concepts` + `04_references_tecniche_design` + `09_marketing_psychology`
+- SA5: (opzionale, veloce) **`53_ad_angles`** per un ventaglio ampio di angoli prima del deck pieno — poi attiva `13_creative_concepts` + `04_references_tecniche_design` + `09_marketing_psychology`
   - **`22_character_creator`** — se la campagna include UGC video o product shot con personaggio fisso
   - **`23_competitor_rebuild`** — se esiste un competitor ad da reverse-engineerare
-- SA7: alimentato da output SA5 — attiva `11_copywriting_ads_meta` + **`28_meta_copy`** + `12_copywriting_ads_google` + `10_advanced_copywriting` + `09_marketing_psychology`
+- SA7: alimentato da output SA5 — (opzionale) **`54_headline_bank`** per esplorare un ventaglio ampio di headline — poi attiva `11_copywriting_ads_meta` + **`28_meta_copy`** + `12_copywriting_ads_google` + `10_advanced_copywriting` + `09_marketing_psychology`
 - SA7 NON parte prima del completamento di SA5: il copy deve riflettere i concept approvati
 
 ### Fase 5 — Production (SA6)
 - Input: output SA5 + SA7 + brand kit
 - Attiva `14_asset_production`
+- **`55_video_script`** — script finito per formati non coperti da `25_ugc_prompt` (voiceover-only, dialogo, founder, VSL) o deliverable-script rapido
 - **`24_static_ads`** — 40 prompt statici (GPT Image 2 o Nano Banana 2)
 - **`25_ugc_prompt`** — 6 prompt video Seedance 2.0 (se campagna include UGC)
 - **`26_product_shot`** — product shot Studio/Held/Worn (se necessario)
@@ -193,6 +197,9 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `11_copywriting_ads_meta` — Meta Ads copy
 - [x] `12_copywriting_ads_google` — Google RSA copy → `/pm-google-ads-copy`
 - [x] `13_creative_concepts` — framework concept (SA5)
+- [x] `53_ad_angles` — angle finder veloce, a monte di 13 (SA5)
+- [x] `54_headline_bank` — headline bank dedicata (SA7)
+- [x] `55_video_script` — script studio universale (SA6)
 - [x] `14_asset_production` — router produzione (SA6) → instrada a 24/25/26/27
 - [x] `15_google_ads_analytics` — report Google Ads
 - [x] `16_meta_ads_analytics` — report Meta Ads
@@ -253,10 +260,13 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-brand-kit` | `21_brand_dna` | Pre-pipeline |
 | `/pm-buyer-persona` | `22_character_creator` | SA5 |
 | `/pm-competitor-rebuild` | `23_competitor_rebuild` | SA5 |
+| `/pm-ad-angles` | `53_ad_angles` | SA5 |
 | `/pm-statiche` | `24_static_ads` | SA6 |
+| `/pm-video-script` | `55_video_script` | SA6 |
 | `/pm-ugc-video` | `25_ugc_prompt` | SA6 |
 | `/pm-product-photo` | `26_product_shot` | SA6 |
 | `/pm-multiplier` | `27_multiplier` | SA6 |
+| `/pm-headlines` | `54_headline_bank` | SA7 |
 | `/pm-meta-copy` | `28_meta_copy` | SA7 |
 | `/pm-google-ads-copy` | `12_copywriting_ads_google` | SA7 |
 | `/pm-landing-page` | `29_landing_page` | Post-SA7 |
