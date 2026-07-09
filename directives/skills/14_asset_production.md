@@ -19,7 +19,7 @@ Tenere il routing separato dall'esecuzione evita che SA6 reinventi prompt già p
 
 | Se il concept è… | Skill | Comando | Modello | Output |
 |------------------|-------|---------|---------|--------|
-| Statica / ad image da zero | `24_static_ads` | `/pm-statiche` | GPT Image 2 / Nano Banana 2 | `04_Static_Ads/` |
+| Statica (rebrand di un winner reale dalla reference bank) | `24_static_ads` | `/pm-statiche` | GPT Image 2 / Nano Banana 2 | `04_Static_Ads/` |
 | Video UGC (hook + parlato) | `25_ugc_prompt` | `/pm-ugc-video` | Seedance 2.0 | `05_UGC_Prompts/` |
 | Shot prodotto (studio/held/worn) | `26_product_shot` | `/pm-product-photo` | GPT Image 2 / Nano Banana 2 | `_assets/product-shots/` |
 | Scalare un ad vincente esistente | `27_multiplier` | `/pm-multiplier` | GPT Image 2 / Nano Banana 2 | `07_Multiplied_Ads/` |
@@ -83,7 +83,7 @@ Tabella riepilogo da confermare con l'utente:
 Le 4 skill esecutrici sono **indipendenti tra loro**. Per più concept di tipo diverso → lancia in parallelo con `run_in_background` (es. statiche del concept 1 mentre gira il video del concept 2).
 
 Per ogni skill passa gli input richiesti:
-- **24_static_ads**: Brand DNA + VOC + angolo concept → 40 prompt (subset picker per generazione)
+- **24_static_ads**: reference bank obbligatoria (`19_ad_spy` + winner live brand) + Brand DNA + VOC + angolo concept → un blocco prosa per ad (batch plan approvato, subset picker per generazione)
 - **25_ugc_prompt**: script/angolo + personaggio da `11_Characters/` + VOC → 6 prompt Seedance
 - **26_product_shot**: foto prodotto + personaggio (se worn/held) + modalità
 - **27_multiplier**: ad vincente + 1-3 foto prodotto + Brand DNA + VOC → tabella strategia (conferma) → prompt

@@ -105,7 +105,7 @@ Salva in: `<pwd>/02_Brand_DNA/brand-dna-[brand-slug].html`
 
 ## Dopo la consegna
 
-> "Brand DNA completato! Quando sei pronto per generare i 40 prompt statici, usa la skill `/static` e carica questo documento Brand DNA insieme al VOC e alle immagini prodotto."
+> "Brand DNA completato! Quando sei pronto per le statiche, esegui `/pm-competitor-spy` su un competitor (banca i winner reali), poi `/pm-statiche`: ogni ad rebranda un winner reale dalla bank col tuo Brand DNA, VOC e immagini prodotto."
 
 ---
 

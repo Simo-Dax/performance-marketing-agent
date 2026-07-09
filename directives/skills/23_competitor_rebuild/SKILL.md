@@ -10,6 +10,8 @@
 
 Trasforma un ad vincente del competitor in un prompt immagine completo per il proprio brand — con tutti i testi e swap visivi scritti esplicitamente. Opzionalmente: 5 variazioni persona.
 
+> **Rapporto con `24_static_ads` (rebrand batch):** stessa dottrina "tieni il design, scambia l'identità". Questa skill è il **percorso ad-hoc a singolo ad**: incolli UN'immagine competitor al volo (senza passare dallo scrape/bank di `19_ad_spy`) e ottieni 1 rebrand + 5 variazioni persona. `24_static_ads` è il **percorso batch**: rebranda N winner reali dalla reference bank bancata da `19_ad_spy`. Usa questa per un test rapido su un singolo ad; usa `24_static_ads` per un batch dalla bank.
+
 ---
 
 ## Input richiesti (chiedi tutto in un unico messaggio)

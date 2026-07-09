@@ -39,6 +39,7 @@ Auto-discovery prima di chiedere:
 ls -t "$WORKDIR/01_VOC_Research/"*.html "$WORKDIR/01_VOC_Research/"*.md 2>/dev/null | head -n 1
 ls -t "$WORKDIR/02_Brand_DNA/"*.html "$WORKDIR/02_Brand_DNA/"*.md 2>/dev/null | head -n 1
 ls -t "$WORKDIR/14_Creative_Briefs/"angles-*.json 2>/dev/null | head -n 1
+ls -t "$WORKDIR/intermediate/sa5_creative_framework.md" 2>/dev/null | head -n 1
 ```
 Chiedi solo ciò che non è derivabile:
 1. **Brand Facebook Page URL o Page ID** — per scrapare gli ad live del brand.
@@ -46,7 +47,7 @@ Chiedi solo ciò che non è derivabile:
 3. **Quanti ad vuoi?** Qualsiasi numero — prima dirò quanto è profonda la reference bank.
 4. **Brief opzionale** — obiettivo campagna, offerta corrente, geo, price point, un ratio richiesto (solo se i placement lo impongono, altrimenti ogni ad renderizza al ratio nativo della sua fonte — il default raccomandato). "skip" se nessuno di questi conta per questo run.
 
-Se esiste un **angle bank approvato** (`14_Creative_Briefs/angles-*.json`), offri una volta: i suoi angoli diventano il pool per questo run e lo Step 4 salta la generazione interna. Porta l'id di ogni angolo (`A03`) fino agli header ad e ai nomi file.
+**Seed opzionale (angoli, non brief visivo).** Se esiste un **angle bank approvato** (`14_Creative_Briefs/angles-*.json` da `53_ad_angles`) o i **concept SA5** (`intermediate/sa5_creative_framework.md`), offri una volta: i loro angoli/messaggi/citazioni VOC diventano il pool per questo run e lo Step 4 salta la generazione interna. Porta l'id (`A03` o nome concept) fino agli header ad e ai nomi file. **Nota architettura:** di un concept SA5 si usa solo l'angolo/messaggio — la sua direzione visiva è ignorata di proposito, perché in questa skill il design viene sempre dall'ad sorgente della reference bank. Lo scrape (Step 2), il teardown dei winner (Step 3b) e la bank restano il motore anche con un seed.
 
 Cattura: `$BRAND_DNA`, `$VOC`, `$PAGE_INPUT`, `$PRODUCT_IMAGES`, `$BRAND_LOGO` (vuoto se assente — mai inventare un allegato), `$AD_COUNT`, `$FORCED_RATIO` (vuoto = ratio nativo per ad), `$BRIEF`.
 
@@ -105,7 +106,7 @@ Mandatorio quando esistono ad attivi. **Guarda davvero le creative.** Scarica le
 
 ## Step 4 — Pool di angoli
 
-Se il run è stato seedato da un angle bank approvato (Step 1), salta questo step — gli angoli seedati sono il pool.
+Se il run è stato seedato da un angle bank approvato o dai concept SA5 (Step 1), salta questo step — gli angoli/messaggi seedati sono il pool (dei concept SA5 si prende angolo+messaggio+citazione VOC, non la direzione visiva).
 
 Altrimenti, assembla in memoria: `$BRAND_DNA`, `$VOC`, il set ad normalizzato con tag/tier, `$AD_ANALYSIS`, `$PROP_CATALOG`+`$PRODUCT_DNA`, `$BRIEF`, storia delle run precedenti (fino a 5 `brand-ads-*.json` scratch più recenti, oggi escluso). Carica `../_shared/angle_engine.md` e genera **6-10 angoli** (usa lo spread G.3, i gate hard G.5, il contratto G.4 semplificato: ogni angolo porta message/awareness/citazione VOC/proof disponibile/segnale su cui si appoggia — **nessuna direzione visiva**, il visual viene sempre dagli ad sorgente in questa skill, dargliene una lo romperebbe). Avvisa: "Costruisco il pool di angoli da Brand DNA, VOC, e i tuoi ad live. 45-90 secondi."
 

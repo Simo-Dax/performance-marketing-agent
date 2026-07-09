@@ -173,7 +173,7 @@ Solo i concept che passano tutti e 6 vanno a SA6.
 ## Step 4 — Routing produzione
 
 Per ogni concept indica esplicitamente quale skill SA6 lo produrrà, così SA6 sa già cosa instradare:
-- Statica ad image da zero → **`24_static_ads`** (`/pm-statiche`)
+- Statica → **`24_static_ads`** (`/pm-statiche`). Nota: `24_static_ads` è **rebrand di winner reali** — prende il design da un ad vincente reale della reference bank, non dalla direzione visiva del concept. Del concept usa **l'angolo/messaggio/citazione VOC** (che seedano il pool angoli); la direzione visiva del concept è ignorata di proposito (il design vince già nel feed reale). Un concept può quindi passare a 24 come seed angolo, non come brief visivo.
 - Video UGC con hook → **`25_ugc_prompt`** (`/pm-ugc-video`)
 - Shot prodotto (studio/in mano/indossato) → **`26_product_shot`** (`/pm-product-photo`)
 - Scalare un winner esistente → **`27_multiplier`** (`/pm-multiplier`)

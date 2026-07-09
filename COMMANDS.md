@@ -17,7 +17,8 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 |---------|---------|----------------|
 | `/pm-brand-kit` | Brand DNA: colori live (Playwright) + voce brand → HTML | 21 / pre-pipeline |
 | `/pm-dati-qualitativi` | VOC research: linguaggio verbatim clienti → HTML | 18 / SA2 |
-| `/pm-competitor-spy` | Ad spy Meta: swipe file static ads ranked (Apify) | 19 / SA1 |
+| `/pm-competitor-spy` | Ad spy Meta static: swipe file ranked + prompt di ricreazione per ogni creative (Apify) | 19 / SA1 |
+| `/pm-competitor-spy-video` | Ad spy Meta video: teardown per video (script/hook/beat sheet, Apify + fal.ai) | 52 / SA1 |
 | `/pm-ugc-analysis` | UGC TikTok: 25 transcript virali (Apify) | 20 / SA1 |
 
 ## Strategia (33 → SA3 → SA4)
@@ -32,20 +33,23 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 ## Creative (SA5)
 | Comando | Cosa fa | Skill / Agente |
 |---------|---------|----------------|
+| `/pm-ad-angles` | Angle finder evidence-driven (SPREAD/FOCUS), a monte del deck | 53 / SA5 |
 | `/pm-buyer-persona` | 1-10 personaggi brand (headshot + full body 3:4) | 22 / SA5 |
-| `/pm-competitor-rebuild` | Reverse-engineer ad competitor → prompt proprio brand | 23 / SA5 |
+| `/pm-competitor-rebuild` | Reverse-engineer un singolo ad competitor → prompt proprio brand (ad-hoc) | 23 / SA5 |
 
 ## Produzione (SA6)
 | Comando | Cosa fa | Skill / Agente |
 |---------|---------|----------------|
-| `/pm-statiche` | 40 static ad prompts (GPT Image 2 / Nano Banana 2) | 24 / SA6 |
-| `/pm-ugc-video` | 6 prompt video UGC → Seedance 2.0 | 25 / SA6 |
+| `/pm-statiche` | Static ad da winner reali: rebrand della reference bank (design tenuto, identità scambiata) | 24 / SA6 |
+| `/pm-video-script` | Video script studio universale (qualsiasi formato/lunghezza), solo testo | 55 / SA6 |
+| `/pm-ugc-video` | UGC factory: 4 ad MP4 montati → Seedance 2.0 | 25 / SA6 |
 | `/pm-product-photo` | Product shot Studio/Held/Worn | 26 / SA6 |
 | `/pm-multiplier` | 5-8 variazioni Andromeda-compliant da winner | 27 / SA6 |
 
 ## Copy (SA7)
 | Comando | Cosa fa | Skill / Agente |
 |---------|---------|----------------|
+| `/pm-headlines` | Headline bank dedicata (~20 headline + 8 hook on-image + 6 first-line) | 54 / SA7 |
 | `/pm-meta-copy` | 5 headline + 5 description + 2 primary text | 28 / SA7 |
 | `/pm-google-ads-copy` | RSA: 15 headline + 4 description | 12 / SA7 |
 

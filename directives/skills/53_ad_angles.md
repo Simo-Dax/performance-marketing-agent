@@ -4,7 +4,7 @@
 **Output:** `14_Creative_Briefs/angles-[brand-slug]-[YYYY-MM-DD].md` + `.json`
 **Reference:** `_shared/angle_engine.md`, `_shared/awareness_tension_funnel.md`, `_shared/niche_offer_types.md`, `_shared/creative_claims_compliance.md`, `_shared/creative_kill_floor_review.md`
 
-Strumento veloce di strategia, evidence-first: trova gli ANGOLI ad prima ancora di scrivere headline, script o concept deck completi. Sta **a monte** di `13_creative_concepts` (che produce il deck completo con visual family) — usa questa skill quando serve un ventaglio ampio di battaglie distinte da testare, prima di investire nel deck pieno. Gratis e solo testo, al massimo 3 domande di intake.
+Strumento veloce di strategia, evidence-first: trova gli ANGOLI ad prima ancora di scrivere headline, script o concept deck completi. Sta **a monte** di `13_creative_concepts` (che produce il deck completo con brief visivo) — usa questa skill quando serve un ventaglio ampio di battaglie distinte da testare, prima di investire nel deck pieno. Gratis e solo testo, al massimo 3 domande di intake.
 
 ---
 

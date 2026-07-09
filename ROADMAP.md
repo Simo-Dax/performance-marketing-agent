@@ -207,8 +207,7 @@ Due leve di automazione di Claude Code, complementari a n8n.
 **A) `/goal` — disponibile ORA, locale, in-sessione** (CLI ≥ v2.1.139, workspace trusted, hooks attivi).
 Imposta una condizione di completamento → Claude lavora a turni finché un evaluator (Haiku) la verifica. **⚠️ Salta i GATE umani** → usare SOLO su task meccanici con end-state verificabile, MAI sulla pipeline gated SA1→SA4. Combina con **auto mode** per run batch non presidiati. L'evaluator giudica solo ciò che è nel transcript → la skill deve *stampare la prova*.
 
-Goal-recipe da usare/testare:
-- `/goal 40 static ad prompt salvati in 04_Static_Ads/ coprendo i percorsi A/B/C/D, ls stampato (o stop dopo 15 turni)` → `24_static_ads`
+Goal-recipe da usare/testare (solo task senza gate umano):
 - `/goal report SA8 Google+Meta generato con tutte le sezioni di 31_reporting_template, salvato in output/reports/` → `/pm-report`
 - `/goal la landing page HTML passa il 34-point anti-AI audit con zero fail, audit stampato` → `29_landing_page`
 - `/goal 6 email (welcome+abandoned+winback) scritte, ognuna passata da 03_editing_selfcheck` → `46_email_creation`
