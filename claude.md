@@ -264,12 +264,12 @@ Quando una skill o un agente deve scrivere un prompt (immagini, video, copy, ric
 - `16_meta_ads_analytics` — ✅ Report performance Meta Ads — metriche, creative fatigue, template report (SA8)
 - `17_financial_performance` — ✅ KPI framework: MER, ROAS, CPA, NCAC, Acquisition MER, budget split, red flag finanziari (SA3)
 - `18_voc_research` — ✅ VOC Research — linguaggio verbatim clienti, 2 fasi: ricerca web + HTML (SA2)
-- `19_ad_spy` — ✅ Ad Spy 2.0 — swipe file competitor Meta, brand-locked, solo static, **Apify REST diretto (no MCP)** (SA1)
+- `19_ad_spy` — ✅ Ad Spy 2.0 — swipe file competitor Meta, brand-locked, solo static, **Apify REST diretto (no MCP)**. **Reverse-engineering a tempo di scrape**: ogni creative unica (qualsiasi tier, ≤40/brand) diventa un prompt di ricreazione via `_shared/format_teardown_recreation.md` (non un riassunto — incollato senza reference image rigenera essenzialmente lo stesso ad), bancato in `_scratch/format-*.json`, bottone 📐 su ogni card, consumato direttamente da `24_static_ads` come reference bank. (SA1)
 - `20_ugc_scraper` — ✅ UGC Scraper 2.0 — 25 transcript TikTok virali, vetting LLM rilevanza (SA1)
 - `21_brand_dna` — ✅ Brand DNA Playwright 3.0 — colori live CSS + web search, HTML (Pre-pipeline)
 - `22_character_creator` — ✅ Character Creator — 1-10 personaggi headshot+fullbody 3:4, GPT Image 2 (SA5)
 - `23_competitor_rebuild` — ✅ Competitor Ad Rebuild — ingegneria inversa + prompt rebuild + variazioni persona (SA5)
-- `24_static_ads` — ✅ Static Render Prompts evidence-driven (SA6): 5 visual families per concept SA5, template per nome usato come blueprint (no paint-by-numbers), prop catalog dalle foto, aspect ratio + GPT Image 2 default, constraints line anti-AI-slop, percorsi A/B/C/D
+- `24_static_ads` — ✅ Static Ads da winner reali — rebrand model (SA6): niente template, ogni ad è il REBRAND di un ad vincente reale dalla reference bank (`19_ad_spy` + winner live del brand), design tenuto intero, solo identità scambiata (parole/marchi/prodotto/colori/numeri) via `_shared/format_teardown_recreation.md` + `_shared/adjacency_kill_pass.md`, deliverable = un blocco prosa per ad (mai zone/scaffold). Reference ads obbligatorie (hard gate). Batch plan approvato dall'utente prima di scrivere. Angoli da `53_ad_angles` o motore interno. Synthesis solo overflow approvato. Ratio segue la fonte, GPT Image 2 default, percorsi A/B/C/D
 - `25_ugc_prompt` — ✅ UGC Factory (Seedance 2.0, Andromeda) — da hook+script a **4 ad MP4 montati** (25-45s): 4 hook unici + b-roll ladder 0/1/2/2 ends-on-CTA, gen <10s, pacing 3.5wps + assembly via script python/bash, 2 🚦gate (transcript+costo), 4 path A/B/C/D, no TikTok scraping (SA6)
 - `26_product_shot` — ✅ Product Shot — Studio/Held/Worn, loop variazioni post-v1 (SA6)
 - `27_multiplier` — ✅ Winning Ad Multiplier 2.0 — 5-8 variazioni Andromeda-compliant (SA6)

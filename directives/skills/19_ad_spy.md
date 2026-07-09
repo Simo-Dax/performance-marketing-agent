@@ -1,8 +1,9 @@
 # SA1 — Ad Spy 2.0 (Competitor Intelligence)
 
 **Agente:** SA1 (Competitor Analysis)
-**Output:** `03_Ad_Spy/adspy-[brand]-[YYYYMMDD].html` + `competitors.json`
+**Output:** `03_Ad_Spy/adspy-[brand]-[YYYYMMDD].html` + `competitors.json` + `_scratch/format-*.json`+`.txt` (prompt di ricreazione per ogni creative unica, consumati da `24_static_ads`)
 **Prerequisiti:** Apify API key configurata
+**Reference:** `directives/skills/_shared/format_teardown_recreation.md` (fase EXTRACT)
 
 ---
 
@@ -143,13 +144,24 @@ Campi utili per ad: `page_name`, `ad_archive_id`, `is_active`, `start_date`/`end
 
 5. **Analisi** — per ogni 🏆/🔥/⚡: 2-3 frasi su hook, awareness level, perché funziona
 
-6. **Download immagini base64:**
+6. **Download immagini base64 + su disco:**
 ```bash
+mkdir -p "$WORKDIR/03_Ad_Spy/_creatives/{SLUG}"
 curl -s -L --max-time 10 \
   -H "User-Agent: Mozilla/5.0..." \
   -H "Referer: https://www.facebook.com/" \
-  "<URL>" | base64
+  -o "$WORKDIR/03_Ad_Spy/_creatives/{SLUG}/{ad_archive_id}.jpg" \
+  "<URL>"
 ```
+Salva **sia** il base64 inline per la card HTML **sia** il file su disco (`_creatives/{SLUG}/{ad_archive_id}.jpg`) — il file locale è l'unico input ammesso per il teardown allo step 6.5 (gli URL Ad Library scadono in pochi giorni, non sono mai fonte di teardown). Tieni una mappa `ad_images[ad_archive_id] = base64` viva fino allo Step 7 (la card HTML la legge).
+
+6.5. **Teardown a livello di ricreazione (ogni creative unica trovata)** — reverse-engineering, non riassunto: ogni ad statico scrapato diventa un prompt che, incollato senza immagine di riferimento, rigenera essenzialmente lo stesso ad.
+   - **Dedup + split.** Normalizza headline+body (lowercase, spazi collassati); solo la prima occorrenza di ogni creative unica procede, le altre righe si registrano come duplicati. Ordina le unique in ordine tier (🏆→🔥→⚡→✅→⬜), tetto **40 unique per brand per run** (oltre è coda a basso segnale).
+   - **In-agente vs backlog.** Le unique con card nel report (fino a 20) si torn-down QUI, in questo agente. Le unique restanti (fino a 20 in più, nessuna card) vanno in una lista `teardown_backlog` nel JSON di ritorno — l'orchestratore le smaltisce in un'ondata parallela separata dopo che tutti gli agenti brand sono tornati (batch da 10 creative, stesso brand, max 5 agenti in volo, un solo messaggio).
+   - **Skip se già bancato.** Se `$WORKDIR/03_Ad_Spy/_scratch/format-{SLUG}-{ad_archive_id}-*.json` esiste già a `schema_version: 2`, non ri-fare il teardown: leggi il `condensed_prompt` esistente da disco e popola comunque `shells[ad_archive_id]` per lo Step 7.
+   - **Esegui F-EXTRACT.** Carica `directives/skills/_shared/format_teardown_recreation.md`, esegui F.2-F.6 sul jpg locale appena scaricato (mai sull'URL), passando headline/body/cta/tier/analisi dello step 5 come variabili. Scrivi `format-{SLUG}-{ad_archive_id}-{YYYYMMDD}.json` + `.txt` in `$WORKDIR/03_Ad_Spy/_scratch/`, `status: extracted_not_transformed`, `created_by_skill: "19_ad_spy"`.
+   - **Self-check** (F.6): JSON riparsa, `condensed_prompt_char_count` ≤3800 e reale, ogni stringa del `verbatim_text_ledger` presente nel `condensed_prompt` (scansione whitespace-normalizzata), zero trattini lunghi. Fallito due volte → droppa lo shell, registra in `teardown_failures`.
+   - **Mappa in memoria:** `shells[ad_archive_id] = {file, condensed_prompt}` — la card HTML dello Step 7 legge da qui; i duplicati risolvono tramite lo shell dell'originale.
 
 7. **Build HTML** — **stesso Design System chiaro navy/slate di `18_voc_research`/`52_ad_spy_video`** (non più dark theme — allinea i 3 deliverable HTML come stessa famiglia prodotto):
    - CSS variabili: `--bg:#FFFFFF; --surface-light:#F4F6FA; --surface-mid:#E8EDF5; --navy:#162441; --slate:#8A9BBC; --body:#2C3E50; --green:#1A6B3C (winner/reach); --blue:#1A5276 (link/info); --amber:#8B6914 (disclaimer)`. Font: system sans-serif stack (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`).
@@ -157,9 +169,23 @@ curl -s -L --max-time 10 \
    - Barra filtri sticky, sfondo bianco, bordo `--surface-mid`: filtro per tier badge, per formato, per stato attivo/ritirato.
    - Card grid su sfondo bianco, ogni card `--surface-light` bg, bordo 1px `--surface-mid`, badge tier in alto (colori: PROVEN/RETIRED = `--green`, HOT = `--amber`, ACTIVE = `--blue`, SHORT = `--slate`), immagine statica inline base64, copy sotto (headline/body/CTA), blocco Audience & Reach quando disponibile (Step 4).
    - Banner disclaimer reach (Step 4) quando `reach_available=false`, in testa alla pagina, `--amber` come da Step 4.
+   - Bottom row card: bottone **[📋 Copy for /rebuild]** + bottone **[📐 Copy format shell]** (renderizza SOLO quando `shells[ad_archive_id]` esiste — copia il `condensed_prompt` verbatim con l'header "PROMPT DI RICREAZIONE, rigenera l'ad sorgente com'è, esegui `24_static_ads` per ribrandizzarlo prima di spedirlo") + data di inizio.
+   - Ogni voce `ADS_DATA` porta anche `format_shell` (il `condensed_prompt` dello shell bancato — un duplicato eredita quello dell'originale) e `shell_file` (il nome file in `_scratch/`); entrambi null solo se il teardown di quell'ad è fallito il self-check.
    - Self-contained: zero `<link>`/`<script src>` esterni, tutto CSS inline + immagini base64.
 
 8. **Salva** in `$WORKDIR/03_Ad_Spy/adspy-{SLUG}-{YYYYMMDD}.html`
+
+---
+
+## Step 4.7 — Ondata teardown backlog (banca le creative oltre il report)
+
+Dopo che tutti gli agenti brand sono tornati, raccogli il `teardown_backlog` di ogni brand. Se tutti i backlog sono vuoti, salta allo Step 5. Altrimenti:
+
+> 📐 Sto bancando altri {TOTALE} format shell oltre le card del report ({N} brand). Gira in background mentre preparo il riepilogo.
+
+Dispatch: **un agente per batch di massimo 10 voci backlog, tutte dello stesso brand, massimo 5 agenti in volo, un solo messaggio parallelo.** Ogni agente carica `directives/skills/_shared/format_teardown_recreation.md`, esegue F-EXTRACT (F.2-F.6) sull'immagine locale già salvata in `_creatives/{SLUG}/{ad_archive_id}.jpg` (mai un URL), scrive `format-{SLUG}-{ad_archive_id}-{YYYYMMDD}.json`+`.txt`, stesso self-check dello Step 6.5. Un agente morto/in timeout non è un fallimento del run: le sue voci si registrano come `teardown_failures`.
+
+Merge dei `written`/`failures` di ogni agente nel record del brand prima di stampare lo Step 5.
 
 ---
 
@@ -169,14 +195,16 @@ curl -s -L --max-time 10 \
 ✅ Ad Spy 2.0 Completato
 
 Brand verificati e processati:
-  🏆 Ka'Chava   → 28 ads, 12 winner → adspy-kachava-{data}.html
-  🏆 Huel       → 18 ads, 7 winner  → adspy-huel-{data}.html
+  🏆 Ka'Chava   → 28 ads, 12 winner, 24 format shell bancati → adspy-kachava-{data}.html
+  🏆 Huel       → 18 ads, 7 winner, 18 format shell bancati → adspy-huel-{data}.html
 
 Non brand-lockati:
   ❌ Brand X — pagina ristretta. Vuoi riprovare? Incolla l'URL Ad Library.
 
-Prossimo step: Apri un 🏆 → clicca "📋 Copy for /pm-competitor-rebuild" → esegui skill 23_competitor_rebuild
+I format shell sono bancati per ogni ad del report — esegui 24_static_ads per ribrandizzarli sul tuo brand (design tenuto, identità scambiata). Ogni card ha anche un bottone 📐 per vedere il prompt strutturale grezzo. Prossimo step (rebuild singolo): apri un 🏆 → clicca "📋 Copy for /pm-competitor-rebuild" → esegui skill 23_competitor_rebuild
 ```
+
+Unisci la lista teardown di ogni brand (shell del report + shell backlog, nuovi e riusati) dentro il relativo record in `competitors.json` come unione deduplicata, mai una sostituzione — gli shell dei run precedenti non si perdono mai.
 
 ---
 
@@ -204,3 +232,6 @@ Scrivi `$WORKDIR/03_Ad_Spy/data.json` seguendo lo schema in `output/dashboard/co
 - **`scrapeAdDetails: true` obbligatorio** — senza, i dati sono incompleti
 - **Controllo contaminazione in ogni agente** — mix di page_name = fallimento, nessuno swipe file
 - **Dispatch parallelo in UN SOLO messaggio**
+- **Teardown solo da immagine locale** — mai da URL Ad Library (scadono in giorni); il file in `_creatives/` è l'unico input ammesso per il format shell
+- **Un prompt di ricreazione non è un ad da spedire** — è intelligence + base di rebrand; `status` resta `extracted_not_transformed` per sempre, solo `24_static_ads` lo ribrandizza
+- **Shell immutabili** — mai sovrascrivere un `format-*.json` esistente; un redo scrive un nuovo file con suffisso `-2`

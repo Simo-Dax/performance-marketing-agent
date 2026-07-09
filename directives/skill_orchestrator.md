@@ -44,14 +44,14 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | Skill | Sub-Agent | Fase | Trigger |
 |-------|-----------|------|---------|
 | `18_voc_research` | SA2 | Research | VOC research — linguaggio verbatim clienti da review/community. Input: URL prodotto + nome prodotto. Output HTML. Richiede web search. |
-| `19_ad_spy` | SA1 | Research | Ad spy competitor Meta — swipe file HTML con static ads. Input: brand/lista/nicchia, paese, n. ads. Richiede Apify. |
+| `19_ad_spy` | SA1 | Research | Ad spy competitor Meta — swipe file HTML con static ads. Banca anche un prompt di ricreazione (reverse-engineering) per ogni creative unica trovata, consumato da `24_static_ads`. Input: brand/lista/nicchia, paese, n. ads. Richiede Apify. |
 | `52_ad_spy_video` | SA1 | Research | Ad spy competitor Meta — sorella video di `19_ad_spy` (solo VIDEO ads). Teardown per video: script timestampato (fal.ai Whisper), on-screen text, hook, beat sheet, CTA. Input: brand/lista/nicchia, paese, n. video. Richiede Apify + fal.ai. |
 | `20_ugc_scraper` | SA1 | Research | Scraping TikTok UGC virali — 25 transcript per swipe file. Input: VOC + nicchia. Richiede Apify. Costo ~$0.056/run. |
 | `21_brand_dna` | Pre-pipeline | Setup | Brand DNA HTML — colori live via Playwright + web search. Input: nome brand + URL. Prerequisito per static e character. |
 | `22_character_creator` | SA5 | Creative | Brand character creator — 1-10 personaggi (headshot + full body). Input: Brand DNA opzionale. Modello: GPT Image 2 o Nano Banana 2. |
 | `23_competitor_rebuild` | SA5 | Creative | Competitor ad rebuild — trasforma ad competitor in prompt per proprio brand + 5 variazioni persona opzionali. Input: ad competitor + Brand DNA + VOC. |
 | `55_video_script` | SA6 | Production | Video Script Studio universale, gratis e solo testo — script finito per qualsiasi formato/lunghezza (10s-90s+), matematica budget parole deterministica, 12 framework nominati, non richiesto da `25_ugc_prompt`. |
-| `24_static_ads` | SA6 | Production | 40 static ad prompts — da Brand DNA + VOC. Input: brand URL + nome prodotto. Modello: GPT Image 2 o Nano Banana 2. |
+| `24_static_ads` | SA6 | Production | Static ad da winner reali (rebrand) — reference bank obbligatoria (`19_ad_spy` + winner live del brand), design tenuto/identità scambiata, un blocco prosa per ad. Input: pagina Facebook brand, n. ad, foto prodotto. Modello: GPT Image 2 (default) o Nano Banana 2 (solo 4:5 vero). Richiede Apify. |
 | `25_ugc_prompt` | SA6 | Production | UGC video prompts → Seedance 2.0 (Higgsfield o fal.ai). Input: script UGC + VOC + Brand DNA. 6 prompt con hook archetype diversi. |
 | `26_product_shot` | SA6 | Production | Product shot (Studio/Held/Worn). Input: immagine prodotto. Opzionale: personaggio da `22_character_creator`. |
 | `27_multiplier` | SA6 | Production | Moltiplicatore winner — 5-8 variazioni Andromeda-compliant da ad vincente. Input: ad vincente + 1-3 img prodotto + Brand DNA + VOC. |
@@ -123,7 +123,7 @@ Esito gate:
 - Input: output SA5 + SA7 + brand kit
 - Attiva `14_asset_production`
 - **`55_video_script`** — script finito per formati non coperti da `25_ugc_prompt` (voiceover-only, dialogo, founder, VSL) o deliverable-script rapido
-- **`24_static_ads`** — 40 prompt statici (GPT Image 2 o Nano Banana 2)
+- **`24_static_ads`** — rebrand di winner reali dalla reference bank (`19_ad_spy` obbligatorio), un blocco prosa per ad (GPT Image 2 o Nano Banana 2)
 - **`25_ugc_prompt`** — 6 prompt video Seedance 2.0 (se campagna include UGC)
 - **`26_product_shot`** — product shot Studio/Held/Worn (se necessario)
 - **`27_multiplier`** — 5-8 variazioni Andromeda-compliant (se esiste un ad vincente da moltiplicare)
@@ -213,7 +213,7 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `21_brand_dna` — Brand DNA Playwright 3.0 (Pre-pipeline)
 - [x] `22_character_creator` — Character Creator (SA5)
 - [x] `23_competitor_rebuild` — Competitor Ad Rebuild (SA5)
-- [x] `24_static_ads` — 40 Static Ad Prompts (SA6)
+- [x] `24_static_ads` — Static Ads da winner reali, rebrand model (SA6)
 - [x] `25_ugc_prompt` — UGC Prompt Generator Seedance 2.0 (SA6)
 - [x] `26_product_shot` — Product Shot Generator (SA6)
 - [x] `27_multiplier` — Winning Ad Multiplier 2.0 (SA6)
