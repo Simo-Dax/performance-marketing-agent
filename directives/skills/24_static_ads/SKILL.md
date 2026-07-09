@@ -4,7 +4,7 @@
 **Input:** reference bank obbligatoria (format shell bancati da `19_ad_spy` e/o dai winner live del brand) + Brand DNA + VOC + foto prodotto
 **Output:** prompt in chat (un blocco prosa per ad) + copia su disco `04_Static_Ads/static-ads-[YYYY-MM-DD].txt`
 **Modello default:** GPT Image 2 (`openai/gpt-image-2/edit`) al ratio nativo di ogni ad sorgente. Nano Banana 2 solo per 4:5 vero insistito.
-**Reference:** `references/format_families.md` (13 famiglie verificate, vocabolario di classificazione, mai template) · `references/winning_ad_science.md` (evidenze — warn su rebrand, legge su synthesis) · `references/rebrand_worked_example.md` (coppia PRIMA/DOPO da studiare prima di scrivere) · `../_shared/format_teardown_recreation.md` (F-EXTRACT/F-TRANSFORM, gate R1-R6) · `../_shared/adjacency_kill_pass.md` (gate K1-K3) · `../_shared/angle_engine.md` (motore angoli, fallback Step 4)
+**Reference:** `references/format_families.md` (13 famiglie verificate, vocabolario di classificazione, mai template) · `references/winning_ad_science.md` (evidenze — warn su rebrand, legge su synthesis/Percorso Z) · `references/rebrand_worked_example.md` (coppia PRIMA/DOPO da studiare prima di scrivere) · `../_shared/format_teardown_recreation.md` (F-EXTRACT/F-TRANSFORM, gate R1-R6) · `../_shared/adjacency_kill_pass.md` (gate K1-K3) · `../_shared/angle_engine.md` (motore angoli, fallback Step 4/Z) · `references/legacy_templates.md` + `references/legacy_visual_families.md` (SOLO Percorso Z, fallback ultima spiaggia — vedi trigger esatto nel ramo zero-ad)
 
 ---
 
@@ -14,7 +14,7 @@ Questa skill **non riempie più template**. L'utente ordina un numero qualsiasi 
 
 **Legge Andromeda:** Meta raggruppa creative look-alike e le pool come un solo ad in delivery — quindi di default N ad = N ad sorgente strutturalmente DIVERSI, distribuiti su famiglie di formato diverse. L'utente può ordinare esplicitamente variazioni di uno stesso stile (stesso design tenuto, messaggio diverso ogni volta); la skill lo permette con una nota onesta che quelle variazioni si raggruppano come un cluster e Meta sceglie il messaggio vincente tra loro. Spread di default, ripetizione solo se richiesta.
 
-**Reference ads obbligatorie.** Questa skill non scrive mai prompt senza ad di riferimento reali: ad live del brand stesso (scrapati) o ricreazioni bancate dal competitor (`19_ad_spy`). Zero fonti + scan competitor rifiutato = il run si ferma con instradamento a `/pm-competitor-spy`.
+**Reference ads obbligatorie.** Questa skill non scrive mai prompt senza ad di riferimento reali: ad live del brand stesso (scrapati) o ricreazioni bancate dal competitor (`19_ad_spy`). Zero fonti + scan competitor rifiutato = il run si ferma con instradamento a `/pm-competitor-spy` — **eccetto** quando non esiste nemmeno un concept SA5: in quel caso, e solo su scelta esplicita dell'utente, la skill offre il **Percorso Z** (Step Z), un fallback a template legacy per non lasciare l'utente a mani vuote. È l'ultima spiaggia, non un'alternativa co-equa: il risultato tende a leggersi "fatto da un'AI" invece che il rebrand di un winner reale.
 
 L'utente interagisce a: intake, approvazione batch plan, scelta path, ogni gate di spesa. Tutto il resto gira silenziosamente.
 
@@ -84,7 +84,55 @@ Se esistono ricreazioni bancate o swipe file → "Nessun ad live sulla tua pagin
 
 > Non trovo ad statici live per questo brand, né reference competitor su disco. Questo workflow costruisce ogni ad da reference reali, quindi ne serve una delle due. Vuoi che scrapi 1-3 competitor ora? Dammi nomi brand o URL Facebook, separati da virgola. O rispondi "stop" ed esegui prima `/pm-competitor-spy`.
 
-Risposta con competitor → rilancia lo scrape (via `19_ad_spy` logic) per ciascuno (max 3), tagga ogni ad `source_brand`. Risposta "stop" (o non una lista) → **fermati**: "Serve reference reali per costruire. Esegui `/pm-competitor-spy` su uno o due competitor, poi rilancia questa skill." Hard gate, non una preferenza. Mai auto-ricercare competitor: l'utente li conosce meglio di una web search.
+Risposta con competitor → rilancia lo scrape (via `19_ad_spy` logic) per ciascuno (max 3), tagga ogni ad `source_brand`. Mai auto-ricercare competitor: l'utente li conosce meglio di una web search.
+
+Risposta "stop" (o non una lista) → controlla `$WORKDIR/intermediate/sa5_creative_framework.md`:
+- **Esiste un concept SA5** → **fermati** comunque: "Serve reference reali per costruire. Esegui `/pm-competitor-spy` su uno o due competitor, poi rilancia questa skill." Hard gate, non una preferenza — un concept da solo non basta, il design deve venire da un winner reale.
+- **Non esiste nessun concept SA5** (nessuna struttura di partenza di nessun tipo) → offri il Percorso Z invece del hard stop:
+
+> Nessuna reference ad e nessun concept in lavorazione da SA5. Due strade: **(1)** mi fermo qui, esegui `/pm-competitor-spy` su 1-2 competitor e poi rilancia questa skill (consigliato — il risultato rebrand di un winner reale batte quasi sempre il template); **(2)** uso il **Percorso Z**, il motore a template legacy — più veloce, ma il risultato tende a leggersi "fatto da un'AI" invece che il rebrand di un ad vincente reale. Quale preferisci?
+
+Attendi la scelta esplicita. Su (2), salta allo Step Z sotto invece che a Step 3, e non tornare più al flusso rebrand per questo run.
+
+---
+
+## Step Z — Percorso legacy a template (fallback, ultima spiaggia)
+
+**Trigger esatto:** reference bank vuota + scan competitor rifiutato + nessun concept SA5 + utente ha scelto esplicitamente l'opzione (2) sopra. Mai automatico, mai silenzioso.
+
+**Reference:** `references/legacy_templates.md` (40 template nominati, EN) · `references/legacy_visual_families.md` (le 5 visual family fisse). Nessun gate R1-R6/K1-K3 (non c'è una fonte reale da cui derivarli); `references/winning_ad_science.md` gira come **LEGGE**, non warn (qui non c'è un winner che ha già vinto nel feed a giustificare le deroghe — trattalo come synthesis) insieme al glance test e ai divieti hard.
+
+### Z.1 — Pool angoli
+
+Nessun angolo da bank/concept: genera 6-10 angoli da `$BRAND_DNA`+`$VOC` soli, stessa chiamata motore di Step 4 (`../_shared/angle_engine.md`, spread G.3, gate G.5). Applica gli stessi gate compliance di Step 4 (`../_shared/creative_claims_compliance.md` C.1/C.3) prima di presentare.
+
+### Z.2 — Piano rapido (approvazione)
+
+Presenta come menu, un abbinamento angolo↔famiglia per riga (non serve un "bank depth" — qui non c'è bank):
+
+> PERCORSO Z, `<AD_COUNT>` ad a template (nessuna reference reale disponibile):
+> AD 1: ANGOLO <n> <nome> × famiglia <nome famiglia>
+> AD 2: ...
+> Rispondi "vai" per costruire, o modifica prima ("cambia famiglia ad 2", "cambia angolo ad 3").
+
+Loop finché l'utente non dice "vai". Stesso principio di Step 5: nessun prompt si scrive prima di questa approvazione.
+
+### Z.3 — Scrittura prompt
+
+Per ogni coppia angolo×famiglia: scegli dalla libreria `references/legacy_templates.md` il **template per nome** (mai per numero) che meglio serve l'angolo e il job della famiglia (`references/legacy_visual_families.md`). Il template è un blueprint, non paint-by-numbers: studia `$BRAND_DNA` (palette, tipografia, stile fotografico, logo) e devia dallo styling letterale del template perché il risultato sia inequivocabilmente on-brand, non un template riempito a caso. Nomina i prop specifici da `$PROP_CATALOG` (mai "il prodotto" generico). Headline da una delle candidate dell'angolo. Ogni slot prova/stat/rating: solo se sourced da VOC/Brand DNA, altrimenti omesso — mai inventato. Applica la constraints line fissa: nessun punto a fine headline, nessun bottone/testo CTA dentro l'immagine, nessun AI-aesthetic tell (gradienti viola-blu, diagrammi orbitali, forme geometriche fluttuanti, riflessi di luce finti, riempimenti arcobaleno over-saturi), composizione mobile-first, fedeltà assoluta ai prop caricati, render al `$ASPECT_RATIO`.
+
+### Z.4 — Consegna
+
+Stesso formato di Step 7, ma l'header dichiara esplicitamente la fonte template invece di un F-<id> — mai far leggere un ad a template come se fosse un rebrand:
+
+```
+AD <n> di <totale>, PERCORSO Z — template legacy: <nome template> (famiglia: <nome famiglia>), angolo: <nome angolo>
+Render: <ratio> su <modello>. Allega: <nomi file, o "nessuno">.
+
+<il render prompt completo>
+```
+
+Salva comunque in `$WORKDIR/04_Static_Ads/static-ads-<YYYY-MM-DD>.txt`. Poi prosegui su Step 8 (scelta path) come da flusso normale.
 
 ---
 
@@ -231,8 +279,8 @@ Mai auto-upload media (serve "yes upload" per ogni file), mai cliccare Genera se
 
 ## Validazione output
 
-1. Ogni ad nel deliverable è UN blocco prosa sotto header corretto. Nessun prompt contiene numerazione zone, righe scaffold `Layout:`, label di campo template, o un paragrafo constraints appiccicato — se ne trovi uno, ricostruisci dalla ricreazione sorgente, mai una patch.
-2. Ogni F-<id> citato risolve a un file reale in `$WORKDIR/03_Ad_Spy/_scratch/` (verifica con glob; un id non risolvibile è un fallimento, mai inventarne uno).
+1. Ogni ad nel deliverable è UN blocco prosa sotto header corretto (**eccetto Percorso Z**, che dichiara esplicitamente "template legacy" invece di un F-<id> — vedi Step Z.4). Nessun prompt contiene numerazione zone, righe scaffold `Layout:`, label di campo template, o un paragrafo constraints appiccicato — se ne trovi uno fuori dal Percorso Z, ricostruisci dalla ricreazione sorgente, mai una patch.
+2. **(Solo flusso rebrand, non Percorso Z)** Ogni F-<id> citato risolve a un file reale in `$WORKDIR/03_Ad_Spy/_scratch/` (verifica con glob; un id non risolvibile è un fallimento, mai inventarne uno).
 3. Swap completo: nessun nome brand/prodotto competitor, nessuna stringa dal `verbatim_text_ledger` di nessuna fonte sopravvive in nessun prompt (ri-diff meccanico, K-3). Le fonti del brand stesso sono esenti dal requisito di swap parole, mai dai numeri sourced.
 4. Ogni numero/rating/conteggio/menzione stampa in ogni prompt è sourced da VOC/Brand DNA/ad scrapati, o ha seguito la scala R4.
 5. L'utente ha approvato il batch plan prima che qualunque prompt fosse scritto, i conteggi sono stati onorati, la riga di spread (ad vs cluster strutturali) è stata mostrata.
@@ -251,7 +299,8 @@ Su fallimento: fix SOLO meccanico (un campo header mancante si riempie; una stri
 | Il prompt è il prompt | Un blocco prosa che si legge esattamente come la ricreazione bancata da cui viene. Nessuna zona, nessun template, nessuno scaffold, nessun paragrafo constraints, mai. |
 | N ad, N fonti, di default | Spread su famiglie di formato, tier provati prima. Ripetizione di uno stile solo se ordinata esplicitamente, con la nota cluster in una riga. |
 | Rebrand, mai copia dell'identità | L'intero design della fonte si tiene; parole/marchi/prodotto/numeri/colori della fonte non si tengono mai (le fonti del brand stesso possono tenere/evolvere il proprio copy). Le fonti competitor girano R1-R6 + K1-K3. |
-| Reference ads obbligatorie | Ad live propri, ricreazioni bancate da `19_ad_spy`, o un teardown da swipe. Zero fonti + scan competitor rifiutato = il run si ferma con instradamento a `/pm-competitor-spy`. |
+| Reference ads obbligatorie | Ad live propri, ricreazioni bancate da `19_ad_spy`, o un teardown da swipe. Zero fonti + scan competitor rifiutato = il run si ferma con instradamento a `/pm-competitor-spy`, **eccetto** il Percorso Z (Step Z): zero fonti + zero concept SA5 + scelta esplicita dell'utente. Un concept SA5 senza reference ads NON sblocca il Percorso Z — resta hard stop. |
+| Il Percorso Z è ultima spiaggia, mai il default | Va offerto SOLO al trigger esatto di Step Z, mai proposto prima, mai silenzioso. Ogni ad che ne esce dichiara "template legacy" nel suo header, mai spacciato per un rebrand. |
 | Synthesis è solo opt-in | Solo quando l'utente ha esplicitamente approvato l'overflow oltre la profondità della bank, etichettato, Sezione S. Mai un fallback silenzioso. |
 | Il ratio segue la fonte | Ogni ad renderizza al ratio nativo della sua fonte salvo forzatura utente; un ratio forzato tiene il design intero su un fondo esteso, mai un re-layout. |
 | La scienza avvisa sui rebrand, fa legge sulla synthesis | La fonte ha già vinto nel feed reale. Su un rebrand un conflitto coi floor scientifici è una riga onesta all'utente, non una riscrittura. Su una synthesis i floor e il glance test sono legge. |
