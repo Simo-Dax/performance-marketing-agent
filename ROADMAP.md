@@ -198,6 +198,8 @@ Eliminata ogni dipendenza da plugin di terzi. **Zero riferimenti residui** nel s
 
 **Resta da fare (acquirente):** configurare le proprie key via `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`. Playwright non richiede key.
 
+> **📘 Come replicare/portare funzionalità da un plugin sorgente esterno nelle nostre skill:** procedura completa e ripetibile in **`execution/plugin_port_playbook.md`**. Copre i due casi — (A) feature nel git del plugin = port fedele, (B) feature NON nel git (release license-server post-v2.23, o solo annuncio utente) = ricostruzione da spec, con onestà obbligatoria che è un equivalente funzionale non una copia 1:1. Include: dove leggere senza rompere il clone git, come adattare le dipendenze alla nostra infra, la grep di verifica zero-branding, tutti i punti di aggancio da aggiornare (agenti/skill_orchestrator/COMMANDS/output-README, mai descrizioni lunghe nel CLAUDE.md lean), e dove registrare la provenance (memory [[plugin-upstream-ports]], mai nel repo). Storico dei port in quella memory.
+
 ---
 
 ### ⭐ Task 8 — Esecuzione autonoma: `/goal` (ora) + `/schedule` routine (post-GitHub)

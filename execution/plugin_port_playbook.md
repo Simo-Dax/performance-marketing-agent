@@ -2,6 +2,12 @@
 
 Procedura ripetibile per quando un plugin di terze parti (installato **solo come reference locale**, mai come dipendenza runtime) rilascia aggiornamenti utili. Due fasi: **estrazione** (leggere cosa è cambiato nel plugin) e **ricostruzione** (riscrivere l'equivalente dentro la nostra struttura sub-agent/skill). **Nessun riferimento al plugin sorgente deve finire nei file del repo** — né nel nome, né nel testo, né nei commenti.
 
+**Due sorgenti possibili, e non sono equivalenti:**
+- **(A) La feature È nel git del plugin** → è un **port vero**: leggi il file sorgente, lo adatti fedelmente. Massima fedeltà.
+- **(B) La feature NON è nel git** (release distribuita solo via license server / canale privato, o l'utente ti dà solo un annuncio) → è una **ricostruzione da spec**: non hai la procedura reale del plugin, la ricrei dalla descrizione dell'utente + conoscenza di dominio standard. Onestà obbligatoria: dillo all'utente ("non ho trovato le loro guideline reali, ho ricostruito dalla spec — potrebbe differire dal loro metodo esatto"). Vedi la sezione dedicata sotto.
+
+> **⚠️ Un plugin sorgente può spostare le release su un canale privato (license server), lasciando il clone git pubblico INDIETRO rispetto alle feature reali dei membri.** È successo col nostro plugin di riferimento (dettaglio versione + commit solo in memory [[plugin-upstream-ports]]). Se `git grep` a HEAD non trova una feature annunciata, **è normale (caso B), non un errore**. Non cercare all'infinito nel git.
+
 ---
 
 ## Fase 1 — Estrazione dalla cartella plugin
@@ -35,6 +41,12 @@ Procedura ripetibile per quando un plugin di terze parti (installato **solo come
 
 5. **Leggi il file estratto per intero** (non solo il diff) — capisci: cosa fa, quali tool/MCP/servizi esterni usa, quale schema di output produce, quali sono le regole hard (mai fare X, sempre fare Y).
 
+5b. **Se non trovi la feature nel git** (grep a HEAD = zero, la skill non è cambiata da versioni), verifica che non sia altrove su disco prima di concludere:
+   ```bash
+   grep -rli "<termine-chiave-feature>" ~/.claude/plugins/ 2>/dev/null | grep -v "projects/.*memory"
+   ```
+   Se anche questo è vuoto → è il **caso B (license-server / non nel git)**. Passa alla sezione "Ricostruzione da spec (caso B)" sotto. Non è un fallimento: è il modello di distribuzione del plugin.
+
 ---
 
 ## Fase 2 — Ricostruzione nella nostra struttura
@@ -57,8 +69,10 @@ Procedura ripetibile per quando un plugin di terze parti (installato **solo come
 
 10. **Aggiorna tutti i punti di aggancio** (non basta il file della skill):
     - `.claude/agents/saN_*.md` — aggiungi la skill alla sezione "Skill native da attivare" + eventuali FASE/tool list rilevanti
-    - `claude.md` — sezione "Skills Disponibili" (riga descrittiva) + mappa cartelle output se serve una sottocartella nuova
-    - `directives/skill_orchestrator.md` — tabella skill, tabella comandi, checklist "internalizzate"
+    - `claude.md` — **è un INDICE lean, NON un catalogo** (vedi convenzione lean, ~3k token, si carica a ogni turno). Aggiungi SOLO una voce compatta nella tabella "Skill — indice per agente" (num + nome, niente descrizione lunga) e la riga nella mappa output se serve una sottocartella nuova. **Mai** aggiungere descrizioni skill lunghe qui — il dettaglio va nei file on-demand.
+    - `directives/skill_orchestrator.md` — tabella skill (descrizione completa qui), tabella comandi, checklist "internalizzate"
+    - `COMMANDS.md` — riga comando `/pm-*`
+    - `output/README.md` — se la skill introduce una cartella/file output nuovo (è la mappa output autoritativa dettagliata)
     - `.claude/commands/pm-*.md` — nuovo comando wrapper se la skill è invocabile standalone
     - comandi di setup (`pm-setup-*.md`) se la skill introduce una nuova dipendenza da credenziale
 
@@ -68,6 +82,21 @@ Procedura ripetibile per quando un plugin di terze parti (installato **solo come
 
 ---
 
+## Ricostruzione da spec (caso B — feature NON nel git)
+
+Quando la feature esiste solo come annuncio/descrizione dell'utente e NON come sorgente leggibile (license-server, canale privato):
+
+1. **Non hai la loro procedura reale.** Hai un annuncio marketing (pochi bullet) + la tua conoscenza di dominio (framework di direct-response / marketing standard). Quello che produci è un **equivalente funzionale basato sul concetto**, non una replica 1:1 del loro metodo esatto.
+2. **Dillo all'utente, esplicitamente e subito.** "Non ho trovato le guideline reali del plugin (release license-server); ho ricostruito dalla tua spec + pratica standard. Potrebbe differire dal loro metodo esatto. Se vuoi la loro procedura precisa, incollami l'output di un run reale o il file skill se puoi leggerlo dall'install."
+3. **Costruisci dalla spec + framework noti**, non inventando: se l'annuncio dice "6 Purchase Beliefs", usa la struttura standard delle purchase beliefs del direct-response; se dice "Offer Brief con big idea/mechanism/belief chain", usa quelle come sezioni. Ancora tutto ai dati reali disponibili (VOC, Brand DNA) coi gate `_shared/creative_claims_compliance.md`.
+4. **Riusa i motori `_shared/` esistenti** invece di re-inventare (awareness/funnel, niche/offer, compliance, kill-floor). Tiene la ricostruzione lean e coerente col resto del sistema.
+5. **Posiziona rispetto a ciò che già esiste.** Se la feature ricostruita overlappa con skill nostre (es. avatar/offer overlap con SA4 strategy), dichiara in-skill il rapporto ("prefigura/alimenta X, non lo sostituisce") per evitare duplicazione confusa.
+6. **In memoria**, marca chiaramente "ricostruito da spec, NON da git" + il termine cercato che non ha dato hit, così un futuro te non ri-cerca invano nel git.
+
+Esempio fatto: **Foundation Pack su `/voc`** (2026-07-23) — annuncio utente descriveva Customer Avatar Sheet + Offer Brief + 6 Purchase Beliefs; grep a HEAD v2.24.0 + su tutto `~/.claude/plugins/` = zero; ricostruito come Fase 3 di `18_voc_research` dalla spec + pratica DR standard. Vedi memory [[plugin-upstream-ports]].
+
+---
+
 ## Regola di fondo
 
-Il plugin di terze parti è **solo materiale di lettura** per capire una funzionalità. Il codice/testo che finisce nel repo è sempre riscritto, mai copiato verbatim con branding del plugin, e mai dipendente a runtime dal plugin stesso (niente `.mcp.json` che punta a server del plugin, niente import di suoi script). Se un blocco di codice è meccanico e privo di branding (es. uno script Python di puro parsing JSON), può essere adattato quasi 1:1 — ma va comunque passato attraverso i punti 8-9 sopra.
+Il plugin di terze parti è **solo materiale di lettura** per capire una funzionalità. Il codice/testo che finisce nel repo è sempre riscritto, mai copiato verbatim con branding del plugin, e mai dipendente a runtime dal plugin stesso (niente `.mcp.json` che punta a server del plugin, niente import di suoi script). Se un blocco di codice è meccanico e privo di branding (es. uno script Python di puro parsing JSON), può essere adattato quasi 1:1 — ma va comunque passato attraverso i punti 8-9 sopra. **Nel caso B (ricostruzione da spec) non c'è nemmeno un sorgente da leggere: sii trasparente sul fatto che è un equivalente, non una copia.**
