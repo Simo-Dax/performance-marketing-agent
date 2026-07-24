@@ -43,7 +43,7 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 
 | Skill | Sub-Agent | Fase | Trigger |
 |-------|-----------|------|---------|
-| `18_voc_research` | SA2 | Research | VOC research — linguaggio verbatim clienti da review/community. Input: URL prodotto + nome prodotto. Output HTML. Richiede web search. |
+| `18_voc_research` | SA2 | Research | VOC research — linguaggio verbatim clienti da review/community. Input: URL prodotto + nome prodotto. Output HTML. Richiede web search. **Fase 3 opzionale Foundation Pack** (avatar + offer brief + 6 purchase beliefs, derivati dal VOC senza nuova ricerca, prefigura SA4). |
 | `19_ad_spy` | SA1 | Research | Ad spy competitor Meta — swipe file HTML con static ads. Banca anche un prompt di ricreazione (reverse-engineering) per ogni creative unica trovata, consumato da `24_static_ads`. Input: brand/lista/nicchia, paese, n. ads. Richiede Apify. |
 | `52_ad_spy_video` | SA1 | Research | Ad spy competitor Meta — sorella video di `19_ad_spy` (solo VIDEO ads). Teardown per video: script timestampato (fal.ai Whisper), on-screen text, hook, beat sheet, CTA. Input: brand/lista/nicchia, paese, n. video. Richiede Apify + fal.ai. |
 | `20_ugc_scraper` | SA1 | Research | Scraping TikTok UGC virali — 25 transcript per swipe file. Input: VOC + nicchia. Richiede Apify. Costo ~$0.056/run. |

@@ -16,7 +16,7 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 | Comando | Cosa fa | Skill / Agente |
 |---------|---------|----------------|
 | `/pm-brand-kit` | Brand DNA: colori live (Playwright) + voce brand → HTML | 21 / pre-pipeline |
-| `/pm-dati-qualitativi` | VOC research: linguaggio verbatim clienti → HTML | 18 / SA2 |
+| `/pm-dati-qualitativi` | VOC research → HTML + Fase 3 opzionale Foundation Pack (avatar/offer brief/6 beliefs) | 18 / SA2 |
 | `/pm-competitor-spy` | Ad spy Meta static: swipe file ranked + prompt di ricreazione per ogni creative (Apify) | 19 / SA1 |
 | `/pm-competitor-spy-video` | Ad spy Meta video: teardown per video (script/hook/beat sheet, Apify + fal.ai) | 52 / SA1 |
 | `/pm-ugc-analysis` | UGC TikTok: 25 transcript virali (Apify) | 20 / SA1 |

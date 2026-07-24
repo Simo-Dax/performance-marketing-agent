@@ -22,7 +22,7 @@ Il JTBD non è un bullet: è la **spina dorsale** dell'output. Fase 1 cattura i 
 
 ## Skill native da attivare
 - **`38_first_party_data_analysis`** → comando `/pm-data-analysis` — se il cliente fornisce dati propri (GA4/Shopify/ads export + recensioni/ticket/survey): Track A quantitativo (→SA3 baseline) + Track B qualitativo (→insight). SA2 è l'analista che esegue entrambi i track.
-- **`18_voc_research`** → comando `/pm-dati-qualitativi` — VOC research, materia prima del JTBD. Output: `01_VOC_Research/voc-[product].html` con la sezione JOBS TO BE DONE già strutturata (job funzionale/emotivo/sociale, struggling moment, failed prior solutions, switch trigger + tagging 4 forze).
+- **`18_voc_research`** → comando `/pm-dati-qualitativi` — VOC research, materia prima del JTBD. Output: `01_VOC_Research/voc-[product].html` con la sezione JOBS TO BE DONE già strutturata (job funzionale/emotivo/sociale, struggling moment, failed prior solutions, switch trigger + tagging 4 forze). **Fase 3 opzionale — Foundation Pack**: dopo il VOC (o standalone su un VOC esistente, "costruisci il foundation pack"), deriva senza nuova ricerca la base d'offerta — Customer Avatar Sheet + Offer Brief (big idea/meccanismo/headline/obiezioni/belief chain) + 6 Purchase Beliefs. Output `01_VOC_Research/foundation-pack-[product].html`. È uno starter d'offerta che **prefigura e alimenta SA4**, non lo sostituisce (il full Brand Strategy resta `32` con 🚦GATE 2).
 
 ---
 
