@@ -25,6 +25,7 @@ Produce asset visivi (immagini statiche, product shot e video UGC) per le campag
 
 **`14_asset_production`** è la skill di routing di SA6. Determina **cosa** produrre e instrada alla skill esecutrice:
 - Serve una **statica** (rebrand di un winner reale dalla reference bank) → `24_static_ads`
+- Serve **animare una statica già finita** (motion poster, ultimo frame = la statica) → `56_animate_static`
 - Serve un **video UGC** → `25_ugc_prompt`
 - Serve uno **shot prodotto** (studio/in mano/indossato) → `26_product_shot`
 - Esiste un **ad vincente da scalare** → `27_multiplier`
@@ -39,6 +40,9 @@ Produce asset visivi (immagini statiche, product shot e video UGC) per le campag
 
 - **`25_ugc_prompt`** (UGC Factory) → comando `/pm-ugc-video`
   **Factory end-to-end** Seedance 2.0 Andromeda: da hook mining (hook-library + VOC, **no TikTok scraping**) → script con framework → **4 ad UGC distinti** (4 hook unici + b-roll ladder 0/1/2/2, ognuno chiude sulla CTA) → genera clip → **monta 4 MP4 finiti** (25-45s). Asset riusati byte-identici: 1 face + 1 body (da `11_Characters/`) + 1 product + 1 voice clip ≤15s. **Ogni generazione <10s** (intero 4-9), pacing ~3.5 wps via `scripts/segment_script.py`; assembly via `scripts/stitch.sh` (concat, audio per-clip, -14 LUFS). Due 🚦 hard gate: **transcript** (parole prima dei prompt) + **costo/pacing** (prima di renderizzare). 4 path generazione (A manuale / B Higgsfield CLI / C fal.ai `bytedance/seedance-2.0/reference-to-video` / D Playwright). B-roll PRODUCT-ONLY. Reference in `references/`, script in `scripts/` (richiede ffmpeg/ffprobe/jq). Output: `05_UGC_Prompts/factory/<slug>/`.
+
+- **`56_animate_static`** → comando `/pm-animate-static`
+  **Statica → motion poster.** Prende UNA statica finita (da `04_Static_Ads/`, `07_Multiplied_Ads/`, `08_Rebuilt_Competitor_Ads/` o fornita) e la anima: inventario layer (Read dell'immagine), 3 concept di animazione fra cui scegliere, motion prompt beat-by-beat, render 3-8s (default 4s, 720p/1080p), **niente musica, niente caption**. Regola non negoziabile: **l'ultimo frame È esattamente la statica originale** — validata estraendo l'ultimo frame e confrontandolo. Richiede un modello image-to-video con **start+end frame conditioning** (default Seedance 2.0 i2v, model-agnostic). Percorsi A manuale / B Higgsfield / C fal.ai. 🚦 gate costo prima di ogni render. NON genera ad nuovi e non cambia il design — è un layer di animazione su un asset già approvato. Output: `16_Animated_Statics/animated-*.mp4` + motion prompt `.txt`.
 
 - **`26_product_shot`** → comando `/pm-product-photo`
   Product shot in 3 modalità: Studio / Held (in mano) / Worn (indossato). Mapping aspect ratio → image_size (1:1→2880×2880, 9:16→2160×3840, 4:5→2560×3200, 16:9→3840×2160). Loop variazioni post-v1. Regola riferimenti universale: carica sempre prodotto + personaggio (se presente), **mai** caricare output precedenti come reference. Output: `_assets/product-shots/`.

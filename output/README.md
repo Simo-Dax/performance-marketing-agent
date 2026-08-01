@@ -34,6 +34,7 @@ Questa è la mappa autoritativa dettagliata (CLAUDE.md ne tiene una versione com
 ├── 13_Meta_Campaigns/         ← 51_meta_build (/pm-meta-build): plan.md + build-manifest.json + manifest.md
 ├── 14_Creative_Briefs/ (+ .json) ← 53_ad_angles (/pm-ad-angles): angle bank id-stabili (A01...)
 ├── 15_Video_Scripts/          ← 55_video_script (/pm-video-script)
+├── 16_Animated_Statics/       ← 56_animate_static (/pm-animate-static): mp4 + motion prompt .txt
 ├── _assets/product-shots/     ← 26_product_shot (/pm-product-photo)
 ├── intermediate/              ← output TESTUALI dei SA (handoff interni)
 │   ├── insight.md             ← 33_insight_synthesis (/pm-insight)
