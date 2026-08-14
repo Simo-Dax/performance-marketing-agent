@@ -3,7 +3,7 @@
 validate_payload.py  --  pre-flight validator for ONE Seedance 2.0 generation.
 
 Runs right before every generation: every hook reel, every body shot, every
-product-only b-roll. It asserts the LOCKED model and the sub-10s ceiling BEFORE a
+b-roll (product-only or character). It asserts the LOCKED model and the sub-10s ceiling BEFORE a
 generation is dispatched, so the pipeline never spends credits on a call that
 violates the model.
 
@@ -13,14 +13,23 @@ THE LOCKED MODEL THIS ENFORCES (Seedance 2.0):
     generation including b-roll voiceover).
   - CHARACTER generations (hooks, body) carry face + body (+ product when the
     product is on screen) + voice. Identity = the re-sent face + body bytes.
-  - PRODUCT-ONLY b-rolls carry the PRODUCT IMAGE + VOICE ONLY. No face, no body.
-    Set "product_only": true on those payloads; the face/body requirement is then
-    intentionally skipped.
+  - B-ROLLS are always voiceover (never a talking head) and may be PRODUCT-ONLY or
+    feature the CHARACTER. A PRODUCT-ONLY b-roll carries the PRODUCT IMAGE + VOICE
+    ONLY: set "product_only": true and the face/body requirement is intentionally
+    skipped. A CHARACTER b-roll (the character's hands filming the product, or the
+    character using it under a voiceover) sets "product_only": false and is validated
+    exactly like a character generation: face + body + product + voice.
   - EVERY generation is an integer 4..9 seconds (UNDER 10). Never auto, never 10+.
   - Pace is fast and punchy (~3.5 wps). If a payload includes "pace_wps" it must land
     in [2.4, 4.0].
   - Audio is expected on every generation; a dialogue payload must attach the voice
     clip. No clone step, no TTS, no spine, no force-muting, no video inputs.
+  - On Higgsfield paths (A/B/D) every generation carries its OWN uniquely-
+    fingerprinted voice cut ("voice_cut": "<gen_id>.wav" from make_voice_cuts.py).
+    Reusing one voice file across generations collides on Higgsfield's lazy _sfx
+    audio dedup and fails silently (see references/voice-and-parallel.md). On the
+    fal backend the dedup bug does not exist, so set "backend": "fal" to skip
+    this check and reuse the one uploaded voice URL.
 
 Usage:
     python validate_payload.py payload.json
@@ -33,6 +42,8 @@ payload.json shape (missing keys get safe defaults):
                   {"path":"prod.png","role":"product"} ],
       "product_on_screen": true,
       "voice_clip_seconds": 14,
+      "voice_cut": "body_01.wav",      # this generation's unique cut (Higgsfield paths)
+      "backend": "higgsfield",         # "fal" skips the voice_cut requirement
       "duration": 6,                   # integer 4..9
       "pace_wps": 3.4,                # optional; if present must be 2.4..4.0
       "has_dialogue": true
@@ -104,9 +115,11 @@ def validate(payload):
                 "role 'product'. Attach the product image.")
         if n_face > 0 or n_body > 0:
             failures.append(
-                "FAIL [no character on a b-roll]: product_only is true but a face/body "
-                "image is attached. B-rolls are product-only: attach the product image "
-                "+ voice clip ONLY, no face, no body.")
+                "FAIL [product_only b-roll has a character]: product_only is true but a "
+                "face/body image is attached. A product-only b-roll attaches the product "
+                "image + voice clip ONLY. For a CHARACTER b-roll (hands filming the product, "
+                "or the character using it under a voiceover) set product_only=false and "
+                "attach face + body + product + voice, like a character generation.")
         if not voice_attached:
             failures.append(
                 "FAIL [b-roll needs voice]: product_only b-roll has no voice clip "
@@ -125,11 +138,18 @@ def validate(payload):
             failures.append(
                 "FAIL [>=2 character images]: found %d (face=%d, body=%d); a face and a "
                 "body reference are both required." % (n_character, n_face, n_body))
-        # CHECK 2: a product image is allowed only when the product is on screen.
+        # CHECK 2: a product image is allowed only when the product is on screen,
+        # and REQUIRED when it is (a character b-roll or product-bearing shot with
+        # no product reference renders an invented product).
         if n_product > 0 and not product_on_screen:
             failures.append(
                 "FAIL [product image only when on screen]: %d product image(s) attached "
                 "but product_on_screen is false." % n_product)
+        if product_on_screen and n_product < 1:
+            failures.append(
+                "FAIL [product image required]: product_on_screen is true but no image "
+                "with role 'product' is attached. The product must render from its real "
+                "photo, never from a text description.")
 
     # CHECK 3: voice reference clip capped at 15 seconds.
     if voice_clip_seconds is not None and voice_clip_seconds > VOICE_CLIP_MAX_SECONDS:
@@ -181,6 +201,24 @@ def validate(payload):
             "FAIL [dialogue needs voice clip]: has_dialogue is true but no voice clip is "
             "attached. Attach the 15s voice reference so Seedance speaks in the consistent voice.")
 
+    # CHECK 8 (unique voice cut): on Higgsfield paths every generation carries its
+    # OWN uniquely-fingerprinted cut of the voice. Reusing one voice file across
+    # generations collides on the lazy _sfx audio dedup and fails silently.
+    backend = str(payload.get("backend", "higgsfield") or "higgsfield").strip().lower()
+    voice_cut = payload.get("voice_cut")
+    if backend != "fal":
+        if not (isinstance(voice_cut, str) and voice_cut.strip()):
+            failures.append(
+                "FAIL [voice_cut required]: no per-generation voice cut named. Run "
+                "make_voice_cuts.py and set voice_cut to this generation's own WAV "
+                "(e.g. \"body_01.wav\"). Reusing one voice file across generations "
+                "silently fails on Higgsfield's _sfx audio dedup; re-uploading the "
+                "same clip does NOT avoid it (the fingerprint is on the speech).")
+        elif not voice_cut.strip().lower().endswith(".wav"):
+            failures.append(
+                "FAIL [voice_cut format]: voice_cut %r should be the clean WAV that "
+                "make_voice_cuts.py wrote (mono 44.1k pcm_s16le)." % voice_cut)
+
     return failures
 
 
@@ -188,7 +226,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="validate_payload.py",
         description="Validate one Seedance 2.0 payload against the locked model "
-                    "(sub-10s, slightly-fast pace, product-only b-rolls) before dispatch.")
+                    "(sub-10s, slightly-fast pace, product-only and character b-rolls) before dispatch.")
     parser.add_argument("payload")
     args = parser.parse_args(argv)
 

@@ -1,10 +1,10 @@
-# SA6 — UGC Factory (Seedance 2.0, Andromeda)
+# SA6 — UGC Factory (Seedance 2.0, Andromeda, parallelo + taglio word-accurate)
 
 **Agente:** SA6 (Asset Production)
 **Output:** `05_UGC_Prompts/factory/<concept-slug>/` — 4 ad MP4 (25-45s), clip raw, manifest
 **Modello:** Seedance 2.0, 9:16, 1080p, audio ON
-**Reference:** `references/` (generation-architecture, andromeda-variation, scripting-frameworks, hook-library, seedance-2.0-limits, consistency-and-assembly, VERIFIED-backend-facts)
-**Script:** `scripts/` (segment_script.py, validate_payload.py, build_manifest.py, stitch.sh)
+**Reference:** `references/` (generation-architecture, andromeda-variation, scripting-frameworks, hook-library, seedance-2.0-limits, consistency-and-assembly, VERIFIED-backend-facts, **voice-and-parallel**)
+**Script:** `scripts/` (segment_script, validate_payload, build_manifest, stitch, **make_voice_cuts, render_parallel, whisper_cut, frame_check**)
 
 ---
 
@@ -20,21 +20,23 @@ Due **hard stop** obbligatori:
 
 Termina il turno a ogni gate e attendi approvazione umana esplicita.
 
-> **Nota architettura:** la factory NON scrapa TikTok. Gli hook vengono dalla `hook-library` + VOC. Il tuo `20_ugc_scraper` (SA1) resta separato come research/swipe-file, indipendente da questa skill.
+> **Nota architettura:** la factory NON scrapa TikTok. Gli hook vengono dalla `hook-library` + VOC. `20_ugc_scraper` (SA1) resta separato come research/swipe-file.
+>
+> **Rapporto con `57_ugc_studio` (default UGC):** lo studio parte da un **format bank** di ad vincenti reali e monta con l'edit grammar. Questa factory è l'**alternativa nominata**: parte da hook mining + script e fa il **fan-out Andromeda a 4 varianti** da un core condiviso. Usa la factory quando vuoi 4 ad distinti dallo stesso script; usa lo studio quando vuoi partire da un formato provato. Le due non si toccano: la factory scrive sotto `05_UGC_Prompts/factory/`, lo studio sotto `studio/`.
 
 ## Il modello in un respiro
 
 - INPUT caricati una volta, riusati su ogni generazione: UNA face image, UN body image, UN product image, UN voice clip (max 15s).
-- Lo STESSO voice clip cavalca ogni generazione come VOICE REFERENCE (anche i b-roll product-only, come voiceover). Audio ON su ogni clip. Niente TTS, niente clone, niente spine separato.
+- UNA voce sorgente, ma **ogni generazione riceve il SUO taglio con fingerprint unico** (mai lo stesso WAV due volte: il backend deduplica l'audio identico in `_sfx` e avvelena la gen — vedi `references/voice-and-parallel.md`). Audio ON su ogni clip. Niente TTS, niente clone, niente spine separato.
 - Gli STESSI byte face+body su ogni generazione CHARACTER (+ product image quando il prodotto è in scena). Byte identici, mai ri-croppati. È l'àncora di identità.
-- **I B-ROLL SONO PRODUCT-ONLY** — solo il prodotto (mano anonima o su superficie) + voiceover. NO character.
+- **I B-ROLL sono voiceover senza volto parlante**: product-only (mano anonima o su superficie) **oppure** con il character in scena che non parla. Mai un volto che parla in un b-roll.
 - **OGNI GENERAZIONE È SOTTO 10s** (intero 4-9), 9:16 verticale, 1080p. Niente generazione 15s. Gli ad lunghi sono molte generazioni corte concatenate.
 - Una generazione può contenere UNA o PIÙ scene descritte nel prompt (Seedance taglia, niente parametro multi-shot: descrivi le scene, setti solo i secondi TOTALI). Le multi-scena si splittano ai tagli dopo.
 - **OGNI AD ASSEMBLATO CHIUDE SULLA CTA.** I b-roll si inseriscono solo in mezzo, mai dopo la CTA.
 
 Il craft non negoziabile è il **PACING**, regola FAST AND PUNCHY (~3.5 parole/sec). Seedance allunga la battuta per riempire la durata richiesta → la durata scelta È la velocità di parlato. Non paddare.
 
-**Gotcha Higgsfield (Path B/D):** ri-carica la media FRESCA e usala subito. Il voice clip in particolare: Higgsfield trasforma pigramente l'audio in un `_sfx.wav` dopo il primo uso e le generazioni successive che lo risolvono FALLISCONO con errore vuoto. Ri-carica il voice fresco prima di ogni generazione (su Path B la CLI auto-uploada il path locale a ogni chiamata → sidesteppa). Su Path C (fal) uploadi una volta e riusi l'URL.
+**Gotcha `_sfx` (Path B/D):** il backend trasforma pigramente l'audio in un `_sfx.wav` dopo il primo uso, e le generazioni successive che lo risolvono FALLISCONO con errore vuoto. La soluzione strutturale è lo Step 5: **un voice cut con fingerprint unico per generazione** (`make_voice_cuts.py`), e un cut fresco a ogni re-roll (un fingerprint speso è bruciato). Su Path C (fal) carichi la voce una volta e riusi l'URL: nessun bug `_sfx`.
 
 ---
 
@@ -217,9 +219,9 @@ Mai generare/click/chiamare modello senza `yes` esplicito per quel batch · mai 
 
 ---
 
-## Step 5 — GENERAZIONE
+## Step 5 — PROMPT + PAYLOAD
 
-Leggi `references/generation-architecture.md` e `consistency-and-assembly.md`. Questo step costruisce e valida prompt+payload; il dispatch reale gira sul path scelto (4.5). Ordine render e riuso:
+Leggi `references/generation-architecture.md` e `consistency-and-assembly.md`. Questo step costruisce e valida prompt+payload; il dispatch reale è lo Step 5.5. Ordine render e riuso:
 
 1. **HOOK come REEL, poi split.** Hook corti → impacchetta ~2 hook in UNA generazione ("hook reel") descritta come 2 scene con taglio netto, secondi totali = somma. 4 hook → 2 reel (ognuno <10s). Dopo render, SPLITTA ogni reel al taglio (rileva il cambio scena con ffmpeg, poi taglia) → 4 hook clip, una per ad.
 2. **BODY, un beat per generazione, generato UNA volta, riusato intero.** Ogni beat = sua generazione. Salva `body_01.mp4` (pain), `body_02` (solution), `body_03` (proof), `body_04` (CTA) in `$WORK/clips`. Ogni ad riusa questi file; mai rigenerare un body beat per ad.
@@ -240,11 +242,56 @@ Costruisci un `payload.json` per generazione sotto `$WORK` e validalo prima di i
 ```bash
 python3 "$SCRIPTS/validate_payload.py" "$WORK/payload_body_01.json"
 ```
-Exit non-zero = NON dispatchare. Dopo ogni render, assert `returned_duration == requested_duration`. Salva ogni clip raw in `$WORK/clips`. Splitta gli hook reel in 4 prima dell'assembly.
+Exit non-zero = NON dispatchare. Dopo ogni render, assert `returned_duration == requested_duration`.
+
+**Voice cut unici per generazione (fisica `_sfx` — leggi `references/voice-and-parallel.md`).** Ogni generazione porta **il SUO taglio della stessa voce sorgente, con fingerprint unico**: non si riusa mai lo stesso WAV su due generazioni (il backend deduplica l'audio identico e lo risolve in `_sfx`, avvelenando la gen). Costruiscili prima di generare:
+```bash
+python3 "$SCRIPTS/make_voice_cuts.py" "$WORK/render_plan.json" "$WORK" "$WORK/voice_cuts"
+```
+**Un fingerprint speso è bruciato:** ogni re-roll richiede un WAV ri-tagliato fresco (su Path B `render_parallel.py` lo rifà da solo; su A/D cancella `voice_cuts/<gen_id>.wav` e ri-esegui `make_voice_cuts.py`). Su Path C (fal) i voice cut si saltano: la voce si carica una volta, nessun bug `_sfx`.
 
 ---
 
-## Step 6 — ASSEMBLY
+## Step 5.5 — GENERAZIONE: prima l'hook reel A, poi tutto il resto in PARALLELO
+
+Prerequisito: 🚦Gate 2 approvato, payload validati, voice cut costruiti.
+
+1. **Renderizza da solo l'HOOK REEL A** (porta hook 1+2: identità, voce e due azioni visive in un render economico):
+   ```bash
+   python3 "$SCRIPTS/render_parallel.py" "$WORK/render_plan.json" "$WORK" "$WORK/voice_cuts" "$WORK/gens" hook_reel_A
+   ```
+   (Path A/D: passa/guida solo il prompt del reel A. Path C: reel A in sync.)
+2. **🚦 HOOK CHECKPOINT.** Mostra il reel e chiedi: **"Ti va bene il volto, la voce e il vibe? Tutto il resto eredita da qui."** Su no → aggiusta (take diverso, hook riformulato, nuova voice clip) e ri-genera — ogni re-roll con sì fresco **E** un WAV ri-tagliato fresco. Non proseguire finché non è soddisfatto.
+3. Su sì, chiedi **"Renderizzo tutto il resto?"** — su quel sì esplicito, lancia **il resto del batch IN PARALLELO**:
+   ```bash
+   python3 "$SCRIPTS/render_parallel.py" "$WORK/render_plan.json" "$WORK" "$WORK/voice_cuts" "$WORK/gens" hook_reel_B body_01 body_02 body_03 body_04 broll_A broll_B
+   ```
+   Invia tutto senza `--wait`, fa polling per job id, scarica in `$WORK/gens/<gen_id>.mp4`, segnala i job la cui audio è risolta in `_sfx`, e **ritenta i fallimenti con un voice cut fresco, gratis**. (Path A: passa i prompt restanti come un batch. Path D: una generazione per volta con sì esplicito. Path C: invia il batch.)
+4. Conferma che ogni generazione sia atterrata (8 mp4 in `gens/`) e che ogni durata restituita ≈ quella richiesta.
+
+---
+
+## Step 6 — TAGLIO + VERIFICA (tutto gratis, zero crediti)
+
+Due passaggi sulle generazioni grezze **PRIMA** di qualsiasi assembly. Non saltarne mai nessuno; non dichiarare buono un batch solo perché i render sono tornati.
+
+**6a. Taglio accurato alla parola (`whisper_cut.py`):**
+```bash
+python3 "$SCRIPTS/whisper_cut.py" "$WORK/render_plan.json" "$WORK/gens" "$WORK/clips"
+```
+Per ogni generazione trascrive con faster-whisper (timestamp per parola), allinea le righe NOTE dello script alle parole riconosciute (difflib, mai indovinando dai silenzi), e taglia ogni riga nella sua clip (`clips/<clip>.mp4`): lo split del reel cade esattamente al confine di riga, ogni clip finisce ~0.2s dopo la sua ultima parola (la riga CTA ha `tail: 0.6` per far respirare l'ad), e la prima riga di ogni generazione tiene la sua testa naturale così nessuna azione di hook viene troncata. Stampa il MATCH RATIO di ogni riga: un ratio basso segnalato (<75%) significa che il modello potrebbe aver impastato le parole — **ASCOLTA quella clip**. Se le parole sono davvero sbagliate è un problema di CONTENUTO: dillo all'utente, e il re-render è una **sua** decisione, con sì fresco e WAV ri-tagliato. (Il cutter è in inglese: un voiceover non inglese flagga ogni riga — è un limite del modello, non un garble.)
+
+**6b. Frame check (`frame_check.sh` + leggi ogni sheet):**
+```bash
+for f in "$WORK"/clips/*.mp4; do bash "$SCRIPTS/frame_check.sh" "$f" "$WORK/clips/.fc_$(basename "$f" .mp4).png"; done
+```
+**LEGGI ogni contact sheet** e verifica, per clip: (1) personaggio on-model rispetto a face+body bloccati (match volto, abbigliamento); (2) l'azione visiva dell'hook è davvero renderizzata; (3) ogni b-roll è un voiceover **senza volto parlante** (b-roll con character: match con le immagini bloccate; product-only: solo il prodotto in frame); (4) nessun testo generato da nessuna parte; (5) prodotto a scala credibile; (6) clip adiacenti in ogni timeline differiscono per ambientazione + inquadratura (la scene ladder regge). Un difetto di contenuto si risolve ri-tagliando sul girato buono quando possibile; solo contenuto genuinamente mancante o sbagliato giustifica **proporre** un re-render, che richiede il suo sì esplicito fresco.
+
+> **Il loop di montaggio qui è GRATIS**: ri-eseguire il cutter con tail diversi, ri-tagliare una clip, ri-montare non costa nulla. Esauriscilo sempre prima di qualsiasi re-render.
+
+---
+
+## Step 7 — ASSEMBLY
 
 Costruisci il manifest, poi monta ogni ad. `stitch.sh` gira UNA VOLTA PER AD:
 ```bash
@@ -260,7 +307,7 @@ Il manifest è il contratto (schema dettagliato in `references/consistency-and-a
 
 ---
 
-## Step 7 — OUTPUT + VALIDAZIONE
+## Step 8 — OUTPUT + VALIDAZIONE
 
 Consegna il pacchetto sotto `$WORK` (`05_UGC_Prompts/factory/<concept-slug>/`): 4 ad MP4 in `out/` (variant_v1..v4, 9:16 1080p, ~-14 LUFS, ognuno 25-45s di banda diversa); clip raw in `clips/` (body beat condivisi, 4 hook, 2 b-roll); `assembly-manifest.json`, tabella pacing approvata, tabella variazioni, asset input in `inputs/`. Stampa i path assoluti.
 

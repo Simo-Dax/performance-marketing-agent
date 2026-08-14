@@ -21,8 +21,9 @@ shots, and the 4 ads) and writes assembly-manifest.json per the LOCKED schema:
 LOCKED MODEL baked into this builder (do not contradict):
   - There is NO voice_track. The same voice clip drove every clip; each keeps its
     own audio. This file refuses to emit or accept a voice_track key.
-  - Identity = the same face + body bytes on character generations. B-ROLLS are
-    product-only (no character) — at the manifest level they are just clip paths.
+  - Identity = the same face + body bytes on character generations (including any
+    character b-roll). B-ROLLS may be product-only or feature the character, and at
+    the manifest level they are just clip paths either way.
   - Distinctness comes from 4 UNIQUE hooks + a b-roll-COUNT ladder (0/1/2/2), not
     from hook length (there is NO 4/6/8/10 ladder). The fingerprint is a sha256 of
     RENDER-AFFECTING axes ONLY: visual_hook + sorted broll_set + b-roll count +

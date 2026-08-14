@@ -54,7 +54,7 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `24_static_ads` | SA6 | Production | Static ad da winner reali (rebrand) — reference bank obbligatoria (`19_ad_spy` + winner live del brand), design tenuto/identità scambiata, un blocco prosa per ad. Input: pagina Facebook brand, n. ad, foto prodotto. Modello: GPT Image 2 (default) o Nano Banana 2 (solo 4:5 vero). Richiede Apify. |
 | `56_animate_static` | SA6 | Production | Statica finita → motion poster 3-8s: i layer si assemblano, **l'ultimo frame È la statica originale**. Niente musica/caption. Input: una statica + concept scelto. Richiede modello image-to-video con start+end frame (fal.ai/Higgsfield). |
 | `57_ugc_studio` | SA6 | Production | **UGC Studio (default UGC video)** — format bank di ad vincenti reali (testimonial/before-after/unboxing/direct-to-camera): ordini un mix, lo studio scrive, renderizza gen 4-9s, taglia con **edit grammar** e assembla 9:16 finiti. 2 gate umani (transcript, costo+cut map). Richiede ffmpeg. |
-| `25_ugc_prompt` | SA6 | Production | UGC factory (**alternativa** a 57): fan-out Andromeda, 4 ad distinti da uno script. Input: script UGC + VOC + Brand DNA. |
+| `25_ugc_prompt` | SA6 | Production | UGC factory (**alternativa nominata** a 57): fan-out Andromeda, 4 ad distinti da un core condiviso. Voice cut unici per gen (anti `_sfx`), render parallelo + hook checkpoint, taglio word-accurate (whisper) + frame check. Input: script UGC + VOC + Brand DNA. |
 | `26_product_shot` | SA6 | Production | Product shot (Studio/Held/Worn). Input: immagine prodotto. Opzionale: personaggio da `22_character_creator`. |
 | `27_multiplier` | SA6 | Production | Moltiplicatore winner — 5-8 variazioni Andromeda-compliant da ad vincente. Input: ad vincente + 1-3 img prodotto + Brand DNA + VOC. |
 | `54_headline_bank` | SA7 | Creative | Headline bank dedicata, più profonda di `28_meta_copy` — ~20 headline + 8 hook on-image + 6 first-line, framework-nominate, char-discipline 27/40, gate personal-attributes Meta. Input: angolo/creative/angle-bank/riff. |
@@ -128,7 +128,7 @@ Esito gate:
 - **`24_static_ads`** — rebrand di winner reali dalla reference bank (`19_ad_spy` obbligatorio), un blocco prosa per ad (GPT Image 2 o Nano Banana 2)
 - **`56_animate_static`** — anima una statica finita in motion poster 3-8s (ultimo frame = la statica), se serve una variante video dell'ad statico
 - **`57_ugc_studio`** — UGC video da formati provati, ad 9:16 finiti (default se campagna include UGC)
-- **`25_ugc_prompt`** — UGC factory, alternativa per fan-out Andromeda a 4 varianti
+- **`25_ugc_prompt`** — UGC factory, alternativa per fan-out Andromeda a 4 varianti (render parallelo, taglio word-accurate)
 - **`26_product_shot`** — product shot Studio/Held/Worn (se necessario)
 - **`27_multiplier`** — 5-8 variazioni Andromeda-compliant (se esiste un ad vincente da moltiplicare)
 - Tool: Canva MCP + Higgsfield MCP + fal.ai MCP

@@ -44,7 +44,7 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 | `/pm-video-script` | Video script studio universale (qualsiasi formato/lunghezza), solo testo | 55 / SA6 |
 | `/pm-animate-static` | Statica finita → motion poster 3-8s (ultimo frame = la statica) | 56 / SA6 |
 | `/pm-ugc-studio` | **UGC Studio (default)**: ordina formati provati → ad 9:16 finiti, edit grammar | 57 / SA6 |
-| `/pm-ugc-video` | UGC factory (alternativa): 4 ad MP4, fan-out Andromeda | 25 / SA6 |
+| `/pm-ugc-video` | UGC factory (alternativa): 4 ad MP4 fan-out Andromeda, render parallelo + taglio word-accurate | 25 / SA6 |
 | `/pm-product-photo` | Product shot Studio/Held/Worn | 26 / SA6 |
 | `/pm-multiplier` | 5-8 variazioni Andromeda-compliant da winner | 27 / SA6 |
 

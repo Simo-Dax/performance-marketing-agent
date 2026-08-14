@@ -9,8 +9,9 @@
 #   variant's chosen point) into a single 9:16 1080x1920 30fps H.264 + AAC MP4.
 #
 # THE AUDIO RULE (this factory NEVER mutes)
-#   Every Seedance clip was generated with the SAME 15s voice reference, so
-#   every clip ALREADY carries its own voice audio in a consistent voice.
+#   Every Seedance clip was generated with a uniquely-fingerprinted CUT of the
+#   same source voice, so every clip ALREADY carries its own voice audio in one
+#   consistent voice.
 #   There is no separate authored voice track, no spine, no muting. We KEEP
 #   each clip's audio and concatenate audio straight through, so the voice
 #   plays continuously across the whole timeline. The only post step on audio

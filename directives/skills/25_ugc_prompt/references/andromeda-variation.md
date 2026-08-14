@@ -16,7 +16,7 @@ The AFTER-Andromeda requirement: each ad is a genuinely DIFFERENT TIMELINE. In t
 - Hooks are uniformly SHORT (~3 to 5s, ~8 to 13 words). Hook length is NOT a distinctness lever and is not laddered.
 
 ### Lever 2 — the b-roll-count ladder (0, 1, 2, 2)
-- The b-roll pool is exactly **2 product-only clips (bA, bB)** — no character, voiceover only (see `references/consistency-and-assembly.md`).
+- The b-roll pool is exactly **2 voiceover clips (bA, bB)**, each product-only or featuring the character (their hands filming and holding the product, or the character using or demonstrating it), never a talking head (see `references/consistency-and-assembly.md`).
 - Each ad uses a different NUMBER of them, inserted at spaced points: V1 uses 0, V2 uses 1, V3 uses 2, V4 uses 2.
 - B-rolls are inserted only in the MIDDLE of the timeline (after the hook or between body beats) — NEVER after the CTA.
 - V3 and V4 both use both b-rolls but at DIFFERENT placements, so they read as different timelines even at the same length.
@@ -34,10 +34,11 @@ The AFTER-Andromeda requirement: each ad is a genuinely DIFFERENT TIMELINE. In t
 
 Every ad gets a fingerprint = a stable hash of RENDER-AFFECTING axes ONLY: visual_hook (the opening action) + sorted b-roll set + b-roll COUNT + b-roll placement indices + ordered roles in the timeline. The free-text verbal hook is NOT in the hash (it varies by construction).
 
-`scripts/build_manifest.py` computes the fingerprint and enforces:
+`scripts/build_manifest.py` computes the fingerprint and HARD-enforces:
 - All 4 fingerprints unique (it names colliders so you change a placement or a visual hook).
 - **Every ad's ordered_timeline ENDS ON THE CTA body beat** — it rejects any timeline that does not, and any b-roll placed after the CTA.
-- V3 and V4 (same b-roll count) must differ in b-roll PLACEMENT.
+
+Two checks it can only WARN about (because differing visual hooks already keep the fingerprints unique): the 0/1/2/2 b-roll-count ladder, and V3 vs V4 differing in b-roll PLACEMENT. The orchestrator verifies both by hand in the variation table and treats any such warning as a failure.
 
 Because the four hooks are unique and the b-roll count/placement differs, the four timelines are genuinely distinct — they read as four different creators, which is what Andromeda needs.
 

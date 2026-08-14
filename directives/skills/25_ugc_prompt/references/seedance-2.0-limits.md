@@ -10,10 +10,11 @@ Seedance 2.0 only. If a number here conflicts with `references/VERIFIED-backend-
 | Duration values | integer 4 to 9 | Always request an explicit integer 4 to 9. Never auto, never 10+. |
 | Aspect ratio | 9:16 vertical | The factory outputs 1080x1920. |
 | Resolution | 1080p (default) | About 9 credits/sec. |
-| Audio | enabled on EVERY generation | Native voice from the attached voice reference, in that voice, saying the shot's words. The product-only b-rolls get the voiceover too. |
+| Audio | enabled on EVERY generation | Native voice from the attached voice reference, in that voice, saying the shot's words. The b-rolls get the voiceover too. |
 | Scenes per generation | one OR several (described in the prompt) | No multi-shot parameter. Describe the scenes, set only the TOTAL seconds; Seedance cuts. Multi-scene gens are split into clips after. |
-| Reference media | face + body + product on character shots; product + voice ONLY on b-rolls | Same bytes every time. B-rolls never carry the character. |
-| Cost | about 9 credits/sec at 1080p | Per second, so batching saves nothing. Leverage = reuse body + b-roll pool, fan unique hooks. |
+| Reference media | face + body + product on character shots and character b-rolls; product + voice ONLY on product-only b-rolls | Same bytes every time. A b-roll may be product-only or carry the character (always voiceover, never a talking head). |
+| Voice per generation | its OWN unique cut on Higgsfield paths | One shared voice file silently fails later renders (the `_sfx` dedup — `references/voice-and-parallel.md`). Unique cuts also make the batch parallel-safe. Path C (fal): reuse one uploaded URL, the bug does not exist there. |
+| Cost | about 9 credits/sec at 1080p | Per second, so batching saves nothing. Leverage = reuse body + b-roll pool, fan unique hooks, render in parallel (wall-clock, not credits). |
 
 There is no separate voice track, no clone step, no TTS, no spine, and no force-muting anywhere.
 
@@ -32,7 +33,7 @@ action_buffer     = +1 to +2 seconds, HOOKS ONLY (for the on-screen action: dump
 generation_seconds = requested_seconds + action_buffer    (must be 4..9, UNDER 10)
 ```
 
-- Talking body shots and product-only b-rolls get NO action buffer — the voiceover fills the slow product motion.
+- Talking body shots and b-rolls get NO action buffer — the voiceover fills the slow product motion.
 - Target band: about **2.4 to 4.0 effective wps**. Below ~2.4 it drags; above ~4.0 it rushes.
 - EVERY generation must be UNDER 10 seconds. If a chunk needs 10s or more at 3.5 wps (more than ~31 words), SPLIT it into more generations.
 
@@ -43,7 +44,7 @@ generation_seconds = requested_seconds + action_buffer    (must be 4..9, UNDER 1
 | body beat "My counter used to be a row of supplement bottles, and I never knew which ones did anything." | 18 | 5 | 0 | 5s | 3.6 | OK (talking) |
 | body beat "AG1 is one scoop with over seventy ingredients, so it replaced that whole shelf." | 14 | 4 | 0 | 4s | 3.5 | OK |
 | hook reel: two ~11-word hooks, with a bottle-dump and a slam | 22 | 6 | +1 to +2 | 7 to 8s | ~3.5 speech | OK (action eats the extra) |
-| product b-roll "One scoop, once a day. That is the entire routine." | 10 | 3→4 | 0 | 4s | 2.5 | OK (clamped to 4s floor) |
+| product b-roll "One scoop, once a day. That is the entire routine." | 10 | 3→4 | 0 | 4s | 2.5 | OK (clamped to 4s floor; the dead tail disappears at the word-accurate cut) |
 | 31-word block | 31 | 9 | 0 | 9s | 3.4 | OK, at the ceiling |
 | 35-word block | 35 | 10 | — | — | — | TOO LONG (>=10s); split into two generations |
 

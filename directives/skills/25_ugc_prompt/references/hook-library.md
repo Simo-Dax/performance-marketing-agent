@@ -11,21 +11,21 @@ This file holds the raw hook material the factory pulls from in Steps 1 and 3. I
 How the rest of the skill uses this file:
 
 - Step 1 (Hook Mining) populates a Hook Bank of verbal lines from HALF A + the member's VOC. No scraping.
-- Step 2 (Scripts First) writes the body beat sheet (ending on the CTA) using ONE framework from `references/scripting-frameworks.md`, plus the 2 product-only b-roll voiceover lines.
+- Step 2 (Scripts First) writes the body beat sheet (ending on the CTA) using ONE framework from `references/scripting-frameworks.md`, plus the 2 b-roll voiceover lines (each product-only or featuring the character).
 - Step 3 (Andromeda Variation) builds 4 ads with 4 UNIQUE hooks (one per ad), each a different HALF A angle + a different KIND of HALF B visual action. Hooks are uniformly short (~3 to 5s); there is NO hook-length ladder. Distinctness comes from the unique hooks + the b-roll-count ladder (0/1/2/2), and every ad ends on the CTA.
-- Step 5 (Generation) renders the 4 hooks as 2 REELS (about 2 hooks per generation, under 10s), described as scenes with a hard cut, then SPLITS each reel at its cut into individual hook clips. The visual prompt fragment in HALF B goes into the talking render prompt for that hook scene.
+- Step 5.5 (Generation) renders the 4 hooks as 2 REELS (about 2 hooks per generation, under 10s), described as scenes with a hard cut; reel A renders FIRST as the identity checkpoint. Step 6's `whisper_cut.py` then SPLITS each reel at its LINE boundary (word-aligned, never scene-detect-guessed) into individual hook clips. The visual prompt fragment in HALF B goes into the talking render prompt for that hook scene.
 - assembly-manifest.json carries `verbal_hook`, `visual_hook`, `hook_clip`, plus the `distinctness_fingerprint` (a hash of visual_hook + sorted broll_set + b-roll count + placement indices + ordered roles). The free-text verbal hook is not in the hash.
 
 Cross references:
 - Frameworks (the 12): `references/scripting-frameworks.md`
 - Seedance 2.0 hard limits and the per-render duration rules: `references/seedance-2.0-limits.md`
-- The 4-axis variation logic and distinctness scoring: `references/andromeda-variation.md`
-- Character lock, the one shared voice reference clip, audio-on assembly, the manifest: `references/consistency-and-assembly.md`
+- The unique-hooks + b-roll-ladder distinctness model: `references/andromeda-variation.md`
+- Character lock, the voice model (one voice, one unique cut per generation), the word-accurate cutter, audio-on assembly, the manifest: `references/consistency-and-assembly.md`
 
 Hard rules pinned here so no one forgets them:
 
-1. NEVER send a video input on any render. A visual hook is achieved through the IMAGE prompt and camera/motion language, not by feeding a reference video. HOOK renders are TALKING renders: the verbal hook is spoken over the action, so a hook gets the locked face + body images + the product image (when the product is on screen) + the uploaded voice clip as the voice reference, and ZERO video inputs. Identity comes from the re-sent face + body bytes.
-2. B-ROLLS ARE PRODUCT-ONLY. A b-roll is NOT a character render — it shows only the product (held by an anonymous hand or standing on a surface) with a voiceover, and attaches the product image + voice clip ONLY (no face, no body). See `references/consistency-and-assembly.md`.
+1. NEVER send a video input on any render. A visual hook is achieved through the IMAGE prompt and camera/motion language, not by feeding a reference video. HOOK renders are TALKING renders: the verbal hook is spoken over the action, so a hook gets the locked face + body images + the product image (when the product is on screen) + that generation's own voice cut as the voice reference (see `references/voice-and-parallel.md`), and ZERO video inputs. Identity comes from the re-sent face + body bytes.
+2. B-ROLLS ARE VOICEOVER, NEVER A TALKING HEAD. A b-roll may feature the character (their hands holding and filming the product, or the character using or demonstrating it) or be product-only; either way it is carried by a voiceover, never the character talking to camera. A character b-roll attaches face + body + product + voice (like any character render); a product-only b-roll attaches the product image + voice clip ONLY (no face, no body). See `references/consistency-and-assembly.md`.
 3. Every hook must carry a visual action. A spoken line over a static talking head is not a hook. If a hook has no dramatic first-1-to-2s action from HALF B, it is rejected in Step 3.
 
 ---
@@ -33,6 +33,16 @@ Hard rules pinned here so no one forgets them:
 ## HALF A. Verbal Hook Archetypes (the spoken opening line)
 
 The verbal hook is the single most important line in the ad. It goes into the hook scene's spoken line. Keep hooks SHORT: about 8 to 13 words, which renders at roughly 3 to 5 seconds at the fast ~3.5 wps pace (the hook scene gets 1 to 2 extra seconds for its visual action). There is no hook-length ladder — all four hooks are short and differ by ANGLE and visual action, not length. Write it the way a real person talks, contractions and all, not the way ad copy reads.
+
+### Winner-rate weighting (verified 2026 — obey when picking the 4)
+
+Verified hook evidence (Motion Creative Benchmarks 2026, 550k+ ads, ~$1.3B Meta spend; full numbers and caveats in `../../_shared/script_frameworks.md`, sezione Evidenze) ranks hook FAMILIES by winner rate:
+
+- **STRONG families — the default pool:** offer/urgency/immediacy-led (9.29% winner rate — the concrete value, newness, or reason-to-act in the first line; lands as A7 Direct Claim or an offer-carrying A5), confession (8.74% — A4), and demographic call-out (the top practitioner performer — A1).
+- **WEAKER families — allowed, flagged:** question-shaped openers, pure listicles, how-to and explainer openers (5.2–5.5% winner rates; A3 phrased as an open question and A5 as a bare list live here).
+- Vague lifestyle or benefit openers ("imagine finally feeling confident") are BANNED — rewrite into something concrete.
+
+The rule for the 4 hooks: at least TWO of the four come from the strong families, a weaker-family hook may take at most ONE slot (when the angle genuinely earns it, e.g. a TEASE curiosity loop), and when VOC exists at least 2 of the 4 carry a verbatim customer phrase or the product's named mechanism. The four must still be four DIFFERENT angles — the weighting biases the pool, it never collapses the variety.
 
 Awareness stages referenced below use the standard 5: Unaware, Problem-Aware, Solution-Aware, Product-Aware, Most-Aware. Framework names refer to the 12 named entries in `references/scripting-frameworks.md`: CROWD (Bandwagon), DISRUPT (Industry Contrarian), CURE (Listicle), FOUNDER, SIMPLE (X Without Y), PURE (Organic), PAS, UGLY, PROVE (Founder Objections), SHOW (Us vs Them), Triple G, TEASE (Curiosity Loop). PURE and UGLY are style modifiers that can ride on top of any of the others. Use the chosen framework's own beats for length; the hook is just the first beat.
 
@@ -135,13 +145,13 @@ Quick chooser:
 
 ## HALF B. Visual Hook Archetypes (the dramatic first 1 to 2 seconds)
 
-This is the part the factory cares about most: something physically dramatic in the opening, not a person standing still and talking. The verbal hook is spoken OVER this action. Because the verbal hook is present, the hook clip is a TALKING render, so: locked character image(s) + product image if shown + uploaded voice message as the voice reference, and NO video_urls (rule 1 above).
+This is the part the factory cares about most: something physically dramatic in the opening, not a person standing still and talking. The verbal hook is spoken OVER this action. Because the verbal hook is present, the hook clip is a TALKING render, so: locked character image(s) + product image if shown + that generation's own voice cut as the voice reference, and NO video_urls (rule 1 above).
 
 For each archetype below:
 - What happens on screen: the literal physical action.
 - Why it stops the scroll: the attention mechanism.
-- Prompt fragment: a concrete chunk to drop into the Seedance image/render prompt for that hook clip. Always combine it with the verbatim character lock line from `references/consistency-and-assembly.md` ("The person in this video must exactly match the reference image, face, hair, body, clothing.") plus your wardrobe and lighting descriptors. Keep camera and motion language explicit so the model produces movement, not a frozen pose.
-- Natural length: how long the action reads cleanly. Use this together with the hook line's word band to pick the canonical ladder rung (4 / 6 / 8 / 10 integer seconds) for that variant.
+- Prompt fragment: the RAW MATERIAL for that hook clip's prompt — always CONDENSE it to the Step 5 less-is-more shape before use (the action in a few direct words + the exact quote; drop the lighting/camera dressing, the reference images carry the look). Always combine it with the CANONICAL character lock line exactly as written in `references/consistency-and-assembly.md` (that file is the single source of truth; never paraphrase the line here, and never add wardrobe or lighting descriptor blocks, the lock rules forbid them). Keep camera and motion language explicit so the model produces movement, not a frozen pose.
+- Natural length: how long the action reads cleanly. (The old 4/6/8/10 ladder is retired; hooks are uniformly SHORT, about 3 to 5 seconds, per the pinned rule at the top of this file.)
 
 A note on framing for all of these: target vertical 1080x1920, 30fps, handheld UGC energy unless stated. The motion verbs (slams, pours, whips, snaps) are doing the work, keep them in the prompt.
 
@@ -149,87 +159,87 @@ A note on framing for all of these: target vertical 1080x1920, 30fps, handheld U
 - What happens: a hand brings the product down onto a hard surface with a sharp stop, items around it jump slightly, then settle.
 - Why it stops the scroll: the abrupt impact and micro-bounce read as a sound even on mute; the eye locks onto the sudden stop.
 - Prompt fragment: "Close-up, a hand firmly sets [PRODUCT] down onto a wood table with a decisive thud, nearby objects jolt slightly from the impact, handheld camera, natural daylight, the person leans into frame and starts speaking to camera."
-- Natural length: the action reads in about 1.5 to 2.5s, so it sits comfortably inside the 4s rung (the hook line plays over and after the slam).
+- Natural length: the action reads in about 1.5 to 2.5s; the hook line plays over and after the slam.
 
 ### B2. Slow-motion liquid pour
 - What happens: a liquid streams in slow motion, the product (serum, drink, oil, milk) pours into a glass, onto skin, or over a surface, light catching the stream.
 - Why it stops the scroll: slow-mo on a fast feed is a pace break; glossy liquid is a known dopamine trigger.
 - Prompt fragment: "Macro slow-motion, [PRODUCT/liquid] pours in a smooth glossy stream into a clear glass, light refracts through the liquid, droplets suspended, then cut to the person holding the glass and speaking to camera, natural light."
-- Natural length: the action reads in about 2.5 to 4s, fits the 6s rung (the pour runs while the line is spoken).
+- Natural length: the action reads in about 2.5 to 4s; the pour runs while the line is spoken.
 
 ### B3. Before / after hard cut
 - What happens: a fast, jarring cut from a "before" state to an "after" state on the same subject (messy to clean, dull to glowing, cluttered to organized), no transition.
 - Why it stops the scroll: the brain auto-compares the two frames; the contrast is the message.
 - Prompt fragment: "Hard cut, frame one shows [BEFORE STATE] in flat dull light, instant cut to frame two showing [AFTER STATE] in brighter light from the same angle, then the person enters frame and addresses the camera." Note: render this as two short shots and butt-cut them; do not feed a reference video.
-- Natural length: the cut itself reads in about 2 to 3.5s. The 6s rung.
+- Natural length: the cut itself reads in about 2 to 3.5s.
 
 ### B4. A mess or spill
 - What happens: something spills, drops, scatters, or overflows in the opening, a deliberate small disaster (powder dusts the counter, a drawer of tangled product, coffee rings everywhere).
 - Why it stops the scroll: mess violates the polished-feed expectation and reads as raw and real, which is the UGC currency.
 - Prompt fragment: "Handheld, [SUBSTANCE] spills and scatters across the counter in a small mess, the person reacts and gestures at it while starting to speak to camera, candid kitchen lighting, slightly imperfect framing."
-- Natural length: the action reads in about 2 to 3s. The 4s or 6s rung.
+- Natural length: the action reads in about 2 to 3s.
 
 ### B5. Fast push-in to the face
 - What happens: the camera rushes in toward the creator's face (or a quick step toward the lens) so the framing snaps from wide to close.
 - Why it stops the scroll: rapid scale change triggers motion attention; suddenly a face fills the screen mid-sentence.
 - Prompt fragment: "Quick punch-in, camera rapidly pushes from a medium shot to a tight close-up on the person's face as they begin speaking directly to camera with urgency, handheld, natural light." Pairs especially well with confession (A4) and contrarian (A2) lines.
-- Natural length: the move reads in about 1 to 2s. The 4s rung.
+- Natural length: the move reads in about 1 to 2s.
 
 ### B6. Unexpected object reveal
 - What happens: the creator pulls an out-of-context object into frame to make a point (a stack of empty competitor bottles, a giant prop, a surprising before-photo on their phone) before introducing the product.
 - Why it stops the scroll: the object does not match the expected frame, so the brain pauses to resolve it.
 - Prompt fragment: "The person pulls [UNEXPECTED OBJECT] up into frame from below, holds it toward camera with a knowing look, then sets it down and starts speaking, handheld, bright daylight."
-- Natural length: the action reads in about 2.5 to 4s. The 6s rung.
+- Natural length: the action reads in about 2.5 to 4s.
 
 ### B7. Transformation / peel / crack / open
 - What happens: a satisfying physical change on the product itself, peeling a seal, cracking a lid, snapping a bar, twisting a cap with a visible click, the package opening for the first time.
 - Why it stops the scroll: a reveal-in-progress is an open loop the eye stays for; the tactile snap is sensory.
 - Prompt fragment: "Macro close-up, fingers peel back the foil seal on [PRODUCT] / snap [PRODUCT] cleanly in half / twist the cap until it clicks open, slow deliberate motion, then the person lifts it toward camera and speaks, soft natural light." Top pairing for unboxing (A10) and reaction (A8).
-- Natural length: the action reads in about 2 to 4s. The 6s rung.
+- Natural length: the action reads in about 2 to 4s.
 
 ### B8. Drop and catch
 - What happens: the product is tossed up or dropped a short distance and caught, a single confident beat of motion.
 - Why it stops the scroll: the falling object hijacks tracking attention; the catch resolves it with a beat of satisfaction.
 - Prompt fragment: "The person tosses [PRODUCT] up a few inches and catches it cleanly in one hand, casual and confident, then holds it up and starts speaking to camera, handheld, daylight."
-- Natural length: the action reads in about 1.5 to 2.5s. The 4s rung.
+- Natural length: the action reads in about 1.5 to 2.5s.
 
 ### B9. Pattern-interrupt motion across frame
 - What happens: a fast object or hand swipes across the whole frame, left to right or toward the lens, briefly blocking the view, then clearing to reveal the creator or product.
 - Why it stops the scroll: the full-frame wipe is a hard visual interrupt that breaks the scroll rhythm; the reveal after the wipe restarts attention.
 - Prompt fragment: "A hand swipes quickly across the lens from left to right, briefly filling the frame, and as it clears the person is revealed mid-gesture beginning to speak to camera, handheld, natural light." Use as a clean seam-friendly opener.
-- Natural length: the action reads in about 1 to 2s. The 4s rung.
+- Natural length: the action reads in about 1 to 2s.
 
 ### B10. Phone flip to back camera
 - What happens: the creator starts on the front (selfie) camera, then visibly flips the phone to the rear camera to show something, the framing and image quality shift on the flip.
 - Why it stops the scroll: the flip is a familiar real-creator gesture that signals "I'm about to show you the actual thing," promising proof.
 - Prompt fragment: "The person holds the phone selfie-style speaking to camera for a beat, then flips the phone to the rear camera, the view swings and reframes onto [PRODUCT / RESULT], handheld, the voice continues over the flip." Keep it one continuous render so the voice does not break.
-- Natural length: the action reads in about 2.5 to 4s. The 6s rung.
+- Natural length: the action reads in about 2.5 to 4s.
 
 ### B11. Satisfying texture close-up
 - What happens: an extreme close-up of a satisfying texture in motion, cream swirling, gel dipping, powder sifting, fabric stretching, foam building.
 - Why it stops the scroll: ASMR-grade texture is a strong sensory magnet; macro detail looks premium.
 - Prompt fragment: "Extreme macro, [TEXTURE: cream swirls / gel stretches / powder sifts] in slow motion filling the frame, rich detail and soft highlights, then cut to the person applying or holding [PRODUCT] and speaking to camera, soft diffused light."
-- Natural length: the action reads in about 2.5 to 4.5s. The 6s or 8s rung.
+- Natural length: the action reads in about 2.5 to 4.5s.
 
 ### B12. Walking into frame mid-action
 - What happens: the frame starts empty or on a scene, and the creator walks in already talking and already doing something (carrying the product, mid-gesture), as if you caught them in motion.
 - Why it stops the scroll: human motion entering an empty frame is a strong attention cue; "already in progress" energy feels candid.
 - Prompt fragment: "Frame starts on an empty room, the person walks briskly into frame already mid-sentence holding [PRODUCT], sits or stops and continues speaking to camera, handheld follow, natural window light."
-- Natural length: the action reads in about 2.5 to 4s. The 6s or 8s rung.
+- Natural length: the action reads in about 2.5 to 4s.
 
 ### B13. Holding the product up to the lens
 - What happens: the creator brings the product right up close to the camera so it briefly dominates the frame, label or detail readable, then pulls it back to talk.
 - Why it stops the scroll: an object filling the lens is a scale and focus break; it puts the product on screen in second one.
 - Prompt fragment: "The person raises [PRODUCT] close to the lens so it fills the frame and the label is sharp, holds for a beat, then lowers it and begins speaking to camera, handheld, bright even light." Strongest when the product image is the locked reference so the label matches exactly.
-- Natural length: the action reads in about 1.5 to 3s. The 4s or 6s rung.
+- Natural length: the action reads in about 1.5 to 3s.
 
 ### B14. Quick demo / instant result in hand
 - What happens: a fast, real demonstration of the product working in the opening, a swatch wiped clean, a stain lifting, water beading off, a spray absorbing instantly.
 - Why it stops the scroll: visible proof up front collapses skepticism before a single claim is spoken.
 - Prompt fragment: "Close-up, the person performs [QUICK ACTION: wipes the swatch and it lifts clean / sprays and it absorbs instantly / pours water and it beads off], the result is visible immediately, then they look to camera and speak, handheld, natural light." Best with direct-claim (A7) and challenge (A6) lines, the visual pays the claim.
-- Natural length: the action reads in about 2.5 to 4.5s. The 6s or 8s rung.
+- Natural length: the action reads in about 2.5 to 4.5s.
 
-Hook length note (NO ladder): every hook is SHORT, about 8 to 13 words, rendering at roughly 3 to 5 seconds at ~3.5 wps plus 1 to 2s for the visual action. All four hooks are short; they differ by ANGLE and by KIND of visual action, never by length. Any HALF B visual works on a short hook — keep the action quick (1 to 2s). The "natural length / rung" notes in the B1 to B14 entries above are just hints about how long an action reads; ignore the rung labels, there is no ladder.
+Hook length note (NO ladder): every hook is SHORT, about 8 to 13 words, rendering at roughly 3 to 5 seconds at ~3.5 wps plus 1 to 2s for the visual action. All four hooks are short; they differ by ANGLE and by KIND of visual action, never by length. Any HALF B visual works on a short hook — keep the action quick (1 to 2s). The "natural length" notes in the B1 to B14 entries above are just hints about how long an action reads.
 
 Drama tiering (use to keep the four opens genuinely different KINDS of action, not two near-identical camera moves):
 - HIGH-DRAMA / pattern-interrupt: B2 pour, B3 before/after, B4 mess, B6 object reveal, B7 transform, B12 walk-in, B14 demo.
@@ -248,15 +258,15 @@ Every hook MUST carry a visual action from HALF B. A spoken line over a static t
 ### How to combine, step by step
 1. Pull a verbal line from the Hook Bank (Step 1) and tag its HALF A archetype. That gives `verbal_hook`.
 2. Pick a HALF B visual that EARNS it (e.g. reaction A8 with a reveal B7, direct-claim A7 with a demo B14, confession A4 with an object reveal B6). That gives `visual_hook`.
-3. Keep the line short (~8 to 13 words). There is no length rung to hit.
+3. Keep the line short (~8 to 13 words). There is no length target to hit beyond that.
 4. Do this for all 4 ads with 4 DIFFERENT verbal angles and 4 DIFFERENT KINDS of visual action. Never reuse a hook.
-5. Render the 4 hooks as 2 REELS (~2 hooks per generation, under 10s), each described as scenes with a hard cut, then SPLIT each reel at its cut into hook clips. Each hook scene is a TALKING render: locked face + body + product (if shown) + voice clip, and NO video input.
+5. Render the 4 hooks as 2 REELS (~2 hooks per generation, under 10s), each described as scenes with a hard cut — reel A first, alone, as the identity checkpoint — then let `whisper_cut.py` split each reel at its line boundary into hook clips. Each hook scene is a TALKING render: locked face + body + product (if shown) + that generation's voice cut, and NO video input.
 
 Distinctness across the 4 ads = 4 unique hooks + the b-roll-count ladder (0/1/2/2). build_manifest.py enforces unique fingerprints, that every ad ends on the CTA, and that V3/V4 place their (two) b-rolls differently.
 
 ### Worked example: a sample product (greens powder)
 
-Shared body (PAS or SIMPLE), ending on the CTA, reused under all 4 ads. The 2 product-only b-rolls (e.g. the pouch standing on a counter; an extreme label close-up) are reused. Only the hook and the b-roll count/placement change:
+Shared body (PAS or SIMPLE), ending on the CTA, reused under all 4 ads. The 2 b-rolls (e.g. the creator's hands turning the pouch to the lens; or the pouch standing on a counter; an extreme label close-up) are reused. Only the hook and the b-roll count/placement change:
 
 | Ad | Verbal hook (HALF A, short) | Archetype | Visual action (HALF B) | B-rolls |
 |---|---|---|---|---|
