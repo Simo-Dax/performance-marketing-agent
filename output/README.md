@@ -24,6 +24,7 @@ Questa è la mappa autoritativa dettagliata (CLAUDE.md ne tiene una versione com
 │   └── _scratch/format-*.json ← prompt di ricreazione bancati da 19, consumati da 24_static_ads
 ├── 04_Static_Ads/             ← 24_static_ads (/pm-statiche)
 ├── 05_UGC_Prompts/            ← 25_ugc_prompt (/pm-ugc-video)
+│   └── studio/<order-slug>/   ← 57_ugc_studio (/pm-ugc-studio): out/<ad_id>.mp4 + gens/stills/clips/frames/edl/manifest
 ├── 06_Ad_Copy/                ← 28_meta_copy (/pm-meta-copy) + 54_headline_bank (/pm-headlines)
 ├── 07_Multiplied_Ads/         ← 27_multiplier (/pm-multiplier)
 ├── 08_Rebuilt_Competitor_Ads/ ← 23_competitor_rebuild (/pm-competitor-rebuild)
