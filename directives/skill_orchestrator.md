@@ -54,6 +54,7 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `24_static_ads` | SA6 | Production | Static ad da winner reali (rebrand) — reference bank obbligatoria (`19_ad_spy` + winner live del brand), design tenuto/identità scambiata, un blocco prosa per ad. Input: pagina Facebook brand, n. ad, foto prodotto. Modello: GPT Image 2 (default) o Nano Banana 2 (solo 4:5 vero). Richiede Apify. |
 | `56_animate_static` | SA6 | Production | Statica finita → motion poster 3-8s: i layer si assemblano, **l'ultimo frame È la statica originale**. Niente musica/caption. Input: una statica + concept scelto. Richiede modello image-to-video con start+end frame (fal.ai/Higgsfield). |
 | `57_ugc_studio` | SA6 | Production | **UGC Studio (default UGC video)** — format bank di ad vincenti reali (testimonial/before-after/unboxing/direct-to-camera): ordini un mix, lo studio scrive, renderizza gen 4-9s, taglia con **edit grammar** e assembla 9:16 finiti. 2 gate umani (transcript, costo+cut map). Richiede ffmpeg. |
+| `58_ugc_blueprint` | SA6 | Production | **Lane reference-driven**: parte da UN video UGC locale che l'utente ha scelto, ne misura la struttura (curva di differenza per-frame, lip-sync test, whisper locale) e la ricostruisce col suo prodotto/creator. Struttura sì, girato mai. Richiede ffmpeg. |
 | `25_ugc_prompt` | SA6 | Production | UGC factory (**alternativa nominata** a 57): fan-out Andromeda, 4 ad distinti da un core condiviso. Voice cut unici per gen (anti `_sfx`), render parallelo + hook checkpoint, taglio word-accurate (whisper) + frame check. Input: script UGC + VOC + Brand DNA. |
 | `26_product_shot` | SA6 | Production | Product shot (Studio/Held/Worn). Input: immagine prodotto. Opzionale: personaggio da `22_character_creator`. |
 | `27_multiplier` | SA6 | Production | Moltiplicatore winner — 5-8 variazioni Andromeda-compliant da ad vincente. Input: ad vincente + 1-3 img prodotto + Brand DNA + VOC. |
@@ -220,6 +221,7 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `24_static_ads` — Static Ads da winner reali, rebrand model (SA6)
 - [x] `56_animate_static` — Statica → motion poster (SA6)
 - [x] `57_ugc_studio` — UGC Studio format-first, edit grammar (SA6, default UGC)
+- [x] `58_ugc_blueprint` — UGC Blueprint da video reference (SA6)
 - [x] `25_ugc_prompt` — UGC factory, fan-out Andromeda (SA6, alternativa)
 - [x] `26_product_shot` — Product Shot Generator (SA6)
 - [x] `27_multiplier` — Winning Ad Multiplier 2.0 (SA6)
@@ -271,6 +273,7 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-animate-static` | `56_animate_static` | SA6 |
 | `/pm-video-script` | `55_video_script` | SA6 |
 | `/pm-ugc-studio` | `57_ugc_studio` | SA6 |
+| `/pm-ugc-blueprint` | `58_ugc_blueprint` | SA6 |
 | `/pm-ugc-video` | `25_ugc_prompt` | SA6 |
 | `/pm-product-photo` | `26_product_shot` | SA6 |
 | `/pm-multiplier` | `27_multiplier` | SA6 |
