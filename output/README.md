@@ -37,6 +37,9 @@ Questa è la mappa autoritativa dettagliata (CLAUDE.md ne tiene una versione com
 ├── 15_Video_Scripts/          ← 55_video_script (/pm-video-script)
 ├── 16_Animated_Statics/       ← 56_animate_static (/pm-animate-static): mp4 + motion prompt .txt
 ├── 17_UGC_Blueprints/         ← 58_ugc_blueprint (/pm-ugc-blueprint): blueprint shot-by-shot + prompt ricostruzione
+├── 18_Pixar_Ads/              ← 59_pixar_ad (/pm-pixar-ad): ad montato + clip raw + storyboard
+├── 19_Talking_Object_Ads/     ← 60_talking_object_ad (/pm-talking-object-ad)
+├── 20_Podcast_Ads/            ← 61_podcast_ad (/pm-podcast-ad)
 ├── _assets/product-shots/     ← 26_product_shot (/pm-product-photo)
 ├── intermediate/              ← output TESTUALI dei SA (handoff interni)
 │   ├── insight.md             ← 33_insight_synthesis (/pm-insight)

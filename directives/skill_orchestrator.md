@@ -56,6 +56,9 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `57_ugc_studio` | SA6 | Production | **UGC Studio (default UGC video)** — format bank di ad vincenti reali (testimonial/before-after/unboxing/direct-to-camera): ordini un mix, lo studio scrive, renderizza gen 4-9s, taglia con **edit grammar** e assembla 9:16 finiti. 2 gate umani (transcript, costo+cut map). Richiede ffmpeg. |
 | `58_ugc_blueprint` | SA6 | Production | **Lane reference-driven**: parte da UN video UGC locale che l'utente ha scelto, ne misura la struttura (curva di differenza per-frame, lip-sync test, whisper locale) e la ricostruisce col suo prodotto/creator. Struttura sì, girato mai. Richiede ffmpeg. |
 | `25_ugc_prompt` | SA6 | Production | UGC factory (**alternativa nominata** a 57): fan-out Andromeda, 4 ad distinti da un core condiviso. Voice cut unici per gen (anti `_sfx`), render parallelo + hook checkpoint, taglio word-accurate (whisper) + frame check. Input: script UGC + VOC + Brand DNA. |
+| `59_pixar_ad` | SA6 | Production | Ad Pixar 3D **voiceover-first**, formato progressione virale. Eroe castato dal Brand DNA (Character Bible bloccato), testimoni altri personaggi Pixar mai umani, prodotto come prop dalla foto reale. **Mai testo renderizzato, mai lip-sync.** 2 gate. Richiede ffmpeg + whisper. |
+| `60_talking_object_ad` | SA6 | Production | Ad **dialogue-first**: il cast vende (problema personificato → eroi ingrediente → il prodotto chiede la vendita). I personaggi **parlano on camera**, nessun voiceover esterno: l'audio nativo delle clip è la traccia. 2 gate. Richiede ffmpeg. |
+| `61_podcast_ad` | SA6 | Production | Finto **podcast a due host**: l'utente carica 2 volti + 2 voci, la skill scrive, renderizza in parallelo (voice cut con fingerprint unico) e monta un 9:16. Nessun riferimento video mai. Richiede ffmpeg + whisper. |
 | `26_product_shot` | SA6 | Production | Product shot (Studio/Held/Worn). Input: immagine prodotto. Opzionale: personaggio da `22_character_creator`. |
 | `27_multiplier` | SA6 | Production | Moltiplicatore winner — 5-8 variazioni Andromeda-compliant da ad vincente. Input: ad vincente + 1-3 img prodotto + Brand DNA + VOC. |
 | `54_headline_bank` | SA7 | Creative | Headline bank dedicata, più profonda di `28_meta_copy` — ~20 headline + 8 hook on-image + 6 first-line, framework-nominate, char-discipline 27/40, gate personal-attributes Meta. Input: angolo/creative/angle-bank/riff. |
@@ -223,6 +226,9 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `57_ugc_studio` — UGC Studio format-first, edit grammar (SA6, default UGC)
 - [x] `58_ugc_blueprint` — UGC Blueprint da video reference (SA6)
 - [x] `25_ugc_prompt` — UGC factory, fan-out Andromeda (SA6, alternativa)
+- [x] `59_pixar_ad` — Pixar Ad Factory (SA6)
+- [x] `60_talking_object_ad` — Talking Object Ad Factory (SA6)
+- [x] `61_podcast_ad` — Podcast Ad Factory (SA6)
 - [x] `26_product_shot` — Product Shot Generator (SA6)
 - [x] `27_multiplier` — Winning Ad Multiplier 2.0 (SA6)
 - [x] `28_meta_copy` — Meta Ad Copy (SA7)
@@ -275,6 +281,9 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-ugc-studio` | `57_ugc_studio` | SA6 |
 | `/pm-ugc-blueprint` | `58_ugc_blueprint` | SA6 |
 | `/pm-ugc-video` | `25_ugc_prompt` | SA6 |
+| `/pm-pixar-ad` | `59_pixar_ad` | SA6 |
+| `/pm-talking-object-ad` | `60_talking_object_ad` | SA6 |
+| `/pm-podcast-ad` | `61_podcast_ad` | SA6 |
 | `/pm-product-photo` | `26_product_shot` | SA6 |
 | `/pm-multiplier` | `27_multiplier` | SA6 |
 | `/pm-headlines` | `54_headline_bank` | SA7 |
