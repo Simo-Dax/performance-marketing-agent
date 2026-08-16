@@ -124,7 +124,7 @@ Dettaglio + prefissi in `execution/tools.md`. In sintesi:
 - **Research:** SimilarWeb (SA1) · Lenny's Data (SA2).
 - **Ops:** Gmail · Google Drive · Calendar · Slack · n8n. Klaviyo ⚠️ da configurare (SA9, `/pm-setup-klaviyo`).
 
-Setup key: `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`.
+Setup key: `/pm-setup-apify`, `/pm-setup-fal-ai`, `/pm-setup-klaviyo`, `/pm-setup-kie` (opzionale, render alt. — mappato non cablato).
 
 ---
 

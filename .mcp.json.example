@@ -1,4 +1,5 @@
 {
+  "_comment_kie": "KIE AI (gateway di render alternativo) NON sta qui: non è un server MCP, si usa via REST diretto. Key con /pm-setup-kie (salva in ~/.config/pm-agent/kie.env), contratto API e punti di innesto in execution/kie_api_map.md. Non usiamo wrapper MCP di terzi.",
   "_comment": "Template di .mcp.json per il Performance Marketing Team. Copia in .mcp.json (gitignored) e sostituisci i placeholder con le tue chiavi/percorsi. Tutti i server sono INDIPENDENTI — nessuna dipendenza da plugin di terzi. Setup guidato: /pm-setup, /pm-setup-apify, /pm-setup-fal-ai, /pm-setup-klaviyo. Sostituisci ${HOME} con il path assoluto della tua home se Claude Code non lo espande.",
   "mcpServers": {
     "google-ads": {

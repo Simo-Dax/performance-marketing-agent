@@ -10,6 +10,7 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 | `/pm-setup` | Master setup: verifica struttura, tool, MCP, API key. Idempotente. | — |
 | `/pm-setup-apify` | Configura Apify API key (spy + UGC scraper) | — |
 | `/pm-setup-fal-ai` | Configura Fal AI key (immagini/video) | — |
+| `/pm-setup-kie` | Configura KIE AI key (render alternativo, REST). Opzionale: mappato in `execution/kie_api_map.md`, non cablato nelle skill | — |
 | `/pm-feedback "..."` | Registra feedback e lo applica come regola (orchestrator/agente/skill) + log + memory | `self_improvement.md` |
 
 ## Pre-pipeline & Research (SA1, SA2)
