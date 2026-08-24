@@ -15,10 +15,10 @@ Riferimento di quali tool/MCP/skill usa ogni sub-agent. Per il routing skill→a
 | **SA5** Creative | fal.ai (`mcp__fal-ai`), Higgsfield (`mcp__higgsfield`) | Character creator, rebuild |
 | **SA6** Production | fal.ai, Higgsfield, Canva (`mcp__canva`), Google Drive | Statiche (GPT Image 2 / Nano Banana 2), UGC video (Seedance 2.0), product shot, finishing |
 | **SA7** Copy | — (usa VOC + Brand DNA + skill) | Meta/Google copy |
-| **SA8** Analytics | Google Ads (`mcp__google-ads__search` GAQL), Meta Ads (`mcp.facebook.com/ads`, solo web), Gmail (`mcp__claude_ai_Gmail`) | Report, audit, search-term/QS, ottimizzazioni, delivery email |
+| **SA8** Analytics | Google Ads (`mcp__google-ads__search` GAQL), Meta Ads MCP (in Claude Code), Gmail (`mcp__claude_ai_Gmail`) | Report, audit, search-term/QS, ottimizzazioni, delivery email |
 | **Orchestrator/Ops** | Slack, Google Calendar, n8n (`mcp__claude_ai_n8n`) | Notifiche, scheduling, automazione |
 
-> **Meta Ads MCP**: funziona solo in claude.ai web (OAuth). In Claude Code usa `30_meta_handoff` (`/pm-handoff`) o export CSV.
+> **Meta Ads MCP**: attivo direttamente in Claude Code — `50_meta_analyze` (`/pm-meta-analyze`, read-only) e `51_meta_build` (`/pm-meta-build`, write, tutto PAUSED). Senza MCP configurato: export CSV da Ads Manager.
 > **Higgsfield MCP**: configurato **solo in questo progetto** (`.mcp.json`), non globale. Server in `~/.claude/mcp-servers/higgsfield/`.
 > **Google Ads MCP**: MCC `5524890329`, config in `.mcp.json` (developer token + login customer id).
 
@@ -40,7 +40,7 @@ API key: `/pm-setup-fal-ai` (fal.ai), `/pm-setup-apify` (Apify).
 
 > **Image-to-video per `56_animate_static`:** basta un modello che accetti una **start image** (non serve end-frame conditioning). Su fal.ai: famiglia `bytedance/seedance-2.0/image-to-video` (+ tier `fast`/`mini`), `fal-ai/kling-video/*`, `minimax/h3/image-to-video`. **Verifica sempre model id e nomi campo con `mcp__fal-ai__find` prima di chiamare** — gli schemi cambiano. Su Higgsfield CLI la statica va su `--start-image`; l'audio è automatico, non c'è flag audio.
 
-> **Motori di render alternativi (pay-per-render) — KIE AI:** gateway che espone gli **stessi modelli** (Nano Banana, GPT Image 2, Seedance) spesso a costo minore, con check del credito gratuito prima di spendere. **Mappato ma NON cablato:** contratto API verificato, endpoint, gate di spesa, scadenze URL e punti di innesto stanno in **`execution/kie_api_map.md`**; la key si configura con `/pm-setup-kie`. Nessuna skill lo chiama oggi — il Path C (fal.ai) copre già "pay-per-render senza abbonamento". Attivarlo è un lavoro esplicito: leggi lo schema `input` del modello sulle docs, scrivi UNO script condiviso create→poll→download in `execution/scripts/`, aggiungilo come Path extra in 24/25/26/27/56/57/58/59/60/61 dietro il gate credito, testa su una generazione reale. Vale la pena solo se il risparmio è reale sui tuoi volumi. **KIE è REST, non MCP** — non va in `.mcp.json`, e non usiamo wrapper MCP di terzi.
+> **Motori di render alternativi (pay-per-render) — KIE AI:** gateway che espone gli **stessi modelli** (Nano Banana, GPT Image 2, Seedance) spesso a costo minore, con check del credito gratuito prima di spendere. **Mappato ma NON cablato:** contratto API verificato, endpoint, gate di spesa, scadenze URL e punti di innesto stanno in **`execution/kie_api_map.md`**; la key si configura con `/pm-setup-kie`. Nessuna skill lo chiama oggi — il Path C (fal.ai) copre già "pay-per-render senza abbonamento". Attivarlo è un lavoro esplicito: leggi lo schema `input` del modello sulle docs, scrivi UNO script condiviso create→poll→download in `execution/scripts/`, aggiungilo come Path extra in 24/25/26/27/56/58/59/60/61/62 dietro il gate credito, testa su una generazione reale. Vale la pena solo se il risparmio è reale sui tuoi volumi. **KIE è REST, non MCP** — non va in `.mcp.json`, e non usiamo wrapper MCP di terzi.
 
 > **Modello di ragionamento (Claude) ≠ modello di render.** Cambiare il modello Claude (via `/model`) non tocca le skill: prompt, VOC e Brand DNA restano identici, cambia solo il costo/qualità del ragionamento. Su batch grandi conviene valutare il modello più conveniente disponibile sul piano. È ortogonale al render engine (fal.ai/Higgsfield), che ha i suoi costi separati.
 

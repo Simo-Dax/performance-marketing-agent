@@ -134,4 +134,4 @@ Dopo la generazione AI:
 
 ## Handoff
 Asset + manifest → **Orchestrator** (`final/assets/`).
-Se landing → `29_landing_page` (`/pm-landing-page`). Per lancio → `30_meta_handoff` (`/pm-handoff`).
+Se landing → `29_landing_page` (`/pm-landing-page`). Per il lancio → `51_meta_build` (`/pm-meta-build`).

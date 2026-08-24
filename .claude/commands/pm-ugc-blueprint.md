@@ -19,4 +19,4 @@ Argomenti: $ARGUMENTS
 
 Richiede `ffmpeg`/`ffprobe`. Output: `17_UGC_Blueprints/<slug>/`.
 
-**Le tre lane UGC:** `57_ugc_studio` (da format bank di winner) · `25_ugc_prompt` (fan-out Andromeda da uno script) · **`58` (da un video specifico che l'utente ha scelto)**. Per scrapare gli ad video di un competitor dalla Ad Library è invece `52_ad_spy_video`.
+**Le tre lane UGC:** `62_ugc_formats` (default, 11 formati, `/pm-ugc`) · `25_ugc_prompt` (fan-out a 4 varianti da uno script) · **`58` (da un video specifico che l'utente ha scelto)**. Per scrapare gli ad video di un competitor dalla Ad Library è invece `52_ad_spy_video`.

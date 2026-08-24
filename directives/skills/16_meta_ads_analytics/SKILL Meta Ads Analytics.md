@@ -19,7 +19,7 @@ Genera report di performance Meta Ads (Facebook + Instagram) usando il Meta Ads 
 
 ⚠️ **Meta Ads MCP richiede configurazione OAuth** (`mcp.facebook.com/ads`).
 - Disponibile solo su claude.ai web (non Claude Code) per OAuth Meta
-- Alternativa fino a configurazione: usa `/pm-handoff` per preparare il handoff prompt, o chiedi all'utente di fornire export CSV da Meta Ads Manager
+- Alternativa fino a configurazione: usa `/pm-meta-analyze` (diagnosi read-only live), o chiedi all'utente un export CSV da Meta Ads Manager
 
 ---
 

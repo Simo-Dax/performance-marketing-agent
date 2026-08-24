@@ -1,6 +1,6 @@
 ---
 name: 50_meta_analyze
-description: Opera il Meta Ads MCP ufficiale direttamente dentro Claude Code per analizzare la performance live dell'account, STRETTAMENTE read-only — non crea, aggiorna, attiva o cancella mai nulla nell'ad account. Due modalità. Quick check = audit account single-pass veloce. Deep diagnosis = fan-out di investigator agent paralleli su slice di dati fisicamente isolate, un referee avversariale che prova a uccidere ogni teoria, e una diagnosi unica ranked con evidence-for, evidence-against, confidence e la singola azione più importante della settimana. SA8 (analytics/reporting), indipendente dalla pipeline creativa. Sostituisce la modalità "analisi" del vecchio 30_meta_handoff. Trigger: /pm-meta-analyze, "analizza le mie campagne meta", "diagnostica le campagne", "perché è salito il CPA", "perché è crollato il ROAS", "le ads si sono rotte", "creative fatigue check", "audit account meta". Per BUILD/lancio campagne → /pm-meta-build (o Ads Manager), mai questa skill. Output in output/reports/{YYYY-MM-DD}_meta_analysis/.
+description: Opera il Meta Ads MCP ufficiale direttamente dentro Claude Code per analizzare la performance live dell'account, STRETTAMENTE read-only — non crea, aggiorna, attiva o cancella mai nulla nell'ad account. Due modalità. Quick check = audit account single-pass veloce. Deep diagnosis = fan-out di investigator agent paralleli su slice di dati fisicamente isolate, un referee avversariale che prova a uccidere ogni teoria, e una diagnosi unica ranked con evidence-for, evidence-against, confidence e la singola azione più importante della settimana. SA8 (analytics/reporting), indipendente dalla pipeline creativa. Trigger: /pm-meta-analyze, "analizza le mie campagne meta", "diagnostica le campagne", "perché è salito il CPA", "perché è crollato il ROAS", "le ads si sono rotte", "creative fatigue check", "audit account meta". Per BUILD/lancio campagne → /pm-meta-build (o Ads Manager), mai questa skill. Output in output/reports/{YYYY-MM-DD}_meta_analysis/.
 ---
 
 # SA8 — Meta Ads Analyze (50)
@@ -16,7 +16,7 @@ referee che prova a uccidere ogni teoria, una diagnosi unica ranked.
 > aderire al ToV del brand (`context/brand/tone_of_voice.md`). I 3 file in `references/` sono technical
 > reference verbatim (operator guide, frameworks, briefs) e restano in inglese.
 
-> **Cambio di paradigma rispetto a `30_meta_handoff`.** Il vecchio handoff aveva la regola "il Meta MCP
+> **Cambio di paradigma rispetto al vecchio handoff (rimosso).** Quello aveva la regola "il Meta MCP
 > gira SOLO su claude.ai web". Non vale più per questa skill: il connector Meta Ads
 > (`mcp.facebook.com/ads`) è disponibile **dentro Claude Code** ed espone i tool come
 > `mcp__…__ads_*` (per-install prefix opaco). Questa skill li opera direttamente, read-only.
@@ -103,7 +103,7 @@ folder `output/{brand}_{campaign}_{date}/` when one exists):
 - `context/brand/business_profile.md` and `context/brand/tone_of_voice.md`: brand name, offer, ToV.
 - Campaign folder `02_Brand_DNA/` and `01_VOC_Research/`, plus `intermediate/sa2_market_insights.md`: brand and offer context.
 - `intermediate/sa7_copy_deck.md` and campaign `06_Ad_Copy/`: newest copy deck, context only in this skill.
-- `09_Meta_Handoff/`: READ-ONLY legacy. Old intake answers occasionally carry account context. Nothing is ever written there.
+- `09_Meta_Handoff/`: READ-ONLY, se esiste da campagne vecchie. Le risposte di intake possono ancora portare contesto sull'account. Non ci si scrive mai; le campagne nuove non la creano.
 - `15_Meta_Campaigns/`: build manifests from `/pm-meta-build` (when ported). The newest manifest auto-fills the case statement (optimized event, created entity ids, launch date) and lets the quick check call out the launched campaign by name. Skip silently if absent.
 
 ## Step 0c, Find the Meta Ads tools (never hardcode a server prefix)

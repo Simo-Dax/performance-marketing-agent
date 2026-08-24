@@ -22,7 +22,7 @@ Termina il turno a ogni gate e attendi approvazione umana esplicita.
 
 > **Nota architettura:** la factory NON scrapa TikTok. Gli hook vengono dalla `hook-library` + VOC. `20_ugc_scraper` (SA1) resta separato come research/swipe-file.
 >
-> **Rapporto con `57_ugc_studio` (default UGC):** lo studio parte da un **format bank** di ad vincenti reali e monta con l'edit grammar. Questa factory è l'**alternativa nominata**: parte da hook mining + script e fa il **fan-out Andromeda a 4 varianti** da un core condiviso. Usa la factory quando vuoi 4 ad distinti dallo stesso script; usa lo studio quando vuoi partire da un formato provato. Le due non si toccano: la factory scrive sotto `05_UGC_Prompts/factory/`, lo studio sotto `studio/`.
+> **Rapporto con `62_ugc_formats` (default UGC):** `62` fa **una ad per run**, in **un solo render** (Seedance 2.5 fino a 30s, niente montaggio), scegliendo fra 11 formati costruiti su ad reali. Questa factory fa il **fan-out a 4 varianti** da un core condiviso, generando più clip e montandole. Usa `62` per la singola ad fatta bene; usa la factory quando ti servono **4 ad distinte dallo stesso script**. Le due non si toccano: la factory scrive sotto `05_UGC_Prompts/factory/`, `62` sotto `formats/<formato>/`.
 
 ## Il modello in un respiro
 

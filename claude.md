@@ -95,8 +95,8 @@ I 9 sub-agent vivono in `.claude/agents/saN_*.md` come **subagent nativi** (fron
 output/
 ├── {brand}_{campaign}_{date}/       ← working dir campagna (apri CC qui = pwd)
 │   ├── 01_VOC_Research/  ← 18 · 02_Brand_DNA/ ← 21 · 03_Ad_Spy/ ← 19+52 (+_scratch/format-*.json)
-│   ├── 04_Static_Ads/ ← 24 · 05_UGC_Prompts/ ← 25 (+studio/ ← 57, +formats/<f>/ ← 62) · 06_Ad_Copy/ ← 28+54 · 07_Multiplied_Ads/ ← 27
-│   ├── 08_Rebuilt_Competitor_Ads/ ← 23 · 09_Meta_Handoff/ ← 30 · 10_Landing_Pages/ ← 29
+│   ├── 04_Static_Ads/ ← 24 · 05_UGC_Prompts/ ← 25 (+formats/<f>/ ← 62) · 06_Ad_Copy/ ← 28+54 · 07_Multiplied_Ads/ ← 27
+│   ├── 08_Rebuilt_Competitor_Ads/ ← 23 · 10_Landing_Pages/ ← 29
 │   ├── 11_Characters/ ← 22 · 12_Email/ ← 46 · 13_Meta_Campaigns/ ← 51 · 14_Creative_Briefs/ ← 53 · 15_Video_Scripts/ ← 55 · 16_Animated_Statics/ ← 56 · 17_UGC_Blueprints/ ← 58 · 18_Pixar_Ads/ ← 59 · 19_Talking_Object_Ads/ ← 60 · 20_Podcast_Ads/ ← 61  ·  caption `_captioned.mp4` accanto al master ← 63
 │   ├── _assets/product-shots/ ← 26
 │   ├── intermediate/    ← output TESTUALI dei SA (insight, sa1..sa9, strategy, copy deck)
@@ -140,7 +140,7 @@ Elenco completo con trigger/dipendenze in `directives/skill_orchestrator.md`; co
 | **SA4** Strategy | 32 brand_strategy (GATE 2) · 48 segment_pain · 34 editorial_plan · 39 marketing_ideas |
 | **33** Ponte | 33 insight_synthesis (GATE 1) |
 | **SA5** Creative | 53 ad_angles · 13 creative_concepts · 22 character_creator · 23 competitor_rebuild |
-| **SA6** Production | 55 video_script · 24 static_ads (rebrand) · 56 animate_static · **62 ugc_formats (default UGC — 11 formati, router `/pm-ugc`)** · 58 ugc_blueprint (da video reference) · 57 ugc_studio + 25 ugc_prompt (lane precedenti) · 59 pixar_ad · 60 talking_object_ad · 61 podcast_ad · 63 auto_captions · 26 product_shot · 27 multiplier · 14 asset_router · 42 carousel |
+| **SA6** Production | 55 video_script · 24 static_ads (rebrand) · 56 animate_static · **62 ugc_formats (default UGC — 11 formati, router `/pm-ugc`)** · 58 ugc_blueprint (da video reference) · 25 ugc_prompt (fan-out 4 varianti) · 59 pixar_ad · 60 talking_object_ad · 61 podcast_ad · 63 auto_captions · 26 product_shot · 27 multiplier · 14 asset_router · 42 carousel |
 | **SA7** Copy | 54 headline_bank · 28 meta_copy · 12 google_copy · 11/10/02/03 copy support · 49 anti_ai_slop · 41 seo_content |
 | **SA8** Analytics | 15 google_analytics · 16 meta_analytics · 31 report_template · 35 search_term · 36 google_audit · 37 google_optim · 40 seo_audit · 50 meta_analyze · 51 meta_build |
 | **SA9** CRM | 43 crm_analysis · 44 rfm · 45 email_strategy · 46 email_creation |
@@ -148,7 +148,6 @@ Elenco completo con trigger/dipendenze in `directives/skill_orchestrator.md`; co
 
 **Note chiave:**
 - `_shared/` = motori riusati da 53/54/55 (angle_engine, awareness_tension_funnel, niche_offer_types, headline_frameworks, script_frameworks, creative_claims_compliance, creative_kill_floor_review, format_teardown_recreation, adjacency_kill_pass). Non invocabili direttamente.
-- **`30_meta_handoff` DEPRECATA** → sostituita da `50_meta_analyze` (read) + `51_meta_build` (write).
 - **Skill globali CC** (in `~/.claude/skills/`): marketing-psychology, copywriting, copy-editing, marketing-ideas, higgsfield-* (generate/product/marketplace/soul-id), google-search-console.
 - Zero dipendenze da plugin di terzi: i servizi (Apify, fal.ai, Playwright, Higgsfield) girano come MCP propri.
 

@@ -29,4 +29,4 @@ Argomenti: $ARGUMENTS
 
 Da dove partire: **Problem/Solution** o **Testimonial** funzionano per quasi ogni prodotto. Per vedere la pipeline girare pulita, **ASMR** è il render più affidabile del set.
 
-**Le altre lane UGC:** `58_ugc_blueprint` (`/pm-ugc-blueprint`, da un video reference specifico) · `25_ugc_prompt` (`/pm-ugc-video`, fan-out da uno script) · `57_ugc_studio` (`/pm-ugc-studio`, format bank precedente).
+**Le altre lane UGC:** `58_ugc_blueprint` (`/pm-ugc-blueprint`, parte da un video reference che hai scelto) · `25_ugc_prompt` (`/pm-ugc-video`, fan-out a 4 ad distinte dallo stesso script).

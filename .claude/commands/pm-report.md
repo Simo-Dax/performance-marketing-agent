@@ -15,7 +15,7 @@ Argomenti: $ARGUMENTS
 3. Determina il business model da `context/brand/business_strategy.md` → seleziona il set KPI giusto (eCommerce / SaaS / Lead Gen).
 4. Pull dati:
    - Google → `15_google_ads_analytics` (GAQL, MCC `5524890329`)
-   - Meta → `16_meta_ads_analytics` (se MCP non configurato → chiedi export CSV o usa `/pm-handoff`)
+   - Meta → `16_meta_ads_analytics` (o `/pm-meta-analyze` per la diagnosi live; se il MCP non è configurato → export CSV)
 5. Calcola delta periodo su periodo, RAG status, anomalie, creative fatigue.
 6. Produci SEMPRE: KPI Scorecard → Insights 💡 → Action Points 🎯 (ICE-scored) → Next Steps ➡️.
 7. Output: `output/reports/{YYYY-MM-DD}_{tipo}/` — `executive_summary.md` (+ `.html` per email se richiesto) + report per canale.

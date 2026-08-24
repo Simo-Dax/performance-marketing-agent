@@ -1,6 +1,6 @@
 ---
 name: 51_meta_build
-description: Opera il Meta Ads MCP ufficiale direttamente dentro Claude Code per COSTRUIRE campagne complete nell'ad account live del brand — campaign + ad set + creative + ad, con audience di retargeting opzionali. Tutto creato PAUSED. I budget sono quotati nella valuta dell'account, convertiti in centesimi interi, ed entrambi i numeri confermati prima di ogni call. Totali sopra 500/giorno richiedono di digitare il numero per confermare, e nulla si attiva senza un sì esplicito per livello (ad → ad set → campaign = spend switch). È anche la sede di OGNI write su campagne esistenti: pause, budget change, targeting update, audience, customer list, attivazione. SA8/post-SA6. Sostituisce la modalità "build" del vecchio 30_meta_handoff. Trigger: /pm-meta-build, "costruisci una campagna", "lancia una campagna", "pubblica/attiva la campagna", "metti in pausa", "cambia il budget", "aggiorna il targeting", "crea un'audience", "carica la customer list". Per SOLA analisi/diagnosi → /pm-meta-analyze (read-only). Risolve i tool Meta per suffisso (`…ads_*`), mai hardcoda il prefix. Usa i copy deck da 06_Ad_Copy verbatim. Creatives via image_hash/video_id/object_story_id dall'account (il MCP non carica file). Output in output/{brand}_{campaign}_{date}/13_Meta_Campaigns/.
+description: Opera il Meta Ads MCP ufficiale direttamente dentro Claude Code per COSTRUIRE campagne complete nell'ad account live del brand — campaign + ad set + creative + ad, con audience di retargeting opzionali. Tutto creato PAUSED. I budget sono quotati nella valuta dell'account, convertiti in centesimi interi, ed entrambi i numeri confermati prima di ogni call. Totali sopra 500/giorno richiedono di digitare il numero per confermare, e nulla si attiva senza un sì esplicito per livello (ad → ad set → campaign = spend switch). È anche la sede di OGNI write su campagne esistenti: pause, budget change, targeting update, audience, customer list, attivazione. SA8/post-SA6. Trigger: /pm-meta-build, "costruisci una campagna", "lancia una campagna", "pubblica/attiva la campagna", "metti in pausa", "cambia il budget", "aggiorna il targeting", "crea un'audience", "carica la customer list". Per SOLA analisi/diagnosi → /pm-meta-analyze (read-only). Risolve i tool Meta per suffisso (`…ads_*`), mai hardcoda il prefix. Usa i copy deck da 06_Ad_Copy verbatim. Creatives via image_hash/video_id/object_story_id dall'account (il MCP non carica file). Output in output/{brand}_{campaign}_{date}/13_Meta_Campaigns/.
 ---
 
 # SA8 — Meta Ads Build (51)
@@ -17,7 +17,7 @@ un problema, usa /pm-meta-analyze, che è read-only by design.
 > in `references/` sono technical reference verbatim. La copy nel creative arriva VERBATIM dai deck
 > `06_Ad_Copy/` (SA7).
 
-> **Cambio di paradigma rispetto a `30_meta_handoff`.** Il vecchio handoff generava prompt da
+> **Cambio di paradigma rispetto al vecchio handoff (rimosso).** Quello generava prompt da
 > incollare in claude.ai web ("Meta MCP solo lì"). Non vale più: il connector Meta Ads
 > (`mcp.facebook.com/ads`) è disponibile dentro Claude Code (`mcp__…__ads_*`, prefix per-install).
 > Questa skill opera i write direttamente, con le cerimonie di conferma qui sotto.

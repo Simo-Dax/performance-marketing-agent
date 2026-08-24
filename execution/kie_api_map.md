@@ -109,7 +109,7 @@ KIE diventerebbe un **Path aggiuntivo**, mai un rimpiazzo: le skill restano mode
 | Skill | Cosa genererebbe via KIE |
 |---|---|
 | `24_static_ads` | statiche (GPT Image 2 / Nano Banana) |
-| `25_ugc_prompt` · `57_ugc_studio` · `58_ugc_blueprint` | clip UGC (Seedance) |
+| `25_ugc_prompt` · `58_ugc_blueprint` · `62_ugc_formats` | clip UGC (Seedance) |
 | `26_product_shot` | product shot |
 | `27_multiplier` | varianti |
 | `56_animate_static` | image-to-video da statica |

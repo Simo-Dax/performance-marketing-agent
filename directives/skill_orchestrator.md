@@ -55,7 +55,6 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `56_animate_static` | SA6 | Production | Statica finita → motion poster 3-8s: i layer si assemblano, **l'ultimo frame È la statica originale**. Niente musica/caption. Input: una statica + concept scelto. Image-to-video con la statica come primo frame; testo/numeri pinnati verbatim, camera lock, audio no-music. 1080p default. |
 | `62_ugc_formats` | SA6 | Production | **UGC Formats (default UGC video)** — 11 formati, uno per ogni dubbio che l'ad deve togliere (problem-solution, testimonial, before-after, tutorial, unboxing, street-interview, asmr, expert, pov, green-screen, founder-story). Router `/pm-ugc` instrada, ogni formato ha il suo playbook + spec + 10 coppie di studio da ad reali smontate. **Split dei due modelli:** l'LLM scrive cosa l'ad È, il modello video dirige — mai una shot list. 3 gate (piano gratis, anchor, video). Precondizioni: VOC per testimonial/expert/street-interview, foto vera per founder-story. |
 | `63_auto_captions` | SA6 | Production | Caption in stile bloccato su qualsiasi video finito (anche non nostro). Con lo script su disco fa **force-align**: whisper dà i tempi, lo script dà le parole → caption = copy esatto. Scrive sempre un `_captioned` separato, mai sovrascrive il master. Vocabolario brand da `context/brand/caption_vocab.json`. Richiede ffmpeg + whisper. |
-| `57_ugc_studio` | SA6 | Production | UGC Studio (**lane precedente**, superata da 62) — format bank di ad vincenti reali (testimonial/before-after/unboxing/direct-to-camera): ordini un mix, lo studio scrive, renderizza gen 4-9s, taglia con **edit grammar** e assembla 9:16 finiti. 2 gate umani (transcript, costo+cut map). Richiede ffmpeg. |
 | `58_ugc_blueprint` | SA6 | Production | **Lane reference-driven**: parte da UN video UGC locale che l'utente ha scelto, ne misura la struttura (curva di differenza per-frame, lip-sync test, whisper locale) e la ricostruisce col suo prodotto/creator. Struttura sì, girato mai. Richiede ffmpeg. |
 | `25_ugc_prompt` | SA6 | Production | UGC factory (**lane precedente**, fan-out a 4 varianti): fan-out Andromeda, 4 ad distinti da un core condiviso. Voice cut unici per gen (anti `_sfx`), render parallelo + hook checkpoint, taglio word-accurate (whisper) + frame check. Input: script UGC + VOC + Brand DNA. |
 | `59_pixar_ad` | SA6 | Production | Ad Pixar 3D **voiceover-first**, formato progressione virale. Eroe castato dal Brand DNA (Character Bible bloccato), testimoni altri personaggi Pixar mai umani, prodotto come prop dalla foto reale. **Mai testo renderizzato, mai lip-sync.** 2 gate. Richiede ffmpeg + whisper. |
@@ -66,7 +65,6 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `54_headline_bank` | SA7 | Creative | Headline bank dedicata, più profonda di `28_meta_copy` — ~20 headline + 8 hook on-image + 6 first-line, framework-nominate, char-discipline 27/40, gate personal-attributes Meta. Input: angolo/creative/angle-bank/riff. |
 | `28_meta_copy` | SA7 | Creative | Meta ad copy — 5 headline (40char) + 5 description (30char) + 2 primary text. Input: Brand DNA + VOC + creative. Alias nativo di `11_copywriting_ads_meta`. |
 | `29_landing_page` | Post-SA7 | Production | Landing page HTML single-file da ad Meta (Tailwind + VOC injection). Input: ad creative + Brand DNA + VOC. Anti-AI slop 34-point audit. |
-| `30_meta_handoff` | Post-SA6 | Lancio | Prompt handoff per Meta Ads MCP su claude.ai web. Due modalità: analisi campagne esistenti o build nuove campagne. |
 
 ---
 
@@ -135,7 +133,7 @@ Esito gate:
 - **`56_animate_static`** — anima una statica finita in motion poster 3-8s (ultimo frame = la statica), se serve una variante video dell'ad statico
 - **`62_ugc_formats`** — **default UGC**: `/pm-ugc` mostra gli 11 formati e instrada; ogni formato ha il suo playbook e il suo banco di 10 ad reali
 - **`63_auto_captions`** — caption su un video finito, force-align sullo script. **Offrile a fine ad, non assumerle**
-- **`57_ugc_studio`** / **`25_ugc_prompt`** — lane UGC precedenti, ancora funzionanti (usa 62 salvo richiesta esplicita)
+- **`25_ugc_prompt`** — lane fan-out: 4 ad distinti dallo stesso script (62 fa una ad per run). Usala quando serve volume dallo stesso core
 - **`26_product_shot`** — product shot Studio/Held/Worn (se necessario)
 - **`27_multiplier`** — 5-8 variazioni Andromeda-compliant (se esiste un ad vincente da moltiplicare)
 - Tool: Canva MCP + Higgsfield MCP + fal.ai MCP
@@ -145,7 +143,6 @@ Esito gate:
 - SA7 attiva `03_editing_selfcheck` sul copy
 - SA6 verifica naming convention e formati
 - Orchestrator consolida tutto in `output/{brand}_{campaign}_{date}/final/`
-- **`30_meta_handoff`** — genera prompt handoff per Meta Ads MCP su claude.ai web (modalità: analisi o build campagne)
 
 ---
 
@@ -228,7 +225,6 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `56_animate_static` — Statica → motion poster (SA6)
 - [x] `62_ugc_formats` — 11 formati UGC + router (SA6, **default UGC**)
 - [x] `63_auto_captions` — Caption force-align su video finiti (SA6)
-- [x] `57_ugc_studio` — UGC Studio format-first, edit grammar (SA6, lane precedente)
 - [x] `58_ugc_blueprint` — UGC Blueprint da video reference (SA6)
 - [x] `25_ugc_prompt` — UGC factory, fan-out Andromeda (SA6, alternativa)
 - [x] `59_pixar_ad` — Pixar Ad Factory (SA6)
@@ -238,7 +234,6 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `27_multiplier` — Winning Ad Multiplier 2.0 (SA6)
 - [x] `28_meta_copy` — Meta Ad Copy (SA7)
 - [x] `29_landing_page` — Landing Page Generator (Post-SA7)
-- [x] `30_meta_handoff` — Meta Ads Handoff (Post-SA6)
 
 ### Strategia + Reporting (internalizzate da Marketing Strategist + Learnn)
 - [x] `31_reporting_template` — struttura fissa report SA8, KPI business-model-aware, export HTML email (SA8) → `/pm-report`
@@ -296,7 +291,6 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-ugc-green-screen` | `62_ugc_formats` → `formats/green-screen/` | SA6 |
 | `/pm-ugc-founder-story` | `62_ugc_formats` → `formats/founder-story/` | SA6 |
 | `/pm-captions` | `63_auto_captions` | SA6 |
-| `/pm-ugc-studio` | `57_ugc_studio` | SA6 |
 | `/pm-ugc-blueprint` | `58_ugc_blueprint` | SA6 |
 | `/pm-ugc-video` | `25_ugc_prompt` | SA6 |
 | `/pm-pixar-ad` | `59_pixar_ad` | SA6 |
@@ -308,7 +302,6 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-meta-copy` | `28_meta_copy` | SA7 |
 | `/pm-google-ads-copy` | `12_copywriting_ads_google` | SA7 |
 | `/pm-landing-page` | `29_landing_page` | Post-SA7 |
-| `/pm-handoff` | `30_meta_handoff` | Post-SA6 |
 | `/pm-report` | `31_reporting_template` | SA8 |
 | `/pm-insight` | `33_insight_synthesis` | Ponte SA2→SA4 (🚦GATE 1) |
 | `/pm-brand-strategy` | `32_brand_strategy` | SA4 Fase 1 (🚦GATE 2) |

@@ -7,7 +7,7 @@
 **Reference:** `references/gemini-teardown-prompt.md` (prompt locked per la Route A) · `references/output-template.md` (template blueprint) · `references/swap-and-render.md` (swap prompt + vincoli render)
 
 La **terza lane** della famiglia UGC, quella **reference-driven**:
-- `57_ugc_studio` costruisce da un **format bank** di winner bancati
+- `62_ugc_formats` costruisce da **11 formati**, ognuno con il suo banco di ad reali
 - `25_ugc_prompt` fa il **fan-out Andromeda** da uno script
 - `58_ugc_blueprint` (questa) parte da **UN video specifico che l'utente ha già scelto** e ne solleva la struttura
 

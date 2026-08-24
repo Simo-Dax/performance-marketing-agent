@@ -24,14 +24,12 @@ Questa è la mappa autoritativa dettagliata (CLAUDE.md ne tiene una versione com
 │   └── _scratch/format-*.json ← prompt di ricreazione bancati da 19, consumati da 24_static_ads
 ├── 04_Static_Ads/             ← 24_static_ads (/pm-statiche)
 ├── 05_UGC_Prompts/            ← 25_ugc_prompt (/pm-ugc-video)
-│   └── studio/<order-slug>/   ← 57_ugc_studio (/pm-ugc-studio): out/<ad_id>.mp4 + gens/stills/clips/frames/edl/manifest
 │   └── formats/<formato>/<concept>/ ← 62_ugc_formats (/pm-ugc + 11 comandi formato): anchor + clip + ad montato + post-production.md
 │                                       formati: problem-solution · testimonial · before-after · tutorial · unboxing ·
 │                                       street-interview · asmr · expert · pov · green-screen · founder-story
 ├── 06_Ad_Copy/                ← 28_meta_copy (/pm-meta-copy) + 54_headline_bank (/pm-headlines)
 ├── 07_Multiplied_Ads/         ← 27_multiplier (/pm-multiplier)
 ├── 08_Rebuilt_Competitor_Ads/ ← 23_competitor_rebuild (/pm-competitor-rebuild)
-├── 09_Meta_Handoff/           ← 30_meta_handoff (DEPRECATA)
 ├── 10_Landing_Pages/          ← 29_landing_page (/pm-landing-page)
 ├── 11_Characters/             ← 22_character_creator (/pm-buyer-persona)
 ├── 12_Email/                  ← 46_email_creation (/pm-email-copy)

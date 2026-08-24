@@ -57,7 +57,6 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 | `/pm-ugc-green-screen` | Creator che reagisce, girato pulito da comporre dopo (20-30s) | 62 / SA6 |
 | `/pm-ugc-founder-story` | Il fondatore racconta perché esiste (24-30s). Richiede foto vera | 62 / SA6 |
 | `/pm-captions` | Brucia caption stile locked su qualsiasi video; force-align sullo script se c'è | 63 / SA6 |
-| `/pm-ugc-studio` | UGC Studio (lane precedente): format bank → ad 9:16, edit grammar | 57 / SA6 |
 | `/pm-ugc-blueprint` | Da un video UGC che ti piace: teardown misurato + ricostruzione col tuo prodotto | 58 / SA6 |
 | `/pm-ugc-video` | UGC factory (lane precedente): 4 ad MP4 fan-out Andromeda, render parallelo + taglio word-accurate | 25 / SA6 |
 | `/pm-pixar-ad` | Ad Pixar 3D voiceover-first, formato progressione "Giorno 1… Giorno 30…" | 59 / SA6 |
@@ -78,7 +77,6 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 |---------|---------|----------------|
 | `/pm-landing-page` | Landing HTML da ad Meta (VOC injection + anti-AI) | 29 / post-SA7 |
 | `/pm-meta-build` | Lancio/gestione campagne Meta live (vedi SA8 sotto) | 51 / post-SA6 |
-| `/pm-handoff` | ⚠️ DEPRECATO — prompt handoff Meta MCP claude.ai web (sostituito da 50/51) | 30 / post-SA6 |
 
 ## Analytics & Reporting (SA8)
 | Comando | Cosa fa | Skill / Agente |
