@@ -1,0 +1,58 @@
+Overall Style & Aesthetics:
+
+* Subject: Young adult woman, 20s, light-to-medium skin, dark hair, natural makeup, wearing a blue ribbed half-zip top in the final use shots. Earlier unboxing is hands-only with pale nude manicure.
+* Props: Neutrogena Hydro Boost retail carton and translucent blue round jar with white lid, physically branded `Neutrogena / Hydro Boost / WATER GEL` where legible. Inner protective seal and clear/light-blue glossy gel are shown during opening.
+* Lighting & Vibe: Warm sunlit skincare unboxing, vertical 9:16, 720×1280, 12 hard-cut shots. Strong directional sunlight creates crisp hand/product shadows and bright specular highlights on blue plastic; final face-use shots keep the same warm natural light. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:01.4
+Shot Type: close-up carton shot, static
+Action: Hands with pale nude nails hold a white/blue Neutrogena Hydro Boost retail carton in hard warm sunlight against a beige surface, front panel centered. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+
+0:01.4–0:03.6
+Shot Type: close-up box opening, static
+Action: Fingers open the top flaps and begin sliding the blue jar out of the carton. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+
+0:03.6–0:05.8
+Shot Type: close-up jar reveal, static
+Action: Translucent blue Hydro Boost jar with white lid is fully removed and held close, label rotated toward lens. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout.
+
+0:05.8–0:07.9
+Shot Type: close-up product rotation, static
+Action: Hands rotate the jar slowly, showing the blue sidewalls, white lid and physical front branding. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect.
+
+0:07.9–0:09.3
+Shot Type: close-up lid opening, static
+Action: Fingers twist/lift the white lid off the jar. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing.
+
+0:09.3–0:10.9
+Shot Type: extreme close-up jar insert, static
+Action: Close insert reveals the inner seal/top surface beneath the lid. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface.
+
+0:10.9–0:12.8
+Shot Type: close-up seal removal, static
+Action: Hand peels/removes the inner protective seal to expose the clear/light-blue gel. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis.
+
+0:12.8–0:15.2
+Shot Type: extreme close-up gel texture, static
+Action: Extreme close-up of the open jar; a fingertip presses into/scoops the glossy gel texture. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+
+0:15.2–0:16.3
+Shot Type: close-up fingertip/product shot, static
+Action: Small amount of gel is shown on fingertip while the open jar remains in the other hand. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+
+0:16.3–0:18.5
+Shot Type: medium skincare application shot, eye-level, static
+Action: Hard cut to young woman in a blue ribbed half-zip top; she applies the gel to one cheek with fingertips. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+
+0:18.5–0:22.0
+Shot Type: close-up face application, eye-level, static
+Action: She smooths the product across cheek/face, leaving a dewy finish while looking toward the phone. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+
+0:22.0–0:24.8
+Shot Type: medium creator/product result shot, eye-level, static
+Action: Final creator/product result shot: she points/touches the hydrated cheek and holds/keeps the blue jar near frame. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+
+CHARACTER COUNT: 4860

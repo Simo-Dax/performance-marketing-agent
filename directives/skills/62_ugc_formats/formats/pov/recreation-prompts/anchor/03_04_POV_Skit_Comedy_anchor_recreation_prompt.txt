@@ -1,0 +1,11 @@
+ANCHOR FRAME RECREATION PROMPT
+
+Photorealistic vertical 9:16 smartphone UGC still. Preserve natural skin texture, real hair detail, believable hands and fingers, subtle lens softness, phone-camera dynamic range, and ordinary consumer lighting. Do not beautify the subject into a fashion model, do not add cinematic haze, and do not turn the scene into a studio product render. No added subtitles, social-media captions, stickers, watermarks, app UI, or source-brand graphics. The only readable branded text should be text that physically exists on the uploaded product itself or unavoidable environmental signage explicitly described.
+
+This recreation does not require an uploaded product. Rebuild the character, pose, environment, camera placement, crop, lighting, and photographic imperfections as closely as possible from the description below. Keep it feeling like a real phone-shot UGC frame, not a polished campaign still.
+
+Composition and scene:
+POV small-business comedy selfie. A young tan-skinned woman with long black voluminous curls and full makeup wears a light blue sleeveless/denim-style top with a low neckline. She sits in a bedroom/office and looks downward with a serious pretending-to-know expression while holding a stemmed wine glass containing a pink/red drink near the lower-left edge. Neutral gray wall and bedding blur behind. Soft daylight, chest-up vertical selfie framing, slightly dramatic expression but natural phone realism.
+
+Critical fidelity:
+Recreate the same framing logic, subject scale, camera height, viewing angle, pose, hand position, prop spacing, background geometry, and lighting direction. Keep the image intentionally natural and slightly imperfect, with the same casual UGC realism rather than over-clean commercial polish. Do not force a product into this frame; the scene/character composition itself is the anchor.

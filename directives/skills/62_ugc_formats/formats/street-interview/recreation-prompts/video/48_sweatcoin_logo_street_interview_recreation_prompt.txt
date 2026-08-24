@@ -1,0 +1,85 @@
+Overall Style & Aesthetics:
+
+* Subject: Black female interviewer, young adult, black furry jacket and winter streetwear, holding a phone/card/logo prompt. Several different passersby—men and women in coats—appear one at a time in a modern office plaza. Reactions range from uncertain guesses to an excited correct answer.
+* Props: Smartphone or small rectangular logo card with dark bezel/body used as the guessing prompt, plus black handheld interview mic/phone audio setup where visible. Modern plaza buildings, paving and winter pedestrians are physical background.
+* Lighting & Vibe: Cold-weather branded street game, vertical 9:16, 720×1280, 15 hard-cut shots. Bright overcast/daylight, natural winter clothing texture, busy plaza movement and quick handheld reframes between interviewer and respondents. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Multiple on-camera voices. No music, outdoor plaza ambience only.
+
+Scene Breakdown
+
+0:00.0–0:00.9
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Black woman interviewer in a black furry jacket stands in a cold modern office plaza and presents a logo prompt/phone/card to a passerby, starting the guessing game. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition.
+Dialogue (On-Camera): "Yes."
+
+0:00.9–0:01.9
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Quick respondent closeup asks what it is about. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed.
+Dialogue (On-Camera): "What is it about?"
+
+0:01.9–0:03.2
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Another short respondent/host exchange asking for hints. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout.
+Dialogue (On-Camera): "Can you give me some hints?"
+
+0:03.2–0:04.5
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: New passerby gives an IT-company guess.
+Dialogue (On-Camera): "Some IT company."
+
+0:04.5–0:05.8
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Another person guesses fintech.
+Dialogue (On-Camera): "Fintech company."
+
+0:05.8–0:07.8
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Another respondent says something like Swedish while looking at the presented logo.
+Dialogue (On-Camera): "Something like Swedish."
+
+0:07.8–0:10.2
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Interviewer says it is a good guess but no, shifting the card/phone toward the next person.
+Dialogue (On-Camera): "It's a really good guess, but definitely no."
+
+0:10.2–0:15.3
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: New respondent thinks it relates to gathering steps and receives confirmation.
+Dialogue (On-Camera): "I think it's related to, like, gathering steps. That's correct."
+
+0:15.3–0:16.8
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Another passerby guesses a music platform.
+Dialogue (On-Camera): "Maybe some music platform."
+
+0:16.8–0:18.1
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Short follow-up `About music, maybe` in a changed respondent crop.
+Dialogue (On-Camera): "About music, maybe."
+
+0:18.1–0:19.4
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Person recognizes it: `Oh, it's Sweatcoin.`
+Dialogue (On-Camera): "Oh, it's Sweatcoin."
+
+0:19.4–0:24.3
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Interviewer/respondent excited confirmation sequence; interviewer smiles and hands/gestures something toward the correct guesser while physical plaza remains behind.
+Dialogue (On-Camera): "Sweatcoin? Yeah? Oh my God, yes, that's correct!"
+
+0:24.3–0:25.1
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Very short handoff beat as the interviewer passes the prize/item toward the woman who answered correctly.
+Dialogue (On-Camera): "Here you go."
+
+0:25.1–0:25.7
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Hard cut to another bundled passerby beside the interviewer in the same snowy plaza; the new respondent identifies the brand.
+Dialogue (On-Camera): "Sweatcoin."
+
+0:25.7–0:29.5
+Shot Type: medium outdoor logo-guess interview, eye-level, handheld
+Action: Final host-facing CTA in the same snowy office plaza. The interviewer faces the lens and delivers the closing line with small natural hand movements while the glass building, pavement and snow remain behind her.
+Dialogue (On-Camera): "Now it's your turn. Do you want to get rewarded just for walking?"
+
+CHARACTER COUNT: 4987

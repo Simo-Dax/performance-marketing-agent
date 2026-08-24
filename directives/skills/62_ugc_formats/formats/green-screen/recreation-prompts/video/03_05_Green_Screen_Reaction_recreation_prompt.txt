@@ -1,0 +1,40 @@
+Overall Style & Aesthetics:
+
+* Subject: Man, approximately late 20s to early 30s, short light-brown hair brushed neatly to the side, fair skin, light eyes, clean-shaven face and natural brows. He wears a saturated royal-blue/purple ribbed crew-neck sweater over a pale shirt cuff and dark trousers. Reactor performance is controlled and explanatory: direct lens contact, small forward leans, compact two-handed gestures, brief brow lifts and light nods. He is seated for every interval in which he appears, with knees forward and elbows kept close to his torso. A pale shirt cuff is intermittently visible at his wrists.
+* Props: Dark brown/black upholstered chair supporting the reactor. No handheld physical product is used. All email screens, browser windows, app panels, icons, logos, clocks, interface cards and graphic backgrounds are composited reaction content and are ignored completely.
+* Lighting & Vibe: Vertical 9:16, 720x1280, reactor-only recreation from a 24.6-second source. 6 verified reactor/edit states, average 4.1 seconds. Soft even frontal indoor light with warm-neutral skin exposure and minimal soft shadow. When visible, the reactor is either a seated medium shot or tighter chest-up crop; camera is static and his background must be replaced by a plain neutral removable background. During source intervals that contain only composited content, show no reactor at all: leave the neutral background empty so later content can be inserted in post. Preserve only his crop, pose, eyeline, mouth, facial expression and gesture timing. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One man's voice throughout. no music, room tone only.
+
+Scene Breakdown
+
+0:00–0:05.5
+Shot Type: Medium seated reactor / eye-level / static
+Action: He sits centered with shoulders square and forearms hovering above his thighs. He looks straight into the lens, starts with hands separated at lower chest height, then brings them inward for small symmetrical emphasis. His right hand rises slightly higher than the left as he stresses the point; brows tighten briefly, then relax. Keep only his body and chair against the removable neutral background; ignore every changing graphic behind him.
+Dialogue (On-Camera): "Writing emails is a waste of valuable time. That's why we built [unclear], so you"
+
+0:05.5–0:06.8
+Shot Type: Empty reactor plate / static
+Action: The source cuts away from the person entirely. For the reactor-only asset, show only the same plain neutral removable background with no person, product, app screen, logo or graphic. Hold the empty plate continuously until the reactor returns.
+Dialogue (Voiceover): "can let an email assistant"
+
+0:06.8–0:11.0
+Shot Type: Tight chest-up reactor / eye-level / static
+Action: Hard cut back to the man in a noticeably larger crop, head near the upper center and sweater filling the lower frame. He keeps direct eye contact and speaks with a small open-mouth smile. Both hands enter low in frame, fingers loosely curled, then separate and rise in short measured beats. His head makes one small forward nod and a slight side tilt while the camera stays fixed. Any icons or graphics positioned around his torso in the source are excluded.
+Dialogue (On-Camera): "do it for you. It connects your Outlook or Gmail."
+
+0:11.0–0:20.1
+Shot Type: Empty reactor plate / static
+Action: The reactor disappears for the long composited demonstration section. Keep the generated reactor layer empty on the same plain neutral removable background for this entire interval. Do not reproduce, describe or generate any email, browser, cursor, meeting, screenshot, text, logo or interface imagery; those elements are added only during later compositing.
+Dialogue (Voiceover): "Drafts replies that sound like you, organizes your inbox and writes helpful meeting notes. So you can get back one hour every day"
+
+0:20.1–0:21.6
+Shot Type: Medium seated reactor / eye-level / static
+Action: Hard cut back to the original wider seated crop. He sits upright, hands together near midline and then opens them slightly toward camera as he delivers the call to action. His chin lifts a little, eyes stay on the lens and his expression becomes more upbeat. Preserve his chair and body only; use the plain removable background instead of source graphics.
+Dialogue (On-Camera): "Go to [unclear]"
+
+0:21.6–0:24.6
+Shot Type: Empty reactor plate / static
+Action: The final source section contains no reactor. Leave the neutral background completely empty through the true end of the clip so the final graphic can be composited later. No brand mark, letters, animation or source background is generated in this reactor pass.
+Dialogue (Voiceover): "dot com to start your seven-day free trial."
+
+CHARACTER COUNT: 4801

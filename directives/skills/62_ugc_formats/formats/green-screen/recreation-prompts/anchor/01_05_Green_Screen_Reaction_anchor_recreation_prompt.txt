@@ -1,0 +1,11 @@
+ANCHOR FRAME RECREATION PROMPT
+
+Photorealistic vertical 9:16 smartphone UGC still. Preserve natural skin texture, real hair detail, believable hands and fingers, subtle lens softness, phone-camera dynamic range, and ordinary consumer lighting. Do not beautify the subject into a fashion model, do not add cinematic haze, and do not turn the scene into a studio product render. No added subtitles, social-media captions, stickers, watermarks, app UI, or source-brand graphics. The only readable branded text should be text that physically exists on the uploaded product itself or unavoidable environmental signage explicitly described.
+
+This recreation does not require an uploaded product. Rebuild the character, pose, environment, camera placement, crop, lighting, and photographic imperfections as closely as possible from the description below. Keep it feeling like a real phone-shot UGC frame, not a polished campaign still.
+
+Composition and scene:
+Green-screen/reaction style composition with a large laptop filling most of the background. The laptop screen shows a generic search-results/webpage interface with white background, blue links and black text, photographed at a slight diagonal from above. In the lower-center foreground, a young light-skinned brunette woman appears as a cutout/reaction presenter from chest up, wearing a dark blazer over a lavender top and looking directly at camera with raised brows. She should overlap the laptop keyboard/screen naturally. Add one rounded purple speech-bubble style caption block near upper-center but keep it generic/unbranded if text is needed. Bright indoor light and crisp social-content compositing.
+
+Critical fidelity:
+Recreate the same framing logic, subject scale, camera height, viewing angle, pose, hand position, prop spacing, background geometry, and lighting direction. Keep the image intentionally natural and slightly imperfect, with the same casual UGC realism rather than over-clean commercial polish. Do not force a product into this frame; the scene/character composition itself is the anchor.

@@ -1,0 +1,11 @@
+ANCHOR FRAME RECREATION PROMPT
+
+Photorealistic vertical 9:16 smartphone UGC still. Preserve natural skin texture, real hair detail, believable hands and fingers, subtle lens softness, phone-camera dynamic range, and ordinary consumer lighting. Do not beautify the subject into a fashion model, do not add cinematic haze, and do not turn the scene into a studio product render. No added subtitles, social-media captions, stickers, watermarks, app UI, or source-brand graphics. The only readable branded text should be text that physically exists on the uploaded product itself or unavoidable environmental signage explicitly described.
+
+This recreation does not require an uploaded product. Rebuild the character, pose, environment, camera placement, crop, lighting, and photographic imperfections as closely as possible from the description below. Keep it feeling like a real phone-shot UGC frame, not a polished campaign still.
+
+Composition and scene:
+On-the-go founder selfie. A young light-skinned woman with brown hair pulled into a sleek ponytail wears a cream zip-neck top under a black puffer vest, with a beige bag strap over one shoulder. She faces the phone camera from chest up, lips pursed in a playful confident expression while walking indoors through a hallway/office. Background shows gray-green wall, framed art and a warm ceiling light, all motion-soft. Front camera look, mild wide-angle distortion and warm mixed indoor light.
+
+Critical fidelity:
+Recreate the same framing logic, subject scale, camera height, viewing angle, pose, hand position, prop spacing, background geometry, and lighting direction. Keep the image intentionally natural and slightly imperfect, with the same casual UGC realism rather than over-clean commercial polish. Do not force a product into this frame; the scene/character composition itself is the anchor.

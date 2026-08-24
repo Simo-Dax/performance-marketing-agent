@@ -1,0 +1,58 @@
+Overall Style & Aesthetics:
+
+* Subject: Young adult woman, approximately 20s–30s, light-to-medium skin, wearing a pale blush-pink scrub-like short-sleeve top and matching loose pants. Her face is visible in wider shots but the demonstration centers on hands, legs and fabric. Natural creator styling, no glam performance.
+* Props: White ATOPALM skincare/body bottle with a bright red pump. `ATOPALM` is physically readable on the front; smaller product-name copy is too small/soft to guarantee and should stay unreadable. White cream/oil dispensed into the palm and rubbed along the leg/pant area. Pale-pink pants themselves are the main visual proof prop.
+* Lighting & Vibe: Bright practical indoor light in a colorful children/store/play-like space, vertical 9:16, 720×1280, 12 hard-cut shots. Footage is phone-native and demonstration-led with mostly locked medium/close framing and realistic fabric movement rather than polished commercial choreography. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:01.1
+Shot Type: medium creator/product shot, eye-level, static
+Action: Creator in pale pink scrub-like matching top and pants stands in a bright child/play/store-like indoor space and presents a white ATOPALM bottle with red pump toward the phone. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition.
+
+0:01.1–0:05.0
+Shot Type: medium problem demonstration shot, eye-level, static
+Action: She demonstrates the clothing problem by moving/pressing the loose pale-pink pant fabric against her leg so it visibly clings rather than falling freely. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed.
+
+0:05.0–0:05.5
+Shot Type: close-up product shot, static
+Action: Quick close product insert of the white bottle and red pump held nearer the lens; label is turned forward. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout.
+
+0:05.5–0:07.8
+Shot Type: close-up dispensing shot, static
+Action: She pumps a small amount of white cream/oil into an open palm in a tight hand closeup. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect.
+
+0:07.8–0:11.9
+Shot Type: close-up hand texture shot, static
+Action: Hands rub/spread the white product between palms/fingers, showing its creamy slip and sheen. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing.
+
+0:11.9–0:12.7
+Shot Type: medium leg application shot, slight high angle, static
+Action: She bends/leans and smooths the product along the lower leg/pant area, using both hands in long downward strokes. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface.
+
+0:12.7–0:13.5
+Shot Type: close-up fabric/hand shot, static
+Action: Closer leg/fabric insert: hand rubs the pale-pink pant leg and releases it, emphasizing how the fabric now separates. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis.
+
+0:13.5–0:14.0
+Shot Type: close-up product/leg shot, static
+Action: Brief product/hand transition shot with the bottle near the leg before another application pass. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+
+0:14.0–0:17.6
+Shot Type: medium application shot, eye-level, static
+Action: She continues rubbing/smoothing the pants/leg with both hands, then lets the fabric fall naturally instead of sticking. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+
+0:17.6–0:20.9
+Shot Type: medium result shot, eye-level, static
+Action: Medium result shot: pant legs hang looser as she shifts stance and looks down/checks the fabric. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+
+0:20.9–0:21.9
+Shot Type: close-up fabric result shot, static
+Action: Close final check on the lower pant leg; her hand brushes across once and releases it.
+
+0:21.9–0:22.6
+Shot Type: medium ending shot, eye-level, static
+Action: Very short ending beat holding on the resolved fabric/product context in the same bright room.
+
+CHARACTER COUNT: 4805

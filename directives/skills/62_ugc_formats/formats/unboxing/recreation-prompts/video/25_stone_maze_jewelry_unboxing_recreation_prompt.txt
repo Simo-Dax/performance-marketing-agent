@@ -1,0 +1,34 @@
+Overall Style & Aesthetics:
+
+* Subject: Only light-skinned hands are visible, neat short/natural manicure. No face appears. The hands open packaging gently and present each insert/jewelry component one at a time.
+* Props: Plain kraft shipping box; inner packaging physically branded `STONE PARIS` with French thank-you copy including `MERCI POUR VOTRE COMMANDE`; white tissue/protective insert; photographic postcard; cream drawstring pouch with round gold emblem; cream hinged jewelry box with gold `STONE PARIS` inside lid; ornate gold-toned ring with clustered raised design. The source filename is misleading: reproduce the physical `STONE PARIS` branding.
+* Lighting & Vibe: Premium but phone-native tabletop jewelry unboxing, vertical 9:16, 720×1280, 6 hard-cut shots. Soft warm indoor/daylight over a wood tabletop; close static framing emphasizes tactile packaging and metallic ring reflections. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:03.1
+Shot Type: medium-close box opening, top-down/oblique, static
+Action: Top-down/oblique view of a plain kraft shipping box on a wood table. Hands open the lid/flaps and reveal a more refined inner jewelry presentation. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+
+0:03.1–0:03.5
+Shot Type: close-up package text shot, static
+Action: Very short close insert on the inside lid/packaging physically printed `STONE PARIS` with French thank-you wording including `MERCI POUR VOTRE COMMANDE` where legible. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+
+0:03.5–0:05.8
+Shot Type: close-up tissue removal, static
+Action: Hands lift/pull white tissue or a protective insert from the open box. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot.
+
+0:05.8–0:07.9
+Shot Type: close-up card reveal, static
+Action: Creator holds up a photographic postcard of a model/brand image above the box, then lowers it. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose. Match the direction and softness of shadows already present; do not add rim lights, beauty lights or dramatic contrast.
+
+0:07.9–0:09.0
+Shot Type: close-up pouch reveal, static
+Action: Close reveal of a cream fabric drawstring pouch with a round gold emblem/logo, held between fingers over the table. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed. Keep the background at the same depth and clarity as the source, with no artificial portrait blur or exaggerated depth separation.
+
+0:09.0–0:19.1
+Shot Type: extreme close-up ring-box/jewelry reveal, static
+Action: Hands open a small cream hinged jewelry/ring box. Gold `STONE PARIS` lettering appears inside the lid; an ornate gold-toned ring with clustered/raised decorative design is revealed, lifted/angled and held for a longer final inspection. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible. Preserve the same amount of headroom and edge cropping when a face or body is visible; do not correct casual phone framing.
+
+CHARACTER COUNT: 4815

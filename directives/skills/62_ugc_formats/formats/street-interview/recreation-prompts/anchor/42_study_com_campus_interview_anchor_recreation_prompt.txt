@@ -1,0 +1,11 @@
+ANCHOR FRAME RECREATION PROMPT
+
+Photorealistic vertical 9:16 smartphone UGC still. Preserve natural skin texture, real hair detail, believable hands and fingers, subtle lens softness, phone-camera dynamic range, and ordinary consumer lighting. Do not beautify the subject into a fashion model, do not add cinematic haze, and do not turn the scene into a studio product render. No added subtitles, social-media captions, stickers, watermarks, app UI, or source-brand graphics. The only readable branded text should be text that physically exists on the uploaded product itself or unavoidable environmental signage explicitly described.
+
+This recreation does not require an uploaded product. Rebuild the character, pose, environment, camera placement, crop, lighting, and photographic imperfections as closely as possible from the description below. Keep it feeling like a real phone-shot UGC frame, not a polished campaign still.
+
+Composition and scene:
+Outdoor campus interview in bright late-afternoon sun. A tall light-skinned male interviewer with sandy-brown hair and short beard stands on the right wearing a cream textured short-sleeve shirt and pale blue trousers, smiling as he extends a tiny handheld microphone. A shorter light-skinned young woman stands left-center wearing glasses, a colorful bandana, black graphic T-shirt and light blue jeans, facing him. Campus lawn, trees, sidewalk and low buildings blur behind. Full upper-body framing, natural candid posture, warm sunlight and realistic shadows.
+
+Critical fidelity:
+Recreate the same framing logic, subject scale, camera height, viewing angle, pose, hand position, prop spacing, background geometry, and lighting direction. Keep the image intentionally natural and slightly imperfect, with the same casual UGC realism rather than over-clean commercial polish. Do not force a product into this frame; the scene/character composition itself is the anchor.

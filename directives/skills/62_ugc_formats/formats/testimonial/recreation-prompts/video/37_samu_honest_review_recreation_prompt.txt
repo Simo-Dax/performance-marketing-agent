@@ -1,0 +1,26 @@
+Overall Style & Aesthetics:
+
+* Subject: Only light-skinned hands/forearms are visible, one arm in a red long sleeve. No face, hair or eyes appear. Nails are natural/neat. The hands present and apply skincare outdoors.
+* Props: Two small pale/white skincare bottles: one spray-style bottle with partially visible front wording, and one white pump bottle with partly legible `GALACTO PORE...` text. The source resolution/angles do not support a confident full label transcription, so keep remaining wording unreadable. Clear/white product is sprayed/pumped and rubbed on the hand.
+* Lighting & Vibe: Sunny outdoor product demo against soft green trees, vertical 9:16, 360×640, 4 hard-cut shots. Strong natural daylight creates warm skin highlights and small bottle reflections; camera stays close and static. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:02.2
+Shot Type: close-up outdoor product shot, static
+Action: Outdoor closeup against sunny green trees: only a light-skinned hand/forearm in a red sleeve presents a small pale/white skincare bottle toward camera. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces. Keep the background at the same depth and clarity as the source, with no artificial portrait blur or exaggerated depth separation. Any visible facial performance should remain understated and source-matched, including blinks, eye shifts, small smiles and brief changes in brow tension.
+
+0:02.2–0:10.5
+Shot Type: close-up spray/hand demonstration, static
+Action: Hand rotates/holds a white/pale pink bottle with physical wording partially visible, then sprays/applies product onto the back of the opposite hand in direct sunlight. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion. Preserve the same amount of headroom and edge cropping when a face or body is visible; do not correct casual phone framing.
+
+0:10.5–0:19.3
+Shot Type: close-up pump/texture demonstration, static
+Action: Second product appears: small white pump bottle with partly legible `GALACTO PORE...`/similar front wording. Fingers pump a small amount of clear/white product onto the hand and rub it across the skin to show texture/absorption. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot. Keep the object's orientation continuous through the action so openings, labels, hinges, cords, caps and handles move plausibly from start to finish.
+
+0:19.3–0:20.8
+Shot Type: close-up final product/hand shot, static
+Action: Very short final hand/product beauty hold in the same outdoor light, ending on the treated hand and bottle. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible. Match the direction and softness of shadows already present; do not add rim lights, beauty lights or dramatic contrast. Maintain the original white balance and local color cast instead of neutralizing warm rooms, cool retail light, shade or outdoor sun.
+
+CHARACTER COUNT: 4851

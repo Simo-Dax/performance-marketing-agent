@@ -1,0 +1,40 @@
+Overall Style & Aesthetics:
+
+* Subject: Woman, mid-20s, long straight strawberry-blonde/light auburn hair parted in the center, light brown eyes, fair skin, natural brows, light mascara, soft pink lips and minimal neutral makeup. She wears a rust-colored crew-neck top under a dark chocolate-brown open overshirt/jacket plus a fine necklace with a small pendant. Her delivery is confident and analytical, with steady lens contact, small nods, raised brows, compact hand points and controlled chest-level gestures.
+* Props: No physical product or handheld prop is used by the reactor. All dashboards, reports, charts, browser pages, screenshots, text panels and other material behind or around her after the opening are composited content and are ignored for recreation.
+* Lighting & Vibe: Vertical 9:16 green-screen software-commentary ad, 360x640, 6 verified reactor shots over 29.6 seconds, average about 4.9 seconds. The opening uses a large close head-and-shoulders crop; later she becomes a smaller chest-up cutout positioned low against inserted screens. Soft warm indoor frontal light keeps her face evenly exposed, with mild natural shadow around the jaw and hair. Her own camera remains static in each segment. Her hair stays naturally draped over both shoulders and moves only with her small head turns; the keyed crop remains clean with no visible handheld shake.  For reactor-only generation, preserve her exact crop changes, posture, eyeline, mouth timing and gestures against a plain neutral removable background, with none of the composited software material. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voice throughout. No music, room tone only.
+
+Scene Breakdown
+
+0:00–0:05.6
+Shot Type: Tight head-and-shoulders close-up / eye level / static
+Action: She fills most of frame, facing the lens with a serious explanatory expression. Her eyebrows lift slightly on the negative recommendation, then her mouth softens into a small knowing smile. One hand rises low at the frame edge for a brief point while her head makes a tiny forward nod; she stays otherwise still and centered.
+Dialogue (On-Camera): "I don't recommend using AI to make your ads, but you can use it to save a ton of time on analysis."
+
+0:05.6–0:10.6
+Shot Type: Tight head-and-shoulders close-up / eye level / static
+Action: A jump cut resets her pose a few centimeters closer. She keeps direct eye contact, lips moving evenly, and punctuates the feature statement with a small index-finger beat near the lower frame. Her brows rise again at the time-saving claim and her chin dips once at the end.
+Dialogue (On-Camera): "Super Ads just released two new features that are already saving me hours on reporting."
+
+0:10.6–0:23.9
+Shot Type: Small chest-up cutout / eye level / static
+Action: The reactor becomes much smaller and sits low in frame. She continues the same calm sales explanation, first lifting her right index finger as if introducing a feature, then switching to an open palm. Through the middle she keeps her shoulders square and alternates brief nods with a direct lens gaze; her eyes widen slightly on the data summary, then she makes a short downward finger point. Near the end her hands gather closer to her chest, open outward once and settle again as she finishes the recommendation statement. The many screen changes behind her are ignored and do not alter the reactor performance.
+Dialogue (On-Camera): "Super Ads AI is like having an expert media buyer who can analyze your account and answer your questions. It will summarize the data for you in easy-to-read charts, explain what's happening, and give you a recommended action plan."
+
+0:23.9–0:25.7
+Shot Type: Small chest-up cutout / eye level / static
+Action: Her low-frame cutout remains front-facing. She smiles lightly, raises one hand with fingers loosely together and makes a compact outward beat, then brings the hand back toward her torso.
+Dialogue (On-Camera): "And I love this new categor"
+
+0:25.7–0:27.0
+Shot Type: Small chest-up cutout / eye level / static
+Action: A quick edit changes her nearby pose; eyebrows lift and she gives a small confirming nod, one hand hovering just below shoulder height while the other stays low.
+Dialogue (On-Camera): "ization report that will"
+
+0:27.0–0:29.6
+Shot Type: Small chest-up cutout / eye level / static
+Action: She looks directly into the lens and finishes with a more animated expression, eyes widening on the outcome list. Her right hand makes two short counting-like beats near the chest, then lowers as the final words become unclear at the source ending; her shoulders remain square and the crop holds through the final frame.
+Dialogue (On-Camera): "show you your winners, losers, and [unclear]."
+
+CHARACTER COUNT: 4815

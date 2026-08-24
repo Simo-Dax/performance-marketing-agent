@@ -1,0 +1,55 @@
+Overall Style & Aesthetics:
+
+* Subject: Woman, approximately mid-to-late 20s, shoulder-length auburn/light-brown hair parted slightly off-center and curled softly at the ends, very fair skin with light freckles, pale green/gray eyes, light brows, small silver nose ring and glossy rose-pink lips. Bright red crew-neck long-sleeve top throughout. Hair remains loose, with the front sections tucked back enough to expose both cheeks during the application. Her shoulders stay close to square and her hands enter mostly from the lower-right/center of frame. Direct-to-lens delivery with brow lifts, small head tilts and compact gestures; later shots become a makeup demo.
+* Props: Taupe-gray cylindrical makeup complexion stick with beige product exposed at the rounded tip; no physical label text is legible while she holds it. Dense round black-handled makeup brush with pale cream bristles; no print is readable. No other physical product is used by the reactor. Every website page, quiz, shade image, product-page photo, menu, button, browser element, text block and graphic behind her is composited content and must be ignored.
+* Lighting & Vibe: Vertical 9:16, 360x640, 29.6-second green-screen commentary/demo with 9 verified reactor shots, average 3.3 seconds. Soft bright frontal light with minimal shadow. Skin remains naturally textured. The reactor changes size/position at true edits but the web layer itself is never recreated. Generate each reactor shot against the same plain neutral removable background, preserving only crop, pose, eyeline, mouth, expression, gestures and the two physical makeup tools. Do not carry over any white website field, browser edge, product photography or source typography around her silhouette. Hard cuts at 5.3, 6.7, 8.0, 12.5, 16.3, 20.0, 24.5 and 26.8 seconds are retained; intermediate website motion is ignored. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voice throughout. no music, room tone only.
+
+Scene Breakdown
+
+0:00–0:05.3
+Shot Type: Medium close-up reactor / eye-level / static
+Action: She faces the lens, shoulders square, with widened eyes and small brow lifts. Her hands rise briefly at chest height, then lower; no product is visible.
+Dialogue (On-Camera): "So many foundations end up being way too dark for me, so let's see if Merit Beauty's shade match quiz actually gets it right"
+
+0:05.3–0:06.7
+Shot Type: Medium close-up reactor / eye-level / static
+Action: Hard cut lower. She gives a small nod and short palm-up gesture while looking into the lens.
+Dialogue (On-Camera): "Obviously, I'm very fair."
+
+0:06.7–0:08.0
+Shot Type: Medium close-up reactor / eye-level / static
+Action: Her hand resets; she points subtly toward her face, brows raised, then lowers the finger.
+Dialogue (On-Camera): "Undertone is neutral."
+
+0:08.0–0:12.5
+Shot Type: Medium close-up reactor / eye-level / static
+Action: She leans slightly forward, gestures once with an index finger, widens her eyes, then gives a small smile and lowers the hand.
+Dialogue (On-Camera): "Fun fact, their minimalist foundation stick isn't a foundation or a concealer. It's actually both."
+
+0:12.5–0:16.3
+Shot Type: Medium close-up reactor / eye-level / static
+Action: She smiles, nods and opens one hand near her chest while keeping direct lens contact.
+Dialogue (On-Camera): "Everything I've tried for Merit, I've absolutely loved, so I'm so excited to see the results of this."
+
+0:16.3–0:20.0
+Shot Type: Medium close-up reactor / eye-level / static
+Action: She raises the complexion stick beside her cheek with beige tip exposed, angles it toward the lens, then brings it closer to her face.
+Dialogue (On-Camera): "Apparently, this is my perfect match, so let's put it on and see for ourselves."
+
+0:20.0–0:24.5
+Shot Type: Tight face-and-product reactor / eye-level / static
+Action: She presses the beige stick to one cheek and lays warm-beige product onto the skin. Her head turns slightly to show the application side while her eyes return to the lens.
+Dialogue (On-Camera): "Thing I love the most about Merit products is that everything is made to be so quick and so easy to work with"
+
+0:24.5–0:26.8
+Shot Type: Tight face demo / eye-level / static
+Action: She presses the round brush into the cheek product and buffs in short circular/upward strokes while speaking in sync.
+Dialogue (On-Camera): "Blending everything out with their brush number one"
+
+0:26.8–0:29.6
+Shot Type: Tight face reactor / eye-level / static
+Action: She lowers the brush, squares to the lens and shows the blended cheek. Eyes widen, brows lift and she gives a tiny impressed nod as the clip ends mid-thought.
+Dialogue (On-Camera): "the way this only took like five seconds to blend is kind of..."
+
+CHARACTER COUNT: 4805

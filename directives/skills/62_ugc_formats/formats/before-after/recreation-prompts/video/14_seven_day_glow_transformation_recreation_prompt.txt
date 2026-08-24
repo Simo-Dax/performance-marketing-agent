@@ -1,0 +1,38 @@
+Overall Style & Aesthetics:
+
+* Subject: Young South Asian woman, early-to-mid 20s, medium warm skin, long dark hair with styling/outfit changing between progression clips. Early clips are casual and minimally made up; final look uses a black top and more polished makeup while still showing realistic skin texture.
+* Props: Clear drinking glass containing an amber/orange liquid. No readable product container or physical packaging appears, so do not name the drink or add ingredients. Lime-green wall is the consistent background.
+* Lighting & Vibe: Simple day-progression creator montage, vertical 9:16, 1080×1920, 7 hard-cut shots. Bright even indoor light against a vivid lime wall. Each early clip is a separate take with small wardrobe/appearance changes; final shot is longer and beauty-focused. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: No audio stream. Silent source.
+
+Scene Breakdown
+
+0:00.0–0:02.2
+Shot Type: medium creator/day-progress shot, eye-level, static
+Action: South Asian woman faces the phone against a bright lime-green wall in a casual first-day look, holding a clear glass filled with amber/orange liquid near chest height. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot.
+
+0:02.2–0:03.3
+Shot Type: medium creator/day-progress shot, eye-level, static
+Action: Hard cut to a different-day/outfit take in the same wall setup; she raises the glass and drinks a small sip. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval. Match the direction and softness of shadows already present; do not add rim lights, beauty lights or dramatic contrast.
+
+0:03.3–0:04.4
+Shot Type: medium creator/day-progress shot, eye-level, static
+Action: Another progression clip with changed clothing/hair detail, again lifting the same amber drink to her lips. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose. Keep the background at the same depth and clarity as the source, with no artificial portrait blur or exaggerated depth separation.
+
+0:04.4–0:05.5
+Shot Type: medium creator/day-progress shot, eye-level, static
+Action: New-day short shot: she drinks from the clear glass, then lowers it while looking toward camera. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+
+0:05.5–0:06.7
+Shot Type: medium creator/day-progress shot, eye-level, static
+Action: Another quick day-change shot repeats the drink action, keeping the lime wall and glass consistent. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+
+0:06.7–0:08.1
+Shot Type: medium creator/day-progress shot, eye-level, static
+Action: Short progression take with another outfit; she swallows/lower glass and briefly faces lens. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+
+0:08.1–0:19.7
+Shot Type: close-up final skin reveal, eye-level, static
+Action: Final long beauty/result shot. Now in a black top with more polished glossy makeup/skin, she no longer focuses on drinking; she rubs/touches one cheek, turns her face side to side and poses so the light catches a smoother, brighter-looking complexion. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+
+CHARACTER COUNT: 4839

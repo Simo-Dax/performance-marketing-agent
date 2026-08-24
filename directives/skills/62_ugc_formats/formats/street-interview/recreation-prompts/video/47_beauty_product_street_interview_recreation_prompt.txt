@@ -1,0 +1,55 @@
+Overall Style & Aesthetics:
+
+* Subject: Female host, young adult, light-to-medium skin, long dark hair, fitted white T-shirt and blue jeans, carrying/holding a black handheld mic and shopping bag. Multiple young adult women in casual streetwear answer one by one; final dark-haired respondent in black remains while host pitches Underlash.
+* Props: Black handheld microphone, shopping bag, ordinary beauty items mentioned only in speech. No Underlash lash kit is clearly physically demonstrated in the visible sequence, so do not invent package visuals.
+* Lighting & Vibe: Bright shopping-street vox-pop, vertical 9:16, 720×1280, 9 hard-cut shots. Natural daylight, storefronts/pedestrians, slight handheld movement and quick reframing between different respondents. Speech stays casual and overlapping where it occurs. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Multiple women's on-camera voices. No music, city street ambience only.
+
+Scene Breakdown
+
+0:00.0–0:02.5
+Shot Type: medium street interview, eye-level, handheld
+Action: Female host in fitted white T-shirt/blue jeans stands on a bright shopping street with mic, asks first woman the can't-live-without beauty-product question. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+Dialogue (On-Camera): "What would be one beauty product you absolutely couldn't live without?"
+
+0:02.5–0:04.4
+Shot Type: medium street interview, eye-level, handheld
+Action: First respondent answers mascara. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed.
+Dialogue (On-Camera): "Mascara."
+
+0:04.4–0:10.1
+Shot Type: medium street interview, eye-level, handheld
+Action: Fast multi-respondent montage in same street: host turns mic to several women who answer mascara, eye pencil and eyeliner; each person appears briefly in casual clothing. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout.
+Dialogue (On-Camera): "Mascara? Mascara. Yeah. And an eye pencil. Mascara. Without eyeliner. Ooh."
+
+0:10.1–0:11.2
+Shot Type: medium street interview, eye-level, handheld
+Action: Another woman answers eyelash curler. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect.
+Dialogue (On-Camera): "Eyelash curler."
+
+0:11.2–0:12.8
+Shot Type: medium street interview, eye-level, handheld
+Action: Next respondent answers Tower 28 concealer. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing.
+Dialogue (On-Camera): "The Tower 28 concealer."
+
+0:12.8–0:13.8
+Shot Type: medium street interview, eye-level, handheld
+Action: Another quick woman says mascara. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface.
+Dialogue (On-Camera): "Mascara?"
+
+0:13.8–0:18.6
+Shot Type: medium street interview, eye-level, handheld
+Action: New respondent/group says lashes/mascara; host transitions into the Underlash pitch while still holding mic. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis.
+Dialogue (On-Camera): "Lashes, probably. Probably like mascara, yeah. Perfect. Okay, you're going to love this then. I"
+
+0:18.6–0:27.0
+Shot Type: medium street interview, eye-level, handheld
+Action: Long host-facing explanation to dark-haired woman in black: she introduces Underlash DIY lash extensions, gesturing toward the listener while explaining at-home application under ten minutes. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+Dialogue (On-Camera): "am from a brand called Underlash. They sell DIY lash extensions, so very similar to the ones you can get in a salon, except you can do them at home yourself in less than 10 minutes, and"
+
+0:27.0–0:29.5
+Shot Type: medium street interview, eye-level, handheld
+Action: Continuation of brand pitch says they last up to seven days and begins the waterproof claim; source ends mid-word after `water—`. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+Dialogue (On-Camera): "they last up to seven days. They're also completely water—"
+
+CHARACTER COUNT: 4848

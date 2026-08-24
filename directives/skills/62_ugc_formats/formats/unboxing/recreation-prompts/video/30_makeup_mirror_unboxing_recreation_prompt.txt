@@ -1,0 +1,26 @@
+Overall Style & Aesthetics:
+
+* Subject: Only light-skinned hands/forearms are visible; no face or full body appears. Hands unpack, rotate, unfold and activate the mirror in a calm demonstration.
+* Props: Black-and-pink retail box physically reading `Auxmir` and `LED Makeup Mirror`; white rectangular folding makeup mirror with rear stand, cable and bright perimeter LED light; three physical touch-control icons along the lower front glass/frame. White bedding is the surface/background.
+* Lighting & Vibe: Simple bedroom product unboxing, vertical 9:16, 720×1280, 4 hard-cut shots. Soft room/daylight for the box and hardware shots, then the mirror LED becomes a strong clean light source in the final shot. Camera stays locked close to the product. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:03.6
+Shot Type: close-up retail-box unboxing, top-down/oblique, static
+Action: Black-and-pink retail package physically branded `Auxmir` and `LED Makeup Mirror` lies on white bedding; hands open/remove the boxed mirror. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces. Keep the background at the same depth and clarity as the source, with no artificial portrait blur or exaggerated depth separation. Any visible facial performance should remain understated and source-matched, including blinks, eye shifts, small smiles and brief changes in brow tension.
+
+0:03.6–0:09.3
+Shot Type: medium-close mirror hardware reveal, static
+Action: White rectangular folding mirror is fully unboxed. Hands turn the unit to show the white back, fold-out support/stand and attached cable, then set it upright on the bed. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion. Preserve the same amount of headroom and edge cropping when a face or body is visible; do not correct casual phone framing.
+
+0:09.3–0:15.2
+Shot Type: medium-close mirror setup, static
+Action: Hands rotate/open the mirror into viewing position and adjust the rear stand so it remains stable; white frame and front glass now face camera. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot. Keep the object's orientation continuous through the action so openings, labels, hinges, cords, caps and handles move plausibly from start to finish.
+
+0:15.2–0:17.4
+Shot Type: medium-close illuminated mirror reveal, eye-level, static
+Action: Final lit reveal: the mirror's rectangular LED border turns on brightly around the glass. Three small touch-control icons are visible along the lower front edge; hold on the illuminated mirror against the white bedding. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible. Match the direction and softness of shadows already present; do not add rim lights, beauty lights or dramatic contrast. Maintain the original white balance and local color cast instead of neutralizing warm rooms, cool retail light, shade or outdoor sun.
+
+CHARACTER COUNT: 4840

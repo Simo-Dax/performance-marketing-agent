@@ -1,0 +1,40 @@
+Overall Style & Aesthetics:
+
+* Subject: Two young adult men on a beach. Host: light-skinned man, white T-shirt and light blue pants/shorts, holding a black handheld microphone. Respondent: light/medium-skinned man in dark T-shirt, blue shorts and sunglasses. Both stand casually and speak naturally, not studio-performed.
+* Props: Black handheld interview microphone. Beach sand, ocean/water, spring-break beachgoers and casual shoreline activity form the physical background. No separate product packaging appears.
+* Lighting & Vibe: Authentic outdoor vox-pop filmed vertically 9:16, 720×1280, 6 hard-cut interview shots. Bright natural beach daylight, real wind/ambient movement, slight handheld phone drift and changing crop between host, respondent and two-shot. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Two men's on-camera voices. No music, beach/street ambience only.
+
+Scene Breakdown
+
+0:00.0–0:04.8
+Shot Type: medium two-person street interview, eye-level, handheld
+Action: On a sunny beach, male host in a white T-shirt/light blue pants holds a handheld microphone toward a male respondent in dark T-shirt, blue shorts and sunglasses; host asks the opening question. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+Dialogue (On-Camera): "Be honest, are the people who spend all of Spring Break just sitting on the beach total NPCs?"
+
+0:04.8–0:12.0
+Shot Type: medium respondent close shot, eye-level, handheld
+Action: Hard cut tighter on respondent as he answers animatedly, beach and spring-break crowd behind; mic remains near his mouth. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+Dialogue (On-Camera): "Bro, literally. It's like, it's the same crowd of people, it's the same square inch of sand every time. It's like a glitch in the matrix."
+
+0:12.0–0:13.2
+Shot Type: medium host/respondent shot, eye-level, handheld
+Action: Quick host-focused cut asking the follow-up, microphone turned back toward himself/respondent. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+Dialogue (On-Camera): "So what's the main character doing?"
+
+0:13.2–0:16.4
+Shot Type: medium respondent shot, eye-level, handheld
+Action: Respondent answers about getting offshore on a private boat, gesturing casually with one hand. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+Dialogue (On-Camera): "We're getting miles offshore, private boat, the whole"
+
+0:16.4–0:22.6
+Shot Type: medium respondent shot, eye-level, handheld
+Action: Longer respondent shot continues the fishing description, facial expression more excited while ocean/beach activity remains behind. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+Dialogue (On-Camera): "squad, and we're actually catching massive fish. There is nothing like the chaos while everyone's reeling in a fish at the same time."
+
+0:22.6–0:24.8
+Shot Type: medium two-shot closing, eye-level, handheld
+Action: Closing two-shot/host beat: host responds `Say less` and keeps the mic between them as both remain relaxed in the same beach location. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+Dialogue (On-Camera): "Say less, we'll catch you offshore."
+
+CHARACTER COUNT: 4849

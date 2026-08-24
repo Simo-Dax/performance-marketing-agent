@@ -1,0 +1,46 @@
+Overall Style & Aesthetics:
+
+* Subject: Young East/Southeast Asian woman, 20s, light-to-medium skin, reddish-brown shoulder/long hair worn loose, black rectangular glasses and casual top. Hair begins drier/frizzier and finishes smoother with more aligned reflective strands.
+* Props: Dark amber/brown Plant Origins hair-treatment oil bottle with pump/dropper hardware. `PLANT ORIGINS` is physically readable; smaller treatment wording is too soft to guarantee and should not be invented. Clear-to-amber oil is dispensed into the palm and spread through hair.
+* Lighting & Vibe: Warm indoor creator UGC, vertical 9:16, 360×640, 9 hard-cut shots. Soft room/daylight with ordinary phone exposure; product macros and hair application alternate rapidly. Keep hair fibers and oil sheen realistic rather than overly glossy. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:03.7
+Shot Type: medium before hair shot, eye-level, static
+Action: East/Southeast Asian woman with reddish-brown hair and black glasses shows the dry/less-polished starting hair state indoors, running fingers through lengths while facing the phone. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+
+0:03.7–0:05.4
+Shot Type: close-up product shot, static
+Action: Close product beauty shot of a dark amber Plant Origins hair-oil bottle held label-forward near the lens. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+
+0:05.4–0:06.8
+Shot Type: close-up product rotation, static
+Action: She rotates the amber bottle slowly so the pump/dropper and side of the physical label are visible. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+
+0:06.8–0:08.0
+Shot Type: close-up dispensing shot, static
+Action: Tight hand insert: product is pumped/dispensed into an open palm. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+
+0:08.0–0:09.2
+Shot Type: extreme close-up texture shot, static
+Action: Macro of clear/amber oil on fingertips/palm, catching small highlights as hands tilt. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+
+0:09.2–0:10.6
+Shot Type: extreme close-up dropper shot, static
+Action: Close dropper/nozzle detail above the hand/bottle, showing liquid delivery texture. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot.
+
+0:10.6–0:12.6
+Shot Type: medium hair application shot, eye-level, static
+Action: Creator smooths the oil through hair mid-lengths and ends with both hands, pulling strands together. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis.
+
+0:12.6–0:15.9
+Shot Type: medium application/result shot, eye-level, static
+Action: Longer application/result bridge: she repeatedly glides palms down the hair, separates sections, and the strands settle flatter and shinier. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+
+0:15.9–0:18.5
+Shot Type: medium after-reveal shot, eye-level, static
+Action: Final after reveal. She turns/poses with the hair smoother, glossier and more controlled, running fingers through it once while the amber Plant Origins bottle remains part of the context. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+
+CHARACTER COUNT: 4807

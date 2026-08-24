@@ -1,0 +1,39 @@
+Overall Style & Aesthetics:
+
+* Subject: East Asian woman, early to mid-30s, long straight black hair parted slightly off center and falling over the right shoulder, dark brown eyes, light skin, natural brows, minimal neutral makeup, pale natural nails. She wears a loose warm-beige short-sleeve crew-neck top. Her delivery is calm but emphatic: direct lens contact, small nods, restrained brow lifts, open palms, finger-counting gestures and measured hand movements.
+* Props: In the final reactor segment she holds four small squeeze tubes in coral, cream, tan and deep brown-red tones; readable physical text on the deep brown-red tube is "cocokind"; all smaller lines and the remaining held-tube print are too soft to read reliably. No other physical prop is used by the reactor. All enlarged tubes, ingredient pages, factory footage, fruit/herb imagery, certification graphics and the opening podcast footage are source/composited content and are ignored for reactor recreation.
+* Lighting & Vibe: Vertical 9:16 green-screen founder/product-reaction ad, 360x640. Reactor-only structure contains 6 meaningful reactor states over the 29.6-second source: one opening interval with no reactor, then five woman-performance segments, average about 4.9 seconds. The woman is evenly lit with soft frontal studio light and appears mainly as a small chest-up cutout, later becoming larger while holding tubes. Her own camera is static; rapid edits after 0:16.8 change only the material behind her, so they are not recreated as reactor cuts. Use a plain neutral removable background and preserve only her crop, pose, eyeline, mouth timing, gestures and final physical tubes. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voice throughout. No music, room tone only.
+
+Scene Breakdown
+
+0:00–0:04.9
+Shot Type: Empty reactor interval / static
+Action: The reactor is not present. The source shows other footage before her response begins, but that material and its speaker are excluded completely; keep the reactor layer empty on the neutral removable background for this interval.
+
+0:04.9–0:08.0
+Shot Type: Small chest-up cutout / eye level / static
+Action: She appears high and slightly right of center, shoulders relaxed and face square to camera. Both hands rise near chest height with fingers softly spread; she gives a short forward hand beat, then brings the hands inward while keeping a composed expression and steady eyeline.
+Dialogue (On-Camera): "[unclear]. Yes, I know, and we know that we are not the world's first lip balm."
+
+0:08.0–0:12.8
+Shot Type: Small chest-up cutout / eye level / static
+Action: Her crop shifts slightly. She raises one hand as if making a counterpoint, then rotates the palm upward. Her eyebrows lift briefly, mouth remains clearly synchronized and she gives a tiny nod while looking directly into lens.
+Dialogue (On-Camera): "In fact, I would argue that, actually, as of today, we are the world's last lip balm. And I'm not going to [unclear]"
+
+0:12.8–0:16.8
+Shot Type: Small chest-up cutout / eye level / static
+Action: She continues in a measured explanatory rhythm, bringing both hands together near the sternum and separating them again. Her head tilts a few degrees, then returns upright; expression stays thoughtful and matter-of-fact.
+Dialogue (On-Camera): "[unclear] skincare-loving ingredients in our lip balms, [unclear]."
+
+0:16.8–0:27.0
+Shot Type: Small chest-up cutout / eye level / static continuous reactor performance
+Action: Her reactor take continues without a visible performance cut while the ignored material behind her changes rapidly. She lifts three fingers briefly as if enumerating reasons, then alternates open palms and compact fingertip beats. Around the middle she brings both hands closer together, palms facing inward, then opens them again while maintaining direct eye contact. Her brows rise on the sensitive-skin point; later she nods once, keeps her torso still and uses one hand to mark the flavor/scent comparison. Near the end of the interval her hands lower and her expression becomes more serious as the final claim begins.
+Dialogue (On-Camera): "So let me tell you the three main reasons why we actually decided to make this lip balm. So the first is we still believe there's an opportunity for sensitive skin-friendly lip balms. So this is [unclear], because I know people love their lip balm flavors, but we did not put any flavor or"
+
+0:27.0–0:29.6
+Shot Type: Medium chest-up cutout / eye level / static
+Action: A reactor edit makes her larger in frame. She holds four squeeze tubes fanned vertically in her left hand at chest level, colored coral, cream, tan and deep brown-red. Her right hand gestures beside the tubes with a small pinching/counting motion; she keeps the products angled toward camera, nods lightly and continues speaking until the source ends.
+Dialogue (On-Camera): "any scent in our lip balms"
+
+CHARACTER COUNT: 4989

@@ -1,0 +1,50 @@
+Overall Style & Aesthetics:
+
+* Subject: Small household dog is the main visible living subject; the creator is represented mostly by hands during the opening/serving steps. No creator face needs to be introduced unless visible in the source. Dog behavior is natural and food-motivated.
+* Props: Ollie pet-food delivery packaging, branded meal packs/containers, shipping box, serving bowl and visible fresh chopped dog food. Preserve physical `Ollie` branding where legible; smaller nutrition/package copy that cannot be read cleanly should remain unreadable.
+* Lighting & Vibe: Home pet-food unboxing/use montage, vertical 9:16, 608×1080, 8 hard-cut shots. Natural household light, close handheld package/food inserts and lower pet-level feeding shots. Keep food texture, cardboard and dog fur realistic. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voiceover throughout. No music, faint household ambience only.
+
+Scene Breakdown
+
+0:00.0–0:03.5
+Shot Type: close-up unboxing/package shot, handheld
+Action: At home, an Ollie delivery box/meal setup is presented in vertical close framing as the fresh-food unboxing begins; dog-related packaging and the box fill the lower frame. Keep the same physical framing and natural movement. Keep the same physical framing and natural movement. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+Dialogue (Voiceover): "If you want more years with a healthy pup, your first step is switching"
+
+0:03.5–0:06.7
+Shot Type: close-up hands/unboxing shot, handheld
+Action: Hands open/reveal the Ollie contents and lift fresh meal packs from the box, showing the branded packaging and food format. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+Dialogue (Voiceover): "them to fresh food. Ollie makes human-grade fresh and"
+
+0:06.7–0:07.7
+Shot Type: close-up product insert, handheld
+Action: Very short close insert on one meal pack/container held toward camera. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+Dialogue (Voiceover): "baked meals with the"
+
+0:07.7–0:09.4
+Shot Type: close-up meal-package shot, handheld
+Action: Hands handle/open a fresh meal portion and bring the food closer to the serving area, packaging briefly label-forward. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect.
+Dialogue (Voiceover): "highest quality ingredients and our"
+
+0:09.4–0:12.4
+Shot Type: close-up food preparation shot, handheld
+Action: Prepared fresh dog food is placed into a bowl; moist chopped texture and portion size remain realistic. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing.
+Dialogue (Voiceover): "dogs couldn't be happier since making the switch. Especially"
+
+0:12.4–0:14.9
+Shot Type: medium pet/food shot, low angle, handheld
+Action: Small dog approaches the serving bowl/meal area and begins investigating the food. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface.
+Dialogue (Voiceover): "since Gabbana has digestion issues, Ollie's"
+
+0:14.9–0:18.9
+Shot Type: medium pet feeding shot, low angle, static
+Action: Longer feeding/use shot with the dog actively eating the fresh meal from the bowl; keep the pet, bowl and moist food as the only physical focus. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis.
+Dialogue (Voiceover): "probiotic and expert vet techs in the app have been so helpful in their"
+
+0:18.9–0:23.1
+Shot Type: medium pet/meal ending shot, eye-level, static
+Action: Closing dog/meal shot holds on the pet and fresh-food context while the unseen creator finishes the health-journey line. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+Dialogue (Voiceover): "transition. To get started on your dog's health journey, head to MyOllie.com."
+
+CHARACTER COUNT: 4848

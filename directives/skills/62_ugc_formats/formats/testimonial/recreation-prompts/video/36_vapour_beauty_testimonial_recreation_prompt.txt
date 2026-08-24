@@ -1,0 +1,55 @@
+Overall Style & Aesthetics:
+
+* Subject: Young adult South Asian woman, 20s–30s, medium warm skin, long black hair worn loose, dark eyes, natural glam base makeup, pale blue/gray sleeveless top, gold watch/bracelet. She alternates direct explanation with tight eye-makeup application.
+* Props: Vapour Beauty Labyrinth Eyeshadow Quad with four pans; makeup brushes including a smaller precision brush; Mesmerize mascara tube/wand. Preserve physical `Vapour Beauty`, `Labyrinth`, and `Mesmerize` wording only where it is actually readable.
+* Lighting & Vibe: Bright indoor beauty tutorial/testimonial, vertical 9:16, 608×1080, 9 hard-cut shots. Soft frontal natural/room light with static phone framing; tighter crops on eye and brush, realistic lashes and skin texture. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voice throughout. No music, faint indoor room tone only.
+
+Scene Breakdown
+
+0:00.0–0:02.9
+Shot Type: medium talking-head beauty shot, eye-level, static
+Action: South Asian woman with long black hair and pale blue/gray sleeveless top faces camera with the finished makeup look, introducing the four products. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+Dialogue (On-Camera): "Today, I'm going to show you how I got this look using these four"
+
+0:02.9–0:07.2
+Shot Type: close-up palette/creator shot, eye-level, static
+Action: She holds/opens a Vapour Beauty Labyrinth eyeshadow quad near her face, angling the four pans so their colors are visible. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+Dialogue (On-Camera): "products from Vapour Beauty. First, I'm going to start with the Labyrinth Eyeshadow"
+
+0:07.2–0:11.6
+Shot Type: close-up eye makeup application, static
+Action: Close makeup application: using a brush, she works a chosen shade into the eye crease while looking toward a mirror/phone. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout.
+Dialogue (Voiceover): "Quad. Check out these colors. Starting with this one, I go in and define the"
+
+0:11.6–0:13.3
+Shot Type: close-up palette/eye application, static
+Action: She switches to a light pink shade and begins placing it across the eyelid. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect.
+Dialogue (Voiceover): "crease in my eye, and then I go in with"
+
+0:13.3–0:16.2
+Shot Type: extreme close-up eyelid application, static
+Action: Closer eyelid application continues, brush patting/sweeping the light pink color. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing.
+Dialogue (Voiceover): "this light pink and color in my"
+
+0:16.2–0:18.8
+Shot Type: close-up precision-brush application, static
+Action: She uses a smaller precision brush to sharpen/define the outer eye/cat-eye shape. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface.
+Dialogue (Voiceover): "eyelid. Go back in using my Precision"
+
+0:18.8–0:21.3
+Shot Type: extreme close-up eye detail, static
+Action: Another close eye detail shows the defined liner/shadow edge being refined. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis.
+Dialogue (Voiceover): "Brush to define the cat eye,"
+
+0:21.3–0:23.7
+Shot Type: close-up mascara application, static
+Action: She applies Mesmerize mascara to upper lashes, wand moving from roots outward. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+Dialogue (Voiceover): "and then I finish off with the Mesmerize"
+
+0:23.7–0:25.9
+Shot Type: medium final beauty reveal, eye-level, static
+Action: Final medium/close beauty reveal: lowers the mascara/brush, faces the lens and shows the completed eye look while asking for the viewer's reaction. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+Dialogue (On-Camera): "mascara. What do you think?"
+
+CHARACTER COUNT: 4817

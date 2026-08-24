@@ -1,0 +1,55 @@
+Overall Style & Aesthetics:
+
+* Subject: Young adult woman, approximately mid-20s, long dark-brown naturally curly hair worn loose, light-to-medium skin, natural creator makeup and casual home/store clothing. She appears on camera in the opening and closing kitchen shots; the middle is product/store B-roll.
+* Props: Green-and-yellow Hiccupops retail cartons and a yellow lollipop on a white stick. Readable physical package wording includes `Hiccupops!` and `Stops Hiccups`; smaller flavor/benefit copy should remain only as legible in the source. Yellow flower bouquet on the kitchen counter. CVS storefront/aisle fixtures and physical department signs are part of the filmed environment.
+* Lighting & Vibe: Phone-native UGC alternating warm home kitchen light with flat bright CVS retail fluorescent light. Vertical 9:16, 608×1080, 9 shots with fast hard cuts and no cinematic transitions. Home shots are locked and frontal; store inserts have slight natural handheld drift. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voice throughout. No music, natural room/store ambience only.
+
+Scene Breakdown
+
+0:00.0–0:03.2
+Shot Type: medium talking-head, eye-level, static
+Action: Young woman stands behind a light kitchen counter in a warm home, long dark curly hair loose, holding a yellow Hiccupops lollipop near her face while bright yellow flowers and green/yellow product cartons sit on the counter. She addresses the phone directly with animated brows and a casual smile. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition.
+Dialogue (On-Camera): "I saw these at CVS the other week and I had to snag them."
+
+0:03.2–0:04.2
+Shot Type: wide storefront insert, slight low angle, handheld
+Action: Hard cut to the exterior of a CVS Pharmacy storefront. The red physical `CVS pharmacy` sign spans the upper facade while the handheld phone points slightly upward; no creator is visible. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed.
+Dialogue (Voiceover): "Fun fact, my"
+
+0:04.2–0:06.2
+Shot Type: medium rear follow shot, eye-level, handheld
+Action: Inside CVS, rear three-quarter view of the same woman walking away down a bright fluorescent aisle in casual clothing. Shelves line both sides and she moves at a normal shopping pace. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout.
+Dialogue (Voiceover): "husband has really bad hiccups and for"
+
+0:06.2–0:07.9
+Shot Type: medium aisle shot, eye-level, handheld
+Action: Hard cut to her walking toward the phone in another aisle angle, centered between shelves. She glances ahead and continues forward; keep the store lighting flat and practical. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect.
+Dialogue (Voiceover): "some reason they're getting harder to get"
+
+0:07.9–0:09.1
+Shot Type: close-up sign insert, upward angle, handheld
+Action: Upward aisle-sign insert. A white hanging directory sign physically lists departments including `diabetes care`, `digestive health` and `home testing`; shelves blur below it.
+Dialogue (Voiceover): "rid of as he ages."
+
+0:09.1–0:11.1
+Shot Type: close-up product shelf shot, eye-level, handheld
+Action: Close shelf insert of multiple green-and-yellow Hiccupops boxes. The front physical packaging shows `Hiccupops!` and `Stops Hiccups`; keep flavor/product copy only where it is truly legible and do not invent smaller wording.
+Dialogue (Voiceover): "So not only is Hiccupops a"
+
+0:11.1–0:13.4
+Shot Type: close-up hand/product shot, eye-level, handheld
+Action: A manicured hand reaches into the shelf, grips one Hiccupops carton and pulls it forward from the row while neighboring boxes remain aligned behind it.
+Dialogue (Voiceover): "delicious lollipop, but Hiccupops resets"
+
+0:13.4–0:16.4
+Shot Type: close-up product beauty shot, eye-level, static
+Action: Back at home, close product/lollipop beauty shot in front of the yellow flowers. A yellow lollipop is held upright with Hiccupops packaging behind it; the hand subtly rotates the candy so its rounded shape catches the light.
+Dialogue (Voiceover): "the hiccup reflex and returns your breathing to normal,"
+
+0:16.4–0:20.1
+Shot Type: medium talking-head, eye-level, static
+Action: Hard cut to the creator again behind the kitchen counter. She holds the lollipop/product at chest height and finishes her recommendation directly to camera with a matter-of-fact smile.
+Dialogue (On-Camera): "just within a few seconds. So give it a try."
+
+CHARACTER COUNT: 4857

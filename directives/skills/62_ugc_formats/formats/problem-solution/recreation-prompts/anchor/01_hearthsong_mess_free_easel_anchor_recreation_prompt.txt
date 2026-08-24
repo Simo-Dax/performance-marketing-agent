@@ -1,0 +1,11 @@
+ANCHOR FRAME RECREATION PROMPT
+
+Photorealistic vertical 9:16 smartphone UGC still. Preserve natural skin texture, real hair detail, believable hands and fingers, subtle lens softness, phone-camera dynamic range, and ordinary consumer lighting. Do not beautify the subject into a fashion model, do not add cinematic haze, and do not turn the scene into a studio product render. No added subtitles, social-media captions, stickers, watermarks, app UI, or source-brand graphics. The only readable branded text should be text that physically exists on the uploaded product itself or unavoidable environmental signage explicitly described.
+
+This recreation does not require an uploaded product. Rebuild the character, pose, environment, camera placement, crop, lighting, and photographic imperfections as closely as possible from the description below. Keep it feeling like a real phone-shot UGC frame, not a polished campaign still.
+
+Composition and scene:
+Sunny backyard scene photographed at child height. Two little girls are seen mostly from behind and three-quarter back view, standing on bright green grass directly in front of a large bright-blue inflatable art easel. The nearer child is centered-left, wearing a cream ruffled top and dusty-pink skirt with light shoes; her hair is tied in a small high ponytail. A second child stands just left of her, partly overlapping. The inflatable structure dominates the right half of frame, with a white vertical painting sheet clipped into the blue frame and colorful childlike paint marks on it. Tall leafy trees, dappled sunlight, soft lawn shadows and a blurred residential yard fill the background. Camera is upright, close enough that the girls fill the lower half and the top of the inflatable easel nearly reaches the frame edge.
+
+Critical fidelity:
+Recreate the same framing logic, subject scale, camera height, viewing angle, pose, hand position, prop spacing, background geometry, and lighting direction. Keep the image intentionally natural and slightly imperfect, with the same casual UGC realism rather than over-clean commercial polish. Do not force a product into this frame; the scene/character composition itself is the anchor.

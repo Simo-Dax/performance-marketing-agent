@@ -44,9 +44,22 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 | `/pm-statiche` | Static ad da winner reali: rebrand della reference bank (design tenuto, identità scambiata) | 24 / SA6 |
 | `/pm-video-script` | Video script studio universale (qualsiasi formato/lunghezza), solo testo | 55 / SA6 |
 | `/pm-animate-static` | Statica finita → motion poster 3-8s (ultimo frame = la statica) | 56 / SA6 |
-| `/pm-ugc-studio` | **UGC Studio (default)**: ordina formati provati → ad 9:16 finiti, edit grammar | 57 / SA6 |
+| `/pm-ugc` | **Porta d'ingresso UGC (default)**: menu 11 formati, instrada sul dubbio da togliere. Non spende | 62 / SA6 |
+| `/pm-ugc-problem-solution` | Nomina un dolore, mostralo fallire, poi il prodotto che lo chiude (20-27s) | 62 / SA6 |
+| `/pm-ugc-testimonial` | Cliente vero, parole sue, in camera (20-30s). Richiede VOC | 62 / SA6 |
+| `/pm-ugc-before-after` | Due stati confrontati sotto condizioni identiche (15-24s). Avviso piattaforma | 62 / SA6 |
+| `/pm-ugc-tutorial` | Insegna UN risultato step by step (22-30s) | 62 / SA6 |
+| `/pm-ugc-unboxing` | Da sigillato a rivelato, la reazione è il payoff (18-27s) | 62 / SA6 |
+| `/pm-ugc-street-interview` | Sconosciuti in pubblico, risposte non copionate (22-30s). Richiede VOC | 62 / SA6 |
+| `/pm-ugc-asmr` | Suoni e texture reggono l'ad (15-25s). Render più affidabile del set | 62 / SA6 |
+| `/pm-ugc-expert` | Spiega **perché** funziona, non che funziona (22-30s). Richiede VOC | 62 / SA6 |
+| `/pm-ugc-pov` | Skit riconoscibile, risata prima del prodotto (15-25s) | 62 / SA6 |
+| `/pm-ugc-green-screen` | Creator che reagisce, girato pulito da comporre dopo (20-30s) | 62 / SA6 |
+| `/pm-ugc-founder-story` | Il fondatore racconta perché esiste (24-30s). Richiede foto vera | 62 / SA6 |
+| `/pm-captions` | Brucia caption stile locked su qualsiasi video; force-align sullo script se c'è | 63 / SA6 |
+| `/pm-ugc-studio` | UGC Studio (lane precedente): format bank → ad 9:16, edit grammar | 57 / SA6 |
 | `/pm-ugc-blueprint` | Da un video UGC che ti piace: teardown misurato + ricostruzione col tuo prodotto | 58 / SA6 |
-| `/pm-ugc-video` | UGC factory (alternativa): 4 ad MP4 fan-out Andromeda, render parallelo + taglio word-accurate | 25 / SA6 |
+| `/pm-ugc-video` | UGC factory (lane precedente): 4 ad MP4 fan-out Andromeda, render parallelo + taglio word-accurate | 25 / SA6 |
 | `/pm-pixar-ad` | Ad Pixar 3D voiceover-first, formato progressione "Giorno 1… Giorno 30…" | 59 / SA6 |
 | `/pm-talking-object-ad` | Ad dove il cast parla: problema personificato → ingredienti → il prodotto chiede la vendita | 60 / SA6 |
 | `/pm-podcast-ad` | Finto podcast a due host (2 volti + 2 voci → 9:16 montato) | 61 / SA6 |

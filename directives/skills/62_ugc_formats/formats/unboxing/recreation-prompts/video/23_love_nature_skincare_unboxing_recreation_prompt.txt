@@ -1,0 +1,38 @@
+Overall Style & Aesthetics:
+
+* Subject: Only light-skinned hands are visible, with neat natural/manicured nails. No face or body appears. Hands lift, squeeze, unwrap and arrange products in a calm top-down unboxing style.
+* Props: Orange-and-white Love Nature/Oriflame oat-and-apricot gift box; pale shower-cream bottle physically reading `Love Nature / CARING SHOWER CREAM / WITH ORGANIC OAT & APRICOT / ORIFLAME`; soap packet physically reading `Love Nature / CARING SOAP BAR / WITH ORGANIC OAT & APRICOT / ORIFLAME`; round pale beige soap bar and other matching set products. White shag carpet background.
+* Lighting & Vibe: Bright top-down beauty unboxing on white textured carpet, vertical 9:16, 540×960, 7 hard-cut intervals. Soft even light and clean package visibility, static camera throughout physical product shots. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:09.5
+Shot Type: top-down open-box shot, static
+Action: Top-down view on a white shag carpet: open orange-and-white Love Nature presentation/gift box displays multiple apricot/oat-themed bath products in molded/arranged compartments, orange fruit illustrations visible around the box. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot.
+
+0:09.5–0:10.4
+Shot Type: close-up product reveal, top-down, static
+Action: Hand lifts a tall pale yellow/cream bottle label-forward; physical wording reads `Love Nature`, `CARING SHOWER CREAM`, `WITH ORGANIC OAT & APRICOT`, and `ORIFLAME` where sharp. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval. Match the direction and softness of shadows already present; do not add rim lights, beauty lights or dramatic contrast.
+
+0:10.4–0:14.1
+Shot Type: close-up texture shot, static
+Action: Close hand/product shot squeezes a small amount of white/cream shower product from the bottle to show texture. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose. Keep the background at the same depth and clarity as the source, with no artificial portrait blur or exaggerated depth separation.
+
+0:14.1–0:15.1
+Shot Type: close-up package reveal, static
+Action: Hand presents a flat soap packet label-forward. Physical text reads `Love Nature`, `CARING SOAP BAR`, `WITH ORGANIC OAT & APRICOT`, and `ORIFLAME` where legible. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+
+0:15.1–0:19.7
+Shot Type: close-up soap unwrapping shot, top-down, static
+Action: Longer soap reveal: the packet is opened and a round pale beige bar is removed/turned between fingers above the white shag surface. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+
+0:19.7–0:22.1
+Shot Type: top-down final product arrangement, static
+Action: Products are arranged beside/around the closed or partially closed gift box, including the shower cream and other Love Nature packaging, forming a final collection shot. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+
+0:22.1–0:25.1
+Shot Type: blank ending interval
+Action: Plain black ending field with no person, hand or physical product visible. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+
+CHARACTER COUNT: 4892

@@ -1,0 +1,40 @@
+Overall Style & Aesthetics:
+
+* Subject: Light-skinned woman, approximately early 30s, long medium-brown hair worn down with a soft side part, brown eyes, defined dark brows, natural pink lips and short dark-red polished nails. She wears plain black V-neck medical scrubs, small gold hoop earrings, a fine necklace with a tiny round pendant and a black wireless microphone clipped to the viewer-right side of her scrub neckline.
+* Props: White rigid LED face mask with eye, nose and mouth openings, attached white cable and a small white handheld controller. Printed text centered across the mask forehead physically reads “CURRENTBODY skin”; the smaller line beneath is too soft to transcribe reliably. When powered, dense rows of tiny LEDs across the inner face glow bright red/orange. Background objects include a glass shower enclosure, chrome shower hardware and a dark speckled vanity surface; no readable print appears on them.
+* Lighting & Vibe: Vertical 9:16, 720×1280. Bright modern bathroom with warm ceiling downlights and neutral beige/gray surfaces. 6 total shots, average shot length 5.0 seconds. The first four are static front-facing talking-head framings separated by hard jump cuts; the final two are static side/product framings. No background travel indicates a pan, push or handheld camera move. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One woman's voice throughout. no music, room tone only.
+
+Scene Breakdown
+
+0:00–0:04.5
+Shot Type: Medium shot / eye-level front-facing phone angle / static
+Action: Standing in front of the glass shower, she faces the lens and speaks while holding the unlit white LED mask in front of her torso. She lifts it upward beside her face, rotates the front toward camera so the eye and mouth openings are clear, then lowers it slightly. Her mouth remains visibly synchronized and she maintains direct eye contact with small brow raises and a light smile. The chrome shower hardware stays fixed behind her.
+Dialogue (On-Camera): "As a dermatologist, I've been getting a lot of questions about red light masks. It"
+
+0:04.5–0:08.6
+Shot Type: Medium shot / eye-level front-facing phone angle / static
+Action: Hard jump cut to the same bathroom position with her posture reset and the mask held lower, partly entering at the bottom edge. She continues speaking directly to lens, briefly lifts one hand near chest height for emphasis and lets it fall. Her head makes small nods while her lips stay in sync; the shower rail does not move.
+Dialogue (On-Camera): "'s one of the only at-home skincare devices I recommend and here's why. So"
+
+0:08.6–0:19.1
+Shot Type: Medium close-up / eye-level / static
+Action: Another hard jump cut tightens her centered talking-head position. The mask sits mostly below frame while she explains, using one hand for small pinching and pointing gestures near the lower center. She maintains a direct lens gaze with brief blinks. Her microphone remains clipped at the neckline and her mouth stays continuously synchronized.
+Dialogue (On-Camera): "there's evidence to show that red light therapy can help with multiple signs of skin aging by emitting light from LEDs at specific wavelengths shown to stimulate collagen production in the skin. It may"
+
+0:19.1–0:22.7
+Shot Type: Medium close-up / eye-level / static
+Action: Jump cut preserves the same shower background but changes her head and hand positions. She speaks with a slight smile, gives a small downward hand motion, then returns both hands near her waist. The camera remains locked and her lips are visibly in sync throughout.
+Dialogue (On-Camera): "also be beneficial for some inflammatory skin conditions."
+
+0:22.7–0:27.7
+Shot Type: Medium side-angle product demonstration / static
+Action: Hard cut to a three-quarter side view beside the vanity. She holds the mask horizontally with both hands, front facing the camera, while holding the small white controller above it. Her mouth stays closed in a posed smile as the same voice continues, making this voiceover. She activates the mask and its internal LED grid turns from unlit white to an intense red/orange glow that casts red light onto her face, hands, scrubs and nearby wall. She looks down and steadies it at chest height.
+Dialogue (Voiceover): "Trying this new series 2 mask from current body and here's why I like it. First, it has red, near"
+
+0:27.7–0:30.0
+Shot Type: Extreme product close-up / top-down slight angle / static
+Action: Hard cut to the illuminated mask filling nearly the entire frame. Dozens of individual red/orange LED points are visible in regular rows around the eye, nose and mouth openings. Her hands grip the mask edges while the attached cable trails out of frame; only a narrow area of counter remains visible.
+Dialogue (Voiceover): "infrared and new to this mask deep, near."
+
+CHARACTER COUNT: 4894

@@ -53,9 +53,11 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `55_video_script` | SA6 | Production | Video Script Studio universale, gratis e solo testo — script finito per qualsiasi formato/lunghezza (10s-90s+), matematica budget parole deterministica, 12 framework nominati, non richiesto da `25_ugc_prompt`. |
 | `24_static_ads` | SA6 | Production | Static ad da winner reali (rebrand) — reference bank obbligatoria (`19_ad_spy` + winner live del brand), design tenuto/identità scambiata, un blocco prosa per ad. Input: pagina Facebook brand, n. ad, foto prodotto. Modello: GPT Image 2 (default) o Nano Banana 2 (solo 4:5 vero). Richiede Apify. |
 | `56_animate_static` | SA6 | Production | Statica finita → motion poster 3-8s: i layer si assemblano, **l'ultimo frame È la statica originale**. Niente musica/caption. Input: una statica + concept scelto. Image-to-video con la statica come primo frame; testo/numeri pinnati verbatim, camera lock, audio no-music. 1080p default. |
-| `57_ugc_studio` | SA6 | Production | **UGC Studio (default UGC video)** — format bank di ad vincenti reali (testimonial/before-after/unboxing/direct-to-camera): ordini un mix, lo studio scrive, renderizza gen 4-9s, taglia con **edit grammar** e assembla 9:16 finiti. 2 gate umani (transcript, costo+cut map). Richiede ffmpeg. |
+| `62_ugc_formats` | SA6 | Production | **UGC Formats (default UGC video)** — 11 formati, uno per ogni dubbio che l'ad deve togliere (problem-solution, testimonial, before-after, tutorial, unboxing, street-interview, asmr, expert, pov, green-screen, founder-story). Router `/pm-ugc` instrada, ogni formato ha il suo playbook + spec + 10 coppie di studio da ad reali smontate. **Split dei due modelli:** l'LLM scrive cosa l'ad È, il modello video dirige — mai una shot list. 3 gate (piano gratis, anchor, video). Precondizioni: VOC per testimonial/expert/street-interview, foto vera per founder-story. |
+| `63_auto_captions` | SA6 | Production | Caption in stile bloccato su qualsiasi video finito (anche non nostro). Con lo script su disco fa **force-align**: whisper dà i tempi, lo script dà le parole → caption = copy esatto. Scrive sempre un `_captioned` separato, mai sovrascrive il master. Vocabolario brand da `context/brand/caption_vocab.json`. Richiede ffmpeg + whisper. |
+| `57_ugc_studio` | SA6 | Production | UGC Studio (**lane precedente**, superata da 62) — format bank di ad vincenti reali (testimonial/before-after/unboxing/direct-to-camera): ordini un mix, lo studio scrive, renderizza gen 4-9s, taglia con **edit grammar** e assembla 9:16 finiti. 2 gate umani (transcript, costo+cut map). Richiede ffmpeg. |
 | `58_ugc_blueprint` | SA6 | Production | **Lane reference-driven**: parte da UN video UGC locale che l'utente ha scelto, ne misura la struttura (curva di differenza per-frame, lip-sync test, whisper locale) e la ricostruisce col suo prodotto/creator. Struttura sì, girato mai. Richiede ffmpeg. |
-| `25_ugc_prompt` | SA6 | Production | UGC factory (**alternativa nominata** a 57): fan-out Andromeda, 4 ad distinti da un core condiviso. Voice cut unici per gen (anti `_sfx`), render parallelo + hook checkpoint, taglio word-accurate (whisper) + frame check. Input: script UGC + VOC + Brand DNA. |
+| `25_ugc_prompt` | SA6 | Production | UGC factory (**lane precedente**, fan-out a 4 varianti): fan-out Andromeda, 4 ad distinti da un core condiviso. Voice cut unici per gen (anti `_sfx`), render parallelo + hook checkpoint, taglio word-accurate (whisper) + frame check. Input: script UGC + VOC + Brand DNA. |
 | `59_pixar_ad` | SA6 | Production | Ad Pixar 3D **voiceover-first**, formato progressione virale. Eroe castato dal Brand DNA (Character Bible bloccato), testimoni altri personaggi Pixar mai umani, prodotto come prop dalla foto reale. **Mai testo renderizzato, mai lip-sync.** 2 gate. Richiede ffmpeg + whisper. |
 | `60_talking_object_ad` | SA6 | Production | Ad **dialogue-first**: il cast vende (problema personificato → eroi ingrediente → il prodotto chiede la vendita). I personaggi **parlano on camera**, nessun voiceover esterno: l'audio nativo delle clip è la traccia. 2 gate. Richiede ffmpeg. |
 | `61_podcast_ad` | SA6 | Production | Finto **podcast a due host**: l'utente carica 2 volti + 2 voci, la skill scrive, renderizza in parallelo (voice cut con fingerprint unico) e monta un 9:16. Nessun riferimento video mai. Richiede ffmpeg + whisper. |
@@ -131,8 +133,9 @@ Esito gate:
 - **`55_video_script`** — script finito per formati non coperti da `25_ugc_prompt` (voiceover-only, dialogo, founder, VSL) o deliverable-script rapido
 - **`24_static_ads`** — rebrand di winner reali dalla reference bank (`19_ad_spy` obbligatorio), un blocco prosa per ad (GPT Image 2 o Nano Banana 2)
 - **`56_animate_static`** — anima una statica finita in motion poster 3-8s (ultimo frame = la statica), se serve una variante video dell'ad statico
-- **`57_ugc_studio`** — UGC video da formati provati, ad 9:16 finiti (default se campagna include UGC)
-- **`25_ugc_prompt`** — UGC factory, alternativa per fan-out Andromeda a 4 varianti (render parallelo, taglio word-accurate)
+- **`62_ugc_formats`** — **default UGC**: `/pm-ugc` mostra gli 11 formati e instrada; ogni formato ha il suo playbook e il suo banco di 10 ad reali
+- **`63_auto_captions`** — caption su un video finito, force-align sullo script. **Offrile a fine ad, non assumerle**
+- **`57_ugc_studio`** / **`25_ugc_prompt`** — lane UGC precedenti, ancora funzionanti (usa 62 salvo richiesta esplicita)
 - **`26_product_shot`** — product shot Studio/Held/Worn (se necessario)
 - **`27_multiplier`** — 5-8 variazioni Andromeda-compliant (se esiste un ad vincente da moltiplicare)
 - Tool: Canva MCP + Higgsfield MCP + fal.ai MCP
@@ -223,7 +226,9 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `23_competitor_rebuild` — Competitor Ad Rebuild (SA5)
 - [x] `24_static_ads` — Static Ads da winner reali, rebrand model (SA6)
 - [x] `56_animate_static` — Statica → motion poster (SA6)
-- [x] `57_ugc_studio` — UGC Studio format-first, edit grammar (SA6, default UGC)
+- [x] `62_ugc_formats` — 11 formati UGC + router (SA6, **default UGC**)
+- [x] `63_auto_captions` — Caption force-align su video finiti (SA6)
+- [x] `57_ugc_studio` — UGC Studio format-first, edit grammar (SA6, lane precedente)
 - [x] `58_ugc_blueprint` — UGC Blueprint da video reference (SA6)
 - [x] `25_ugc_prompt` — UGC factory, fan-out Andromeda (SA6, alternativa)
 - [x] `59_pixar_ad` — Pixar Ad Factory (SA6)
@@ -278,6 +283,19 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-statiche` | `24_static_ads` | SA6 |
 | `/pm-animate-static` | `56_animate_static` | SA6 |
 | `/pm-video-script` | `55_video_script` | SA6 |
+| `/pm-ugc` | `62_ugc_formats` (router) | SA6 |
+| `/pm-ugc-problem-solution` | `62_ugc_formats` → `formats/problem-solution/` | SA6 |
+| `/pm-ugc-testimonial` | `62_ugc_formats` → `formats/testimonial/` | SA6 |
+| `/pm-ugc-before-after` | `62_ugc_formats` → `formats/before-after/` | SA6 |
+| `/pm-ugc-tutorial` | `62_ugc_formats` → `formats/tutorial/` | SA6 |
+| `/pm-ugc-unboxing` | `62_ugc_formats` → `formats/unboxing/` | SA6 |
+| `/pm-ugc-street-interview` | `62_ugc_formats` → `formats/street-interview/` | SA6 |
+| `/pm-ugc-asmr` | `62_ugc_formats` → `formats/asmr/` | SA6 |
+| `/pm-ugc-expert` | `62_ugc_formats` → `formats/expert/` | SA6 |
+| `/pm-ugc-pov` | `62_ugc_formats` → `formats/pov/` | SA6 |
+| `/pm-ugc-green-screen` | `62_ugc_formats` → `formats/green-screen/` | SA6 |
+| `/pm-ugc-founder-story` | `62_ugc_formats` → `formats/founder-story/` | SA6 |
+| `/pm-captions` | `63_auto_captions` | SA6 |
 | `/pm-ugc-studio` | `57_ugc_studio` | SA6 |
 | `/pm-ugc-blueprint` | `58_ugc_blueprint` | SA6 |
 | `/pm-ugc-video` | `25_ugc_prompt` | SA6 |

@@ -1,0 +1,45 @@
+Overall Style & Aesthetics:
+
+* Subject: Male host, young adult/early 30s, light skin, dark beard, white/light striped shirt, holding a black handheld mic. Three college-age respondents appear briefly in separate campus cuts with casual student clothing. Everyone speaks directly and naturally.
+* Props: Black handheld interview microphone. Outdoor college campus/plaza with modern buildings, pavement, planters and passing students. No physical Study.com product is held; spoken brand name is audio only.
+* Lighting & Vibe: Phone-native campus vox-pop, vertical 9:16, 720×1280, 7 hard-cut shots. Bright natural daylight, mild handheld movement and practical location sound. Framing alternates host/respondents without cinematic transitions. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Multiple on-camera voices. No music, outdoor campus ambience only.
+
+Scene Breakdown
+
+0:00.0–0:02.6
+Shot Type: medium campus interview, eye-level, handheld
+Action: Bearded male host in a white striped/light shirt stands in a campus plaza with handheld microphone and asks a student the opening college question. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned.
+Dialogue (On-Camera): "If you could change one thing about college, what would it be?"
+
+0:02.6–0:03.6
+Shot Type: medium student response, eye-level, handheld
+Action: Quick student response shot in the same outdoor campus environment. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval.
+Dialogue (On-Camera): "No student debt."
+
+0:03.6–0:07.2
+Shot Type: medium student response, eye-level, handheld
+Action: Hard cut to another young respondent/student, microphone held toward them for the second wish about completing classes remotely. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+Dialogue (On-Camera): "I wish I could [unclear] my classes from my couch."
+
+0:07.2–0:08.8
+Shot Type: medium student response, eye-level, handheld
+Action: Third respondent/student answers quickly about finishing faster; background pedestrians/buildings change slightly with the new person. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+Dialogue (On-Camera): "Yeah, I wish I could finish in half a year."
+
+0:08.8–0:21.2
+Shot Type: medium host brand pitch, eye-level, handheld
+Action: Host/brand-explanation section in the campus setting. He addresses camera/respondent and delivers the Study.com value proposition, with natural hand/mic gestures and students/campus behind. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+Dialogue (On-Camera): "With Study.com, you can actually get all three. Earn real college credits at just $95 a month, take courses from your phone, and transfer those credits to over 2,000 accredited colleges,"
+
+0:21.2–0:23.2
+Shot Type: medium host continuation, eye-level, handheld
+Action: Short continuation of the host's explanation about finishing the degree faster. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+Dialogue (On-Camera): "helping you finish your degree faster and"
+
+0:23.2–0:24.6
+Shot Type: medium host closing, eye-level, handheld
+Action: Final close/medium host beat finishes `with less student debt` and holds briefly in the same plaza. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+Dialogue (On-Camera): "with less student debt."
+
+CHARACTER COUNT: 4919

@@ -1,0 +1,25 @@
+Overall Style & Aesthetics:
+
+* Subject: Man, approximately early-to-mid 30s, thick tousled dark-brown hair, dark eyes, light-to-medium warm skin, dark mustache with light stubble and expressive dark brows. Plain white crew-neck T-shirt. Reactor delivery is energetic and comic: direct lens contact, strong open-mouth emphasis, frequent brow lifts, slight forward leans, head tilts, one- and two-finger pointing gestures and repeated right-hand beats beside his face. His crop sits mostly in the lower-right/lower-center of the source composition, usually showing head, shoulders and upper chest. Hair remains intentionally messy with individual curls/tufts lifting above the forehead and crown; the T-shirt collar stays flat and unadorned.
+* Props: No physical handheld product is used by the reactor. All soap boxes, bars, hands holding soap, flames, rocks, colored studio surfaces, logos, product photography and large words around him are composited background/content and are ignored completely.
+* Lighting & Vibe: Vertical 9:16, 720x1280, 19.5-second source reduced to 3 reactor-only states: visible reactor from 0:00–2.9, empty reactor plate from 2.9–3.8, then visible reactor continuously from 3.8–19.5. Soft bright frontal creator lighting, warm skin exposure, modest shadow under chin and hair. Skin texture stays natural and unretouched; the white shirt is evenly lit without colored spill from the composited background. The source repeatedly hard-cuts its product/background layer, but frame-by-frame inspection of the man shows his pose and mouth continuing smoothly through those product swaps; do not invent reactor cuts from them. Recreate only his crop, pose, eyeline, expression, mouth and gesture timing on a plain neutral removable background. When he disappears, leave the plate empty for later compositing. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: One man's voice throughout. no music, room tone only.
+
+Scene Breakdown
+
+0:00–0:02.9
+Shot Type: Medium close-up reactor / slightly low eye-level / static
+Action: He occupies the lower portion of frame, shoulders angled only slightly while his face turns directly toward the lens. He begins with a strong open-mouth delivery and a small forward lean, then settles back. His right hand rises beside his shoulder in short emphatic motions while the left remains mostly below crop. Brows lift and pinch together in alternating beats; his head tilts a few degrees and returns center. His right forearm occasionally enters from the side with the elbow below crop, creating quick upward pointing motions rather than broad arm swings. Keep his white shirt, hair, face and gestures only, removing every soap/product image behind him.
+Dialogue (On-Camera): "When it's time to power up your shower, only one soap goes into"
+
+0:02.9–0:03.8
+Shot Type: Empty reactor plate / static
+Action: The source temporarily removes the presenter. Generate no person or object during this interval; hold only the plain neutral removable background so the source's product/fire insert can be added later. No visual element from that insert is recreated in the reactor asset.
+Dialogue (Voiceover): "your [unclear]. Dr."
+
+0:03.8–0:19.5
+Shot Type: Medium close-up reactor / eye-level / static
+Action: He reappears in a slightly larger lower-center crop and remains continuously visible for the rest of the ad even while the composited product layer changes repeatedly. He looks into the lens, first leaning toward viewer-left with his right hand lifted, then straightens and uses compact pointing beats near cheek and shoulder height. Around the middle of the interval he forms a two-finger gesture, rotates his wrist, lowers the hand and raises it again without any discontinuous body reset. His mouth opens wide on stressed words, lips narrow between phrases and his mustache moves clearly with the speech. His brows repeatedly lift, eyes narrow briefly for emphasis, then reopen. Later he tips his head toward viewer-right, gives a small confident nod and brings his right hand up again with index/two-finger emphasis. Through the final seconds his shoulders remain steady while the hand lowers, rises once more and settles; head and facial movement stays continuous through every background swap. Do not reproduce boxes, soap, fire, hands, rocks, large words or colored surfaces from the source. Keep him isolated against the neutral removable background until the true end. His torso never walks or turns away; all performance energy stays within the tight crop, driven by mouth, brows, head angle and the right hand. No product ever physically touches him.
+Dialogue (On-Camera): "Squatch is unleashing two legendary bricks inspired by Dragon Ball Z. Super [unclear] Surge. Fueled by Goku, built to [unclear] you feeling energized and unstoppable. And Final Flash Fresh. Vegeta inspired, bold and intense. Train like a [unclear], power like a champion."
+
+CHARACTER COUNT: 4995

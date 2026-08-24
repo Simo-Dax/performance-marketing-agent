@@ -1,0 +1,42 @@
+Overall Style & Aesthetics:
+
+* Subject: Young white man/late-teen to early-20s, fair skin, medium-brown hair, clean-shaven/light facial hair, wearing a black T-shirt and silver chain with small cross. Hair moves from messy dry start to wet post-shower, then a fluffy textured styled finish.
+* Props: White round hair-styling tub with dark printed branding that is mirrored/too soft to transcribe confidently; white/cream clay/paste inside. Bath towel used to scrunch-dry wet hair. No other product packaging needs to be invented.
+* Lighting & Vibe: Casual bedroom/bathroom grooming UGC, vertical 9:16, 360×640, 8 hard-cut shots. Soft practical indoor light, static phone at roughly eye level, ordinary phone sharpness and realistic wet-to-dry hair texture. No on-screen text, captions, subtitles, emoji or watermarks anywhere; the only text is what is physically printed on the product.
+* Audio: Music bed only. No voiceover, no talking.
+
+Scene Breakdown
+
+0:00.0–0:01.4
+Shot Type: medium before shot, eye-level, static
+Action: Young white man/teen with brown hair faces the phone indoors wearing a black T-shirt and silver chain; hair begins dry, messy and flat/irregular around the forehead. Preserve the exact camera height, crop and subject scale from this interval; do not push in, pull back or re-center for a cleaner composition. Do not add extra gestures, repeated demonstrations, extra product rotations or reaction beats that are not present in the source interval. Keep the background at the same depth and clarity as the source, with no artificial portrait blur or exaggerated depth separation.
+
+0:01.4–0:02.5
+Shot Type: medium wet-hair shot, eye-level, static
+Action: Hard cut to wet post-shower hair, darker and clumped, upper body/shoulders closer to camera. Keep every hand, body and prop movement at ordinary real-time speed, including the small pauses and hesitations that make the source feel casually filmed. Keep hair, fabric, liquid and loose objects settling under normal gravity after each movement instead of freezing them into a polished pose.
+
+0:02.5–0:04.4
+Shot Type: medium towel-dry shot, eye-level, static
+Action: He scrunches and squeezes wet hair with a towel, lifting sections and removing moisture with quick natural motions. Maintain the same relative positions between the subject, product and fixed background objects throughout this shot instead of tidying the layout. Preserve small asymmetries in posture, spacing and hand position; the shot should feel observed rather than art-directed.
+
+0:04.4–0:05.5
+Shot Type: close-up product shot, static
+Action: Product insert: he holds a small white hair-clay/pomade tub near the lens; printed brand wording is too soft/mirrored to transcribe reliably. Keep phone autofocus natural and subtle: focus may breathe slightly with near objects, but do not add a cinematic rack-focus effect. Retain realistic skin pores, fine hair flyaways, wrinkles in clothing, scuffs on packaging and ordinary surface imperfections where visible.
+
+0:05.5–0:06.9
+Shot Type: close-up product scoop shot, static
+Action: Close hand/tub shot as he opens/scoops a small amount of white/cream styling product onto fingertips. Retain ordinary phone exposure behavior and realistic highlight clipping; bright skin, glass, plastic and white surfaces should not become artificially soft or glowing. Keep reflections physically anchored to the product and environment as it moves, especially on glass, glossy plastic, metal and wet surfaces.
+
+0:06.9–0:08.7
+Shot Type: close-up hand texture shot, static
+Action: He rubs/emulsifies the product between both palms/fingers until it thins across the hands. Preserve real contact shadows where fingers meet products, hair touches clothing, feet meet the floor or objects rest on a surface. Preserve the source's native motion cadence and frame-to-frame continuity; do not interpolate smoother movement or create slow motion.
+
+0:08.7–0:12.6
+Shot Type: medium hair styling shot, eye-level, static
+Action: Long styling section: both hands work product through hair from roots to ends, pushing upward/back, pinching sections and building fluffy separated texture. Match the product's physical dimensions, cap orientation, label direction and distance from the lens; do not enlarge it for emphasis. Do not introduce extra people, hands, products, furniture or decor beyond what is physically present in this shot.
+
+0:12.6–0:16.4
+Shot Type: medium after reveal, eye-level, static
+Action: Final reveal. Hair is dry-looking, fuller and intentionally textured; he faces the camera, turns slightly and lets the styled front sit naturally without further application. Keep natural finger pressure and grip changes visible when an object is held, opened, rubbed, pressed, poured or repositioned. Match the direction and softness of shadows already present; do not add rim lights, beauty lights or dramatic contrast.
+
+CHARACTER COUNT: 4897
