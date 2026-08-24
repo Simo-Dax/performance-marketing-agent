@@ -62,6 +62,7 @@ Tutti i comandi del Performance Marketing Team. Vivono in `.claude/commands/`. O
 | `/pm-pixar-ad` | Ad Pixar 3D voiceover-first, formato progressione "Giorno 1… Giorno 30…" | 59 / SA6 |
 | `/pm-talking-object-ad` | Ad dove il cast parla: problema personificato → ingredienti → il prodotto chiede la vendita | 60 / SA6 |
 | `/pm-podcast-ad` | Finto podcast a due host (2 volti + 2 voci → 9:16 montato) | 61 / SA6 |
+| `/pm-vox-ad` | Collage editoriale word-synced: ogni parola forte fa pop-in del suo oggetto, sync misurato | 64 / SA6 |
 | `/pm-product-photo` | Product shot Studio/Held/Worn | 26 / SA6 |
 | `/pm-multiplier` | 5-8 variazioni Andromeda-compliant da winner | 27 / SA6 |
 

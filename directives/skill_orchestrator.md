@@ -60,6 +60,7 @@ Questo file definisce il routing delle skill: quando attivarle, in quale fase de
 | `59_pixar_ad` | SA6 | Production | Ad Pixar 3D **voiceover-first**, formato progressione virale. Eroe castato dal Brand DNA (Character Bible bloccato), testimoni altri personaggi Pixar mai umani, prodotto come prop dalla foto reale. **Mai testo renderizzato, mai lip-sync.** 2 gate. Richiede ffmpeg + whisper. |
 | `60_talking_object_ad` | SA6 | Production | Ad **dialogue-first**: il cast vende (problema personificato → eroi ingrediente → il prodotto chiede la vendita). I personaggi **parlano on camera**, nessun voiceover esterno: l'audio nativo delle clip è la traccia. 2 gate. Richiede ffmpeg. |
 | `61_podcast_ad` | SA6 | Production | Finto **podcast a due host**: l'utente carica 2 volti + 2 voci, la skill scrive, renderizza in parallelo (voice cut con fingerprint unico) e monta un 9:16. Nessun riferimento video mai. Richiede ffmpeg + whisper. |
+| `64_vox_ad` | SA6 | Production | **VOX collage editoriale word-synced**, voiceover-first. La voce nomina, l'oggetto nominato fa pop-in **su quella parola** (legge parola→oggetto: una parola forte non mappata = validation failure). **LITERAL-first — l'inverso di `59`**, che è emotion-first. Stile bloccato incollato byte-identico in ogni keyframe (è quello l'ancora, non un personaggio). Un keyframe per clip, la clip parte da sfondo vuoto e ci si assembla dentro. **Step 6.5: misura frame by frame l'arrivo reale di ogni elemento e ri-tempa in un filter graph ffmpeg** — ogni pop entro un quarto di secondo dalla parola. Mai musica. 2 gate (transcript, beat map+costo). Voce incisa dall'utente. Richiede ffmpeg + whisper. |
 | `26_product_shot` | SA6 | Production | Product shot (Studio/Held/Worn). Input: immagine prodotto. Opzionale: personaggio da `22_character_creator`. |
 | `27_multiplier` | SA6 | Production | Moltiplicatore winner — 5-8 variazioni Andromeda-compliant da ad vincente. Input: ad vincente + 1-3 img prodotto + Brand DNA + VOC. |
 | `54_headline_bank` | SA7 | Creative | Headline bank dedicata, più profonda di `28_meta_copy` — ~20 headline + 8 hook on-image + 6 first-line, framework-nominate, char-discipline 27/40, gate personal-attributes Meta. Input: angolo/creative/angle-bank/riff. |
@@ -230,6 +231,7 @@ SA9 gestisce il canale owned (email/retention). Trigger: export clienti disponib
 - [x] `59_pixar_ad` — Pixar Ad Factory (SA6)
 - [x] `60_talking_object_ad` — Talking Object Ad Factory (SA6)
 - [x] `61_podcast_ad` — Podcast Ad Factory (SA6)
+- [x] `64_vox_ad` — VOX collage word-synced (SA6)
 - [x] `26_product_shot` — Product Shot Generator (SA6)
 - [x] `27_multiplier` — Winning Ad Multiplier 2.0 (SA6)
 - [x] `28_meta_copy` — Meta Ad Copy (SA7)
@@ -296,6 +298,7 @@ Ogni skill produzione è invocabile come slash-command nativo. Tabella di mappin
 | `/pm-pixar-ad` | `59_pixar_ad` | SA6 |
 | `/pm-talking-object-ad` | `60_talking_object_ad` | SA6 |
 | `/pm-podcast-ad` | `61_podcast_ad` | SA6 |
+| `/pm-vox-ad` | `64_vox_ad` | SA6 |
 | `/pm-product-photo` | `26_product_shot` | SA6 |
 | `/pm-multiplier` | `27_multiplier` | SA6 |
 | `/pm-headlines` | `54_headline_bank` | SA7 |

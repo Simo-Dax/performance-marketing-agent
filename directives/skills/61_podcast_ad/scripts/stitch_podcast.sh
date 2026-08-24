@@ -56,7 +56,7 @@ ffmpeg -nostdin -y -v error -f concat -safe 0 -i "$TMP/concat.txt" -c copy "$JOI
   || { echo "ffmpeg concat failed" >&2; exit 1; }
 
 # -14 LUFS loudness normalization. TWO-PASS (measure, then apply with linear gain) so the
-# final mix lands exactly on target -- matches the house standard (ugc-studio, clay-ad).
+# final mix lands exactly on target -- matches the house standard across the video skills.
 # Falls back to single-pass if the measurement can't be parsed.
 LN_I=-14; LN_TP=-1.5; LN_LRA=11
 MEAS="$(ffmpeg -nostdin -hide_banner -v info -i "$JOIN" \

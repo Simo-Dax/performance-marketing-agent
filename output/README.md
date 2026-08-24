@@ -41,6 +41,7 @@ Questa è la mappa autoritativa dettagliata (CLAUDE.md ne tiene una versione com
 ├── 18_Pixar_Ads/              ← 59_pixar_ad (/pm-pixar-ad): ad montato + clip raw + storyboard
 ├── 19_Talking_Object_Ads/     ← 60_talking_object_ad (/pm-talking-object-ad)
 ├── 20_Podcast_Ads/            ← 61_podcast_ad (/pm-podcast-ad)
+├── 21_Vox_Ads/                ← 64_vox_ad (/pm-vox-ad): ad word-synced + clip raw + keyframe + beat map + report timing/arrivi
 │   (63_auto_captions /pm-captions non ha cartella propria: scrive `<nome>_captioned.mp4` accanto al master, mai sovrascrivendolo)
 ├── _assets/product-shots/     ← 26_product_shot (/pm-product-photo)
 ├── intermediate/              ← output TESTUALI dei SA (handoff interni)

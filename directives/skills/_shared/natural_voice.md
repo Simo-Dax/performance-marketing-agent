@@ -1,6 +1,6 @@
 # Natural voice, the anti-AI-slop rulebook (shared)
 
-Every piece of copy or script this plugin produces must sound like a real person, never like an ad reading itself out loud and never like a language model formatting for visual impact. This shared module is the house cadence law for spoken scripts AND written primary text. It is hoisted from the clay-ad skill's proven local rulebook so every skill inherits the same craft; clay-ad's local copy remains in place and authoritative for clay runs.
+Every piece of copy or script this agent produces must sound like a real person, never like an ad reading itself out loud and never like a language model formatting for visual impact. This shared module is the house cadence law for spoken scripts AND written primary text. Every skill that writes spoken or primary text inherits it.
 
 ## HARD RULE 1: flowing spoken sentences, not clipped ad-fragments
 
